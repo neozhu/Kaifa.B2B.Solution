@@ -1,0 +1,8 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.InforApiServiceAdapterProvider\bin\Debug\Kaifa.B2B.InforApiServiceAdapterProvider.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.InforApiServiceAdapterProvider\bin\Debug\Kaifa.B2B.InforApiServiceAdapterProvider.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.InforApiServiceAdapterProvider\bin\Debug\ScheduledTaskAdapter.TaskComponents.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.InforApiServiceAdapterProvider\obj\Debug\ResolveAssemblyReference.cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.InforApiServiceAdapterProvider\obj\Debug\Kaifa.B2B.InforApiServiceAdapterProvider.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.InforApiServiceAdapterProvider\obj\Debug\Kaifa.B2B.InforApiServiceAdapterProvider.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.InforApiServiceAdapterProvider.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.InforApiServiceAdapterProvider.pdb

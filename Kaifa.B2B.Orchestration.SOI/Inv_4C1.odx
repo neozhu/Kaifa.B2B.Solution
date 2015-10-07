@@ -1,0 +1,369 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c16063ba-5dd2-4718-8568-574810c01729" LowerBound="1.1" HigherBound="44.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.Orchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="94072556-c5eb-4d69-a4a6-e2a3f8f604c1" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="6.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveInventoryMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="6b0d84ba-f4d1-4a67-8faf-3ac47fccd477" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ade3d835-0561-4613-86cf-afd04390ae66" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas.Wms.InventoryReport" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3f0148e5-0f8a-4996-aaed-d0387d5166a5" ParentLink="Module_PortType" LowerBound="6.1" HigherBound="8.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Send4C1Message" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d86c1741-1481-4a99-b6db-00e12b48ccef" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="821d0b12-1458-4848-ade1-db0ddd5abbd2" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas.RosettaNet.SGRTHUB4C1_MS_1_0_SupplierOwnInventory" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="9f9bb6c2-a4f8-45ec-8e65-f189dcac2de2" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="10.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendXmlDocument" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="14a627ec-9256-4a7b-a615-1ad8a2ecc52b" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="61c98885-98e6-4dff-a87d-d08b65027478" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="8c777526-4a26-4504-a785-025a53006acf" ParentLink="Module_ServiceDeclaration" LowerBound="10.1" HigherBound="43.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Inv_4C1" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="00797494-6f86-4d01-ba6b-4af982e146d9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Count" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2c3ace7c-271b-4d02-b21b-7f34a5361862" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CountStr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="85f01143-dd6c-494d-8377-d7f413b1cafe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Increase" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e6f35926-39f2-4fb5-9bc0-bb1abdbc4e15" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Microsoft.Solutions.BTARN.Shared.SubmitRNIF" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SubmitRNIF" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1bc1e6c3-cecf-4cc8-9659-70f297ca457f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="17.1" HigherBound="19.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.RosettaNet.SGRTHUB4C1_MS_1_0_SupplierOwnInventory" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Pip4C1ForSTXMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="20b741f2-ba47-4c9c-99ad-35574bcf54c1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="19.1" HigherBound="21.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.Wms.InventoryReport" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InventoryReportMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="218cd6d1-e058-41c8-9fb6-4bd60e18a811" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.Wms.VendorInventoryReport" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="VendorReportMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="58114f17-b95d-4d52-a071-923841ed5ff0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.RosettaNet.SGRTHUB4C1_MS_1_0_SupplierOwnInventory" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Pip4C1ForE2OpenMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e489b644-3946-4326-aa2f-394ffdd64f8e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RawMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="984b9b89-02c1-4f64-9954-3e5b45897ddb" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="1d9e70f8-40ab-473f-91ac-fe2716b9691f" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="37.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveInventoryMessage" />
+                    <om:Property Name="MessageName" Value="InventoryReportMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_InventoryReportMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="7fbe018a-8274-49e5-ae67-3b715ed61e30" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="Expression" Value="Count = xpath(InventoryReportMessage, &quot;count(/*[local-name()='InventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport']/*[local-name()='VendorInventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetCount" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="8c5aa89d-7a55-444e-9d7e-78e22b67509e" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="Expression" Value="Increase&lt;=Count" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop_CreateVendorReport" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="1c926df1-13ea-46c6-872f-bec2a9274b07" ParentLink="ComplexStatement_Statement">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="c419b1e3-53cc-4628-b8ba-fbbaa6a14d60" ParentLink="Construct_MessageRef">
+                            <om:Property Name="Ref" Value="VendorReportMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="1db9a645-9e5a-4436-a2d9-36c873117d92" ParentLink="ComplexStatement_Statement">
+                            <om:Property Name="Expression" Value="CountStr = Increase.ToString();&#xD;&#xA;&#xD;&#xA;VendorReportMessage =  xpath(InventoryReportMessage, &quot;/*[local-name()='InventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport']/*[local-name()='VendorInventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport'][&quot; + CountStr + &quot;]&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Parallel" OID="9e22336e-18f7-4ae3-ad79-333061886611" ParentLink="ComplexStatement_Statement">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ParallelActions_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="ParallelBranch" OID="cd35a5a1-3497-4cad-887b-0ca1faf87768" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ParallelBranch_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Construct" OID="828c1c1d-043e-49fa-a43e-92b2d135b663" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructMessage_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="7dddaa96-b1c0-430c-bfe0-8327325ca490" ParentLink="Construct_MessageRef">
+                                    <om:Property Name="Ref" Value="Pip4C1ForSTXMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Transform" OID="379fbf84-c2b0-426e-a53b-1f2e833eba42" ParentLink="ComplexStatement_Statement">
+                                    <om:Property Name="ClassName" Value="Kaifa.B2B.Mapping.Inventory_To_4C1_STX" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Transform_Rosettanet4C1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="749f6ad6-720c-4993-9f87-f54787ed1f1c" ParentLink="Transform_InputMessagePartRef">
+                                        <om:Property Name="MessageRef" Value="VendorReportMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_1" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="73f972be-0b00-495d-9de0-9043cc3f2fb7" ParentLink="Transform_OutputMessagePartRef">
+                                        <om:Property Name="MessageRef" Value="Pip4C1ForSTXMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="127d61d0-1c52-42ed-9faa-cfd7472f7961" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="Expression" Value="//&#xD;&#xA; System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX&quot;,&quot;kaifa.b2b&quot;);&#xD;&#xA;// SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA;// &quot;sourcePartyName&quot;,&#xD;&#xA;// &quot;destinationPartyName&quot;,&#xD;&#xA;// &quot;pipCode&quot;,&#xD;&#xA;// &quot;pipInstanceIdentifier&quot;,&#xD;&#xA;// &quot;pipVersion&quot;,&#xD;&#xA;//  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Rosttanet4C1Message,&quot;4C1V0200&quot;)&#xD;&#xA;//);&#xD;&#xA;&#xD;&#xA; " />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="InvokeSubmitRNIFAPI" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Send" OID="f5252eb2-8dbe-49e1-96b0-ac1c71658ed1" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="PortName" Value="Send4C1Message" />
+                                <om:Property Name="MessageName" Value="Pip4C1ForSTXMessage" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_ResttanetMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ParallelBranch" OID="b227749a-47dd-4068-bc87-35f5fad781d2" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ParallelBranch_2" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Construct" OID="6415487f-aa33-4add-a88a-cad6a4aab39b" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructMessage_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="0717391b-ce6e-4897-809b-2b0c573ddc1e" ParentLink="Construct_MessageRef">
+                                    <om:Property Name="Ref" Value="Pip4C1ForE2OpenMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Transform" OID="84a05b1a-004a-4942-9051-c023fa7ef128" ParentLink="ComplexStatement_Statement">
+                                    <om:Property Name="ClassName" Value="Kaifa.B2B.Mapping.Inventory_To_4C1_e2Open" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Transform_Rosettanet4C1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="db4d04c3-6502-4121-b59d-7323562e0412" ParentLink="Transform_InputMessagePartRef">
+                                        <om:Property Name="MessageRef" Value="VendorReportMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="3320863d-1784-41b7-94cc-4e6bb0d027a2" ParentLink="Transform_OutputMessagePartRef">
+                                        <om:Property Name="MessageRef" Value="Pip4C1ForE2OpenMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="4c1c3d7c-bd79-49b2-ab15-4e473a70be21" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="Expression" Value="//&#xD;&#xA; System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX&quot;,&quot;kaifa.b2b&quot;);&#xD;&#xA;// SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA;// &quot;sourcePartyName&quot;,&#xD;&#xA;// &quot;destinationPartyName&quot;,&#xD;&#xA;// &quot;pipCode&quot;,&#xD;&#xA;// &quot;pipInstanceIdentifier&quot;,&#xD;&#xA;// &quot;pipVersion&quot;,&#xD;&#xA;//  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Rosttanet4C1Message,&quot;4C1V0200&quot;)&#xD;&#xA;//);&#xD;&#xA;&#xD;&#xA; " />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="InvokeSubmitRNIFAPI" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Send" OID="7cc97e94-6449-47c5-a9eb-7caf2f278b21" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="PortName" Value="Send4C1Message" />
+                                <om:Property Name="MessageName" Value="Pip4C1ForE2OpenMessage" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_ResttanetMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="ba7c7cbf-5ab6-4816-bea1-cd6f09c8dca9" ParentLink="ComplexStatement_Statement">
+                        <om:Property Name="Expression" Value="Increase = Increase + 1;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Increasing" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="93f90dda-d320-48c3-b34c-ec4c06bf43dc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="13.1" HigherBound="15.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.PortType_ReceiveInventoryMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveInventoryMessage" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ce44d133-5136-42e2-a22b-46d2a6fc6f2f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="13.1" HigherBound="14.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0fea36bb-1aa5-4e0b-8976-0a2e06814074" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="15.1" HigherBound="17.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.PortType_Send4C1Message" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send4C1Message" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="9e960c9b-c57e-4b95-96c0-348bb6a5bda3" ParentLink="PortDeclaration_CLRAttribute" LowerBound="15.1" HigherBound="16.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.Orchestration
+{
+
+#error "Errors exist for one or more children."
+
+#error "Errors exist for one or more children."
+
+#error "Errors exist for one or more children."
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Inv_4C1
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveInventoryMessage ReceiveInventoryMessage;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Send4C1Message Send4C1Message;
+
+#error "Message Type 'Kaifa.B2B.Schemas.RosettaNet.SGRTHUB4C1_MS_1_0_SupplierOwnInventory' does not exist or is not valid."
+
+#error "Message Type 'Kaifa.B2B.Schemas.Wms.InventoryReport' does not exist or is not valid."
+
+#error "Message Type 'Kaifa.B2B.Schemas.Wms.VendorInventoryReport' does not exist or is not valid."
+
+#error "Message Type 'Kaifa.B2B.Schemas.RosettaNet.SGRTHUB4C1_MS_1_0_SupplierOwnInventory' does not exist or is not valid."
+
+#error "Message Type 'System.Xml.XmlDocument' does not exist or is not valid."
+        System.Int32 Count;
+        System.String CountStr;
+        System.Int32 Increase;
+
+#error "Type 'Microsoft.Solutions.BTARN.Shared.SubmitRNIF' does not exist or is not valid."
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1d9e70f8-40ab-473f-91ac-fe2716b9691f")]
+            activate receive (ReceiveInventoryMessage.Operation_1, InventoryReportMessage);
+            CountStr = "";
+
+#error "The expression that you have entered is not valid."
+
+#error "Errors exist for one or more children."
+        }
+    }
+}
+

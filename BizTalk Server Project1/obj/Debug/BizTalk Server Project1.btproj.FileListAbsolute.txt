@@ -1,0 +1,4 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\BizTalk Server Project1\bin\Debug\BizTalk Server Project1.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\BizTalk Server Project1\bin\Debug\BizTalk Server Project1.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\BizTalk Server Project1\obj\Debug\BizTalk Server Project1.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\BizTalk Server Project1\obj\Debug\BizTalk Server Project1.pdb

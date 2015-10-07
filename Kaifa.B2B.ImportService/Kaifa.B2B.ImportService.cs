@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.ServiceProcess;
+using System.Text;
+using Kaifa.B2B.VendorAlloc;
+
+namespace Kaifa.B2B.ImportService
+{
+    public partial class Kaifa_B2B_ImportService : ServiceBase
+    {
+        private CalendarTask calTask = null;
+        private AllocTask allTask = null;
+        public Kaifa_B2B_ImportService()
+        {
+            InitializeComponent();
+            string connectionstring = System.Configuration.ConfigurationManager.AppSettings["connectionstring"];
+            string alldir = System.Configuration.ConfigurationManager.AppSettings["allocDir"];
+            string allbakdir = System.Configuration.ConfigurationManager.AppSettings["allocBakDir"];
+
+            allTask = new AllocTask(alldir, allbakdir, connectionstring);
+            string caldir = System.Configuration.ConfigurationManager.AppSettings["calDir"];
+            string calbakdir = System.Configuration.ConfigurationManager.AppSettings["calBakDir"];
+
+            calTask = new CalendarTask(caldir, calbakdir, connectionstring);
+        }
+
+        protected override void OnStart(string[] args)
+        {
+
+            allTask.Start();
+            calTask.Start();
+        }
+
+        protected override void OnStop()
+        {
+            allTask.Stop();
+            calTask.Stop();
+        }
+    }
+}

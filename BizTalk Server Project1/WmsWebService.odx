@@ -1,0 +1,243 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="6e3f8818-d10a-4e78-9e32-dd04ee539827" LowerBound="1.1" HigherBound="52.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="BizTalk_Server_Project1" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="5d062e0b-0906-48ae-9563-715e892d11cc" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:portType name=&quot;WmsWebServicePortType&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="WmsWebServicePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b2448b3a-fbbb-44d3-83e2-767a575f96c0" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;callBackEnd&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="callBackEnd" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="f81dac00-979d-4881-b52f-34985950f902" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.31">
+                    <om:Property Name="Ref" Value="BizTalk_Server_Project1.callBackEndRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;http://com.ssaglobal.com:callBackEndRequest&quot;/&gt;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="callBackEndRequest" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="c4b5b15d-359d-4539-a7fa-a586ebd677e8" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="16.33" HigherBound="16.52">
+                    <om:Property Name="Ref" Value="BizTalk_Server_Project1.callBackEndResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;http://com.ssaglobal.com:callBackEndResponse&quot;/&gt;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="callBackEndResponse" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="506867ec-bdad-4bd8-8179-9473d7f4cb94" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2d21ca0f-96bf-4c32-a300-3f9647cba6d5" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="e22c81eb-bc56-4871-95ef-04c74f1ad71d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.31">
+                    <om:Property Name="Ref" Value="BizTalk_Server_Project1.callBackEndRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d96d18c9-d560-449a-b320-69232f4eae2e" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;callBackEndRequest&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="callBackEndRequest" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="d9cd29cc-37ab-4ec7-b760-b4b132055f85" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="BizTalk_Server_Project1.WmsWebService_com_ssaglobal_com.callBackEnd" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="4824f8ef-828d-4227-8ff5-f39380b05952" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;callBackEndResponse&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="callBackEndResponse" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="a2c39792-5e9f-416c-819c-1796341be9f5" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="BizTalk_Server_Project1.WmsWebService_com_ssaglobal_com.callBackEndResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="bcdc7e8d-067b-4433-829b-da61b9bce13a" ParentLink="Module_ServiceDeclaration" LowerBound="26.1" HigherBound="51.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:service name=&quot;WmsWebService&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="WmsWebServiceClient" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="c1fa2e5f-5e38-409e-b625-85933b3112c3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="BizTalk_Server_Project1.callBackEndRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_request" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="69b496e9-d78a-4ef4-97d4-16bff024d2c0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="BizTalk_Server_Project1.callBackEndResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_reponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="f172e007-1f04-4d9e-bfb9-c3dd397bfe67" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="42070cc7-3d7e-470b-8525-2d47dec486bf" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_1" />
+                    <om:Property Name="MessageName" Value="Message_request" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="7272c827-4a90-466a-85d1-778a6529d724" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="45.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="c8beeb55-3a5d-4c51-ac94-7292a8eb266b" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="6976a88f-bfef-4b2f-bdb0-9586f25d78f8" ParentLink="Construct_MessageRef" LowerBound="40.23" HigherBound="40.38">
+                        <om:Property Name="Ref" Value="Message_request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="b309ecaa-77f8-47b4-904e-3b1e743060b1" ParentLink="ServiceBody_Statement" LowerBound="45.1" HigherBound="47.1">
+                    <om:Property Name="PortName" Value="Port_2" />
+                    <om:Property Name="MessageName" Value="Message_request" />
+                    <om:Property Name="OperationName" Value="callBackEnd" />
+                    <om:Property Name="OperationMessageName" Value="callBackEndRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="f1e6742e-c219-4072-8562-9070388e53e7" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="49.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_2" />
+                    <om:Property Name="MessageName" Value="Message_reponse" />
+                    <om:Property Name="OperationName" Value="callBackEnd" />
+                    <om:Property Name="OperationMessageName" Value="callBackEndResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_2" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bbf6e4e0-77de-4b1f-9b8a-7a4a3f2851f7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="29.1" HigherBound="31.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="BizTalk_Server_Project1.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="6870c004-c2eb-4e76-b538-dd8d573defc7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="29.1" HigherBound="30.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c109600e-9962-4572-955c-dd06017b2088" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="31.1" HigherBound="33.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="BizTalk_Server_Project1.WmsWebServicePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_2" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="63975c5e-bebf-47ca-ad1f-eb43bd1bd754" ParentLink="PortDeclaration_CLRAttribute" LowerBound="31.1" HigherBound="32.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module BizTalk_Server_Project1
+{
+    internal messagetype callBackEndRequest
+    {
+        body WmsWebService_com_ssaglobal_com.callBackEnd parameters;
+    };
+    internal messagetype callBackEndResponse
+    {
+        body WmsWebService_com_ssaglobal_com.callBackEndResponse parameters;
+    };
+    internal porttype WmsWebServicePortType
+    {
+        requestresponse callBackEnd
+        {
+            callBackEndRequest, callBackEndResponse
+        };
+    };
+    internal porttype PortType_1
+    {
+        oneway Operation_1
+        {
+            callBackEndRequest
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service WmsWebServiceClient
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_1 Port_1;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses WmsWebServicePortType Port_2;
+        message callBackEndRequest Message_request;
+        message callBackEndResponse Message_reponse;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("42070cc7-3d7e-470b-8525-2d47dec486bf")]
+            activate receive (Port_1.Operation_1, Message_request);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7272c827-4a90-466a-85d1-778a6529d724")]
+            construct Message_request
+            {
+
+#error "No Expression."
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b309ecaa-77f8-47b4-904e-3b1e743060b1")]
+            send (Port_2.callBackEnd, Message_request);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f1e6742e-c219-4072-8562-9070388e53e7")]
+            receive (Port_2.callBackEnd, Message_reponse);
+        }
+    }
+}
+

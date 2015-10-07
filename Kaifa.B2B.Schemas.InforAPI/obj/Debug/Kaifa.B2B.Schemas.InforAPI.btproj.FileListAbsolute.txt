@@ -1,0 +1,6 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.InforAPI\bin\Debug\Kaifa.B2B.Schemas.InforAPI.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.InforAPI\bin\Debug\Kaifa.B2B.Schemas.InforAPI.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Schemas.InforAPI.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Schemas.InforAPI.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.InforAPI\obj\Debug\Kaifa.B2B.Schemas.InforAPI.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.InforAPI\obj\Debug\Kaifa.B2B.Schemas.InforAPI.pdb

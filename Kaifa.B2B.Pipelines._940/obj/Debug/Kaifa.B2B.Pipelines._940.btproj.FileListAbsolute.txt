@@ -1,0 +1,7 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Pipelines._940\bin\Debug\Kaifa.B2B.Pipelines._940.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Pipelines._940\bin\Debug\Kaifa.B2B.Pipelines._940.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Pipelines._940\bin\Debug\Kaifa.B2B.Schemas._940.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Pipelines._940\obj\Debug\Kaifa.B2B.Pipelines._940.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Pipelines._940\obj\Debug\Kaifa.B2B.Pipelines._940.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Pipelines._940.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Pipelines._940.pdb

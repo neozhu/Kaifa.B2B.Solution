@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A829E5FF-7D74-49F7-8A4E-21D92A7BF520}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Kaifa.B2B.Schemas.Wms</RootNamespace>
+    <AssemblyName>Kaifa.B2B.Schemas.Wms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>kaifa.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="AdvancedShipNotice.xsd">
+      <TypeName>AdvancedShipNotice</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="InventoryReport.xsd">
+      <TypeName>InventoryReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="CMShipmentPODReport.xsd">
+      <TypeName>CMShipmentPODReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <None Include="kaifa.snk" />
+    <Schema Include="VendorShipmentPODReport.xsd">
+      <TypeName>VendorShipmentPODReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="OrderShipmentPOD.xsd">
+      <TypeName>OrderShipmentPOD</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="VendorShipmentReport.xsd">
+      <TypeName>VendorShipmentReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="OrderShipment.xsd">
+      <TypeName>OrderShipment</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="VendorInventoryReport.xsd">
+      <TypeName>VendorInventoryReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="VendorReceiptReport.xsd">
+      <TypeName>VendorReceiptReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>
