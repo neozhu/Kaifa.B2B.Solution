@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="urn:rosettanet:specification:domain:SalesReporting:xsd:schema:1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:urss="urn:rosettanet:specification:system:xml:1.0"
+	xmlns:tns="urn:rosettanet:specification:domain:SalesReporting:xsd:schema:1.0"
+	xmlns:drtqf="urn:rosettanet:specification:domain:TotalQualifier:xsd:codelist:1.0"
+	xmlns:updtn="urn:rosettanet:specification:universal:ProductIdentification:xsd:schema:1.0"
+	xmlns:udts="urn:rosettanet:specification:universal:Dates:xsd:schema:1.0"
+	xmlns:ulctn="urn:rosettanet:specification:universal:Locations:xsd:schema:1.0"
+	xmlns:ucttf="urn:rosettanet:specification:universal:ContactInformation:xsd:schema:1.0"
+	xmlns:umtyp="urn:rosettanet:specification:universal:MonetaryExpression:xsd:schema:1.0"
+	xmlns:drbpc="urn:rosettanet:specification:domain:BookPriceQualifier:xsd:codelist:1.0"
+	xmlns:drnsl="urn:rosettanet:specification:domain:SaleType:xsd:codelist:1.0"
+	xmlns:drpmt="urn:rosettanet:specification:domain:PaymentMethod:xsd:codelist:1.0"
+	xmlns:drpcs="urn:rosettanet:specification:domain:PurchaseMethod:xsd:codelist:1.0"
+	xmlns:drtnc="urn:rosettanet:specification:domain:TransactionType:xsd:codelist:1.0"
+	xmlns:uptrn="urn:rosettanet:specification:universal:PartnerIdentification:xsd:schema:1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="urn:rosettanet:specification:domain:TotalQualifier:xsd:codelist:1.0"
+		schemaLocation="CodeList/RN_TotalQualifier.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:universal:ProductIdentification:xsd:schema:1.0"
+		schemaLocation="../../Universal/ProductIdentification.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:universal:Dates:xsd:schema:1.0" schemaLocation="../../Universal/Dates.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:universal:Locations:xsd:schema:1.0" schemaLocation="../../Universal/Locations.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:universal:ContactInformation:xsd:schema:1.0"
+		schemaLocation="../../Universal/ContactInformation.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:universal:MonetaryExpression:xsd:schema:1.0"
+		schemaLocation="../../Universal/MonetaryExpression.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:domain:BookPriceQualifier:xsd:codelist:1.0"
+		schemaLocation="CodeList/RN_BookPriceQualifier.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:domain:SaleType:xsd:codelist:1.0" schemaLocation="CodeList/RN_SaleType.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:domain:PaymentMethod:xsd:codelist:1.0" schemaLocation="CodeList/RN_PaymentMethod.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:domain:PurchaseMethod:xsd:codelist:1.0"
+		schemaLocation="CodeList/RN_PurchaseMethod.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:domain:TransactionType:xsd:codelist:1.0"
+		schemaLocation="CodeList/RN_TransactionType.xsd"></xs:import>
+	<xs:import namespace="urn:rosettanet:specification:universal:PartnerIdentification:xsd:schema:1.0"
+		schemaLocation="../../Universal/PartnerIdentification.xsd"></xs:import>
+	<xs:annotation>
+		<xs:documentation>
+			<urss:Copyright>© 2004 RosettaNet. All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the inclusion of this copyright notice. Any derivative works must cite the copyright notice. Any public redistribution or sale of this publication or derivative works requires prior written permission of the publisher.</urss:Copyright>
+			<urss:Disclaimer>RosettaNet makes no representation about the suitability of this work for any purpose or regarding any claims made by products which use it.  It is provided as is without expressed or implied warranty.</urss:Disclaimer>
+			<urss:Program>Sales Reporting Milestone Program</urss:Program>
+			<urss:Purpose>Provides the Sales Reporting domain structures.</urss:Purpose>
+		</xs:documentation>
+		<xs:appinfo>
+			<urss:CreationDate>08/03/2004</urss:CreationDate>
+			<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="BookPrice" type="tns:BookPriceType"></xs:element>
+	<xs:element name="ContractDetails" type="tns:ContractDetailsType"></xs:element>
+	<xs:element name="DatePeriodAndDuration" type="tns:DatePeriodAndDurationType"></xs:element>
+	<xs:element name="InstallLocation" type="tns:InstallLocationType"></xs:element>
+	<xs:element name="LotIdentification" type="tns:LotIdentificationType"></xs:element>
+	<xs:element name="ParticipatingPartner" type="tns:ParticipatingPartnerType"></xs:element>
+	<xs:element name="ProductInformation" type="tns:ProductInformationType"></xs:element>
+	<xs:element name="ProductSummary" type="tns:ProductSummaryType"></xs:element>
+	<xs:element name="ProductUnitTotal" type="tns:ProductUnitTotalType"></xs:element>
+	<xs:element name="SalesOut" type="tns:SalesOutType"></xs:element>
+	<xs:element name="SalesOutAndTransaction" type="tns:SalesOutAndTransactionType"></xs:element>
+	<xs:element name="SpecialPrice" type="tns:SpecialPriceType"></xs:element>
+	<xs:complexType name="BookPriceType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object represents a booking price. It describes the price the trading partner was charged by the seller.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="umtyp:FinancialAmount"></xs:element>
+			<xs:element name="Qualifier" type="drbpc:BookPriceQualifierType">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Code identifying the price the trading partner was charged by the seller.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ContractDetailsType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object represents a business arrangement for the supply of goods or services. Group of attributes pertaining to the specific type of contract.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ContractPeriod" type="tns:DatePeriodAndDurationType">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>This object allows representation of a date period by a duration or begin and an end dates.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Identifier" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>A unique proprietary number to identify a "solution" which is usually a combination of parts and services or software</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Type" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>A textual description of a contract. Additional description pertaining to the type of contract.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DatePeriodAndDurationType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object allows representation of a date period by a duration or begin and an end dates.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="udts:DatePeriod"></xs:element>
+				<xs:element name="Duration" type="xs:duration"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="InstallLocationType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes a customer's install location of a product. The physical address for the final destination of the product.  This location may be different from the customer location.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="ucttf:ContactInformation" minOccurs="0"></xs:element>
+			<xs:choice>
+				<xs:element ref="ulctn:Location"></xs:element>
+				<xs:element ref="ulctn:PhysicalAddress"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LotIdentificationType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object identifies a lot which associates the product with a specific group of products with some similar attributes.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Primary" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>The primary lot identifier</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Secondary" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>The secondary lot identifier</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ParticipatingPartnerType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes a partner that participates in a point of sale transaction which can either be a reseller, distributor, manufacturer or end-user.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="umtyp:TaxJurisdiction" minOccurs="0"></xs:element>
+			<xs:choice>
+				<xs:element ref="uptrn:IntermittentPartner"></xs:element>
+				<xs:element ref="uptrn:KnownPartner"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ProductInformationType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes the information pertaining to products sold.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ContractIdentifier" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>The contract number. Unique identifier that pertains specifically to the contract.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="tns:LotIdentification" minOccurs="0"></xs:element>
+			<xs:element ref="updtn:ProductIdentification"></xs:element>
+			<xs:element name="ProvisionPeriod" type="tns:DatePeriodAndDurationType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>This object allows representation of a date period by a duration or begin and an end dates.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SerialIdentifier" type="xs:string" maxOccurs="unbounded" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>The serial number. There could be multiple serial numbers for a single product sold.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ProductSummaryType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes the summary of information (products and products sold). Information in this object is not derivable from the line items.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="updtn:ProductIdentification" minOccurs="0"></xs:element>
+			<xs:element ref="tns:ProductUnitTotal" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ProductUnitTotalType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes total units of a product. Total number of products sold by the trading partner.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Qualifier" type="drtqf:TotalQualifierType">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>A code that qualifies a total.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Value" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Value of total units of a product</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SalesOutType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes the sales out of products.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Date" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Shipment date. This date is trading partner-specific (i.e could be when product left the port, when product left factory, etc.)</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Quantity" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Quantity of products shipped in this shipment.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SaleType" type="drnsl:SaleTypeType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Code identifying the type of sale terms the trading partner bought from the seller.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SalesOutAndTransactionType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object describes the sales out of a sale and those pertaining to a sale transaction.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BookDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Original book date of this shipment</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BookUnitPrice" type="tns:BookPriceType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>This object represents a booking price. It describes the price the trading partner was charged by the seller.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LeaseDescription" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>A textual description for a lease of product of this shipment</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentMethod" type="drpmt:PaymentMethodType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Code identifying how the trading partner paid the seller for the product.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriceListIdentifier" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>An identifier of a price list that is related to this shipment.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PurchaseMethod" type="drpcs:PurchaseMethodType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Code identifying the method by which the trading partner procured the product from the seller.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResaleUnitPrice" type="umtyp:FinancialAmountType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>The business document must express financial amounts. 
+
+</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="tns:SalesOut"></xs:element>
+			<xs:element name="TransactionType" type="drtnc:TransactionTypeType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>Code identifying the type of transaction pertaining to the line item in the sales report.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SpecialPriceType">
+		<xs:annotation>
+			<xs:appinfo>
+				<urss:Definition>This object represents a special price based on number of unit of products and an eligible period.</urss:Definition>
+				<urss:CreationDate>08/03/2004</urss:CreationDate>
+				<urss:LastUpdatedDate>08/03/2004</urss:LastUpdatedDate>
+				<urss:TypeVersion>1.0</urss:TypeVersion>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EligiblePeriod" type="tns:DatePeriodAndDurationType" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>This object allows representation of a date period by a duration or begin and an end dates.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EligibleUnits" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<urss:Definition>The number of units that has to be ordered to be eligible for a special price.</urss:Definition>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="umtyp:ProductPricing"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:token" fixed="1.0"></xs:attribute>
+	</xs:complexType>
+</xs:schema>
