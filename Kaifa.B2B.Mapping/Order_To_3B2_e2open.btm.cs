@@ -113,7 +113,6 @@ namespace Kaifa.B2B.Mapping {
                   <xsl:variable name=""var:v6"" select=""userCSharp:StringTrimLeft(&quot;Delivery Note&quot;)"" />
                   <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;PICK&quot;)"" />
                   <xsl:variable name=""var:v8"" select=""userCSharp:StringTrimLeft(&quot;&quot;)"" />
-                  <xsl:variable name=""var:v9"" select=""userCSharp:StringConcat(string(s0:LOTTABLE03/text()) , &quot;-&quot; , string(../../../@CMCode))"" />
                   <xsl:variable name=""var:v11"" select=""userCSharp:StringTrimLeft(&quot;RT&quot;)"" />
                   <ns0:DocumentSubLineLotShipReference>
                     <ns0:GlobalDocumentReferenceTypeCode>
@@ -141,6 +140,7 @@ namespace Kaifa.B2B.Mapping {
                       <ns0:SeagateProprietaryDONumber>
                         <xsl:value-of select=""../s0:ORDERKEY/text()"" />
                       </ns0:SeagateProprietaryDONumber>
+                      <xsl:variable name=""var:v9"" select=""userCSharp:POformatter(string(s0:COMMODITYCLASS/text()) , string(s0:LOTTABLE03/text()) , string(../../../@CMCode))"" />
                       <ns0:SeagateProprietaryPONumber>
                         <xsl:value-of select=""$var:v9"" />
                       </ns0:SeagateProprietaryPONumber>
@@ -309,11 +309,17 @@ public string DateTimeFormat(string str) {
             return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,15) + "".000Z"";
         }
 
-public string StringConcat(string param0, string param1, string param2)
-{
-   return param0 + param1 + param2;
-}
-
+public string POformatter(string asic, string po, string cmsite)
+        {
+            if (asic.ToUpper().Trim() == ""ASIC"")
+            {
+                return po;
+            }
+            else
+            {
+                return po + ""-"" + cmsite;
+            }
+        }
 
 
 ]]></msxsl:script>

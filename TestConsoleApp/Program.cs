@@ -16,6 +16,11 @@ namespace TestConsoleApp
     {
         static void Main(string[] args)
         {
+            TDN940Generator tdn = new TDN940Generator("0000000273", "wmwhse1", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;", "");
+            XDocument doc= tdn.Generator();
+
+            Console.WriteLine(doc);
+            //TestAPI();
             //XmlDocument doc = new XmlDocument();
             //doc.Load("c:\\webreponse.xml");
             //string xml = doc.DocumentElement.ChildNodes[0].InnerText;
@@ -29,15 +34,15 @@ namespace TestConsoleApp
 
 
             //"Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False"
-            //CalendarTask t = new CalendarTask("c:\\test\\in", "c:\\test\\bak", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
+            //CalendarTask t = new CalendarTask("C:\\test\\in", "C:\\test\\bk", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
             //t.Start();
             //Console.ReadLine();
             //t.Stop();
 
-            //CalendarProcess p = new CalendarProcess("c:\\希捷日历导入模板.xlsx", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
+            //CalendarProcess p = new CalendarProcess("C:\\希捷日历导入模板.xlsx", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
             //p.Read();
-            //AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_adhoc20150819095009.xlsx", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
-            //p.Read();
+            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_quarter20151002000231.xlsx", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
+            p.Read();
             //string a = "STZ".Substring(0, 2);
             //string connstring = "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False";
             //string warehouse = "wmwhse1";
@@ -123,6 +128,47 @@ namespace TestConsoleApp
             //string res1 = doc.ToString();
             //inv();
             //asn();
+        }
+
+        public string getrequestime(string datetime) {
+            //2015-09-22T01:10:00;
+            return datetime.Substring(10, 5).Replace(":", "-");
+        }
+        public string PrimaryRemark(string pcode, string remark, string storerkey) {
+
+            if (pcode.ToUpper().Trim() == "2")
+            {
+                return remark;
+            }
+            else
+            {
+                return storerkey;
+            }
+        }
+
+        public string POformat(string asic, string po, string cmsite)
+        {
+            if (asic.ToUpper().Trim() == "ASIC")
+            {
+                return po;
+            }
+            else
+            {
+                return po + "-" + cmsite;
+            }
+        }
+        public static void TestAPI() {
+            string path = "c:\\Cm_940.xml";
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+
+            XmlDocument doc1 = RemoveNamespace(doc);
+            WmsAPI.WmsWebServicePortTypeClient  client = new TestConsoleApp.WmsAPI.WmsWebServicePortTypeClient();
+            //string RequestType, string MessageType, string RequestMethod, string XmlString
+            //"MessageProcessor","ShipmentOrder","storeByQuote",strContent
+            string res = client.callBackEnd("MessageProcessor", "ShipmentOrder", "storeByQuote",doc1.DocumentElement.OuterXml);
+            Console.WriteLine(res);
+        
         }
         public string dateformat(string strdate,string strmin){
             string dt = string.Format("{0}/{1}/{2}", strdate.Substring(0, 4), strdate.Substring(5, 2), strdate.Substring(7, 2));

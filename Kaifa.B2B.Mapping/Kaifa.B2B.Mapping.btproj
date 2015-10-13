@@ -74,6 +74,10 @@
       <Project>{A829E5FF-7D74-49F7-8A4E-21D92A7BF520}</Project>
       <Name>Kaifa.B2B.Schemas.Wms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kaifa.B2B.Schemas._940\Kaifa.B2B.Schemas._940.btproj">
+      <Project>{E3EEC535-8642-4C41-8149-FB4C80CBDC41}</Project>
+      <Name>Kaifa.B2B.Schemas._940</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Map Include="Inventory_To_4C1_STX.btm">
@@ -132,6 +136,12 @@
   <ItemGroup>
     <Map Include="Order_To_3B2_STX_ASIC.btm">
       <TypeName>Order_To_3B2_STX_ASIC</TypeName>
+      <Namespace>Kaifa.B2B.Mapping</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="CM940_To_TDN.btm">
+      <TypeName>CM940_To_TDN</TypeName>
       <Namespace>Kaifa.B2B.Mapping</Namespace>
     </Map>
   </ItemGroup>

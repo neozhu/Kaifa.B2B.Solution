@@ -14,10 +14,15 @@ namespace Kaifa.B2B.VendorAlloc
         private string _excelFile;
         private string _connectionstring;
         public const string WAREHOUSE = "WMWHSE1";
+        private string _fileName = "";
         public AllocProcess(string allocFile, string connectionstring)
         {
             _excelFile = allocFile;
             _connectionstring = connectionstring;
+
+            FileInfo fs = new FileInfo(_excelFile);
+
+            _fileName = fs.Name;
         }
         private string GetAllocType(string filename)
         {
@@ -59,6 +64,7 @@ namespace Kaifa.B2B.VendorAlloc
                                 cmd.CommandText =string.Format(@"INSERT INTO [wmwhse1].[STXALLOCATION]
                                                     ([WHSEID]
                                                     ,[PLANNERCODE]
+                                                    ,[STXAGRP]
                                                     ,[SITE]
                                                     ,[TYPE]
                                                     ,[PRISKU]
@@ -74,6 +80,7 @@ namespace Kaifa.B2B.VendorAlloc
                                                     VALUES
                                                           ('{0}'
                                                           ,'{1}'
+                                                          ,'{14}'
                                                           ,'{2}'
                                                           ,'{3}'
                                                           ,'{4}'
@@ -85,8 +92,8 @@ namespace Kaifa.B2B.VendorAlloc
                                                           ,'{10}'
                                                           ,'{11}'
                                                           ,'{12}'
-                                                          ,'{13}')"   
-                                    
+                                                          ,'{13}')"
+
                                     , WAREHOUSE
                                     , dr["Planner Code"]
                                     , dr["SITE"]
@@ -101,6 +108,7 @@ namespace Kaifa.B2B.VendorAlloc
                                     , DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
                                     , WAREHOUSE
                                     , ""
+                                    , _fileName
                                     );
 
                                 //Site	Prime Part	Alternate Part	Vendor Number	Allocation Percentage	Start Date Active	End Date Active	Planner Code	Non ASIC Indicator

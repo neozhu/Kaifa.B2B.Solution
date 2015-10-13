@@ -1,0 +1,214 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="1f96c98d-4b13-4a40-a4c5-1086eb14d5b7" LowerBound="1.1" HigherBound="47.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.Orchestration.TDN" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="7be6c884-d78e-495b-affc-4280106a7da2" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveTDN940" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2b03ad3b-96da-4ca5-ab54-32e3ceaaa8ea" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ff901f0b-47ee-4e6a-8e02-3b2057302cff" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.47">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas._940.OrderTND940" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="90ddadbd-2bb4-4b62-bc4c-19b027cb418f" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendTDN940FTP" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="748cde7d-00fc-4140-a749-31d2528ffa88" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="dbb73f97-d751-42c2-aff9-903cacf96568" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.54">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas._940.CM_TDN_940_Oubound" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="858e27df-cd07-4807-982b-999c975c55b0" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="46.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="TDN_Orchestration" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="2055737b-1d36-451d-bc0e-33a2cb65bfc2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="20237532-1deb-446b-98a6-f84fb9eaa598" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas._940.OrderTND940" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OrderTDNMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="cf0616a9-fe52-4309-b38e-15ee0d520be7" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas._940.CM_TDN_940_Oubound" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="TDN940Message" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="cdbd7959-a3c9-405e-8062-f0abe0c64228" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="65c2ae18-58fd-447a-b233-e5be7bfc0b2a" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="33.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveTDN940" />
+                    <om:Property Name="MessageName" Value="OrderTDNMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_OrderTND" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="ec8d8260-c74f-4e01-a9e6-2c5e8c036e6e" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="42.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="2885551b-4666-4e39-bf54-2e4964e506fa" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="38.1">
+                        <om:Property Name="ClassName" Value="Kaifa.B2B.Mapping.CM940_To_TDN" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="d8faf15d-9c35-4b0b-89b4-a33bdb0e4709" ParentLink="Transform_InputMessagePartRef" LowerBound="37.77" HigherBound="37.92">
+                            <om:Property Name="MessageRef" Value="OrderTDNMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="5f03b276-d5ba-4921-8d08-0d9d0a932dd5" ParentLink="Transform_OutputMessagePartRef" LowerBound="37.28" HigherBound="37.41">
+                            <om:Property Name="MessageRef" Value="TDN940Message" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="7e5b3bec-95e7-4d7f-bdd9-b014de07a75b" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="41.1">
+                        <om:Property Name="Expression" Value="FileName =&quot;TDN_&quot; +  System.Convert.ToString(xpath(OrderTDNMessage,&quot;string(/*[local-name()='OrderTDN940' and namespace-uri()='http://Kaifa.B2B.Schemas.OrderTDN940']/*[local-name()='CM_TDN_940' and namespace-uri()='http://Kaifa.B2B.Schemas.OrderTDN940'][1]/*[local-name()='ORDERKEY' and namespace-uri()='http://Kaifa.B2B.Schemas.OrderTDN940'])&quot;));&#xD;&#xA;TDN940Message(FILE.ReceivedFileName)=FileName;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="1851f3a4-fe95-41a4-b6bd-d131c42c2fee" ParentLink="Construct_MessageRef" LowerBound="34.23" HigherBound="34.36">
+                        <om:Property Name="Ref" Value="TDN940Message" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="abbf8641-96c4-4f54-b68b-dc9992fa39b2" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="PortName" Value="SendTDN940FTP" />
+                    <om:Property Name="MessageName" Value="TDN940Message" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_TDN940" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f81ed284-aed8-454c-a1dd-0e45cb644890" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.TDN.PortType_ReceiveTDN940" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveTDN940" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="e2726c37-0110-4461-aede-712ee9a81296" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="75a62feb-393d-4847-8c90-be0a16e9725b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.TDN.PortType_SendTDN940FTP" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendTDN940FTP" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="6e66e088-af4f-4e21-9f57-4125f010dfec" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.Orchestration.TDN
+{
+    internal porttype PortType_ReceiveTDN940
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.Schemas._940.OrderTND940
+        };
+    };
+    internal porttype PortType_SendTDN940FTP
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.Schemas._940.CM_TDN_940_Oubound
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service TDN_Orchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveTDN940 ReceiveTDN940;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendTDN940FTP SendTDN940FTP;
+        message Kaifa.B2B.Schemas._940.OrderTND940 OrderTDNMessage;
+        message Kaifa.B2B.Schemas._940.CM_TDN_940_Oubound TDN940Message;
+        System.String FileName;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("65c2ae18-58fd-447a-b233-e5be7bfc0b2a")]
+            activate receive (ReceiveTDN940.Operation_1, OrderTDNMessage);
+            FileName = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ec8d8260-c74f-4e01-a9e6-2c5e8c036e6e")]
+            construct TDN940Message
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("2885551b-4666-4e39-bf54-2e4964e506fa")]
+                transform (TDN940Message) = Kaifa.B2B.Mapping.CM940_To_TDN (OrderTDNMessage);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7e5b3bec-95e7-4d7f-bdd9-b014de07a75b")]
+                FileName ="TDN_" +  System.Convert.ToString(xpath(OrderTDNMessage,"string(/*[local-name()='OrderTDN940' and namespace-uri()='http://Kaifa.B2B.Schemas.OrderTDN940']/*[local-name()='CM_TDN_940' and namespace-uri()='http://Kaifa.B2B.Schemas.OrderTDN940'][1]/*[local-name()='ORDERKEY' and namespace-uri()='http://Kaifa.B2B.Schemas.OrderTDN940'])"));
+                TDN940Message(FILE.ReceivedFileName)=FileName;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("abbf8641-96c4-4f54-b68b-dc9992fa39b2")]
+            send (SendTDN940FTP.Operation_1, TDN940Message);
+        }
+    }
+}
+

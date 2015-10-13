@@ -101,7 +101,7 @@ namespace Kaifa.B2B.Utility
                 orderno = GetOrderNo(GetResponseDocument(doc));
             }
             string content = ConstructContent(pulllistNo, siteCode, RequestDate, Type, orderno, error);
-            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn" }, siteCode + "-940-" + pulllistNo, content, null, true, "", "", "10.2.232.75");
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "hzhu@ataway.cn" }, siteCode + "-940-" + pulllistNo, content, null, true, "", "", "10.2.232.75");
             
         }
 

@@ -33,26 +33,31 @@ namespace Kaifa.B2B.VendorAlloc
 
         public void Start() {
             _timer = new Timer(new TimerCallback(Do));
-            _timer.Change(20 * 1000, 2000);
+            _timer.Change(120 * 1000, 320*1000);
         }
         private void Do(object obj) {
-            //List<FileInfo> listFiles = new List<FileInfo>(); //保存所有的文件信息  
-            DirectoryInfo directory = new DirectoryInfo(_strDir);
-            FileInfo[] fileInfoArray = directory.GetFiles();
-            if (fileInfoArray.Length > 0)
+            lock (obj)
             {
-                foreach (FileInfo file in fileInfoArray) {
-                    if (!file.IsReadOnly && (file.Extension.ToLower()==".xls" || file.Extension.ToLower()==".xlsx")) {
+                //List<FileInfo> listFiles = new List<FileInfo>(); //保存所有的文件信息  
+                DirectoryInfo directory = new DirectoryInfo(_strDir);
+                FileInfo[] fileInfoArray = directory.GetFiles();
+                if (fileInfoArray.Length > 0)
+                {
+                    foreach (FileInfo file in fileInfoArray)
+                    {
+                        if (!file.IsReadOnly && (file.Extension.ToLower() == ".xls" || file.Extension.ToLower() == ".xlsx"))
+                        {
 
-                        AllocProcess alloc = new AllocProcess(file.FullName, _connstring);
-                        alloc.Read();
-                        Thread.Sleep(100);
-                        file.MoveTo(Path.Combine(_backupDir, file.Name + DateTime.Now.ToString(".yyyyMMddHHmmssfff") + ".bk"));
+                            AllocProcess alloc = new AllocProcess(file.FullName, _connstring);
+                            alloc.Read();
+
+                            file.MoveTo(Path.Combine(_backupDir, file.Name + DateTime.Now.ToString(".yyyyMMddHHmmssfff") + ".bk"));
+                        }
+
                     }
-                    
-                    }
-                
-                
+
+
+                }
             }
         }
         public void Stop() {

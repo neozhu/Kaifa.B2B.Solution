@@ -16,7 +16,7 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
     <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimLeft(&quot;EXceed&quot;)"" />
     <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimLeft(&quot;sceadmin&quot;)"" />
     <xsl:variable name=""var:v4"" select=""userCSharp:StringTrimLeft(&quot;STEST_wmwhse1&quot;)"" />
-    <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;66183&quot;)"" />
+    <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;SZT&quot;)"" />
     <xsl:variable name=""var:v6"" select=""./s0:Row[1]/s0:PullNo/text()"" />
     <xsl:variable name=""var:v7"" select=""./s0:Row[1]/s0:PO/text()"" />
     <xsl:variable name=""var:v8"" select=""./s0:Row[1]/s0:Site/text()"" />
@@ -70,9 +70,9 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
               <xsl:value-of select=""$var:v14"" />
             </ns0:Type>
             <xsl:for-each select=""s0:Row"">
-              <xsl:variable name=""var:v15"" select=""../s0:Row[1]/s0:Site/text()"" />
+              <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;SZT&quot;)"" />
               <ns0:ShipmentOrderDetail>
-                <xsl:variable name=""var:v16"" select=""userCSharp:SpiltSite(string($var:v15))"" />
+                <xsl:variable name=""var:v16"" select=""userCSharp:PrimeRemark(string(s0:PrimeOnly/text()) , string(s0:Remarks/text()) , string($var:v15))"" />
                 <ns0:StorerKey>
                   <xsl:value-of select=""$var:v16"" />
                 </ns0:StorerKey>
@@ -138,6 +138,18 @@ public string StringTrimLeft(string str)
 	return str.TrimStart(null);
 }
 
+
+public string PrimeRemark(string pcode, string remark, string storerkey) {
+
+            if (pcode.ToUpper().Trim() == ""2"")
+            {
+                return remark;
+            }
+            else
+            {
+                return storerkey;
+            }
+        }
 
 
 ]]></msxsl:script>

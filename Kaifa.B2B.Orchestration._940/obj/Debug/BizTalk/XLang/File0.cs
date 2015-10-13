@@ -854,18 +854,11 @@ namespace Kaifa.B2B.Orchestration.CM940
                     __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
                     __ctx1__.__ShipmentOrder = null;
                 }
-                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
-                    __ctx1__.__CallServiceRequest = null;
-                }
                 if (__ctx1__ != null && __ctx1__.__CallServiceReponse != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceReponse);
                     __ctx1__.__CallServiceReponse = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__strContent = null;
                 if (__ctx1__ != null)
                     __ctx1__.__pulllistNo = null;
                 if (__ctx1__ != null)
@@ -874,6 +867,13 @@ namespace Kaifa.B2B.Orchestration.CM940
                     __ctx1__.__Reqdate = null;
                 if (__ctx1__ != null)
                     __ctx1__.__strType = null;
+                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
+                    __ctx1__.__CallServiceRequest = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__strContent = null;
                 if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
                 {
                     __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
@@ -1407,7 +1407,7 @@ namespace Kaifa.B2B.Orchestration.CM940
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{B2FB111A-8995-4F22-8211-2A03743BCDA3}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{A1CCC9E2-835F-44A0-A2D0-8F6F873CBE9D}"))
         };
 
     }
