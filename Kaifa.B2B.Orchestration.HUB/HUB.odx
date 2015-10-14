@@ -234,10 +234,10 @@
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
                             <om:Element Type="VariableAssignment" OID="23b5ba95-6fe6-4a50-966b-81c2abb81472" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="103.1">
-                                <om:Property Name="Expression" Value="//&#xD;&#xA;pipInstanceMessageIdForSTX = Pip4B2MessageForSTX(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4B2MessageForSTX,&quot;4B2SG0100&quot;);&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA;//System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;4B2&quot;,&#xD;&#xA; pipInstanceMessageIdForSTX,&#xD;&#xA; &quot;1.0&quot;,&#xD;&#xA; strPipMessageForSTX&#xD;&#xA; );&#xD;&#xA;&#xD;&#xA;&#xD;&#xA; " />
+                                <om:Property Name="Expression" Value="//&#xD;&#xA;pipInstanceMessageIdForSTX = Pip4B2MessageForSTX(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4B2MessageForSTX,&quot;4B2SG0100&quot;);&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA;//System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;4B2&quot;,&#xD;&#xA; pipInstanceIdentifierForSTX,&#xD;&#xA; &quot;1.0&quot;,&#xD;&#xA; strPipMessageForSTX&#xD;&#xA; );&#xD;&#xA;&#xD;&#xA;&#xD;&#xA; " />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="InvokeSubmitRNIFAPI" />
-                                <om:Property Name="Signal" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
                         <om:Element Type="ParallelBranch" OID="c031ba37-5989-47ae-aee5-1dde82174815" ParentLink="ReallyComplexStatement_Branch" LowerBound="106.1" HigherBound="134.1">
@@ -289,10 +289,10 @@
                                 <om:Property Name="Signal" Value="True" />
                             </om:Element>
                             <om:Element Type="VariableAssignment" OID="cb78cbbf-276b-491f-9e2a-ffb7bd5e7875" ParentLink="ComplexStatement_Statement" LowerBound="118.1" HigherBound="134.1">
-                                <om:Property Name="Expression" Value="//&#xD;&#xA;pipInstanceMessageIdFore2open = Pip4B2MessageForE2Open(BTS.MessageID);&#xD;&#xA;strPipMessageFore2open  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4B2MessageForE2Open,&quot;4B2SG0100&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To e2open &quot; + pipInstanceMessageIdFore2open + &quot; - &quot; + pipInstanceIdentifierFore2open,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF1.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;E2OPEN&quot;,&#xD;&#xA; &quot;4B2&quot;,&#xD;&#xA; pipInstanceMessageIdFore2open,&#xD;&#xA; &quot;1.0&quot;,&#xD;&#xA; strPipMessageFore2open&#xD;&#xA; );&#xD;&#xA;&#xD;&#xA; " />
+                                <om:Property Name="Expression" Value="//&#xD;&#xA;pipInstanceMessageIdFore2open = Pip4B2MessageForE2Open(BTS.MessageID);&#xD;&#xA;strPipMessageFore2open  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4B2MessageForE2Open,&quot;4B2SG0100&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To e2open &quot; + pipInstanceMessageIdFore2open + &quot; - &quot; + pipInstanceIdentifierFore2open,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF1.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;E2OPEN&quot;,&#xD;&#xA; &quot;4B2&quot;,&#xD;&#xA; pipInstanceIdentifierFore2open,&#xD;&#xA; &quot;1.0&quot;,&#xD;&#xA; strPipMessageFore2open&#xD;&#xA; );&#xD;&#xA;&#xD;&#xA; " />
                                 <om:Property Name="ReportToAnalyst" Value="True" />
                                 <om:Property Name="Name" Value="InvokeSubmitRNIFAPI" />
-                                <om:Property Name="Signal" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
                             </om:Element>
                         </om:Element>
                     </om:Element>
@@ -473,7 +473,7 @@ module Kaifa.B2B.Orchestration.HUB
                          "KAIFA",
                          "SEAGATE-US",
                          "4B2",
-                         pipInstanceMessageIdForSTX,
+                         pipInstanceIdentifierForSTX,
                          "1.0",
                          strPipMessageForSTX
                          );
@@ -505,7 +505,7 @@ module Kaifa.B2B.Orchestration.HUB
                          "KAIFA",
                          "E2OPEN",
                          "4B2",
-                         pipInstanceMessageIdFore2open,
+                         pipInstanceIdentifierFore2open,
                          "1.0",
                          strPipMessageFore2open
                          );

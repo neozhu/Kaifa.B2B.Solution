@@ -33,8 +33,8 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
         public XDocument Generator() {
             XDocument asn = new XDocument(new XElement("AdvancedShipNotice"));
 
-            IEnumerable<XElement> receipts = Group(Receipt());
-            foreach (XElement receipt in receipts)
+            IEnumerable<XElement> receipts = Group(Receipt().ToList());
+            foreach (XElement receipt in receipts.ToList())
             {
 
 

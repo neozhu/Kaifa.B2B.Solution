@@ -39,8 +39,8 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 
 
 
-            IEnumerable<XElement> reports = Group( GetReport());
-            foreach (XElement report in reports)
+            IEnumerable<XElement> reports = Group(GetReport().ToList());
+            foreach (XElement report in reports.ToList())
             {
 
 

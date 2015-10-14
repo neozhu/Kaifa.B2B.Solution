@@ -41,6 +41,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RNPIPs", "Schemas\RNPIPs.bt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.Orchestration.TDN", "Kaifa.B2B.Orchestration.TDN\Kaifa.B2B.Orchestration.TDN.btproj", "{499659D4-C584-40B3-B9B1-1C25A3E008E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScripts", "SqlScripts", "{0F4BD74D-3FA8-4954-8C6F-4070DB3A1E49}"
+	ProjectSection(SolutionItems) = preProject
+		sqlscripts\view_[wmwhse1].[ASN_SG3B2].sql = sqlscripts\view_[wmwhse1].[ASN_SG3B2].sql
+		sqlscripts\view_[wmwhse1].[CM_TDN_940].sql = sqlscripts\view_[wmwhse1].[CM_TDN_940].sql
+		sqlscripts\view_[wmwhse1].[INVENTORYREPORT_SGHUB].sql = sqlscripts\view_[wmwhse1].[INVENTORYREPORT_SGHUB].sql
+		sqlscripts\view_[wmwhse1].[ORDER_POD].sql = sqlscripts\view_[wmwhse1].[ORDER_POD].sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
