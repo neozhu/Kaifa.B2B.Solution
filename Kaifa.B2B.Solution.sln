@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScripts", "SqlScripts", 
 		sqlscripts\view_[wmwhse1].[ORDER_POD].sql = sqlscripts\view_[wmwhse1].[ORDER_POD].sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOBApplication", "LOBApplication\LOBApplication.csproj", "{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{499659D4-C584-40B3-B9B1-1C25A3E008E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{499659D4-C584-40B3-B9B1-1C25A3E008E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{499659D4-C584-40B3-B9B1-1C25A3E008E4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

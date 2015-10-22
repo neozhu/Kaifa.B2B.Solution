@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Pip3A2PriceAndAvailabilityResponse SYSTEM "3A2PriceAndAvailabilityResponseMessageGuideline_v1_3.dtd">
+<Pip3A2PriceAndAvailabilityResponse>
+	<ProductPriceAndAvailability>
+		<ProductLineItem>
+			<ProductQuantity>0</ProductQuantity>
+			<productUnit>
+				<ProductPackageDescription>
+					<GlobalProductStatusCode>Active</GlobalProductStatusCode>
+					<unitPrice>
+						<FinancialAmount>
+							<GlobalCurrencyCode>XCD</GlobalCurrencyCode>
+							<MonetaryAmount>0</MonetaryAmount>
+						</FinancialAmount>
+					</unitPrice>
+					<ProductIdentification>
+						<GlobalProductIdentifier>GlobalProductI</GlobalProductIdentifier>
+						<PartnerProductIdentification>
+							<GlobalPartnerClassificationCode>Carrier</GlobalPartnerClassificationCode>
+							<ProprietaryProductIdentifier>Pr</ProprietaryProductIdentifier>
+						</PartnerProductIdentification>
+						<PartnerProductIdentification>
+							<GlobalPartnerClassificationCode>Carrier</GlobalPartnerClassificationCode>
+							<ProprietaryProductIdentifier>Pr</ProprietaryProductIdentifier>
+						</PartnerProductIdentification>
+						<PartnerProductIdentification>
+							<GlobalPartnerClassificationCode>Carrier</GlobalPartnerClassificationCode>
+							<ProprietaryProductIdentifier>Pr</ProprietaryProductIdentifier>
+						</PartnerProductIdentification>
+					</ProductIdentification>
+				</ProductPackageDescription>
+			</productUnit>
+			<LineNumber>Lin</LineNumber>
+		</ProductLineItem>
+		<GlobalPricingTypeCode>Gl</GlobalPricingTypeCode>
+		<GlobalPricingTypeCode>Gl</GlobalPricingTypeCode>
+		<GlobalPricingTypeCode>Gl</GlobalPricingTypeCode>
+		<WarehouseInformationResource>
+			<warehouseAddress>
+				<PhysicalAddress>
+					<GlobalLocationIdentifier>0000000000000</GlobalLocationIdentifier>
+					<cityName>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</cityName>
+					<addressLine1>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine1>
+					<addressLine2>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine2>
+					<addressLine3>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine3>
+					<GlobalCountryCode>AF</GlobalCountryCode>
+					<NationalPostalCode>Natio</NationalPostalCode>
+					<regionName>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</regionName>
+				</PhysicalAddress>
+			</warehouseAddress>
+			<warehouseQuantity>
+				<ProductQuantity>0</ProductQuantity>
+			</warehouseQuantity>
+		</WarehouseInformationResource>
+		<WarehouseInformationResource>
+			<warehouseAddress>
+				<PhysicalAddress>
+					<GlobalLocationIdentifier>0000000000000</GlobalLocationIdentifier>
+					<cityName>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</cityName>
+					<addressLine1>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine1>
+					<addressLine2>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine2>
+					<addressLine3>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine3>
+					<GlobalCountryCode>AF</GlobalCountryCode>
+					<NationalPostalCode>Natio</NationalPostalCode>
+					<regionName>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</regionName>
+				</PhysicalAddress>
+			</warehouseAddress>
+			<warehouseQuantity>
+				<ProductQuantity>0</ProductQuantity>
+			</warehouseQuantity>
+		</WarehouseInformationResource>
+		<WarehouseInformationResource>
+			<warehouseAddress>
+				<PhysicalAddress>
+					<GlobalLocationIdentifier>0000000000000</GlobalLocationIdentifier>
+					<cityName>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</cityName>
+					<addressLine1>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine1>
+					<addressLine2>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine2>
+					<addressLine3>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</addressLine3>
+					<GlobalCountryCode>AF</GlobalCountryCode>
+					<NationalPostalCode>Natio</NationalPostalCode>
+					<regionName>
+						<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+					</regionName>
+				</PhysicalAddress>
+			</warehouseAddress>
+			<warehouseQuantity>
+				<ProductQuantity>0</ProductQuantity>
+			</warehouseQuantity>
+		</WarehouseInformationResource>
+	</ProductPriceAndAvailability>
+	<fromRole>
+		<PartnerRoleDescription>
+			<GlobalPartnerRoleClassificationCode>Product Supplier</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<GlobalPartnerClassificationCode>Carrier</GlobalPartnerClassificationCode>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>987654321</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+			</PartnerDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+				</contactName>
+				<telephoneNumber>
+					<CommunicationsNumber>CommunicationsN</CommunicationsNumber>
+				</telephoneNumber>
+				<EmailAddress>Em</EmailAddress>
+			</ContactInformation>
+		</PartnerRoleDescription>
+	</fromRole>
+	<toRole>
+		<PartnerRoleDescription>
+			<GlobalPartnerRoleClassificationCode>Product Supplier</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<GlobalPartnerClassificationCode>Carrier</GlobalPartnerClassificationCode>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>123456789</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+			</PartnerDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText ns1:lang="en-US" xmlns:ns1="http://www.w3.org/XML/1998/namespace">FreeFormText_0</FreeFormText>
+				</contactName>
+				<telephoneNumber>
+					<CommunicationsNumber>CommunicationsN</CommunicationsNumber>
+				</telephoneNumber>
+				<EmailAddress>Em</EmailAddress>
+			</ContactInformation>
+		</PartnerRoleDescription>
+	</toRole>
+	<thisDocumentGenerationDateTime>
+		<DateTimeStamp>DateTimeStampDat</DateTimeStamp>
+	</thisDocumentGenerationDateTime>
+	<thisDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>Pr</ProprietaryDocumentIdentifier>
+	</thisDocumentIdentifier>
+	<requestingDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>Pr</ProprietaryDocumentIdentifier>
+	</requestingDocumentIdentifier>
+	<GlobalDocumentFunctionCode>Response</GlobalDocumentFunctionCode>
+	<requestingDocumentDateTime>
+		<DateTimeStamp>DateTimeStampDat</DateTimeStamp>
+	</requestingDocumentDateTime>
+</Pip3A2PriceAndAvailabilityResponse>

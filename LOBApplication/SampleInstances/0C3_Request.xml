@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Pip0C3SynchronousTestNotification SYSTEM "0C3_MS_R01_02_SynchronousTestNotification.dtd">
+<Pip0C3SynchronousTestNotification>
+	<fromRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText xml:lang="EN">Jane Doe</FreeFormText>
+				</contactName>
+				<EmailAddress>jdoe@xyz.com</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>555.5555</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>555.5556</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Initiator</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>123456789</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</fromRole>
+	<GlobalDocumentFunctionCode>Request</GlobalDocumentFunctionCode>
+	<SynchronousTest />
+	<thisDocumentGenerationDateTime>
+		<DateTimeStamp>20040207T232040.347Z</DateTimeStamp>
+	</thisDocumentGenerationDateTime>
+	<thisDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>20040207T232040.147Z</ProprietaryDocumentIdentifier>
+	</thisDocumentIdentifier>
+	<toRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText xml:lang="EN">Jane Doe</FreeFormText>
+				</contactName>
+				<EmailAddress>jdoe@xyz.com</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>555.5555</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>555.5556</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Responder</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>987654321</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</toRole>
+</Pip0C3SynchronousTestNotification>

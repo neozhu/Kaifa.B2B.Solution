@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Pip0C2AsynchronousTestConfirmation SYSTEM "0C4_MS_R01_02_SynchronousTestResponse.dtd">
+<Pip0C4SynchronousTestResponse>
+	<fromRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText></FreeFormText>
+				</contactName>
+				<EmailAddress>jdoeresponder@xyz.com</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>555.5557</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>555.5558</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Responder</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>123456789</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Electronic Components</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User Government</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</fromRole>
+	<GlobalDocumentFunctionCode>Response</GlobalDocumentFunctionCode>
+	<requestingDocumentDateTime>
+		<DateTimeStamp>20040208T202752.555Z</DateTimeStamp>
+	</requestingDocumentDateTime>
+	<requestingDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>20040208T202752.225Z</ProprietaryDocumentIdentifier>
+	</requestingDocumentIdentifier>
+	<SynchronousTest>
+		<Attachment>
+			<GlobalAttachmentDescriptionCode>Assembly drawings</GlobalAttachmentDescriptionCode>
+			<GlobalMimeTypeQualifierCode>application/activemessage</GlobalMimeTypeQualifierCode>
+			<UniversalResourceIdentifier>test</UniversalResourceIdentifier>
+		</Attachment>
+	</SynchronousTest>
+	<thisDocumentGenerationDateTime>
+		<DateTimeStamp>20040129T044543.735Z</DateTimeStamp>
+	</thisDocumentGenerationDateTime>
+	<thisDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>test</ProprietaryDocumentIdentifier>
+	</thisDocumentIdentifier>
+	<toRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText>Jane Doe Initiator</FreeFormText>
+				</contactName>
+				<EmailAddress>jdoeinitiator@xyz.com</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>555.5555</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>555.5556</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Initiator</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>987654321</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</toRole>
+</Pip0C4SynchronousTestResponse>

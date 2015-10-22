@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Pip3A2PriceAndAvailabilityQuery SYSTEM "3A2PriceAndAvailabilityQueryMessageGuideline_v1_3.dtd">
+<Pip3A2PriceAndAvailabilityQuery>
+	<ProductPriceAndAvailabilityQuery>
+		<QueryConstraint>Query Constraint</QueryConstraint>
+		<ProductPriceAndAvailability>
+			<ProductLineItem>
+				<ProductQuantity>1</ProductQuantity>
+				<productUnit>
+					<ProductPackageDescription>
+						<GlobalProductStatusCode>Discontinued</GlobalProductStatusCode>
+						<unitPrice>
+							<FinancialAmount>
+								<GlobalCurrencyCode>USD</GlobalCurrencyCode>
+								<MonetaryAmount>0.0</MonetaryAmount>
+							</FinancialAmount>
+						</unitPrice>
+						<ProductIdentification>
+							<GlobalProductIdentifier>12345678901234</GlobalProductIdentifier>
+							<PartnerProductIdentification>
+								<GlobalPartnerClassificationCode>Distributor</GlobalPartnerClassificationCode>
+								<ProprietaryProductIdentifier>ProprietaryProductIdentifier_0</ProprietaryProductIdentifier>
+							</PartnerProductIdentification>
+						</ProductIdentification>
+					</ProductPackageDescription>
+				</productUnit>
+			</ProductLineItem>
+			<WarehouseInformationResource>
+				<warehouseAddress>
+					<PhysicalAddress>
+						<GlobalLocationIdentifier>0000000000999</GlobalLocationIdentifier>
+						<cityName>
+							<FreeFormText xml:lang="EN">Seattle</FreeFormText>
+						</cityName>
+						<addressLine1>
+							<FreeFormText xml:lang="EN">One Microsoft Way</FreeFormText>
+						</addressLine1>
+						<addressLine2>
+							<FreeFormText xml:lang="EN">Redmond</FreeFormText>
+						</addressLine2>
+						<addressLine3>
+							<FreeFormText xml:lang="EN">Bellevue</FreeFormText>
+						</addressLine3>
+						<GlobalCountryCode>AF</GlobalCountryCode>
+						<NationalPostalCode>Natio</NationalPostalCode>
+						<regionName>
+							<FreeFormText xml:lang="EN">Washington</FreeFormText>
+						</regionName>
+					</PhysicalAddress>
+				</warehouseAddress>
+				<warehouseQuantity>
+					<ProductQuantity>1</ProductQuantity>
+				</warehouseQuantity>
+			</WarehouseInformationResource>
+		</ProductPriceAndAvailability>
+	</ProductPriceAndAvailabilityQuery>
+	<fromRole>
+		<PartnerRoleDescription>
+			<GlobalPartnerRoleClassificationCode>Customer</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<GlobalPartnerClassificationCode>Manufacturer</GlobalPartnerClassificationCode>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>123456789</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+			</PartnerDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText xml:lang="EN">Carol Philips</FreeFormText>
+				</contactName>
+				<telephoneNumber>
+					<CommunicationsNumber>503-555-0132</CommunicationsNumber>
+				</telephoneNumber>
+				<EmailAddress>tanya@blueyonder-25.com</EmailAddress>
+			</ContactInformation>
+		</PartnerRoleDescription>
+	</fromRole>
+	<toRole>
+		<PartnerRoleDescription>
+			<GlobalPartnerRoleClassificationCode>Product Supplier</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<GlobalPartnerClassificationCode>Distributor</GlobalPartnerClassificationCode>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>987654321</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</toRole>
+	<thisDocumentGenerationDateTime>
+		<DateTimeStamp>20000101T121212.000Z</DateTimeStamp>
+	</thisDocumentGenerationDateTime>
+	<thisDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>12345</ProprietaryDocumentIdentifier>
+	</thisDocumentIdentifier>
+	<GlobalDocumentFunctionCode>Request</GlobalDocumentFunctionCode>
+</Pip3A2PriceAndAvailabilityQuery>

@@ -1,0 +1,9 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\bin\LOBApplication.exe.config
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\bin\LOBApplication.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\bin\LOBApplication.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\obj\Debug\ResolveAssemblyReference.cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\obj\Debug\LOBApplication.FindPIPMessages.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\obj\Debug\LOBApplication.Form1.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\obj\Debug\LOBApplication.csproj.GenerateResource.Cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\obj\Debug\LOBApplication.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\LOBApplication\obj\Debug\LOBApplication.pdb

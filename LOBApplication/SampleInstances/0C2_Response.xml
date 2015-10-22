@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Pip0C2AsynchronousTestConfirmation SYSTEM "0C2_MS_R01_02_AsynchronousTestConfirmation.dtd">
+<Pip0C2AsynchronousTestConfirmation>
+	<AsynchronousTest></AsynchronousTest>
+	<fromRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText>FreeFormText_0</FreeFormText>
+				</contactName>
+				<EmailAddress>Em</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>CommunicationsN</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>CommunicationsN</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Responder</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>123456789</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</fromRole>
+	<GlobalDocumentFunctionCode>Response</GlobalDocumentFunctionCode>
+	<requestingDocumentDateTime>
+		<DateTimeStamp>DateTimeStampDat</DateTimeStamp>
+	</requestingDocumentDateTime>
+	<requestingDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>Pr</ProprietaryDocumentIdentifier>
+	</requestingDocumentIdentifier>
+	<thisDocumentGenerationDateTime>
+		<DateTimeStamp>DateTimeStampDat</DateTimeStamp>
+	</thisDocumentGenerationDateTime>
+	<thisDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>Pr</ProprietaryDocumentIdentifier>
+	</thisDocumentIdentifier>
+	<toRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText>FreeFormText_0</FreeFormText>
+				</contactName>
+				<EmailAddress>Em</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>CommunicationsN</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>CommunicationsN</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Initiator</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>987654321</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</toRole>
+</Pip0C2AsynchronousTestConfirmation>

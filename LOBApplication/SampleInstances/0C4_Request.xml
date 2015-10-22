@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Pip0C4SynchronousTestQuery SYSTEM "0C4_MS_R01_02_SynchronousTestQuery.dtd">
+<Pip0C4SynchronousTestQuery>
+	<fromRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText xml:lang="EN">Jane Doe Initiator</FreeFormText>
+				</contactName>
+				<EmailAddress>jdoeinitiator@xyz.com</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>555.5555</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>555.5556</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Initiator</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>123456789</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Information Technology</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</fromRole>
+	<GlobalDocumentFunctionCode>Request</GlobalDocumentFunctionCode>
+	<SynchronousTest />
+	<thisDocumentGenerationDateTime>
+		<DateTimeStamp>20040207T234136.929Z</DateTimeStamp>
+	</thisDocumentGenerationDateTime>
+	<thisDocumentIdentifier>
+		<ProprietaryDocumentIdentifier>20040207T234136.129Z</ProprietaryDocumentIdentifier>
+	</thisDocumentIdentifier>
+	<toRole>
+		<PartnerRoleDescription>
+			<ContactInformation>
+				<contactName>
+					<FreeFormText xml:lang="EN">Jane Doe Responder</FreeFormText>
+				</contactName>
+				<EmailAddress>jdoeresponder@xyz.com</EmailAddress>
+				<facsimileNumber>
+					<CommunicationsNumber>555.5557</CommunicationsNumber>
+				</facsimileNumber>
+				<telephoneNumber>
+					<CommunicationsNumber>555.5558</CommunicationsNumber>
+				</telephoneNumber>
+			</ContactInformation>
+			<GlobalPartnerRoleClassificationCode>Responder</GlobalPartnerRoleClassificationCode>
+			<PartnerDescription>
+				<BusinessDescription>
+					<GlobalBusinessIdentifier>987654321</GlobalBusinessIdentifier>
+					<GlobalSupplyChainCode>Electronic Components</GlobalSupplyChainCode>
+				</BusinessDescription>
+				<GlobalPartnerClassificationCode>End User Government</GlobalPartnerClassificationCode>
+			</PartnerDescription>
+		</PartnerRoleDescription>
+	</toRole>
+</Pip0C4SynchronousTestQuery>
