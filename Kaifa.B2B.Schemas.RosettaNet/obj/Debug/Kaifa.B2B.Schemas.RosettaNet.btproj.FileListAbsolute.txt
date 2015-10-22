@@ -1,6 +1,6 @@
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.RosettaNet\bin\Debug\Kaifa.B2B.Schemas.RosettaNet.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.RosettaNet\bin\Debug\Kaifa.B2B.Schemas.RosettaNet.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Schemas.RosettaNet.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.RosettaNet\obj\Debug\Kaifa.B2B.Schemas.RosettaNet.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.RosettaNet\obj\Debug\Kaifa.B2B.Schemas.RosettaNet.pdb
-D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Schemas.RosettaNet.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Schemas.RosettaNet.pdb

@@ -2,7 +2,7 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\bin\Debug\
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\bin\Debug\Kaifa.B2B.Mapping.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\bin\Debug\Kaifa.B2B.Schemas.RosettaNet.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\bin\Debug\Kaifa.B2B.Schemas.Wms.dll
-D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\obj\Debug\Kaifa.B2B.Mapping.dll
-D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\obj\Debug\Kaifa.B2B.Mapping.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Mapping.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.Mapping.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\obj\Debug\Kaifa.B2B.Mapping.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\obj\Debug\Kaifa.B2B.Mapping.pdb

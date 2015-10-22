@@ -786,10 +786,10 @@ namespace Kaifa.B2B.Orchestration.SOI
                                         <om:Property Name='Signal' Value='True' />
                                     </om:Element>
                                     <om:Element Type='VariableAssignment' OID='44938471-b0f1-4df7-a5ca-0e7a47e603ae' ParentLink='ComplexStatement_Statement' LowerBound='94.1' HigherBound='109.1'>
-                                        <om:Property Name='Expression' Value='pipInstanceMessageIdForSTX = Pip4C1ForSTXMessage(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4C1ForSTXMessage,&quot;4C1V0200&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;4C1&quot;,&#xD;&#xA; pipInstanceIdentifierForSTX,&#xD;&#xA; &quot;R02.00&quot;,&#xD;&#xA; strPipMessageForSTX&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA; ' />
+                                        <om:Property Name='Expression' Value='pipInstanceMessageIdForSTX = Pip4C1ForSTXMessage(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4C1ForSTXMessage,&quot;4C1R0200&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;4C1&quot;,&#xD;&#xA; pipInstanceIdentifierForSTX,&#xD;&#xA; &quot;R02.00&quot;,&#xD;&#xA; strPipMessageForSTX&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA; ' />
                                         <om:Property Name='ReportToAnalyst' Value='True' />
                                         <om:Property Name='Name' Value='InvokeSubmitRNIFAPI' />
-                                        <om:Property Name='Signal' Value='True' />
+                                        <om:Property Name='Signal' Value='False' />
                                     </om:Element>
                                 </om:Element>
                                 <om:Element Type='DecisionBranch' OID='0bf8b67b-87d4-4e50-8d92-1154ba7049e3' ParentLink='ReallyComplexStatement_Branch' LowerBound='110.30' HigherBound='141.1'>
@@ -842,10 +842,10 @@ namespace Kaifa.B2B.Orchestration.SOI
                                         <om:Property Name='Signal' Value='True' />
                                     </om:Element>
                                     <om:Element Type='VariableAssignment' OID='641de701-7a2d-4447-8ca2-1941e54ba2d1' ParentLink='ComplexStatement_Statement' LowerBound='125.1' HigherBound='140.1'>
-                                        <om:Property Name='Expression' Value='pipInstanceMessageIdForSTX = Pip4C1ForSTXMessage(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4C1ForSTXMessage,&quot;4C1V0200&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;4C1&quot;,&#xD;&#xA; pipInstanceIdentifierForSTX,&#xD;&#xA; &quot;R02.00&quot;,&#xD;&#xA; strPipMessageForSTX&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA; ' />
+                                        <om:Property Name='Expression' Value='pipInstanceMessageIdForSTX = Pip4C1ForSTXMessage(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip4C1ForSTXMessage,&quot;4C1R0200&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;4C1&quot;,&#xD;&#xA; pipInstanceIdentifierForSTX,&#xD;&#xA; &quot;R02.00&quot;,&#xD;&#xA; strPipMessageForSTX&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA; ' />
                                         <om:Property Name='ReportToAnalyst' Value='True' />
                                         <om:Property Name='Name' Value='InvokeSubmitRNIFAPI' />
-                                        <om:Property Name='Signal' Value='True' />
+                                        <om:Property Name='Signal' Value='False' />
                                     </om:Element>
                                 </om:Element>
                                 <om:Element Type='DecisionBranch' OID='49ac36bb-a38f-4cbf-8ba6-78520c53211e' ParentLink='ReallyComplexStatement_Branch'>
@@ -988,15 +988,15 @@ namespace Kaifa.B2B.Orchestration.SOI
                 SOI_Orchestration __svc__ = (SOI_Orchestration)_service;
                 __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.ReceiveInventoryMessage != null)
-                {
-                    __svc__.ReceiveInventoryMessage.Close(this, null);
-                    __svc__.ReceiveInventoryMessage = null;
-                }
                 if (__svc__.SendPip4C1Message != null)
                 {
                     __svc__.SendPip4C1Message.Close(this, null);
                     __svc__.SendPip4C1Message = null;
+                }
+                if (__svc__.ReceiveInventoryMessage != null)
+                {
+                    __svc__.ReceiveInventoryMessage.Close(this, null);
+                    __svc__.ReceiveInventoryMessage = null;
                 }
                 base.Finally();
             }
@@ -1039,35 +1039,7 @@ namespace Kaifa.B2B.Orchestration.SOI
                 __SOI_Orchestration_1 __ctx1__ = (__SOI_Orchestration_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx1__ != null)
-                    __ctx1__.__SCHEDULELocation = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdForSTX = null;
-                if (__ctx1__ != null && __ctx1__.__VendorReportMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__VendorReportMessage);
-                    __ctx1__.__VendorReportMessage = null;
-                }
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageFore2open = null;
-                if (__ctx1__ != null)
                     __ctx1__.__CountStr = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierFore2open = null;
-                if (__ctx1__ != null && __ctx1__.__Pip4C1ForE2OpenMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForE2OpenMessage);
-                    __ctx1__.__Pip4C1ForE2OpenMessage = null;
-                }
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF1 = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageForSTX = null;
                 if (__ctx1__ != null && __ctx1__.__InventoryReportMessage != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__InventoryReportMessage);
@@ -1078,6 +1050,34 @@ namespace Kaifa.B2B.Orchestration.SOI
                     __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForSTXMessage);
                     __ctx1__.__Pip4C1ForSTXMessage = null;
                 }
+                if (__ctx1__ != null && __ctx1__.__VendorReportMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__VendorReportMessage);
+                    __ctx1__.__VendorReportMessage = null;
+                }
+                if (__ctx1__ != null && __ctx1__.__Pip4C1ForE2OpenMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForE2OpenMessage);
+                    __ctx1__.__Pip4C1ForE2OpenMessage = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF1 = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__SCHEDULELocation = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageForSTX = null;
                 base.Finally();
             }
 
@@ -1291,8 +1291,8 @@ namespace Kaifa.B2B.Orchestration.SOI
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
             __SOI_Orchestration_1 __ctx1__ = (__SOI_Orchestration_1)_stateMgrs[1];
+            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1338,8 +1338,8 @@ namespace Kaifa.B2B.Orchestration.SOI
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
             __SOI_Orchestration_1 __ctx1__ = (__SOI_Orchestration_1)_stateMgrs[1];
+            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1681,8 +1681,8 @@ namespace Kaifa.B2B.Orchestration.SOI
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[2];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
             __SOI_Orchestration_1 __ctx1__ = (__SOI_Orchestration_1)_stateMgrs[1];
+            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1792,7 +1792,7 @@ namespace Kaifa.B2B.Orchestration.SOI
                     return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
                 goto case 12;
             case 12:
-                __ctx1__.__strPipMessageForSTX = Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(__ctx1__.__Pip4C1ForSTXMessage.part.TypedValue, "4C1V0200");
+                __ctx1__.__strPipMessageForSTX = Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(__ctx1__.__Pip4C1ForSTXMessage.part.TypedValue, "4C1R0200");
                 if ( !PostProgressInc( __seg__, __ctx__, 13 ) )
                     return Microsoft.XLANGs.Core.StopConditions.Paused;
                 goto case 13;
@@ -1916,7 +1916,7 @@ namespace Kaifa.B2B.Orchestration.SOI
                     return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
                 goto case 28;
             case 28:
-                __ctx1__.__strPipMessageForSTX = Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(__ctx1__.__Pip4C1ForSTXMessage.part.TypedValue, "4C1V0200");
+                __ctx1__.__strPipMessageForSTX = Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(__ctx1__.__Pip4C1ForSTXMessage.part.TypedValue, "4C1R0200");
                 if ( !PostProgressInc( __seg__, __ctx__, 29 ) )
                     return Microsoft.XLANGs.Core.StopConditions.Paused;
                 goto case 29;
@@ -1961,8 +1961,8 @@ namespace Kaifa.B2B.Orchestration.SOI
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[3];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
             __SOI_Orchestration_1 __ctx1__ = (__SOI_Orchestration_1)_stateMgrs[1];
+            __SOI_Orchestration_root_0 __ctx0__ = (__SOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {

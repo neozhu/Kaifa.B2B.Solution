@@ -113,14 +113,14 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
         private  IEnumerable<XElement> Receipt()
         {
             string whereexpression = "    AND RECEIPT.RECEIPTKEY  IN (" + string.Join(",", _receiptkeys.Select(t => "'" + t + "'").ToArray()) + ")";
-            string sqlcommandtext = string.Format(@"SELECT RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,
+            string sqlcommandtext = string.Format(@"SELECT RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],
 		                                            RECEIPTDETAIL.SKU,RECEIPTDETAIL.LOTTABLE02,
 		                                            RECEIPTDETAIL.LOTTABLE03,RECEIPTDETAIL.LOTTABLE06,
 		                                            CAST(SUM(RECEIPTDETAIL.QTYRECEIVED) AS INT) QTYRECEIVED,
 		                                            '' DOREMARK
                                                     FROM [{0}].[RECEIPT] RECEIPT ,[{0}].[RECEIPTDETAIL] RECEIPTDETAIL
                                                     WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY {1}
-                                                    GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPTDETAIL.SKU,
+                                                    GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],RECEIPTDETAIL.SKU,
                                                     RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,
                                                     RECEIPTDETAIL.LOTTABLE06 FOR XML AUTO,ELEMENTS", _warehous, whereexpression);
             using (SqlConnection conn = new SqlConnection(_connectionstring))

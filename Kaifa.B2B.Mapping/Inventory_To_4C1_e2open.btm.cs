@@ -218,9 +218,10 @@ public string ProprietaryDocumentIdentifier(string Site,string msgType,string su
             return string.Format(""{0}{1}{2}{3}{4}"", Site, msgType, str, supplierDuns, seq);
         }
 
-//<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> 
+//For ON Hold Qty
+        //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
         //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>
-        public string ProprietaryLotIdentifier(string Site, string InventoryType,
+       public string ProprietaryLotIdentifier(string Site, string InventoryType,
              string onholdRemark,
              string ReceiptDate, string StorerKey, string SupplierDO,
              string SpecialRemarks, string SeagatePO, string OnHoldQty)
@@ -233,7 +234,14 @@ public string ProprietaryDocumentIdentifier(string Site,string msgType,string su
                 {
                     receivedate = DateTime.Parse(ReceiptDate).ToString(""MMMddyyyy"", System.Globalization.CultureInfo.CreateSpecificCulture(""en-US""));
                 }
-                return string.Format(""{0}/{1}/{2}*{3}*{4}*{5}*{6}"", Site.Substring(0, 2), InventoryType + "" "" + onholdRemark , receivedate, StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
+                if (onholdRemark.ToUpper().Trim() == ""RTV"")
+                {
+                    return string.Format(""{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}"", Site.Substring(0, 2), InventoryType + "" "" + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, """", SeagatePO);
+                }
+                else
+                {
+                    return string.Format(""{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}"", Site.Substring(0, 2), InventoryType + "" "" + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks,  SeagatePO,"""");
+                }
             }
             else
             {

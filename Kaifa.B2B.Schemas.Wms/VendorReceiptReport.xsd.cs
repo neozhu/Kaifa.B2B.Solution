@@ -80,6 +80,7 @@ namespace Kaifa.B2B.Schemas.Wms {
               <xs:element minOccurs=""0"" name=""WHSEID"" type=""xs:string"" />
               <xs:element minOccurs=""0"" name=""RECEIPTKEY"" type=""xs:string"" />
               <xs:element minOccurs=""0"" name=""STORERKEY"" type=""xs:string"" />
+              <xs:element minOccurs=""0"" name=""TYPE"" type=""xs:string"" />
               <xs:element maxOccurs=""unbounded"" name=""RECEIPTDETAIL"">
                 <xs:complexType>
                   <xs:sequence>

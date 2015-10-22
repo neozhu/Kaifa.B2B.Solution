@@ -25,7 +25,7 @@
 			<TestMapSourceType>0</TestMapSourceType>
 			<TestMapTargetType>0</TestMapTargetType>
 			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
-			<EditorInputInstanceFilename></EditorInputInstanceFilename>
+			<EditorInputInstanceFilename>D:\长城开发项目\报文\0a1.xml</EditorInputInstanceFilename>
 			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
 			<ValidateInstanceInputType>0</ValidateInstanceInputType>
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>

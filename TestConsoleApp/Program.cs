@@ -58,19 +58,19 @@ namespace TestConsoleApp
         //    user.UserName = "sceadmin";
         //    user.Password = "123";
         //    user.Whcode = "SCPRD_wmwhse1";
-            string[] keys = new string[] { "0000000046", "0000000033", "0000000034", "0000000035", "0000000036" };
+            string[] keys = new string[] { "0000000737", "0000000033", "0000000034", "0000000035", "0000000036" };
         //    string str = DateTime.Now.ToString("yyyyMMddTHHmmss.fff") + "Z";
             //string str = DateTime.Now.ToString("MMMddyyyy", CultureInfo.CreateSpecificCulture("en-US"));
             //string str = DateTime.Now.ToString("yyyyMMddHHmmssfff");
             //inv();
             //Console.WriteLine(str);
 
-            //AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
-            //     "SZT", "Seagate", "e2open", "wmwhse1",
-            //    "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False",
-            //    "http://kaifa.b2b.schemas/AdvancedShipNotice");
-            //XDocument asn = g.Generator();
-            //Console.WriteLine(asn);
+            AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
+                 "SZT", "Seagate", "e2open", "wmwhse1",
+                "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False",
+                "http://kaifa.b2b.schemas/AdvancedShipNotice");
+            XDocument asn = g.Generator();
+            Console.WriteLine(asn);
             //string orderkey = GetOrderKey();
             ////IEnumerable<string> orders = GetOrderKeys();
             //UpdateFlag(orders.ToArray());
@@ -89,12 +89,12 @@ namespace TestConsoleApp
             //XDocument asn = g.Generator();
             //Console.WriteLine(asn);
 
-            InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
-                    "SZT", "Seagate", "e2open", "wmwhse1",
-                "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;",
-                "http://kaifa.b2b.schemas/InventoryReport");
-            XDocument doc = inv.Generator();
-            Console.WriteLine(doc);
+            //InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
+            //        "SZT", "Seagate", "e2open", "wmwhse1",
+            //    "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;",
+            //    "http://kaifa.b2b.schemas/InventoryReport");
+            //XDocument doc = inv.Generator();
+            //Console.WriteLine(doc);
 
             //DataReader();
             //LoginTest(user);
@@ -128,6 +128,47 @@ namespace TestConsoleApp
             //string res1 = doc.ToString();
             //inv();
             //asn();
+        }
+
+        //For ON Hold Qty
+        //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
+        //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>
+        public string ProprietaryLotIdentifier(string Site, string InventoryType,
+             string onholdRemark,
+             string ReceiptDate, string StorerKey, string SupplierDO,
+             string SpecialRemarks, string SeagatePO, string OnHoldQty)
+        {
+
+            string receivedate = "";
+            if (decimal.Parse(OnHoldQty) > 0)
+            {
+                if (!string.IsNullOrEmpty(ReceiptDate))
+                {
+                    receivedate = DateTime.Parse(ReceiptDate).ToString("MMMddyyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+                }
+                if (onholdRemark.ToUpper().Trim() == "RTV")
+                {
+                    return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, "", SeagatePO);
+                }
+                else
+                {
+                    return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks,  SeagatePO,"");
+                }
+            }
+            else
+            {
+                return string.Format("{0}*{1}*{2}*{3}*{4}", Site.Substring(0, 2), StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
+            }
+        }
+
+
+        //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
+        public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
+        {
+            if (ordertype.Trim().ToUpper()=="20")
+                return string.Format("{0}*SZT{1}*{2}*{3}*{4}*{5}", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks,"" ,seagatePO);
+            else
+                return string.Format("{0}*SZT{1}*{2}*{3}*{4}*", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
         }
 
         public string getrequestime(string datetime) {
@@ -316,6 +357,33 @@ namespace TestConsoleApp
                 return string.Format("{0}*{1}*{2}*{3}*{4}", Site, StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
             }
         }
+
+
+
+        //For ON Hold Qty
+        //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
+        //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>
+        //public string ProprietaryLotIdentifier(string Site, string InventoryType,
+        //     string onholdRemark,
+        //     string ReceiptDate, string StorerKey, string SupplierDO,
+        //     string SpecialRemarks, string SeagatePO, string OnHoldQty)
+        //{
+
+        //    string receivedate = "";
+        //    if (decimal.Parse(OnHoldQty) > 0)
+        //    {
+        //        if (!string.IsNullOrEmpty(ReceiptDate))
+        //        {
+        //            receivedate = DateTime.Parse(ReceiptDate).ToString("MMMddyyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+        //        }
+        //        return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks,"", SeagatePO);
+        //    }
+        //    else
+        //    {
+        //        return string.Format("{0}*{1}*{2}*{3}*{4}", Site.Substring(0, 2), StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
+        //    }
+        //}
+
 
         //<SITE><MSG TYPE><DATE TIME><SUPPLIER DUNS><SYSTEM GENERATED RUNNING SEQ NUMBER>
         //public string ProprietaryDocumentIdentifier(string Site,string msgType,string supplierDuns) {

@@ -67,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Schema Include="Pip0A1FailureNotification.xsd">
+      <TypeName>Pip0A1FailureNotification</TypeName>
+      <Namespace>Kaifa.B2B.PipSchema.Extendtion</Namespace>
+    </Schema>
     <None Include="kaifa.snk" />
     <Schema Include="SGRTHUB4B2_MS_1_0_ShipmentReceiptNotification.xsd">
       <TypeName>SGRTHUB4B2_MS_1_0_ShipmentReceiptNotification</TypeName>

@@ -112,7 +112,7 @@ namespace Kaifa.B2B.Mapping {
                     </ns0:ProprietaryProductIdentifier>
                   </xsl:if>
                   <ns0:SeagateProprietaryLocator>
-                    <xsl:variable name=""var:v10"" select=""userCSharp:SeagateProprietaryLocator(string(../../s0:config/s0:fromRole/s0:Site/text()) , string(../s0:STORERKEY/text()) , string(s0:LOTTABLE02/text()) , string(s0:DOREMARK/text()) , string(s0:LOTTABLE03/text()))"" />
+                    <xsl:variable name=""var:v10"" select=""userCSharp:SeagateProprietaryLocator(string(../../s0:config/s0:fromRole/s0:Site/text()) , string(../s0:STORERKEY/text()) , string(s0:LOTTABLE02/text()) , string(s0:DOREMARK/text()) , string(s0:LOTTABLE03/text()) , string(../s0:TYPE/text()))"" />
                     <ns0:FreeFormText>
                       <xsl:value-of select=""$var:v10"" />
                     </ns0:FreeFormText>
@@ -196,9 +196,13 @@ public string dateTimeNow()
 }
 
 //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
-public string SeagateProprietaryLocator(string site,string storerkey,string suppliterDO,string specialRemarks,string seagatePO) {
-            return string.Format(""{0}*SZT{1}*{2}*{3}*{4}"", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
-}
+        public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
+        {
+            if (ordertype.Trim().ToUpper()==""20"")
+                return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*{5}"", site.Substring(0, 2), storerkey, suppliterDO, ""RTV"","""" ,seagatePO);
+            else
+                return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*"", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
+        }
 
 public string ProprietaryDocumentIdentifier(string Site,string msgType,string supplierDuns) {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmssfff"");

@@ -59,8 +59,8 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
         public IEnumerable<string> GetReceiptKeys(AdvancedShipNoticeProviderParameters para) {
             using (SqlConnection conn = new SqlConnection(para.connectionstring))
             {
-                conn.Open();
-                string sqlcmd = string.Format("SELECT T.RECEIPTKEY  FROM  [{0}].[RECEIPT]  T WHERE (T.B2BFLAG=0 OR T.B2BFLAG IS NULL) AND STATUS=N'11'", para.warehous);
+                conn.Open(); 
+                string sqlcmd = string.Format("SELECT T.RECEIPTKEY  FROM  [{0}].[RECEIPT]  T WHERE (T.B2BFLAG=0 OR T.B2BFLAG IS NULL) AND STATUS=N'11' AND T.[TYPE]!=N'30' ", para.warehous);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sqlcmd;
                 SqlDataReader reader = cmd.ExecuteReader();
