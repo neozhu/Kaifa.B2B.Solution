@@ -95,11 +95,11 @@ namespace Kaifa.B2B.Utility
         static public void Send940NotificationMail(XmlDocument doc, string pulllistNo, string siteCode, string RequestDate, string Type)
         {
             string orderno = "";
-            string error = GetError(GetResponseDocument(doc));
-            if (string.IsNullOrEmpty(error))
-            {
+            string error = GetMsg(GetResponseDocument(doc));//GetError(GetResponseDocument(doc));
+            //if (string.IsNullOrEmpty(error))
+            //{
                 orderno = GetOrderNo(GetResponseDocument(doc));
-            }
+            //}
             string content = ConstructContent(pulllistNo, siteCode, RequestDate, Type, orderno, error);
             content = TemplateHTML().Replace("#Email Content#", content);
 
@@ -132,6 +132,20 @@ namespace Kaifa.B2B.Utility
         private static string GetOrderNo(XmlDocument doc) {
 
             XmlNode node = doc.DocumentElement.SelectSingleNode("/Message/Body/Result/ShipmentOrder/ShipmentOrderHeader/OrderKey");
+            if (node != null)
+            {
+                return node.InnerText;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        private static string GetMsg(XmlDocument doc)
+        {
+
+            XmlNode node = doc.DocumentElement.SelectSingleNode("/Message/Body/Result/ShipmentOrder/ShipmentOrderHeader/Msg");
             if (node != null)
             {
                 return node.InnerText;
