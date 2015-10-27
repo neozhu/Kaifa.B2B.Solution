@@ -16,6 +16,7 @@ namespace TestConsoleApp
     {
         static void Main(string[] args)
         {
+            string dt=  DateTime.Now.ToString("yyyyMMddT000000.000") + "Z";
             //TDN940Generator tdn = new TDN940Generator("0000000273", "wmwhse1", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;", "");
             //XDocument doc= tdn.Generator();
 
@@ -337,26 +338,26 @@ namespace TestConsoleApp
         }
         //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> 
         //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>
-        public string ProprietaryLotIdentifier(string Site, string InventoryType,
-             string onholdRemark,
-             string ReceiptDate, string StorerKey, string SupplierDO,
-             string SpecialRemarks, string SeagatePO, string OnHoldQty)
-        {
+        //public string ProprietaryLotIdentifier(string Site, string InventoryType,
+        //     string onholdRemark,
+        //     string ReceiptDate, string StorerKey, string SupplierDO,
+        //     string SpecialRemarks, string SeagatePO, string OnHoldQty)
+        //{
 
-            string receivedate = "";
-            if (decimal.Parse(OnHoldQty) > 0)
-            {
-                if (!string.IsNullOrEmpty(ReceiptDate))
-                {
-                    receivedate = DateTime.Parse(ReceiptDate).ToString("MMMddyyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
-                }
-                return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}", Site, InventoryType + " " + onholdRemark , receivedate, StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
-            }
-            else
-            {
-                return string.Format("{0}*{1}*{2}*{3}*{4}", Site, StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
-            }
-        }
+        //    string receivedate = "";
+        //    if (decimal.Parse(OnHoldQty) > 0)
+        //    {
+        //        if (!string.IsNullOrEmpty(ReceiptDate))
+        //        {
+        //            receivedate = DateTime.Parse(ReceiptDate).ToString("MMMddyyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+        //        }
+        //        return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}", Site, InventoryType + " " + onholdRemark , receivedate, StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
+        //    }
+        //    else
+        //    {
+        //        return string.Format("{0}*{1}*{2}*{3}*{4}", Site, StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
+        //    }
+        //}
 
 
 

@@ -192,7 +192,8 @@ public string StringTrimLeft(string str)
 
 public string dateTimeNow()
 {
-	return DateTime.Now.ToString(""yyyyMMddTHHmmss.fff"") + ""Z"";
+     //return DateTime.Now.ToString(""yyyyMMddTHHmmss.fff"") + ""Z"";
+     return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
 }
 
 //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234

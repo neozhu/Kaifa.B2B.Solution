@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.Text.RegularExpressions;
 
 namespace Kaifa.B2B.Utility
 {
@@ -95,11 +96,12 @@ namespace Kaifa.B2B.Utility
         static public void Send940NotificationMail(XmlDocument doc, string pulllistNo, string siteCode, string RequestDate, string Type)
         {
             string orderno = "";
-            string error = GetMsg(GetResponseDocument(doc));//GetError(GetResponseDocument(doc));
-            //if (string.IsNullOrEmpty(error))
-            //{
+            string error = GetError(GetResponseDocument(doc));
+            if (string.IsNullOrEmpty(error))
+            {
+                error = GetMsg(GetResponseDocument(doc));
                 orderno = GetOrderNo(GetResponseDocument(doc));
-            //}
+            }
             string content = ConstructContent(pulllistNo, siteCode, RequestDate, Type, orderno, error);
             content = TemplateHTML().Replace("#Email Content#", content);
 
@@ -148,7 +150,7 @@ namespace Kaifa.B2B.Utility
             XmlNode node = doc.DocumentElement.SelectSingleNode("/Message/Body/Result/ShipmentOrder/ShipmentOrderHeader/Msg");
             if (node != null)
             {
-                return node.InnerText;
+                return Regex.Replace(node.InnerText, @"\r\n?|\n", "<br />");  //node.InnerText.Replace("\r\n", "</br>");
             }
             else
             {
