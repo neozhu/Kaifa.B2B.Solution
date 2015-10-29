@@ -146,7 +146,7 @@ namespace Kaifa.B2B.Mapping {
               </ns0:ProductQuantity>
             </ns0:receivedQuantity>
             <ns0:shipmentReceiptReportDateTime>
-              <xsl:variable name=""var:v19"" select=""userCSharp:dateTimeNow()"" />
+              <xsl:variable name=""var:v19"" select=""userCSharp:dateTimeNow0()"" />
               <ns0:DateTimeStamp>
                 <xsl:value-of select=""$var:v19"" />
               </ns0:DateTimeStamp>
@@ -219,14 +219,20 @@ public string ProprietaryDocumentIdentifier(string Site, string vendorCode, stri
 
 public string dateTimeNow()
 {
-	//return DateTime.Now.ToString(""yyyyMMddTHHmmss"") + ""Z"";
-                   return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
+	return DateTime.Now.ToString(""yyyyMMddTHHmmss"") + ""Z"";
+                   //return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
 }
 
 public string ProprietaryReferenceIdentifier(string site, string VendorCode,string cmCode,string kitlist)
         {
             return string.Format(""{0}{1}~{2}~{3}"", site, VendorCode, cmCode, kitlist);
          }
+
+public string dateTimeNow0()
+{
+	//return DateTime.Now.ToString(""yyyyMMddTHHmmss"") + ""Z"";
+                   return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
+}
 
 public string NONASICPurchaseOrder(string PO,string CmCode) {
             return string.Format(""{0}-{1}"", PO, CmCode);

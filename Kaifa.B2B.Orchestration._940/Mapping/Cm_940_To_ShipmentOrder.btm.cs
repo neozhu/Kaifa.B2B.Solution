@@ -71,6 +71,7 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
             </ns0:Type>
             <xsl:for-each select=""s0:Row"">
               <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;SZT&quot;)"" />
+              <xsl:variable name=""var:v17"" select=""string(s0:PrimeOnly/text())"" />
               <ns0:ShipmentOrderDetail>
                 <xsl:variable name=""var:v16"" select=""userCSharp:PrimeRemark(string(s0:PrimeOnly/text()) , string(s0:Remarks/text()) , string($var:v15))"" />
                 <ns0:StorerKey>
@@ -91,6 +92,10 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
                 <ns0:OpenQty>
                   <xsl:value-of select=""s0:Qty/text()"" />
                 </ns0:OpenQty>
+                <xsl:variable name=""var:v18"" select=""userCSharp:strLottable06($var:v17)"" />
+                <ns0:Lottable06>
+                  <xsl:value-of select=""$var:v18"" />
+                </ns0:Lottable06>
                 <ns0:PrimeOnly>
                   <xsl:value-of select=""s0:PrimeOnly/text()"" />
                 </ns0:PrimeOnly>
@@ -149,6 +154,17 @@ public string PrimeRemark(string pcode, string remark, string storerkey) {
             {
                 return storerkey;
             }
+        }
+
+public string strLottable06(string p) {
+            if (p.Trim() == ""1"" || p.Trim() == ""0"")
+            {
+                return ""OK"";
+            }
+            else {
+                return ""MANUAL"";
+            }
+        
         }
 
 

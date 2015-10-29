@@ -136,7 +136,7 @@ namespace Kaifa.B2B.Mapping {
                 </xsl:if>
               </ns0:receivedQuantity>
               <ns0:shipmentReceiptReportDateTime>
-                <xsl:variable name=""var:v11"" select=""userCSharp:dateTimeNow()"" />
+                <xsl:variable name=""var:v11"" select=""userCSharp:dateTimeNow0()"" />
                 <ns0:DateTimeStamp>
                   <xsl:value-of select=""$var:v11"" />
                 </ns0:DateTimeStamp>
@@ -192,8 +192,8 @@ public string StringTrimLeft(string str)
 
 public string dateTimeNow()
 {
-     //return DateTime.Now.ToString(""yyyyMMddTHHmmss.fff"") + ""Z"";
-     return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
+     return DateTime.Now.ToString(""yyyyMMddTHHmmss.fff"") + ""Z"";
+     //return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
 }
 
 //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
@@ -210,6 +210,12 @@ public string ProprietaryDocumentIdentifier(string Site,string msgType,string su
             string seq = ""000001"";
             return string.Format(""{0}{1}{2}{3}{4}"", Site, msgType, str, supplierDuns, seq);
         }
+
+public string dateTimeNow0()
+{
+	//return DateTime.Now.ToString(""yyyyMMddTHHmmss"") + ""Z"";
+                   return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
+}
 
 
 ]]></msxsl:script>

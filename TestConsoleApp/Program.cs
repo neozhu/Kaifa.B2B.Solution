@@ -130,7 +130,16 @@ namespace TestConsoleApp
             //inv();
             //asn();
         }
-
+        public string strLottable06(string p) {
+            if (p.Trim() == "1" || p.Trim() == "0")
+            {
+                return "OK";
+            }
+            else {
+                return "MANUAL";
+            }
+        
+        }
         //For ON Hold Qty
         //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
         //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>

@@ -68,6 +68,7 @@ namespace Kaifa.B2B.Schemas.InforAPI {
                                 <xs:element name=""ReqLoc"" type=""xs:string"" />
                                 <xs:element name=""OpenQty"" type=""xs:string"" />
                                 <xs:element minOccurs=""0"" name=""Lottable01"" type=""xs:string"" />
+                                <xs:element minOccurs=""0"" name=""Lottable06"" type=""xs:string"" />
                                 <xs:element name=""PrimeOnly"" type=""xs:string"" />
                                 <xs:element minOccurs=""0"" name=""SUsr1"" type=""xs:string"" />
                                 <xs:element minOccurs=""0"" name=""SUsr2"" type=""xs:string"" />
