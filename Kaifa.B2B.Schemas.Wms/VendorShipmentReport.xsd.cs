@@ -101,6 +101,7 @@ namespace Kaifa.B2B.Schemas.Wms {
                           <xs:element name=""LOTTABLE06"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE07"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE08"" type=""xs:string"" />
+                          <xs:element name=""SPREMARK"" type=""xs:string"" />
                           <xs:element name=""QTY"" type=""xs:string"" />
                         </xs:sequence>
                       </xs:complexType>
@@ -138,6 +139,7 @@ namespace Kaifa.B2B.Schemas.Wms {
                           <xs:element name=""LOTTABLE06"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE07"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE08"" type=""xs:string"" />
+                          <xs:element name=""SPREMARK"" type=""xs:string"" />
                           <xs:element name=""QTY"" type=""xs:string"" />
                         </xs:sequence>
                       </xs:complexType>

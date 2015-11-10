@@ -103,6 +103,7 @@ namespace Kaifa.B2B.Schemas.Wms {
                           <xs:element minOccurs=""0"" name=""LOTTABLE06"" type=""xs:string"" />
                           <xs:element minOccurs=""0"" name=""LOTTABLE07"" type=""xs:string"" />
                           <xs:element minOccurs=""0"" name=""LOTTABLE08"" type=""xs:string"" />
+                          <xs:element minOccurs=""0"" name=""SPREMARK"" type=""xs:string"" />
                           <xs:element minOccurs=""0"" name=""QTY"" type=""xs:string"" />
                         </xs:sequence>
                       </xs:complexType>

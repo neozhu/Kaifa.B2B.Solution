@@ -146,7 +146,7 @@ namespace Kaifa.B2B.Mapping {
               </ns0:ProductQuantity>
             </ns0:receivedQuantity>
             <ns0:shipmentReceiptReportDateTime>
-              <xsl:variable name=""var:v19"" select=""userCSharp:dateTimeNow0()"" />
+              <xsl:variable name=""var:v19"" select=""userCSharp:dateTimeNow0(string(s0:ORDERDETAIL/s0:TRANSACTIONDATE/text()))"" />
               <ns0:DateTimeStamp>
                 <xsl:value-of select=""$var:v19"" />
               </ns0:DateTimeStamp>
@@ -213,8 +213,8 @@ public string StringTrimLeft(string str)
 public string ProprietaryDocumentIdentifier(string Site, string vendorCode, string msgType)
         {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmss"");
-            string seq = ""000001"";
-            return string.Format(""{0}{1}{2}SUP{3}{4}"", Site, vendorCode,msgType, str, seq);
+            string seq = ""100001"";
+            return string.Format(""{0}{1}{2}SUP{3}{5}{4}"", Site, vendorCode,msgType, str, seq,""663050425"");
         }
 
 public string dateTimeNow()
@@ -228,10 +228,12 @@ public string ProprietaryReferenceIdentifier(string site, string VendorCode,stri
             return string.Format(""{0}{1}~{2}~{3}"", site, VendorCode, cmCode, kitlist);
          }
 
-public string dateTimeNow0()
+public string dateTimeNow0(string str)
 {
 	//return DateTime.Now.ToString(""yyyyMMddTHHmmss"") + ""Z"";
-                   return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
+                  // return DateTime.Now.ToString(""yyyyMMddT000000.000"") + ""Z"";
+                 return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,9) + ""000000.000Z"";
+
 }
 
 public string NONASICPurchaseOrder(string PO,string CmCode) {

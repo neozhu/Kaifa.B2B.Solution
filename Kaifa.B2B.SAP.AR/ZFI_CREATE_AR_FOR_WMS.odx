@@ -1,0 +1,440 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="2048192e-5868-4a7a-b03d-0d11ec19b8a2" LowerBound="1.1" HigherBound="94.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.SAP.AR" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="52db4126-0184-43ab-a15e-8d61d30e3e77" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:portType name=&quot;ZFI_CREATE_AR_FOR_WMS&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="ZFI_CREATE_AR_FOR_WMS" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1c4a3bdf-4edc-4a71-acd1-cf6e77802577" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;ZfiCreateArForWms&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="ZfiCreateArForWms" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="3709fc30-8822-4f66-89d2-11469b8ae1cc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.30">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.SAP.AR.ZfiCreateArForWms" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;urn:sap-com:document:sap:soap:functions:mc-style:ZfiCreateArForWms&quot;/&gt;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="351ea129-c5ca-4617-a9c0-5f8bb69976db" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="16.32" HigherBound="16.57">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.SAP.AR.ZfiCreateArForWmsResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;urn:sap-com:document:sap:soap:functions:mc-style:ZfiCreateArForWmsResponse&quot;/&gt;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="87eba6be-c589-4589-98fc-2928b91fb074" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveWMSARReport" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="387cf316-89f5-4e15-8431-25eb256fb7df" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="37bc002d-d757-44a9-8db7-5af4c688739a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.43">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas.Wms.ARReport" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ed2f92b8-89ae-4d9c-a5ec-f85820b11c77" ParentLink="Module_PortType" LowerBound="26.1" HigherBound="33.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SaveInvokeResult" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="08303e3a-576d-470d-a826-140949a2e946" ParentLink="PortType_OperationDeclaration" LowerBound="28.1" HigherBound="32.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="c21aa25b-2dd1-462c-a6f5-49633a10fd23" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="30.13" HigherBound="30.38">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.SAP.AR.ZfiCreateArForWmsResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="2e355c1b-db37-421e-b688-2624370da446" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;ZfiCreateArForWms&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="ZfiCreateArForWms" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="120fbe45-40c6-4165-929d-d8356722de19" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Kaifa.B2B.SAP.AR.ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_soap_functions_mc_style.ZfiCreateArForWms" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="6f9aa8e7-b17a-4670-8d0e-0b854e7c3bcf" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;ZfiCreateArForWmsResponse&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="ZfiCreateArForWmsResponse" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="d5df1211-0ccc-4233-a3de-ef575d5f3b9e" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Kaifa.B2B.SAP.AR.ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_soap_functions_mc_style.ZfiCreateArForWmsResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="6c776d32-f0b8-4de1-a55e-c6991b44130e" ParentLink="Module_ServiceDeclaration" LowerBound="33.1" HigherBound="93.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:service name=&quot;ZFI_CREATE_AR_FOR_WMS&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="ZFI_CREATE_AR_FOR_WMSClient" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="b316ead6-e60a-41fe-a527-7a6850a1510f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Count" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="715911ba-ea86-4a59-89d5-0c78ff970e31" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CountStr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="dacae407-ca54-4d0b-a815-20fa54c43969" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Increase" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="213ab1a0-b155-4152-80f7-87cd7a1e3347" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="batchid" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f0916a7d-dcf6-47d5-91cd-4e9c9cd67afd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sapbkid" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="61e1cd07-8f79-4eb5-98dc-09f128daed39" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sapmsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="efcca641-d942-41c1-a982-51758a806384" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.SAP.AR.ZfiCreateArForWms" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ARRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4ddc2817-7d67-4320-a78b-b8f315093767" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.SAP.AR.ZfiCreateArForWmsResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ARResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="67711e3a-b781-4814-803e-9f89d3351255" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.Wms.ARReport" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ARReport_Message" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="128aebbf-8876-4074-8b1e-10ab8a463be4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.Wms.CustARReport" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CustARReport_Message" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="6bd3f43d-0cd3-44cd-b843-c1af72336550" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="46d1596e-a6e0-41f4-918a-7ad3730a871f" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="60.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveWMSARReport" />
+                    <om:Property Name="MessageName" Value="ARReport_Message" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_ARReport" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="e0fe0755-4aeb-4697-b164-b494e459d22a" ParentLink="ServiceBody_Statement" LowerBound="60.1" HigherBound="64.1">
+                    <om:Property Name="Expression" Value="Count = xpath(ARReport_Message, &quot;count(/*[local-name()='ARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR']/*[local-name()='CustARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetCount" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="28769816-be18-4ac7-80ed-98353a1873e4" ParentLink="ServiceBody_Statement" LowerBound="64.1" HigherBound="91.1">
+                    <om:Property Name="Expression" Value="Increase&lt;=Count " />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop_Customer" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="dfa9bb57-4280-420d-ad33-ed7b635225fc" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="76.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_CustMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="8bceaa59-f40f-4608-8540-acf90a6b5750" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="73.1">
+                            <om:Property Name="Expression" Value="CountStr = Increase.ToString();&#xD;&#xA;CustARReport_Message =  xpath(ARReport_Message, &quot;/*[local-name()='ARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR']/*[local-name()='CustARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR'][&quot; + CountStr + &quot;]&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="8fc6dd26-e240-4f21-a710-143a36424938" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="75.1">
+                            <om:Property Name="ClassName" Value="Kaifa.B2B.SAP.AR.Map_To_SAPAR" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_1" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="617851e7-06b9-472a-9848-47c9287a2bd3" ParentLink="Transform_InputMessagePartRef" LowerBound="74.87" HigherBound="74.107">
+                                <om:Property Name="MessageRef" Value="CustARReport_Message" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="9100f701-6412-4955-b37e-8820b21d6c30" ParentLink="Transform_OutputMessagePartRef" LowerBound="74.32" HigherBound="74.52">
+                                <om:Property Name="MessageRef" Value="ARRequest" />
+                                <om:Property Name="PartRef" Value="parameters" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="69b00f05-7c5d-4e66-bd59-231c96b0dfaf" ParentLink="Construct_MessageRef" LowerBound="68.27" HigherBound="68.47">
+                            <om:Property Name="Ref" Value="CustARReport_Message" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="75194391-4ef7-43ae-90ed-9aa4fa2c2f17" ParentLink="Construct_MessageRef" LowerBound="68.49" HigherBound="68.58">
+                            <om:Property Name="Ref" Value="ARRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="97ae6139-2828-4424-936f-2d409907df05" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="78.1">
+                        <om:Property Name="PortName" Value="InvokeSAPWebService" />
+                        <om:Property Name="MessageName" Value="ARRequest" />
+                        <om:Property Name="OperationName" Value="ZfiCreateArForWms" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Request" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="e602c420-0a06-470f-be5c-6a2d62dfb5cb" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="80.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="InvokeSAPWebService" />
+                        <om:Property Name="MessageName" Value="ARResponse" />
+                        <om:Property Name="OperationName" Value="ZfiCreateArForWms" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive_Response" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="8c41589c-04d8-48e2-8234-3d6fd7ab0de3" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="86.1">
+                        <om:Property Name="Expression" Value="sapbkid = System.Convert.ToString(xpath(ARResponse.parameters,&quot;string(/*[local-name()='ZfiCreateArForWmsResponse' and namespace-uri()='urn:sap-com:document:sap:soap:functions:mc-style']/*[local-name()='DocumentNumber' and namespace-uri()=''])&quot;));&#xD;&#xA;batchid=  System.Convert.ToString(xpath(ARResponse.parameters,&quot;string(/*[local-name()='ZfiCreateArForWmsResponse' and namespace-uri()='urn:sap-com:document:sap:soap:functions:mc-style']/*[local-name()='WmsBatchidOut' and namespace-uri()=''])&quot;));&#xD;&#xA;sapmsg =  System.Convert.ToString(xpath(ARResponse.parameters,&quot;string(/*[local-name()='ZfiCreateArForWmsResponse' and namespace-uri()='urn:sap-com:document:sap:soap:functions:mc-style']/*[local-name()='MsgTab' and namespace-uri()='']/*[local-name()='item' and namespace-uri()='']/*[local-name()='Message' and namespace-uri()=''])&quot;));&#xD;&#xA;&#xD;&#xA;Kaifa.B2B.Utility.SAPARReturnHelper.Update(batchid,sapbkid,sapmsg);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="UpdateWMSBKId" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="52a27cfd-647e-458c-bf7d-4a460ec36da9" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="88.1">
+                        <om:Property Name="PortName" Value="SaveInvokeResult" />
+                        <om:Property Name="MessageName" Value="ARResponse" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Result" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="76cf1d90-af9a-4e19-a44f-a017984e2eea" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="90.1">
+                        <om:Property Name="Expression" Value="Increase = Increase + 1;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Expression_++" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a0382297-c612-4a8f-acdb-7d85ee68767c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="36.1" HigherBound="38.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.SAP.AR.PortType_ReceiveWMSARReport" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveWMSARReport" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="3f3e39c3-11f2-43bb-bd91-e4c36de2b743" ParentLink="PortDeclaration_CLRAttribute" LowerBound="36.1" HigherBound="37.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a7418322-d779-488c-8582-28f46495d5c9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="38.1" HigherBound="40.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.SAP.AR.ZFI_CREATE_AR_FOR_WMS" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InvokeSAPWebService" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="5e05cfc2-ddc9-48da-aa1c-150d720133ee" ParentLink="PortDeclaration_CLRAttribute" LowerBound="38.1" HigherBound="39.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a5dd7f89-03a7-459d-b826-c79dded3d0ae" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="40.1" HigherBound="42.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.SAP.AR.PortType_SaveInvokeResult" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SaveInvokeResult" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="a532ddd1-87db-4d61-9f74-761f48af5627" ParentLink="PortDeclaration_CLRAttribute" LowerBound="40.1" HigherBound="41.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.SAP.AR
+{
+    internal messagetype ZfiCreateArForWms
+    {
+        body ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_soap_functions_mc_style.ZfiCreateArForWms parameters;
+    };
+    internal messagetype ZfiCreateArForWmsResponse
+    {
+        body ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_soap_functions_mc_style.ZfiCreateArForWmsResponse parameters;
+    };
+    internal porttype ZFI_CREATE_AR_FOR_WMS
+    {
+        requestresponse ZfiCreateArForWms
+        {
+            ZfiCreateArForWms, ZfiCreateArForWmsResponse
+        };
+    };
+    public porttype PortType_ReceiveWMSARReport
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.Schemas.Wms.ARReport
+        };
+    };
+    public porttype PortType_SaveInvokeResult
+    {
+        oneway Operation_1
+        {
+            ZfiCreateArForWmsResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ZFI_CREATE_AR_FOR_WMSClient
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveWMSARReport ReceiveWMSARReport;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ZFI_CREATE_AR_FOR_WMS InvokeSAPWebService;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SaveInvokeResult SaveInvokeResult;
+        message ZfiCreateArForWms ARRequest;
+        message ZfiCreateArForWmsResponse ARResponse;
+        message Kaifa.B2B.Schemas.Wms.ARReport ARReport_Message;
+        message Kaifa.B2B.Schemas.Wms.CustARReport CustARReport_Message;
+        System.Int32 Count;
+        System.String CountStr;
+        System.Int32 Increase;
+        System.String batchid;
+        System.String sapbkid;
+        System.String sapmsg;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("46d1596e-a6e0-41f4-918a-7ad3730a871f")]
+            activate receive (ReceiveWMSARReport.Operation_1, ARReport_Message);
+            CountStr = "";
+            batchid = "";
+            sapbkid = "";
+            sapmsg = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e0fe0755-4aeb-4697-b164-b494e459d22a")]
+            Count = xpath(ARReport_Message, "count(/*[local-name()='ARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR']/*[local-name()='CustARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR'])"); 
+            CountStr = Count.ToString();
+            Increase = 1;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("28769816-be18-4ac7-80ed-98353a1873e4")]
+            while (Increase<=Count )
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("dfa9bb57-4280-420d-ad33-ed7b635225fc")]
+                construct CustARReport_Message, ARRequest
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8bceaa59-f40f-4608-8540-acf90a6b5750")]
+                    CountStr = Increase.ToString();
+                    CustARReport_Message =  xpath(ARReport_Message, "/*[local-name()='ARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR']/*[local-name()='CustARReport' and namespace-uri()='http://Kaifa.B2B.Schemas.WMSAR'][" + CountStr + "]");
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8fc6dd26-e240-4f21-a710-143a36424938")]
+                    transform (ARRequest.parameters) = Kaifa.B2B.SAP.AR.Map_To_SAPAR (CustARReport_Message);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("97ae6139-2828-4424-936f-2d409907df05")]
+                send (InvokeSAPWebService.ZfiCreateArForWms, ARRequest);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e602c420-0a06-470f-be5c-6a2d62dfb5cb")]
+                receive (InvokeSAPWebService.ZfiCreateArForWms, ARResponse);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8c41589c-04d8-48e2-8234-3d6fd7ab0de3")]
+                sapbkid = System.Convert.ToString(xpath(ARResponse.parameters,"string(/*[local-name()='ZfiCreateArForWmsResponse' and namespace-uri()='urn:sap-com:document:sap:soap:functions:mc-style']/*[local-name()='DocumentNumber' and namespace-uri()=''])"));
+                batchid=  System.Convert.ToString(xpath(ARResponse.parameters,"string(/*[local-name()='ZfiCreateArForWmsResponse' and namespace-uri()='urn:sap-com:document:sap:soap:functions:mc-style']/*[local-name()='WmsBatchidOut' and namespace-uri()=''])"));
+                sapmsg =  System.Convert.ToString(xpath(ARResponse.parameters,"string(/*[local-name()='ZfiCreateArForWmsResponse' and namespace-uri()='urn:sap-com:document:sap:soap:functions:mc-style']/*[local-name()='MsgTab' and namespace-uri()='']/*[local-name()='item' and namespace-uri()='']/*[local-name()='Message' and namespace-uri()=''])"));
+                
+                Kaifa.B2B.Utility.SAPARReturnHelper.Update(batchid,sapbkid,sapmsg);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("52a27cfd-647e-458c-bf7d-4a460ec36da9")]
+                send (SaveInvokeResult.Operation_1, ARResponse);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("76cf1d90-af9a-4e19-a44f-a017984e2eea")]
+                Increase = Increase + 1;
+            }
+        }
+    }
+}
+

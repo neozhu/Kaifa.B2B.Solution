@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A70CE982-1BC7-4250-8E02-381FC823F21A}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Kaifa.B2B.SAP.AR</RootNamespace>
+    <AssemblyName>Kaifa.B2B.SAP.AR</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>kaifa.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_rfc_functions.xsd">
+      <TypeName>ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_rfc_functions</TypeName>
+      <Namespace>Kaifa.B2B.SAP.AR</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_soap_functions_mc_style.xsd">
+      <TypeName>ZFI_CREATE_AR_FOR_WMS_sap_com_document_sap_soap_functions_mc_style</TypeName>
+      <Namespace>Kaifa.B2B.SAP.AR</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="ZFI_CREATE_AR_FOR_WMS.odx">
+      <TypeName>ZFI_CREATE_AR_FOR_WMS</TypeName>
+      <Namespace>Kaifa.B2B.SAP.AR</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Map_To_SAPAR.btm">
+      <TypeName>Map_To_SAPAR</TypeName>
+      <Namespace>Kaifa.B2B.SAP.AR</Namespace>
+    </Map>
+    <Content Include="ZFI_CREATE_AR_FOR_WMS.BindingInfo.xml" />
+    <Content Include="ZFI_CREATE_AR_FOR_WMS_Custom.BindingInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kaifa.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kaifa.B2B.Schemas.Wms\Kaifa.B2B.Schemas.Wms.btproj">
+      <Project>{A829E5FF-7D74-49F7-8A4E-21D92A7BF520}</Project>
+      <Name>Kaifa.B2B.Schemas.Wms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kaifa.B2B.Utility\Kaifa.B2B.Utility.csproj">
+      <Project>{4C14FF3F-EC2D-41FA-88E8-95DE19129A3B}</Project>
+      <Name>Kaifa.B2B.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

@@ -75,6 +75,14 @@
       <TypeName>CMShipmentPODReport</TypeName>
       <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
     </Schema>
+    <Schema Include="ARReport.xsd">
+      <TypeName>ARReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
+    <Schema Include="CustARReport.xsd">
+      <TypeName>CustARReport</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.Wms</Namespace>
+    </Schema>
     <None Include="kaifa.snk" />
     <Schema Include="VendorShipmentPODReport.xsd">
       <TypeName>VendorShipmentPODReport</TypeName>

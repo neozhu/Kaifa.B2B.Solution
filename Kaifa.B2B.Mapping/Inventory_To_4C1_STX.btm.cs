@@ -208,14 +208,11 @@ public string dateTimeNow()
 	return DateTime.Now.ToString(""yyyyMMddTHHmmss.fff"") + ""Z"";
 }
 
-///*Uncomment the following code for a sample Inline C# function
-//that concatenates two inputs. Change the number of parameters of
-//this function to be equal to the number of inputs connected to this functoid.*/
-
+//
 public string ProprietaryDocumentIdentifier(string Site,string msgType,string supplierDuns) {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmssfff"");
             string seq = ""000001"";
-            return string.Format(""{0}HUB{1}{2}{3}{4}"", Site, msgType, str, supplierDuns, seq);
+            return string.Format(""{0}HUB{1}{2}{3}{5}{4}"", Site, msgType, str, supplierDuns, seq,""663050425"");
         }
 
 //For ON Hold Qty

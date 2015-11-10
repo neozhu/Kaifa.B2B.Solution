@@ -20,6 +20,20 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
+		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.Wms\ARReport.xsd">
+			<ValidateTestMapInput>True</ValidateTestMapInput>
+			<ValidateTestMapOutput>True</ValidateTestMapOutput>
+			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
+			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
+			<TestMapSourceType>0</TestMapSourceType>
+			<TestMapTargetType>0</TestMapTargetType>
+			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
+			<EditorInputInstanceFilename></EditorInputInstanceFilename>
+			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
+			<ValidateInstanceInputType>0</ValidateInstanceInputType>
+			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
+			<AutoRefreshSchema>0</AutoRefreshSchema>
+		</File>
 		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.Wms\CMShipmentPODReport.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
@@ -29,6 +43,20 @@
 			<TestMapTargetType>0</TestMapTargetType>
 			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
 			<EditorInputInstanceFilename>D:\长城开发项目\报文\CMShipmentPODReport.xml</EditorInputInstanceFilename>
+			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
+			<ValidateInstanceInputType>0</ValidateInstanceInputType>
+			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
+			<AutoRefreshSchema>0</AutoRefreshSchema>
+		</File>
+		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Schemas.Wms\CustARReport.xsd">
+			<ValidateTestMapInput>True</ValidateTestMapInput>
+			<ValidateTestMapOutput>True</ValidateTestMapOutput>
+			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
+			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
+			<TestMapSourceType>0</TestMapSourceType>
+			<TestMapTargetType>0</TestMapTargetType>
+			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
+			<EditorInputInstanceFilename></EditorInputInstanceFilename>
 			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
 			<ValidateInstanceInputType>0</ValidateInstanceInputType>
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>

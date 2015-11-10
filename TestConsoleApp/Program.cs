@@ -16,7 +16,22 @@ namespace TestConsoleApp
     {
         static void Main(string[] args)
         {
-            string dt=  DateTime.Now.ToString("yyyyMMddT000000.000") + "Z";
+            test();
+            Kaifa.B2B.Utility.SAPARReturnHelper.Update("20151105_15141", "test", "test");
+            //ARGenerator ar = new ARGenerator("20151105", "wmwhse1", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;", "");
+            //XDocument doc= ar.Generator();
+
+            //Console.WriteLine(doc);
+
+            //DateTime date = DateTime.Now;
+            //DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
+            //DateTime edt = new DateTime(date.Year, date.Month, 21);
+
+            //SAP.ZfiCreateArForWmsRequest req = new TestConsoleApp.SAP.ZfiCreateArForWmsRequest();
+            //SAP.ZfiWmsStru body = new TestConsoleApp.SAP.ZfiWmsStru();
+          
+
+            //string dt=  DateTime.Now.ToString("yyyyMMddT000000.000") + "Z";
             //TDN940Generator tdn = new TDN940Generator("0000000273", "wmwhse1", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;", "");
             //XDocument doc= tdn.Generator();
 
@@ -59,7 +74,7 @@ namespace TestConsoleApp
         //    user.UserName = "sceadmin";
         //    user.Password = "123";
         //    user.Whcode = "SCPRD_wmwhse1";
-            string[] keys = new string[] { "0000000737", "0000000033", "0000000034", "0000000035", "0000000036" };
+            string[] keys = new string[] { "0000001192", "0000001193", "0000001228" };
         //    string str = DateTime.Now.ToString("yyyyMMddTHHmmss.fff") + "Z";
             //string str = DateTime.Now.ToString("MMMddyyyy", CultureInfo.CreateSpecificCulture("en-US"));
             //string str = DateTime.Now.ToString("yyyyMMddHHmmssfff");
@@ -68,24 +83,24 @@ namespace TestConsoleApp
 
             AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
                  "SZT", "Seagate", "e2open", "wmwhse1",
-                "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False",
+                "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
                 "http://kaifa.b2b.schemas/AdvancedShipNotice");
             XDocument asn = g.Generator();
             Console.WriteLine(asn);
             //string orderkey = GetOrderKey();
             ////IEnumerable<string> orders = GetOrderKeys();
             //UpdateFlag(orders.ToArray());
-            //string orderkey = "0000000028";
+            //string orderkey = "0000000530";
             //OrderShipmentGenerator g = new OrderShipmentGenerator(orderkey, "c:\\config.xml",
             //     "SZT", "Seagate", "e2open", "wmwhse1",
             //    "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
             //    "http://kaifa.b2b.schemas/OrderShipment");
             //XDocument asn = g.Generator();
             //Console.WriteLine(asn);
-            //string[] orderkeys = new string[] { "0000000024", "0000000025" };
+            //string[] orderkeys = new string[] { "0000000529", "0000000530" };
             //OrderShipmentPODGenerator g = new OrderShipmentPODGenerator(orderkeys, "c:\\config.xml",
             //    "SZT", "Seagate", "e2open", "wmwhse1",
-            //   "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False",
+            //   "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
             //   "http://kaifa.b2b.schemas/OrderShipment");
             //XDocument asn = g.Generator();
             //Console.WriteLine(asn);
@@ -140,6 +155,37 @@ namespace TestConsoleApp
             }
         
         }
+        public static string test() {
+            DateTime date = DateTime.Now;
+            string batchId = date.ToString("yyyyMMdd");
+            DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
+            DateTime edt = new DateTime(date.Year, date.Month, 21);
+
+            using (SqlConnection conn = new SqlConnection("Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False"))
+            {
+                conn.Open();
+                string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}'  
+                                        ", batchId, sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sqlcmd;
+                object up= cmd.ExecuteScalar();
+                Console.WriteLine(up);
+
+                cmd.CommandText = string.Format("select count(*) from BILLADMIN.BIC_CHARGE where ARBATCHID like '{0}_%'", batchId);
+                object res = cmd.ExecuteScalar(); 
+                int count = Convert.ToInt32(res);
+                if (count > 0)
+                    return batchId;
+                else
+                    return string.Empty;
+
+
+
+            }
+        }
+        public string dtnowstring() {
+            return DateTime.Now.ToString("yyyy-MM-dd");
+        }
         //For ON Hold Qty
         //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
         //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>
@@ -184,6 +230,13 @@ namespace TestConsoleApp
         public string getrequestime(string datetime) {
             //2015-09-22T01:10:00;
             return datetime.Substring(10, 5).Replace(":", "-");
+        }
+        public string convertdatetimestring(string dtstr)
+        {
+            //2015-11-02T12:00:00
+            //20151101T000052.791Z
+
+            return dtstr.Replace("-", "").Replace(":", "") + ".000Z";
         }
         public string PrimaryRemark(string pcode, string remark, string storerkey) {
 

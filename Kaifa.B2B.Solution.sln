@@ -51,6 +51,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScripts", "SqlScripts", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOBApplication", "LOBApplication\LOBApplication.csproj", "{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.SAP.AR", "Kaifa.B2B.SAP.AR\Kaifa.B2B.SAP.AR.btproj", "{A70CE982-1BC7-4250-8E02-381FC823F21A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,12 @@ Global
 		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2197A553-FB6E-463D-87CC-5E0C70ECF7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70CE982-1BC7-4250-8E02-381FC823F21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70CE982-1BC7-4250-8E02-381FC823F21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70CE982-1BC7-4250-8E02-381FC823F21A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A70CE982-1BC7-4250-8E02-381FC823F21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70CE982-1BC7-4250-8E02-381FC823F21A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70CE982-1BC7-4250-8E02-381FC823F21A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

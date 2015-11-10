@@ -228,7 +228,7 @@ public string ProprietaryDocumentIdentifier(string Site, string CmCode, string m
         {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmss"");
             string seq = ""000001"";
-            return string.Format(""{0}{1}{2}{3}{4}"", Site, CmCode, msgType, str, seq);
+            return string.Format(""{0}{1}{2}{3}{5}{4}"", Site, CmCode, msgType, str, seq,""663050425"");
         }
 
 public string SeagateProprietarySite(string hubsite, string cmsite) {
@@ -248,7 +248,9 @@ public string NONASICPurchaseOrder(string PO,string CmCode) {
 public string DateTimeFormat(string str) {
             //20150616T021822.000Z
             //2015-03-31T21:44:21
-            return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,15) + ""Z"";
+           //timestamp as 00:00:00  for both STX/E2O
+            //return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,15) + ""Z"";
+            return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,9) + ""000000Z"";
         }
 
 public string SeagateProprietaryRTVReason(string l06,string ldo) {

@@ -136,7 +136,7 @@ namespace Kaifa.B2B.Mapping {
                 </xsl:if>
               </ns0:receivedQuantity>
               <ns0:shipmentReceiptReportDateTime>
-                <xsl:variable name=""var:v11"" select=""userCSharp:dateTimeNow()"" />
+                <xsl:variable name=""var:v11"" select=""userCSharp:convertdatetimestring(string(s0:LOTTABLE04/text()))"" />
                 <ns0:DateTimeStamp>
                   <xsl:value-of select=""$var:v11"" />
                 </ns0:DateTimeStamp>
@@ -146,7 +146,7 @@ namespace Kaifa.B2B.Mapping {
         </ns0:ShipmentReceiptInformationResource>
       </xsl:for-each>
       <ns0:thisDocumentGenerationDateTime>
-        <xsl:variable name=""var:v12"" select=""userCSharp:dateTimeNow()"" />
+        <xsl:variable name=""var:v12"" select=""userCSharp:datetimenowstring()"" />
         <ns0:DateTimeStamp>
           <xsl:value-of select=""$var:v12"" />
         </ns0:DateTimeStamp>
@@ -190,11 +190,6 @@ public string StringTrimLeft(string str)
 }
 
 
-public string dateTimeNow()
-{
-	return DateTime.Now.ToString(""yyyyMMddTHHmmss.fff"") + ""Z"";
-}
-
 //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
         public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
         {
@@ -204,10 +199,28 @@ public string dateTimeNow()
                 return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*"", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
         }
 
+//ZT+ASN+yyyymmddhhmmssfff+ supplierDuns+kaifa hub DUNS + one up number
+//Pls refer this link for proposed doc id format enhancement to address possible duplicate docids from UPS and Kaifa during transition period. Need to include KAIFA DUNS (663050425) in the prop doc id to both STX and e2open feeds.
 public string ProprietaryDocumentIdentifier(string Site,string msgType,string supplierDuns) {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmssfff"");
             string seq = ""000001"";
-            return string.Format(""{0}{1}{2}{3}{4}"", Site, msgType, str, supplierDuns, seq);
+            return string.Format(""{0}{1}{2}{3}{5}{4}"", Site, msgType, str, supplierDuns, seq,""663050425"");
+        }
+
+public string convertdatetimestring(string dtstr)
+        {
+            //2015-11-02T12:00:00
+            //20151101T000052.791Z
+
+            return dtstr.Replace(""-"", """").Replace("":"", """") + "".000Z"";
+        }
+
+public string datetimenowstring()
+        {
+            //2015-11-02T12:00:00
+            //20151101T000052.791Z
+
+           return DateTime.Now.ToString(""yyyyMMddTHHmmss"") + "".000Z"";
         }
 
 

@@ -215,7 +215,7 @@ public string ProprietaryDocumentIdentifier(string Site, string vendorCode, stri
         {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmss"");
             string seq = ""000001"";
-            return string.Format(""{0}{1}{2}SUP{3}{4}"", Site, vendorCode,msgType, str, seq);
+            return string.Format(""{0}{1}{2}SUP{3}{5}{4}"", Site, vendorCode,msgType, str, seq,""663050425"");
         }
 
 public string dateTimeNow()

@@ -215,7 +215,7 @@ public string dateTimeNow()
 public string ProprietaryDocumentIdentifier(string Site,string msgType,string supplierDuns) {
             string str = DateTime.Now.ToString(""yyyyMMddHHmmssfff"");
             string seq = ""000001"";
-            return string.Format(""{0}{1}{2}{3}{4}"", Site, msgType, str, supplierDuns, seq);
+            return string.Format(""{0}{1}{2}{3}{5}{4}"", Site, msgType, str, supplierDuns, seq,""663050425"");
         }
 
 //For ON Hold Qty
@@ -258,7 +258,8 @@ public string StringConcat(string param0, string param1)
 public string DateTimeFormat(string str) {
             //20150616T021822.000Z
             //2015-03-31T21:44:21
-            return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,15) + "".000Z"";
+            //return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,15) + "".000Z"";
+              return str.Replace(""-"", string.Empty).Replace("":"", string.Empty).Substring(0,9) + ""000000.000Z"";
         }
 
 

@@ -244,12 +244,13 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 		LOTTABLE06,
 		LOTTABLE07,
 		LOTTABLE08,
+        SPREMARK,
 		CAST(SUM(QTY) as int) AS QTY
 FROM [{0}].[ORDER_POD] as [ORDERDETAIL]  where ORDERKEY IN ({1})
 GROUP BY 
 		STORERKEY,ORDERKEY,TRANSACTIONDATE,EXTERNORDERKEY,COMCODE,
         CONSIGNEEKEY,CMDUNS,SKU,SKUGROUP,COMMODITYCLASS,
-		LOTTABLE02,LOTTABLE03,LOTTABLE06,LOTTABLE07,LOTTABLE08   FOR XML AUTO,ELEMENTS", this._warehous, string.Join(",", this._orderKeys.Select(t => "'" + t + "'").ToArray()));
+		LOTTABLE02,LOTTABLE03,LOTTABLE06,LOTTABLE07,LOTTABLE08,SPREMARK   FOR XML AUTO,ELEMENTS", this._warehous, string.Join(",", this._orderKeys.Select(t => "'" + t + "'").ToArray()));
 
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
