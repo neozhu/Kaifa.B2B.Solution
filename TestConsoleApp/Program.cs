@@ -10,14 +10,31 @@ using System.Data.SqlClient;
 using System.Xml.XPath;
 using System.Globalization;
 using Kaifa.B2B.VendorAlloc;
+using System.IO;
+using Excel;
+using System.Data;
 namespace TestConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            test();
-            Kaifa.B2B.Utility.SAPARReturnHelper.Update("20151105_15141", "test", "test");
+
+            string _excelFile="c:\\szt_vendor_alloc_quarter20151002000231.xlsx";
+            FileStream stream = File.Open(_excelFile, FileMode.Open, FileAccess.Read);
+                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                excelReader.IsFirstRowAsColumnNames = true;
+                DataSet result = excelReader.AsDataSet();
+                DataTable dt = result.Tables[0];
+                excelReader.Close();
+                stream.Close();
+
+                MailClient.SendAllocNotificationMail(dt, _excelFile, string.Empty);
+                Console.Read();
+
+
+            //test();
+            //Kaifa.B2B.Utility.SAPARReturnHelper.Update("20151105_15141", "test", "test");
             //ARGenerator ar = new ARGenerator("20151105", "wmwhse1", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;", "");
             //XDocument doc= ar.Generator();
 
@@ -81,12 +98,12 @@ namespace TestConsoleApp
             //inv();
             //Console.WriteLine(str);
 
-            AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
-                 "SZT", "Seagate", "e2open", "wmwhse1",
-                "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
-                "http://kaifa.b2b.schemas/AdvancedShipNotice");
-            XDocument asn = g.Generator();
-            Console.WriteLine(asn);
+            //AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
+            //     "SZT", "Seagate", "e2open", "wmwhse1",
+            //    "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
+            //    "http://kaifa.b2b.schemas/AdvancedShipNotice");
+            //XDocument asn = g.Generator();
+            //Console.WriteLine(asn);
             //string orderkey = GetOrderKey();
             ////IEnumerable<string> orders = GetOrderKeys();
             //UpdateFlag(orders.ToArray());

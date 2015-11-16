@@ -30,35 +30,36 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             _args = args as ARProviderParameters;
             _args.tagnamespace = "http://Kaifa.B2B.Schemas.WMSAR";
             string batchid = GetBatchId(_args);
-            if (!string.IsNullOrEmpty(batchid))
-            {
+            return null;
+            //if (!string.IsNullOrEmpty(batchid))
+            //{
 
-                MemoryStream ms = new MemoryStream();
-                XmlWriterSettings xws = new XmlWriterSettings();
-                xws.OmitXmlDeclaration = true;
-                xws.Indent = true;
+            //    MemoryStream ms = new MemoryStream();
+            //    XmlWriterSettings xws = new XmlWriterSettings();
+            //    xws.OmitXmlDeclaration = true;
+            //    xws.Indent = true;
 
-                using (XmlWriter xw = XmlWriter.Create(ms, xws))
-                {
-                    ARGenerator tdn = new ARGenerator(batchid, _args.warehous, _args.connectionstring, _args.tagnamespace);
-                    XDocument doc = tdn.Generator();
-                    doc.WriteTo(xw);
-                }
-                ms.Seek(0, SeekOrigin.Begin);
-                //System.Diagnostics.Trace.WriteLine("");
+            //    using (XmlWriter xw = XmlWriter.Create(ms, xws))
+            //    {
+            //        ARGenerator tdn = new ARGenerator(batchid, _args.warehous, _args.connectionstring, _args.tagnamespace);
+            //        XDocument doc = tdn.Generator();
+            //        doc.WriteTo(xw);
+            //    }
+            //    ms.Seek(0, SeekOrigin.Begin);
+            //    //System.Diagnostics.Trace.WriteLine("");
 
 
-                //UpdateFlag(_args, orderkey);
-                System.Diagnostics.Trace.WriteLine(string.Format("Create AR {0}", batchid), "ARProvider");
-                return ms;
+            //    //UpdateFlag(_args, orderkey);
+            //    System.Diagnostics.Trace.WriteLine(string.Format("Create AR {0}", batchid), "ARProvider");
+            //    return ms;
 
 
                 
-            }
-            else
-            {
-                return null;
-            }
+            //}
+            //else
+            //{
+            //    return null;
+            //}
         }
 //1.	结账日期为： 上月的21日0：00至 当月20日24：00；
 //2.	进出口部每月必须在20日之前上传关务费用至WMS系统；
@@ -74,10 +75,11 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             string batchId = "";
             if (date.Day == lastscday)
             {
-                batchId = date.ToString("yyyyMMdd");
+               
                 DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
                 DateTime edt = new DateTime(date.Year, date.Month, 21);
 
+                batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                 using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                 {
                     conn.Open();
@@ -88,7 +90,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                     int count = Convert.ToInt32(res);
                     if (count > 0)
                     {
-                        string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='B' where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND ARBATCHID IS NULL
+                        string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='C',ARSAPDT=getdate() where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND ARBATCHID IS NULL
                                         ", batchId, sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
 
                         cmd.CommandText = sqlcmd;
@@ -118,10 +120,10 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             {
                 if (_args.Immediately)
                 {
-                    batchId = date.ToString("yyyyMMdd");
+                    //batchId = date.ToString("yyyyMMdd");
                     DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
                     DateTime edt = new DateTime(date.Year, date.Month, 21);
-
+                    batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                     using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                     {
                         conn.Open();
@@ -132,7 +134,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                         int count = Convert.ToInt32(res);
                         if (count > 0)
                         {
-                            string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='B' where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND ARBATCHID IS NULL
+                            string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='C',ARSAPDT=getdate() where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND ARBATCHID IS NULL
                                         ", batchId, sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
 
                             cmd.CommandText = sqlcmd;

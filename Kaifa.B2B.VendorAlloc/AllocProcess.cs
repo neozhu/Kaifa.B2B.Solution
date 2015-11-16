@@ -6,6 +6,7 @@ using System.IO;
 using Excel;
 using System.Data;
 using System.Data.SqlClient;
+ 
 
 namespace Kaifa.B2B.VendorAlloc
 {
@@ -40,6 +41,7 @@ namespace Kaifa.B2B.VendorAlloc
                 IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
                 excelReader.IsFirstRowAsColumnNames = true;
                 DataSet result = excelReader.AsDataSet();
+                DataTable dt = null;
                 excelReader.Close();
                 stream.Close();
                 if (result.Tables.Count > 0)
@@ -51,7 +53,7 @@ namespace Kaifa.B2B.VendorAlloc
                         SqlTransaction trx = conn.BeginTransaction();
                         try
                         {
-                            DataTable dt = result.Tables[0];
+                             dt = result.Tables[0];
                             foreach (DataRow dr in dt.Rows)
                             {
                                 object site = dr["Site"];
@@ -116,9 +118,13 @@ namespace Kaifa.B2B.VendorAlloc
                             }
                             trx.Commit();
                             conn.Close();
+
+
+                            MailClient.SendAllocNotificationMail(dt, _excelFile,string.Empty);
                         }
                         catch (Exception e)
                         {
+                            MailClient.SendAllocNotificationMail(dt, _excelFile, e.Message);
                             Console.WriteLine(e);
                             trx.Rollback();
                             conn.Close();
