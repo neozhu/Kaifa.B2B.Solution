@@ -20,17 +20,17 @@ namespace TestConsoleApp
         static void Main(string[] args)
         {
 
-            string _excelFile="c:\\szt_vendor_alloc_quarter20151002000231.xlsx";
-            FileStream stream = File.Open(_excelFile, FileMode.Open, FileAccess.Read);
-                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-                excelReader.IsFirstRowAsColumnNames = true;
-                DataSet result = excelReader.AsDataSet();
-                DataTable dt = result.Tables[0];
-                excelReader.Close();
-                stream.Close();
+            //string _excelFile="c:\\szt_vendor_alloc_quarter20151002000231.xlsx";
+            //FileStream stream = File.Open(_excelFile, FileMode.Open, FileAccess.Read);
+            //    IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            //    excelReader.IsFirstRowAsColumnNames = true;
+            //    DataSet result = excelReader.AsDataSet();
+            //    DataTable dt = result.Tables[0];
+            //    excelReader.Close();
+            //    stream.Close();
 
-                MailClient.SendAllocNotificationMail(dt, _excelFile, string.Empty);
-                Console.Read();
+            //    MailClient.SendAllocNotificationMail(dt, _excelFile, string.Empty);
+            //    Console.Read();
 
 
             //test();
@@ -114,13 +114,13 @@ namespace TestConsoleApp
             //    "http://kaifa.b2b.schemas/OrderShipment");
             //XDocument asn = g.Generator();
             //Console.WriteLine(asn);
-            //string[] orderkeys = new string[] { "0000000529", "0000000530" };
-            //OrderShipmentPODGenerator g = new OrderShipmentPODGenerator(orderkeys, "c:\\config.xml",
-            //    "SZT", "Seagate", "e2open", "wmwhse1",
-            //   "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
-            //   "http://kaifa.b2b.schemas/OrderShipment");
-            //XDocument asn = g.Generator();
-            //Console.WriteLine(asn);
+            string[] orderkeys = new string[] { "0000000647" };
+            OrderShipmentPODGenerator g = new OrderShipmentPODGenerator(orderkeys, "c:\\config.xml",
+                "SZT", "Seagate", "e2open", "wmwhse1",
+               "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
+               "http://kaifa.b2b.schemas/OrderShipment");
+            XDocument asn = g.Generator();
+            Console.WriteLine(asn);
 
             //InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
             //        "SZT", "Seagate", "e2open", "wmwhse1",

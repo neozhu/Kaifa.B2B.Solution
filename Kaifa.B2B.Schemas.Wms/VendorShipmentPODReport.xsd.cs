@@ -99,7 +99,7 @@ namespace Kaifa.B2B.Schemas.Wms {
                           <xs:element name=""COMMODITYCLASS"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE02"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE03"" type=""xs:string"" />
-                          <xs:element name=""LOTTABLE04"" type=""xs:string"" />
+                          <xs:element minOccurs=""0"" name=""LOTTABLE04"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE06"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE07"" type=""xs:string"" />
                           <xs:element name=""LOTTABLE08"" type=""xs:string"" />

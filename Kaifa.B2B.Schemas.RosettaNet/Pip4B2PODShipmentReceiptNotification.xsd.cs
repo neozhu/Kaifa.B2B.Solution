@@ -92,7 +92,7 @@ namespace Kaifa.B2B.Schemas.RosettaNet {
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name=""ShipmentReceiptNotificationLineItem"">
+              <xs:element maxOccurs=""unbounded"" name=""ShipmentReceiptNotificationLineItem"">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name=""acceptedQuantity"">
