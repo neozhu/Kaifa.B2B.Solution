@@ -129,6 +129,26 @@ namespace Kaifa.B2B.VendorAlloc
             SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "hzhu@ataway.cn", "jjiang@ataway.cn" },   "Alloc导入通知[" + filename +"]", content, null, true, "", "", "10.2.232.75");
         }
 
+
+        static public void SendCalendarNotificationMail(DataTable messageTable, string filename, string errormsg)
+        {
+            //string orderno = "";
+            //string error = GetError(GetResponseDocument(doc));
+            //if (string.IsNullOrEmpty(error))
+            //{
+            //    error = GetMsg(GetResponseDocument(doc));
+            //    orderno = GetOrderNo(GetResponseDocument(doc));
+            //}
+            string content = ConstructHTMLTable(errormsg, messageTable, (dr) =>
+            {
+                return false;
+            });
+            //content = "";
+            content = TemplateHTML().Replace("#Email Content#", content);
+
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "hzhu@ataway.cn", "jjiang@ataway.cn" }, "日历导入通知[" + filename + "]", content, null, true, "", "", "10.2.232.75");
+        }
+
         static private string ConstructHTMLTable(string errormsg, DataTable dt, Func<DataRow, bool> rowHiglithRule)
         {
             if (dt == null) throw new ArgumentNullException("dt");
@@ -142,7 +162,7 @@ namespace Kaifa.B2B.VendorAlloc
                 sb.AppendLine(string.Format("<h2>{0}</h2>", errormsg));
             }
 
-            sb.AppendLine(tab + tab + "<table>");
+            sb.AppendLine(tab + tab + "<table border=1>");
 
             // headers.
             sb.Append(tab + tab + tab + "<thead><tr>");

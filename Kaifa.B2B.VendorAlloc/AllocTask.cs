@@ -33,12 +33,13 @@ namespace Kaifa.B2B.VendorAlloc
 
         public void Start() {
             _timer = new Timer(new TimerCallback(Do));
-            _timer.Change(120 * 1000, 320*1000);
+            _timer.Change(20 * 1000, 3*1000);
         }
         private void Do(object obj) {
             lock (obj)
             {
                 //List<FileInfo> listFiles = new List<FileInfo>(); //保存所有的文件信息  
+               
                 DirectoryInfo directory = new DirectoryInfo(_strDir);
                 FileInfo[] fileInfoArray = directory.GetFiles();
                 if (fileInfoArray.Length > 0)
@@ -47,11 +48,12 @@ namespace Kaifa.B2B.VendorAlloc
                     {
                         if (!file.IsReadOnly && (file.Extension.ToLower() == ".xls" || file.Extension.ToLower() == ".xlsx"))
                         {
-
+                            Console.WriteLine(file.FullName);
                             AllocProcess alloc = new AllocProcess(file.FullName, _connstring);
                             alloc.Read();
 
                             file.MoveTo(Path.Combine(_backupDir, file.Name + DateTime.Now.ToString(".yyyyMMddHHmmssfff") + ".bk"));
+                            Console.WriteLine("move......" + _backupDir);
                         }
 
                     }

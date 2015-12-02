@@ -113,15 +113,27 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
         private  IEnumerable<XElement> Receipt()
         {
             string whereexpression = "    AND RECEIPT.RECEIPTKEY  IN (" + string.Join(",", _receiptkeys.Select(t => "'" + t + "'").ToArray()) + ")";
+//            string sqlcommandtext = string.Format(@"SELECT RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],
+//		                                            RECEIPTDETAIL.SKU,RECEIPTDETAIL.LOTTABLE02,
+//		                                            RECEIPTDETAIL.LOTTABLE03,RECEIPTDETAIL.LOTTABLE04,RECEIPTDETAIL.LOTTABLE06,
+//		                                            CAST(SUM(RECEIPTDETAIL.QTYRECEIVED) AS INT) QTYRECEIVED,
+//		                                            '' DOREMARK
+//                                                    FROM [{0}].[RECEIPT] RECEIPT ,[{0}].[RECEIPTDETAIL] RECEIPTDETAIL
+//                                                    WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY AND QTYRECEIVED > 0 
+//                                                    {1}
+//                                                    GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],RECEIPTDETAIL.SKU,
+//                                                    RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,RECEIPTDETAIL.LOTTABLE04,
+//                                                    RECEIPTDETAIL.LOTTABLE06 FOR XML AUTO,ELEMENTS", _warehous, whereexpression);
             string sqlcommandtext = string.Format(@"SELECT RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],
 		                                            RECEIPTDETAIL.SKU,RECEIPTDETAIL.LOTTABLE02,
-		                                            RECEIPTDETAIL.LOTTABLE03,RECEIPTDETAIL.LOTTABLE04,RECEIPTDETAIL.LOTTABLE06,
+		                                            RECEIPTDETAIL.LOTTABLE03,DATEADD(hour,8,RECEIPT.RECEIPTDATE) as LOTTABLE04,RECEIPTDETAIL.LOTTABLE06,
 		                                            CAST(SUM(RECEIPTDETAIL.QTYRECEIVED) AS INT) QTYRECEIVED,
 		                                            '' DOREMARK
                                                     FROM [{0}].[RECEIPT] RECEIPT ,[{0}].[RECEIPTDETAIL] RECEIPTDETAIL
-                                                    WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY {1}
+                                                    WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY AND QTYRECEIVED > 0 
+                                                    {1}
                                                     GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],RECEIPTDETAIL.SKU,
-                                                    RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,RECEIPTDETAIL.LOTTABLE04,
+                                                    RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,RECEIPT.RECEIPTDATE,
                                                     RECEIPTDETAIL.LOTTABLE06 FOR XML AUTO,ELEMENTS", _warehous, whereexpression);
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {

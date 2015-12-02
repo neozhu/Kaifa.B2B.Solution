@@ -33,7 +33,7 @@ namespace Kaifa.B2B.VendorAlloc
 
         public void Start() {
             _timer = new Timer(new TimerCallback(Do));
-            _timer.Change(20 * 1000, 2000);
+            _timer.Change(30 * 1000, 3000);
         }
         private void Do(object obj) {
             //List<FileInfo> listFiles = new List<FileInfo>(); //保存所有的文件信息  
@@ -50,12 +50,13 @@ namespace Kaifa.B2B.VendorAlloc
                             FileInfo file = fileInfoArray[i];
                             if (!file.IsReadOnly && (file.Extension.ToLower() == ".xls" || file.Extension.ToLower() == ".xlsx"))
                             {
-
+                                Console.WriteLine(file.FullName);
                                 CalendarProcess calendar = new CalendarProcess(file.FullName, _connstring);
                                 calendar.Read();
                                 //Thread.Sleep(100);
 
                                 file.MoveTo(Path.Combine(_backupDir, file.Name + DateTime.Now.ToString(".yyyyMMddHHmmssfff") + ".bk"));
+                                Console.WriteLine("move...." + file.FullName);
                             }
 
                         }
@@ -64,7 +65,8 @@ namespace Kaifa.B2B.VendorAlloc
                     }
                 }
             }catch(Exception e){
-            
+                Console.WriteLine(e.Message);
+                //throw e;
             }
         }
         public void Stop() {

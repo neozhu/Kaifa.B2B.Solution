@@ -121,9 +121,9 @@
 		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\Order_To_4B2POD_e2open.btm">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
-			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
+			<TestMapInputInstanceFilename>D:\长城开发项目\报文\4b2pod.xml</TestMapInputInstanceFilename>
 			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
-			<TestMapSourceType>0</TestMapSourceType>
+			<TestMapSourceType>1</TestMapSourceType>
 			<TestMapTargetType>0</TestMapTargetType>
 			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
 			<EditorInputInstanceFilename></EditorInputInstanceFilename>
@@ -135,7 +135,7 @@
 		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\Order_To_4B2POD_e2open_CM.btm">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
-			<TestMapInputInstanceFilename>D:\长城开发项目\报文\CMShipmentPODReport.xml</TestMapInputInstanceFilename>
+			<TestMapInputInstanceFilename>D:\长城开发项目\报文\cmpod.xml</TestMapInputInstanceFilename>
 			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
 			<TestMapSourceType>1</TestMapSourceType>
 			<TestMapTargetType>0</TestMapTargetType>
@@ -149,7 +149,7 @@
 		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Mapping\Order_To_4B2POD_STX.btm">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
-			<TestMapInputInstanceFilename>D:\长城开发项目\报文\VendorShipmentPODReport.xml</TestMapInputInstanceFilename>
+			<TestMapInputInstanceFilename>D:\长城开发项目\报文\4b2pod.xml</TestMapInputInstanceFilename>
 			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
 			<TestMapSourceType>1</TestMapSourceType>
 			<TestMapTargetType>0</TestMapTargetType>

@@ -44,7 +44,7 @@ namespace Kaifa.B2B.VendorAlloc
                 DataTable dt = null;
                 excelReader.Close();
                 stream.Close();
-                if (result.Tables.Count > 0)
+                if (result.Tables.Count > 0 && result.Tables[0].Rows.Count>0)
                 {
                     using (SqlConnection conn = new SqlConnection(_connectionstring))
                     {
@@ -112,7 +112,7 @@ namespace Kaifa.B2B.VendorAlloc
                                     , ""
                                     , _fileName
                                     );
-
+                                Console.WriteLine("reading....." + dr["Planner Code"].ToString());
                                 //Site	Prime Part	Alternate Part	Vendor Number	Allocation Percentage	Start Date Active	End Date Active	Planner Code	Non ASIC Indicator
                                 cmd.ExecuteNonQuery();
                             }

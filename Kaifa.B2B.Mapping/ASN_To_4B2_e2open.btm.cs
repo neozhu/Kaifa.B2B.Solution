@@ -64,7 +64,6 @@ namespace Kaifa.B2B.Mapping {
         <xsl:value-of select=""$var:v5"" />
       </ns0:GlobalDocumentFunctionCode>
       <xsl:for-each select=""s0:RECEIPT"">
-        <xsl:variable name=""var:v6"" select=""position()"" />
         <ns0:ShipmentReceiptInformationResource>
           <ns0:shipmentIdentifier>
             <xsl:if test=""s0:RECEIPTKEY"">
@@ -74,6 +73,7 @@ namespace Kaifa.B2B.Mapping {
             </xsl:if>
           </ns0:shipmentIdentifier>
           <xsl:for-each select=""s0:RECEIPTDETAIL"">
+            <xsl:variable name=""var:v6"" select=""position()"" />
             <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;Work Order&quot;)"" />
             <xsl:variable name=""var:v8"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
             <xsl:variable name=""var:v9"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />

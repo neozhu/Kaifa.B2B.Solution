@@ -102,19 +102,8 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                     else
                         return string.Empty;
 
-
-
-                    
-
-                 
-                    
-
-
-
                 }
-           
 
-                
             }
             else
             {
@@ -143,11 +132,6 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                         }
                         else
                             return string.Empty;
-
-
-                      
-
-                        
 
 
 

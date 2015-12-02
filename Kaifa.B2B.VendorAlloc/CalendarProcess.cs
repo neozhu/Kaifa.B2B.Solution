@@ -25,9 +25,10 @@ namespace Kaifa.B2B.VendorAlloc
                 IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
                 excelReader.IsFirstRowAsColumnNames = true;
                 DataSet result = excelReader.AsDataSet();
+                DataTable dt = result.Tables[0];
                 excelReader.Close();
                 stream.Close();
-                if (result.Tables.Count > 0)
+                if (result.Tables.Count > 0 && dt.Rows.Count > 0)
                 {
                     using (SqlConnection conn = new SqlConnection(_connectionstring))
                     {
@@ -36,7 +37,7 @@ namespace Kaifa.B2B.VendorAlloc
                         SqlTransaction trx = conn.BeginTransaction();
                         try
                         {
-                            DataTable dt = result.Tables[0];
+                            
                             foreach (DataRow dr in dt.Rows)
                             {
                                 object year = dr["财务年"];
@@ -80,12 +81,16 @@ namespace Kaifa.B2B.VendorAlloc
                             }
                             trx.Commit();
                             conn.Close();
+
+                            MailClient.SendCalendarNotificationMail(dt, _excelFile, string.Empty);
                         }
                         catch (Exception e)
                         {
                             Console.WriteLine(e);
                             trx.Rollback();
                             conn.Close();
+
+                            MailClient.SendCalendarNotificationMail(dt, _excelFile, e.Message);
                         }
                     }
                 }
