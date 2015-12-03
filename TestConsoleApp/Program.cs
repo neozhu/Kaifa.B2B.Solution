@@ -93,29 +93,29 @@ namespace TestConsoleApp
         //    user.UserName = "sceadmin";
         //    user.Password = "123";
         //    user.Whcode = "SCPRD_wmwhse1";
-            string[] keys = new string[] { "0000000275", "0000000275", "0000000275" };
+            string[] keys = new string[] { "0000000348", "0000000348", "0000000348" };
         //    string str = DateTime.Now.ToString("yyyyMMddTHHmmss.fff") + "Z";
             //string str = DateTime.Now.ToString("MMMddyyyy", CultureInfo.CreateSpecificCulture("en-US"));
             //string str = DateTime.Now.ToString("yyyyMMddHHmmssfff");
             //inv();
             //Console.WriteLine(str);
 
-            AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
-                 "SZT", "Seagate", "e2open", "wmwhse1",
-                "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
-                "http://kaifa.b2b.schemas/AdvancedShipNotice");
-            XDocument asn = g.Generator();
-            Console.WriteLine(asn);
+            //AdvancedShipNoticeGenerator g = new AdvancedShipNoticeGenerator(keys, "c:\\config.xml",
+            //     "SZT", "Seagate", "e2open", "wmwhse1",
+            //    "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
+            //    "http://kaifa.b2b.schemas/AdvancedShipNotice");
+            //XDocument asn = g.Generator();
+            //Console.WriteLine(asn);
             //string orderkey = GetOrderKey();
             ////IEnumerable<string> orders = GetOrderKeys();
             //UpdateFlag(orders.ToArray());
-            //string orderkey = "0000000530";
-            //OrderShipmentGenerator g = new OrderShipmentGenerator(orderkey, "c:\\config.xml",
-            //     "SZT", "Seagate", "e2open", "wmwhse1",
-            //    "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False",
-            //    "http://kaifa.b2b.schemas/OrderShipment");
-            //XDocument asn = g.Generator();
-            //Console.WriteLine(asn);
+            string orderkey = "1000000056";
+            OrderShipmentGenerator g = new OrderShipmentGenerator(orderkey, "c:\\config.xml",
+                 "SZT", "Seagate", "e2open", "wmwhse1",
+                "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
+                "http://kaifa.b2b.schemas/OrderShipment");
+            XDocument asn = g.Generator();
+            Console.WriteLine(asn);
             //string[] orderkeys = new string[] { "0000000647" };
             //OrderShipmentPODGenerator g = new OrderShipmentPODGenerator(orderkeys, "c:\\config.xml",
             //    "SZT", "Seagate", "e2open", "wmwhse1",

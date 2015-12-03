@@ -17,7 +17,7 @@ namespace Kaifa.B2B.Mapping {
     <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimLeft(&quot;Electronic Components&quot;)"" />
     <xsl:variable name=""var:v4"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
     <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;Request&quot;)"" />
-    <xsl:variable name=""var:v22"" select=""userCSharp:StringTrimLeft(&quot;Shipment Information User&quot;)"" />
+    <xsl:variable name=""var:v23"" select=""userCSharp:StringTrimLeft(&quot;Shipment Information User&quot;)"" />
     <ns0:Pip4B2ShipmentReceiptNotification>
       <ns0:fromRole>
         <ns0:PartnerRoleDescription>
@@ -63,23 +63,24 @@ namespace Kaifa.B2B.Mapping {
         <xsl:value-of select=""$var:v5"" />
       </ns0:GlobalDocumentFunctionCode>
       <xsl:for-each select=""s0:NOASIC/s0:ORDER"">
-        <xsl:variable name=""var:v19"" select=""userCSharp:StringTrimLeft(&quot;Packing Slip Number&quot;)"" />
-        <ns0:ShipmentReceiptInformationResource>
-          <ns0:shipmentIdentifier>
-            <xsl:variable name=""var:v6"" select=""userCSharp:ProprietaryReferenceIdentifier(string(../../s0:config/s0:fromRole/s0:Site/text()) , string(s0:ORDERDETAIL/s0:STORERKEY/text()) , string(../../@CMCode) , string(s0:EXTERNORDERKEY/text()))"" />
-            <ns0:ProprietaryReferenceIdentifier>
-              <xsl:value-of select=""$var:v6"" />
-            </ns0:ProprietaryReferenceIdentifier>
-          </ns0:shipmentIdentifier>
-          <xsl:for-each select=""s0:ORDERDETAIL"">
-            <xsl:variable name=""var:v7"" select=""position()"" />
-            <xsl:variable name=""var:v8"" select=""userCSharp:StringTrimLeft(&quot;Purchase Order&quot;)"" />
-            <xsl:variable name=""var:v10"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
-            <xsl:variable name=""var:v11"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
-            <xsl:variable name=""var:v12"" select=""userCSharp:StringTrimLeft(&quot;RECEIVE&quot;)"" />
-            <xsl:variable name=""var:v14"" select=""userCSharp:StringTrimLeft(&quot;&quot;)"" />
-            <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;545196698&quot;)"" />
-            <xsl:variable name=""var:v16"" select=""string(../../../@CMCode)"" />
+        <xsl:for-each select=""s0:ORDERDETAIL"">
+          <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;Purchase Order&quot;)"" />
+          <xsl:variable name=""var:v8"" select=""userCSharp:StringTrimLeft(&quot;1&quot;)"" />
+          <xsl:variable name=""var:v9"" select=""string(../../../@CMCode)"" />
+          <xsl:variable name=""var:v11"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
+          <xsl:variable name=""var:v12"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
+          <xsl:variable name=""var:v13"" select=""userCSharp:StringTrimLeft(&quot;RECEIVE&quot;)"" />
+          <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;&quot;)"" />
+          <xsl:variable name=""var:v16"" select=""userCSharp:StringTrimLeft(&quot;545196698&quot;)"" />
+          <xsl:variable name=""var:v17"" select=""string(../../../s0:config/s0:fromRole/s0:Site/text())"" />
+          <xsl:variable name=""var:v20"" select=""userCSharp:StringTrimLeft(&quot;Packing Slip Number&quot;)"" />
+          <ns0:ShipmentReceiptInformationResource>
+            <ns0:shipmentIdentifier>
+              <xsl:variable name=""var:v6"" select=""userCSharp:ProprietaryReferenceIdentifier(string(../../../s0:config/s0:fromRole/s0:Site/text()) , string(s0:STORERKEY/text()) , string(../../../@CMCode) , string(../s0:EXTERNORDERKEY/text()))"" />
+              <ns0:ProprietaryReferenceIdentifier>
+                <xsl:value-of select=""$var:v6"" />
+              </ns0:ProprietaryReferenceIdentifier>
+            </ns0:shipmentIdentifier>
             <ns0:ShipmentReceiptNotificationLineItem>
               <ns0:acceptedQuantity>
                 <xsl:if test=""s0:QTY"">
@@ -90,23 +91,23 @@ namespace Kaifa.B2B.Mapping {
               </ns0:acceptedQuantity>
               <ns0:DocumentSubLineReference>
                 <ns0:GlobalDocumentReferenceTypeCode>
-                  <xsl:value-of select=""$var:v8"" />
+                  <xsl:value-of select=""$var:v7"" />
                 </ns0:GlobalDocumentReferenceTypeCode>
                 <ns0:LineNumber>
-                  <xsl:value-of select=""$var:v7"" />
+                  <xsl:value-of select=""$var:v8"" />
                 </ns0:LineNumber>
-                <xsl:variable name=""var:v9"" select=""userCSharp:NONASICPurchaseOrder(string(s0:LOTTABLE03/text()) , string(../../../@CMCode))"" />
+                <xsl:variable name=""var:v10"" select=""userCSharp:NONASICPurchaseOrder(string(s0:LOTTABLE03/text()) , $var:v9)"" />
                 <ns0:ProprietaryDocumentIdentifier>
-                  <xsl:value-of select=""$var:v9"" />
+                  <xsl:value-of select=""$var:v10"" />
                 </ns0:ProprietaryDocumentIdentifier>
               </ns0:DocumentSubLineReference>
               <ns0:GlobalProductUnitOfMeasureCode>
-                <xsl:value-of select=""$var:v10"" />
+                <xsl:value-of select=""$var:v11"" />
               </ns0:GlobalProductUnitOfMeasureCode>
               <ns0:ProductIdentification>
                 <ns0:PartnerProductIdentification>
                   <ns0:GlobalPartnerClassificationCode>
-                    <xsl:value-of select=""$var:v11"" />
+                    <xsl:value-of select=""$var:v12"" />
                   </ns0:GlobalPartnerClassificationCode>
                   <xsl:if test=""s0:SKU"">
                     <ns0:ProprietaryProductIdentifier>
@@ -115,17 +116,17 @@ namespace Kaifa.B2B.Mapping {
                   </xsl:if>
                   <ns0:SeagateProprietaryTransactionType>
                     <ns0:FreeFormText>
-                      <xsl:value-of select=""$var:v12"" />
+                      <xsl:value-of select=""$var:v13"" />
                     </ns0:FreeFormText>
                   </ns0:SeagateProprietaryTransactionType>
                   <ns0:SeagateProprietaryRTVReason>
-                    <xsl:variable name=""var:v13"" select=""userCSharp:SeagateProprietaryRTVReason(string(s0:LOTTABLE06/text()) , string(s0:LOTTABLE02/text()))"" />
+                    <xsl:variable name=""var:v14"" select=""userCSharp:SeagateProprietaryRTVReason(string(s0:LOTTABLE06/text()) , string(s0:LOTTABLE02/text()))"" />
                     <ns0:FreeFormText>
-                      <xsl:value-of select=""$var:v13"" />
+                      <xsl:value-of select=""$var:v14"" />
                     </ns0:FreeFormText>
                   </ns0:SeagateProprietaryRTVReason>
                   <ns0:SeagateProprietaryPOBalance>
-                    <xsl:value-of select=""$var:v14"" />
+                    <xsl:value-of select=""$var:v15"" />
                   </ns0:SeagateProprietaryPOBalance>
                 </ns0:PartnerProductIdentification>
               </ns0:ProductIdentification>
@@ -133,12 +134,12 @@ namespace Kaifa.B2B.Mapping {
                 <ns0:PartnerDescription>
                   <ns0:BusinessDescription>
                     <ns0:GlobalBusinessIdentifier>
-                      <xsl:value-of select=""$var:v15"" />
+                      <xsl:value-of select=""$var:v16"" />
                     </ns0:GlobalBusinessIdentifier>
                     <ns0:businessName>
-                      <xsl:variable name=""var:v17"" select=""userCSharp:SeagateProprietarySite(string(../../../s0:config/s0:fromRole/s0:Site/text()) , $var:v16)"" />
+                      <xsl:variable name=""var:v18"" select=""userCSharp:SeagateProprietarySite($var:v17 , $var:v9)"" />
                       <ns0:FreeFormText>
-                        <xsl:value-of select=""$var:v17"" />
+                        <xsl:value-of select=""$var:v18"" />
                       </ns0:FreeFormText>
                     </ns0:businessName>
                   </ns0:BusinessDescription>
@@ -152,44 +153,44 @@ namespace Kaifa.B2B.Mapping {
                 </xsl:if>
               </ns0:receivedQuantity>
               <ns0:shipmentReceiptReportDateTime>
-                <xsl:variable name=""var:v18"" select=""userCSharp:DateTimeFormat(string(s0:TRANSACTIONDATE/text()))"" />
+                <xsl:variable name=""var:v19"" select=""userCSharp:DateTimeFormat(string(s0:TRANSACTIONDATE/text()))"" />
                 <ns0:DateTimeStamp>
-                  <xsl:value-of select=""$var:v18"" />
+                  <xsl:value-of select=""$var:v19"" />
                 </ns0:DateTimeStamp>
               </ns0:shipmentReceiptReportDateTime>
             </ns0:ShipmentReceiptNotificationLineItem>
-          </xsl:for-each>
-          <ns0:TrackingReference>
-            <ns0:GlobalTrackingReferenceTypeCode>
-              <xsl:value-of select=""$var:v19"" />
-            </ns0:GlobalTrackingReferenceTypeCode>
-            <ns0:ProprietaryShipmentTrackingIdentifier>
-              <xsl:value-of select=""s0:DELIVERYORDER/text()"" />
-            </ns0:ProprietaryShipmentTrackingIdentifier>
-            <xsl:if test=""s0:ORDERDETAIL/s0:ORDERKEY"">
-              <ns0:SeagateProprietaryDONumber>
-                <xsl:value-of select=""s0:ORDERDETAIL/s0:ORDERKEY/text()"" />
-              </ns0:SeagateProprietaryDONumber>
-            </xsl:if>
-          </ns0:TrackingReference>
-        </ns0:ShipmentReceiptInformationResource>
+            <ns0:TrackingReference>
+              <ns0:GlobalTrackingReferenceTypeCode>
+                <xsl:value-of select=""$var:v20"" />
+              </ns0:GlobalTrackingReferenceTypeCode>
+              <ns0:ProprietaryShipmentTrackingIdentifier>
+                <xsl:value-of select=""../s0:DELIVERYORDER/text()"" />
+              </ns0:ProprietaryShipmentTrackingIdentifier>
+              <xsl:if test=""s0:ORDERKEY"">
+                <ns0:SeagateProprietaryDONumber>
+                  <xsl:value-of select=""s0:ORDERKEY/text()"" />
+                </ns0:SeagateProprietaryDONumber>
+              </xsl:if>
+            </ns0:TrackingReference>
+          </ns0:ShipmentReceiptInformationResource>
+        </xsl:for-each>
       </xsl:for-each>
       <ns0:thisDocumentGenerationDateTime>
-        <xsl:variable name=""var:v20"" select=""userCSharp:dateTimeNow()"" />
+        <xsl:variable name=""var:v21"" select=""userCSharp:dateTimeNow()"" />
         <ns0:DateTimeStamp>
-          <xsl:value-of select=""$var:v20"" />
+          <xsl:value-of select=""$var:v21"" />
         </ns0:DateTimeStamp>
       </ns0:thisDocumentGenerationDateTime>
       <ns0:thisDocumentIdentifier>
-        <xsl:variable name=""var:v21"" select=""userCSharp:ProprietaryDocumentIdentifier(string(s0:config/s0:fromRole/s0:Site/text()) , string(@CMCode) , &quot;PODCM&quot;)"" />
+        <xsl:variable name=""var:v22"" select=""userCSharp:ProprietaryDocumentIdentifier(string(s0:config/s0:fromRole/s0:Site/text()) , string(@CMCode) , &quot;PODCM&quot;)"" />
         <ns0:ProprietaryDocumentIdentifier>
-          <xsl:value-of select=""$var:v21"" />
+          <xsl:value-of select=""$var:v22"" />
         </ns0:ProprietaryDocumentIdentifier>
       </ns0:thisDocumentIdentifier>
       <ns0:toRole>
         <ns0:PartnerRoleDescription>
           <ns0:GlobalPartnerRoleClassificationCode>
-            <xsl:value-of select=""$var:v22"" />
+            <xsl:value-of select=""$var:v23"" />
           </ns0:GlobalPartnerRoleClassificationCode>
           <ns0:PartnerDescription>
             <ns0:BusinessDescription>

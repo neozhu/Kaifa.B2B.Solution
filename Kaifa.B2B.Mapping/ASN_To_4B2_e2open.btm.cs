@@ -64,19 +64,19 @@ namespace Kaifa.B2B.Mapping {
         <xsl:value-of select=""$var:v5"" />
       </ns0:GlobalDocumentFunctionCode>
       <xsl:for-each select=""s0:RECEIPT"">
-        <ns0:ShipmentReceiptInformationResource>
-          <ns0:shipmentIdentifier>
-            <xsl:if test=""s0:RECEIPTKEY"">
-              <ns0:ProprietaryReferenceIdentifier>
-                <xsl:value-of select=""s0:RECEIPTKEY/text()"" />
-              </ns0:ProprietaryReferenceIdentifier>
-            </xsl:if>
-          </ns0:shipmentIdentifier>
-          <xsl:for-each select=""s0:RECEIPTDETAIL"">
-            <xsl:variable name=""var:v6"" select=""position()"" />
-            <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;Work Order&quot;)"" />
-            <xsl:variable name=""var:v8"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
-            <xsl:variable name=""var:v9"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
+        <xsl:for-each select=""s0:RECEIPTDETAIL"">
+          <xsl:variable name=""var:v6"" select=""userCSharp:StringTrimLeft(&quot;Work Order&quot;)"" />
+          <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;1&quot;)"" />
+          <xsl:variable name=""var:v8"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
+          <xsl:variable name=""var:v9"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
+          <ns0:ShipmentReceiptInformationResource>
+            <ns0:shipmentIdentifier>
+              <xsl:if test=""../s0:RECEIPTKEY"">
+                <ns0:ProprietaryReferenceIdentifier>
+                  <xsl:value-of select=""../s0:RECEIPTKEY/text()"" />
+                </ns0:ProprietaryReferenceIdentifier>
+              </xsl:if>
+            </ns0:shipmentIdentifier>
             <ns0:ShipmentReceiptNotificationLineItem>
               <ns0:acceptedQuantity>
                 <xsl:if test=""s0:QTYRECEIVED"">
@@ -87,10 +87,10 @@ namespace Kaifa.B2B.Mapping {
               </ns0:acceptedQuantity>
               <ns0:DocumentSubLineReference>
                 <ns0:GlobalDocumentReferenceTypeCode>
-                  <xsl:value-of select=""$var:v7"" />
+                  <xsl:value-of select=""$var:v6"" />
                 </ns0:GlobalDocumentReferenceTypeCode>
                 <ns0:LineNumber>
-                  <xsl:value-of select=""$var:v6"" />
+                  <xsl:value-of select=""$var:v7"" />
                 </ns0:LineNumber>
                 <xsl:if test=""s0:LOTTABLE02"">
                   <ns0:ProprietaryDocumentIdentifier>
@@ -142,8 +142,8 @@ namespace Kaifa.B2B.Mapping {
                 </ns0:DateTimeStamp>
               </ns0:shipmentReceiptReportDateTime>
             </ns0:ShipmentReceiptNotificationLineItem>
-          </xsl:for-each>
-        </ns0:ShipmentReceiptInformationResource>
+          </ns0:ShipmentReceiptInformationResource>
+        </xsl:for-each>
       </xsl:for-each>
       <ns0:thisDocumentGenerationDateTime>
         <xsl:variable name=""var:v12"" select=""userCSharp:datetimenowstring()"" />

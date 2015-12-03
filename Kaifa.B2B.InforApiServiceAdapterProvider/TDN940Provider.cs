@@ -63,17 +63,24 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 
         private string GetOrderKey(TDN940ProviderParameters _args)
         {
-            using (SqlConnection conn = new SqlConnection(_args.connectionstring))
+            try
             {
-                conn.Open();
-                string sqlcmd = string.Format(@"SELECT TOP 1 T.ORDERKEY  FROM  [{0}].[ORDERS]  T WHERE (T.B2BFLAG3 = 0) AND STATUS=N'88'  
+                using (SqlConnection conn = new SqlConnection(_args.connectionstring))
+                {
+                    conn.Open();
+                    string sqlcmd = string.Format(@"SELECT TOP 1 T.ORDERKEY  FROM  [{0}].[ORDERS]  T WHERE (T.B2BFLAG3 = 0) AND STATUS=N'88'  
                                                AND  EXISTS (SELECT ORDERKEY FROM [{0}].[CM_TDN_940] T1 WHERE T.ORDERKEY = T1.ORDERKEY )
                                         ", _args.warehous);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = sqlcmd;
-                object result = cmd.ExecuteScalar();
-                return (result==null?string.Empty:result.ToString());
+                    SqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = sqlcmd;
+                    object result = cmd.ExecuteScalar();
+                    conn.Close();
+                    return (result == null ? string.Empty : result.ToString());
 
+                }
+            }
+            catch {
+                return string.Empty;
             }
         }
         private void UpdateFlag(TDN940ProviderParameters _args, string orderkey) {

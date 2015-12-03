@@ -33,7 +33,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
         {
             XDocument order = new XDocument(new XElement("OrderShipment"));
 
-            IEnumerable<XElement> vendorreports = Group(OrderShipment());
+            IEnumerable<XElement> vendorreports = Group(OrderShipment().ToList());
             foreach (XElement report in vendorreports)
             {
 
