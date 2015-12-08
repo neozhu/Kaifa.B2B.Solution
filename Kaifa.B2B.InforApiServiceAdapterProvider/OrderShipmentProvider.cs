@@ -68,7 +68,8 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                 using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                 {
                     conn.Open();
-                    string sqlcmd = string.Format(@"SELECT TOP 1 T.ORDERKEY  FROM  [{0}].[ORDERS]  T WHERE (T.B2BFLAG1=0 OR T.B2BFLAG1 IS NULL) AND STATUS=N'88'  
+                    string sqlcmd = string.Format(@"SELECT TOP 1 T.ORDERKEY  FROM  [{0}].[ORDERS]  T WHERE (T.B2BFLAG1=0 OR T.B2BFLAG1 IS NULL) AND (STATUS=N'88'  
+                                                      OR ( T.STATUS=N'92' AND  NOT  EXISTS (SELECT 1 FROM [{0}].[ORDERDETAIL] T2 WHERE  T2.STATUS<'88' AND T.ORDERKEY=T2.ORDERKEY ) ))
                                                AND  EXISTS (SELECT ORDERKEY FROM [{0}].[ASN_SG3B2] T1 WHERE T.ORDERKEY = T1.ORDERKEY )
                                         ", _args.warehous);
                     SqlCommand cmd = conn.CreateCommand();

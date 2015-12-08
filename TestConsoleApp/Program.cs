@@ -109,13 +109,13 @@ namespace TestConsoleApp
             //string orderkey = GetOrderKey();
             ////IEnumerable<string> orders = GetOrderKeys();
             //UpdateFlag(orders.ToArray());
-            string orderkey = "1000000056";
-            OrderShipmentGenerator g = new OrderShipmentGenerator(orderkey, "c:\\config.xml",
-                 "SZT", "Seagate", "e2open", "wmwhse1",
-                "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
-                "http://kaifa.b2b.schemas/OrderShipment");
-            XDocument asn = g.Generator();
-            Console.WriteLine(asn);
+            //string orderkey = "1000000056";
+            //OrderShipmentGenerator g = new OrderShipmentGenerator(orderkey, "c:\\config.xml",
+            //     "SZT", "Seagate", "e2open", "wmwhse1",
+            //    "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
+            //    "http://kaifa.b2b.schemas/OrderShipment");
+            //XDocument asn = g.Generator();
+            //Console.WriteLine(asn);
             //string[] orderkeys = new string[] { "0000000647" };
             //OrderShipmentPODGenerator g = new OrderShipmentPODGenerator(orderkeys, "c:\\config.xml",
             //    "SZT", "Seagate", "e2open", "wmwhse1",
@@ -124,12 +124,12 @@ namespace TestConsoleApp
             //XDocument asn = g.Generator();
             //Console.WriteLine(asn);
 
-            //InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
-            //        "SZT", "Seagate", "e2open", "wmwhse1",
-            //    "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;",
-            //    "http://kaifa.b2b.schemas/InventoryReport");
-            //XDocument doc = inv.Generator();
-            //Console.WriteLine(doc);
+            InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
+                    "SZT", "Seagate", "e2open", "wmwhse1",
+                "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
+                "http://kaifa.b2b.schemas/InventoryReport");
+            XDocument doc = inv.Generator();
+            Console.WriteLine(doc);
 
             //DataReader();
             //LoginTest(user);

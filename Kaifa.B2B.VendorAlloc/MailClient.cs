@@ -126,7 +126,7 @@ namespace Kaifa.B2B.VendorAlloc
             //content = "";
             content = TemplateHTML().Replace("#Email Content#", content);
 
-            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "hzhu@ataway.cn", "jjiang@ataway.cn" },   "Alloc导入通知[" + filename +"]", content, null, true, "", "", "10.2.232.75");
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "XiaoQinWang@kaifa.cn", "JessieZeng@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn" }, "Alloc导入通知[" + filename + "]", content, null, true, "", "", "10.2.232.75");
         }
 
 
@@ -146,7 +146,7 @@ namespace Kaifa.B2B.VendorAlloc
             //content = "";
             content = TemplateHTML().Replace("#Email Content#", content);
 
-            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "hzhu@ataway.cn", "jjiang@ataway.cn" }, "日历导入通知[" + filename + "]", content, null, true, "", "", "10.2.232.75");
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "XiaoQinWang@kaifa.cn", "JessieZeng@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn" }, "日历导入通知[" + filename + "]", content, null, true, "", "", "10.2.232.75");
         }
 
         static private string ConstructHTMLTable(string errormsg, DataTable dt, Func<DataRow, bool> rowHiglithRule)
