@@ -119,7 +119,7 @@ namespace Kaifa.B2B.Mapping {
                     <xsl:value-of select=""$var:v8"" />
                   </ns0:DateTimeStamp>
                 </ns0:manufactureDate>
-                <xsl:variable name=""var:v12"" select=""userCSharp:ProprietaryLotIdentifier($var:v10 , &quot;ONHOLD&quot; , string(s0:LOTTABLE06/text()) , $var:v11 , string($var:v9) , string(s0:LOTTABLE02/text()) , &quot;&quot; , string(s0:LOTTABLE03/text()) , string(s0:HOLDQTY/text()))"" />
+                <xsl:variable name=""var:v12"" select=""userCSharp:ProprietaryLotIdentifier($var:v10 , &quot;ONHOLD&quot; , string(s0:LOTTABLE06/text()) , $var:v11 , string($var:v9) , string(s0:LOTTABLE02/text()) , string(s0:LOTTABLE08/text()) , string(s0:LOTTABLE03/text()) , string(s0:HOLDQTY/text()))"" />
                 <ns0:ProprietaryLotIdentifier>
                   <xsl:value-of select=""$var:v12"" />
                 </ns0:ProprietaryLotIdentifier>

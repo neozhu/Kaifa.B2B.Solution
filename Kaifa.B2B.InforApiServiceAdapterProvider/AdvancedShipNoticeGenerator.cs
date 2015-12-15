@@ -131,6 +131,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 		                                            '' DOREMARK
                                                     FROM [{0}].[RECEIPT] RECEIPT ,[{0}].[RECEIPTDETAIL] RECEIPTDETAIL
                                                     WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY AND QTYRECEIVED > 0 
+                                                    AND  exists ( select sku from [wmwhse1].[SKU] t4 where t4.SKU = [RECEIPTDETAIL].SKU and t4.STORERKEY=[RECEIPTDETAIL].STORERKEY and t4.ITEMCHARACTERISTIC2 is null ) 
                                                     {1}
                                                     GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],RECEIPTDETAIL.SKU,
                                                     RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,RECEIPT.RECEIPTDATE,

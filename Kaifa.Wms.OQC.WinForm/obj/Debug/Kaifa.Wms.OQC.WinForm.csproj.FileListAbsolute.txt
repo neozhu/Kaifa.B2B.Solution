@@ -1,0 +1,10 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\Kaifa.Wms.OQC.WinForm.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\Kaifa.Wms.OQC.WinForm.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\ResolveAssemblyReference.cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.oqcForm.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.Properties.Resources.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.csproj.GenerateResource.Cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\Kaifa.Wms.OQC.WinForm.exe.config
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.g.resources
