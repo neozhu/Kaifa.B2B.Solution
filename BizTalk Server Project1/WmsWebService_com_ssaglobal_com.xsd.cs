@@ -3,6 +3,10 @@ namespace BizTalk_Server_Project1 {
     
     
     [SchemaType(SchemaTypeEnum.Document)]
+    [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in0", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in0' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
+    [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in1", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in1' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
+    [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in2", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in2' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
+    [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in3", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in3' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
     [System.SerializableAttribute()]
     [SchemaRoots(new string[] {@"callBackEnd", @"callBackEndResponse"})]
     public sealed class WmsWebService_com_ssaglobal_com : Microsoft.XLANGs.BaseTypes.SchemaBase {
@@ -14,6 +18,16 @@ namespace BizTalk_Server_Project1 {
         private const string _strSchema = @"<?xml version=""1.0"" encoding=""utf-16""?>
 <xs:schema xmlns:tns=""http://com.ssaglobal.com"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" attributeFormDefault=""qualified"" elementFormDefault=""qualified"" targetNamespace=""http://com.ssaglobal.com"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
   <xs:element name=""callBackEnd"">
+    <xs:annotation>
+      <xs:appinfo>
+        <b:properties>
+          <b:property distinguished=""true"" xpath=""/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in0' and namespace-uri()='http://com.ssaglobal.com']"" />
+          <b:property distinguished=""true"" xpath=""/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in1' and namespace-uri()='http://com.ssaglobal.com']"" />
+          <b:property distinguished=""true"" xpath=""/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in2' and namespace-uri()='http://com.ssaglobal.com']"" />
+          <b:property distinguished=""true"" xpath=""/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in3' and namespace-uri()='http://com.ssaglobal.com']"" />
+        </b:properties>
+      </xs:appinfo>
+    </xs:annotation>
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs=""1"" maxOccurs=""1"" name=""in0"" nillable=""true"" type=""xs:string"" />
@@ -60,6 +74,10 @@ namespace BizTalk_Server_Project1 {
         }
         
         [Schema(@"http://com.ssaglobal.com",@"callBackEnd")]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in0", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in0' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in1", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in1' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in2", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in2' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "in3", XPath = @"/*[local-name()='callBackEnd' and namespace-uri()='http://com.ssaglobal.com']/*[local-name()='in3' and namespace-uri()='http://com.ssaglobal.com']", XsdType = @"string")]
         [System.SerializableAttribute()]
         [SchemaRoots(new string[] {@"callBackEnd"})]
         public sealed class callBackEnd : Microsoft.XLANGs.BaseTypes.SchemaBase {

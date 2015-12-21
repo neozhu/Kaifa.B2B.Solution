@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(oqcForm));
             this.label1 = new System.Windows.Forms.Label();
             this.orderkeytxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,55 +69,64 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "出货单号";
             // 
             // orderkeytxt
             // 
-            this.orderkeytxt.Location = new System.Drawing.Point(74, 10);
+            this.orderkeytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderkeytxt.Location = new System.Drawing.Point(92, 10);
             this.orderkeytxt.MaxLength = 10;
             this.orderkeytxt.Name = "orderkeytxt";
-            this.orderkeytxt.Size = new System.Drawing.Size(248, 20);
+            this.orderkeytxt.Size = new System.Drawing.Size(248, 26);
             this.orderkeytxt.TabIndex = 1;
             this.orderkeytxt.TextChanged += new System.EventHandler(this.orderkeytxt_TextChanged);
             this.orderkeytxt.Leave += new System.EventHandler(this.orderkeytxt_Leave);
+            this.orderkeytxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderkeytxt_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(328, 13);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(343, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "落放ID";
             // 
             // dropidtxt
             // 
-            this.dropidtxt.Location = new System.Drawing.Point(376, 10);
+            this.dropidtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dropidtxt.Location = new System.Drawing.Point(407, 10);
             this.dropidtxt.MaxLength = 14;
             this.dropidtxt.Name = "dropidtxt";
-            this.dropidtxt.Size = new System.Drawing.Size(248, 20);
-            this.dropidtxt.TabIndex = 3;
+            this.dropidtxt.Size = new System.Drawing.Size(248, 26);
+            this.dropidtxt.TabIndex = 2;
             this.dropidtxt.Leave += new System.EventHandler(this.dropidtxt_Leave);
+            this.dropidtxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderkeytxt_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(640, 13);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(661, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "订单状态";
             // 
             // statustxt
             // 
-            this.statustxt.Location = new System.Drawing.Point(701, 10);
+            this.statustxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statustxt.Location = new System.Drawing.Point(740, 13);
             this.statustxt.Name = "statustxt";
-            this.statustxt.Size = new System.Drawing.Size(92, 20);
-            this.statustxt.TabIndex = 5;
+            this.statustxt.ReadOnly = true;
+            this.statustxt.Size = new System.Drawing.Size(92, 26);
+            this.statustxt.TabIndex = 50;
             // 
             // subtotalpickedqtytxt
             // 
@@ -125,7 +135,7 @@
             this.subtotalpickedqtytxt.Location = new System.Drawing.Point(450, 399);
             this.subtotalpickedqtytxt.Name = "subtotalpickedqtytxt";
             this.subtotalpickedqtytxt.Size = new System.Drawing.Size(190, 38);
-            this.subtotalpickedqtytxt.TabIndex = 9;
+            this.subtotalpickedqtytxt.TabIndex = 90;
             this.subtotalpickedqtytxt.Text = "0";
             this.subtotalpickedqtytxt.TextChanged += new System.EventHandler(this.subpickedqtytxt_TextChanged);
             // 
@@ -147,7 +157,7 @@
             this.subtotalcheckqtytxt.Location = new System.Drawing.Point(17, 399);
             this.subtotalcheckqtytxt.Name = "subtotalcheckqtytxt";
             this.subtotalcheckqtytxt.Size = new System.Drawing.Size(190, 38);
-            this.subtotalcheckqtytxt.TabIndex = 11;
+            this.subtotalcheckqtytxt.TabIndex = 110;
             this.subtotalcheckqtytxt.Text = "0";
             // 
             // label6
@@ -168,7 +178,7 @@
             this.subtotaldiffqtytxt.Location = new System.Drawing.Point(685, 399);
             this.subtotaldiffqtytxt.Name = "subtotaldiffqtytxt";
             this.subtotaldiffqtytxt.Size = new System.Drawing.Size(190, 38);
-            this.subtotaldiffqtytxt.TabIndex = 13;
+            this.subtotaldiffqtytxt.TabIndex = 130;
             this.subtotaldiffqtytxt.Text = "0";
             // 
             // label7
@@ -193,12 +203,17 @@
             // 
             // stxqrcode
             // 
-            this.stxqrcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stxqrcode.BackColor = System.Drawing.Color.White;
+            this.stxqrcode.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stxqrcode.Location = new System.Drawing.Point(92, 106);
+            this.stxqrcode.Multiline = true;
             this.stxqrcode.Name = "stxqrcode";
-            this.stxqrcode.Size = new System.Drawing.Size(701, 26);
-            this.stxqrcode.TabIndex = 15;
+            this.stxqrcode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.stxqrcode.Size = new System.Drawing.Size(740, 31);
+            this.stxqrcode.TabIndex = 3;
+            this.stxqrcode.TextChanged += new System.EventHandler(this.stxqrcode_TextChanged);
             this.stxqrcode.Leave += new System.EventHandler(this.stxqrcode_Leave);
+            this.stxqrcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stxqrcode_KeyPress);
             // 
             // openqtytxt
             // 
@@ -206,7 +221,7 @@
             this.openqtytxt.Location = new System.Drawing.Point(15, 59);
             this.openqtytxt.Name = "openqtytxt";
             this.openqtytxt.Size = new System.Drawing.Size(190, 38);
-            this.openqtytxt.TabIndex = 17;
+            this.openqtytxt.TabIndex = 170;
             this.openqtytxt.Text = "0";
             // 
             // label9
@@ -221,16 +236,16 @@
             // pickedqty
             // 
             this.pickedqty.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickedqty.Location = new System.Drawing.Point(211, 59);
+            this.pickedqty.Location = new System.Drawing.Point(231, 59);
             this.pickedqty.Name = "pickedqty";
             this.pickedqty.Size = new System.Drawing.Size(190, 38);
-            this.pickedqty.TabIndex = 19;
+            this.pickedqty.TabIndex = 190;
             this.pickedqty.Text = "0";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(212, 43);
+            this.label10.Location = new System.Drawing.Point(232, 43);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 18;
@@ -240,16 +255,16 @@
             // 
             this.checkedqtytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedqtytxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.checkedqtytxt.Location = new System.Drawing.Point(407, 59);
+            this.checkedqtytxt.Location = new System.Drawing.Point(442, 59);
             this.checkedqtytxt.Name = "checkedqtytxt";
             this.checkedqtytxt.Size = new System.Drawing.Size(190, 38);
-            this.checkedqtytxt.TabIndex = 21;
+            this.checkedqtytxt.TabIndex = 210;
             this.checkedqtytxt.Text = "0";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(408, 43);
+            this.label11.Location = new System.Drawing.Point(443, 43);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 20;
@@ -271,36 +286,36 @@
             this.pickdetailgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pickdetailgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pickdetailgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.pickdetailgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pickdetailgrid.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pickdetailgrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.pickdetailgrid.Location = new System.Drawing.Point(442, 155);
             this.pickdetailgrid.Name = "pickdetailgrid";
             this.pickdetailgrid.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pickdetailgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pickdetailgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.pickdetailgrid.Size = new System.Drawing.Size(604, 224);
-            this.pickdetailgrid.TabIndex = 23;
+            this.pickdetailgrid.TabIndex = 230;
             // 
             // label13
             // 
@@ -317,51 +332,51 @@
             this.checkrecordgrid.AllowUserToDeleteRows = false;
             this.checkrecordgrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkrecordgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkrecordgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.checkrecordgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkrecordgrid.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkrecordgrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.checkrecordgrid.Location = new System.Drawing.Point(12, 155);
             this.checkrecordgrid.Name = "checkrecordgrid";
             this.checkrecordgrid.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkrecordgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkrecordgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.checkrecordgrid.Size = new System.Drawing.Size(409, 224);
-            this.checkrecordgrid.TabIndex = 25;
+            this.checkrecordgrid.TabIndex = 250;
             // 
             // diffqtytxt
             // 
             this.diffqtytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.diffqtytxt.ForeColor = System.Drawing.Color.Red;
-            this.diffqtytxt.Location = new System.Drawing.Point(603, 59);
+            this.diffqtytxt.Location = new System.Drawing.Point(642, 59);
             this.diffqtytxt.Name = "diffqtytxt";
             this.diffqtytxt.Size = new System.Drawing.Size(190, 38);
-            this.diffqtytxt.TabIndex = 27;
+            this.diffqtytxt.TabIndex = 270;
             this.diffqtytxt.Text = "0";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(604, 43);
+            this.label14.Location = new System.Drawing.Point(643, 43);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 13);
             this.label14.TabIndex = 26;
@@ -375,7 +390,7 @@
             this.diffck.Location = new System.Drawing.Point(659, 138);
             this.diffck.Name = "diffck";
             this.diffck.Size = new System.Drawing.Size(134, 17);
-            this.diffck.TabIndex = 28;
+            this.diffck.TabIndex = 280;
             this.diffck.Text = "只显示有差异的记录";
             this.diffck.UseVisualStyleBackColor = true;
             this.diffck.CheckedChanged += new System.EventHandler(this.diffck_CheckedChanged);
@@ -385,6 +400,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 440);
+            this.Controls.Add(this.stxqrcode);
             this.Controls.Add(this.diffqtytxt);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.checkrecordgrid);
@@ -397,7 +413,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.openqtytxt);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.stxqrcode);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.subtotaldiffqtytxt);
             this.Controls.Add(this.label7);
@@ -412,6 +427,7 @@
             this.Controls.Add(this.orderkeytxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.diffck);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "oqcForm";
             this.Text = "出货复检程序";
             ((System.ComponentModel.ISupportInitialize)(this.pickdetailgrid)).EndInit();

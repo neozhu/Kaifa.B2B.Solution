@@ -816,15 +816,15 @@ namespace Kaifa.B2B.Orchestration.HUB
                 HUB_Orchestration __svc__ = (HUB_Orchestration)_service;
                 __HUB_Orchestration_root_0 __ctx0__ = (__HUB_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.SendPip4B2Message != null)
-                {
-                    __svc__.SendPip4B2Message.Close(this, null);
-                    __svc__.SendPip4B2Message = null;
-                }
                 if (__svc__.ReceiveReceiptMessage != null)
                 {
                     __svc__.ReceiveReceiptMessage.Close(this, null);
                     __svc__.ReceiveReceiptMessage = null;
+                }
+                if (__svc__.SendPip4B2Message != null)
+                {
+                    __svc__.SendPip4B2Message.Close(this, null);
+                    __svc__.SendPip4B2Message = null;
                 }
                 base.Finally();
             }
@@ -867,45 +867,45 @@ namespace Kaifa.B2B.Orchestration.HUB
                 __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierForSTX = null;
-                if (__ctx1__ != null && __ctx1__.__AdvancedShipNoticeMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__AdvancedShipNoticeMessage);
-                    __ctx1__.__AdvancedShipNoticeMessage = null;
-                }
+                    __ctx1__.__CountStr = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF1 = null;
+                    __ctx1__.__strPipMessageFore2open = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF = null;
+                    __ctx1__.__strPipMessageForSTX = null;
                 if (__ctx1__ != null)
                     __ctx1__.__SCHEDULELocation = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__CountStr = null;
+                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierFore2open = null;
                 if (__ctx1__ != null && __ctx1__.__VendorReciptReportMessage != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__VendorReciptReportMessage);
                     __ctx1__.__VendorReciptReportMessage = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null && __ctx1__.__Pip4B2MessageForE2Open != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__Pip4B2MessageForE2Open);
+                    __ctx1__.__Pip4B2MessageForE2Open = null;
+                }
+                if (__ctx1__ != null && __ctx1__.__AdvancedShipNoticeMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__AdvancedShipNoticeMessage);
+                    __ctx1__.__AdvancedShipNoticeMessage = null;
+                }
                 if (__ctx1__ != null && __ctx1__.__Pip4B2MessageForSTX != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__Pip4B2MessageForSTX);
                     __ctx1__.__Pip4B2MessageForSTX = null;
                 }
                 if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierFore2open = null;
-                if (__ctx1__ != null && __ctx1__.__Pip4B2MessageForE2Open != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__Pip4B2MessageForE2Open);
-                    __ctx1__.__Pip4B2MessageForE2Open = null;
-                }
+                    __ctx1__.__SubmitRNIF1 = null;
                 base.Finally();
             }
 
@@ -1107,8 +1107,8 @@ namespace Kaifa.B2B.Orchestration.HUB
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
             __HUB_Orchestration_root_0 __ctx0__ = (__HUB_Orchestration_root_0)_stateMgrs[0];
+            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1154,8 +1154,8 @@ namespace Kaifa.B2B.Orchestration.HUB
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
             __HUB_Orchestration_root_0 __ctx0__ = (__HUB_Orchestration_root_0)_stateMgrs[0];
+            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1477,8 +1477,8 @@ namespace Kaifa.B2B.Orchestration.HUB
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[2];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
             __HUB_Orchestration_root_0 __ctx0__ = (__HUB_Orchestration_root_0)_stateMgrs[0];
+            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1601,8 +1601,8 @@ namespace Kaifa.B2B.Orchestration.HUB
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[3];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
             __HUB_Orchestration_root_0 __ctx0__ = (__HUB_Orchestration_root_0)_stateMgrs[0];
+            __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {

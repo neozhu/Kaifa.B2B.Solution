@@ -64,13 +64,13 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                string sqltxt = string.Format(@"SELECT SERIALKEY ,STORERKEY,SKU,CHECKQTY,DROPID ,ORDERKEY FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ORDER BY SERIALKEY", orderkey);
+                string sqltxt = string.Format(@"SELECT SERIALKEY ,STORERKEY,SKU,CHECKQTY,DROPID ,ORDERKEY FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ", orderkey);
                 if (!string.IsNullOrEmpty(dropid))
                 {
-                    sqltxt += string.Format(" AND DROPID='{0}'", dropid);
+                    sqltxt += string.Format(" AND DROPID='{0}' ", dropid);
                 }
                
-                cmd.CommandText = sqltxt;
+                cmd.CommandText = sqltxt + " ORDER BY SERIALKEY ";
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -130,7 +130,18 @@ namespace Kaifa.Wms.OQC.WinForm
                 return Convert.ToBoolean(result);
             }
         }
-
+        public bool checkingOrderKey(string orderkey)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = string.Format(@"select count(*) from [wmwhse1].pickdetail where orderkey='{0}'    ", orderkey);
+                object result = cmd.ExecuteScalar();
+                conn.Close();
+                return Convert.ToBoolean(result);
+            }
+        }
         public bool checkingDropId(string orderkey, string dropid)
         {
             using (SqlConnection conn = new SqlConnection(_connectionstring))

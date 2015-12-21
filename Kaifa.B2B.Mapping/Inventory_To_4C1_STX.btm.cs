@@ -233,7 +233,11 @@ public string ProprietaryDocumentIdentifier(string Site,string msgType,string su
                 }
                 if (onholdRemark.ToUpper().Trim() == ""RTV"")
                 {
-                    return string.Format(""{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}"", Site.Substring(0, 2), InventoryType + "" "" + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, """", SeagatePO);
+                    //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Tracecode as special remarks>
+                    //*<Seagate PO#> *<RTV/rtv number>
+                    //Example: SZ/ONHOLD SHIP/AUG252015*SZT60558*RBCA-00001040*TC123*XYZ*RTV/rmaref-2015-1222
+                    return string.Format(""{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}"", Site.Substring(0, 2), InventoryType + "" "" + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks, """", ""RTV/"" + SeagatePO);
+                    //return string.Format(""{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}"", Site.Substring(0, 2), InventoryType + "" "" + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, """", ""RTV/"" + SeagatePO);
                 }
                 else
                 {

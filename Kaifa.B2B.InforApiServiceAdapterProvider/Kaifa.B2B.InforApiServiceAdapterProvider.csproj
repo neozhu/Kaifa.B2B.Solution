@@ -56,6 +56,7 @@
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="ARGenerator.cs" />
     <Compile Include="ARProvider.cs" />
+    <Compile Include="MailClient.cs" />
     <Compile Include="TDN940Provider.cs" />
     <Compile Include="OrderShipmentPODProvider.cs" />
     <Compile Include="InventoryReportGenerator.cs" />

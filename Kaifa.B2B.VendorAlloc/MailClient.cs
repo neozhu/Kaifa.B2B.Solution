@@ -129,6 +129,25 @@ namespace Kaifa.B2B.VendorAlloc
             SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "XiaoQinWang@kaifa.cn", "JessieZeng@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn" }, "Alloc导入通知[" + filename + "]", content, null, true, "", "", "10.2.232.75");
         }
 
+        static public void SendNoSKUAllocNotificationMail(DataTable messageTable, string filename, string errormsg)
+        {
+            //string orderno = "";
+            //string error = GetError(GetResponseDocument(doc));
+            //if (string.IsNullOrEmpty(error))
+            //{
+            //    error = GetMsg(GetResponseDocument(doc));
+            //    orderno = GetOrderNo(GetResponseDocument(doc));
+            //}
+            string content = ConstructHTMLTable(errormsg, messageTable, (dr) =>
+            {
+                return false;
+            });
+            //content = "";
+            content = TemplateHTML().Replace("#Email Content#", content);
+
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "XiaoQinWang@kaifa.cn", "JessieZeng@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn" }, "Alloc导入失败SKU没有主数据[" + filename + "]", content, null, true, "", "", "10.2.232.75");
+        }
+
 
         static public void SendCalendarNotificationMail(DataTable messageTable, string filename, string errormsg)
         {

@@ -910,15 +910,15 @@ namespace Kaifa.B2B.SAP.AR
                 ZFI_CREATE_AR_FOR_WMSClient __svc__ = (ZFI_CREATE_AR_FOR_WMSClient)_service;
                 __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.ReceiveWMSARReport != null)
-                {
-                    __svc__.ReceiveWMSARReport.Close(this, null);
-                    __svc__.ReceiveWMSARReport = null;
-                }
                 if (__svc__.SaveInvokeResult != null)
                 {
                     __svc__.SaveInvokeResult.Close(this, null);
                     __svc__.SaveInvokeResult = null;
+                }
+                if (__svc__.ReceiveWMSARReport != null)
+                {
+                    __svc__.ReceiveWMSARReport.Close(this, null);
+                    __svc__.ReceiveWMSARReport = null;
                 }
                 if (__svc__.InvokeSAPWebService != null)
                 {
@@ -964,41 +964,41 @@ namespace Kaifa.B2B.SAP.AR
             public override void Finally()
             {
                 ZFI_CREATE_AR_FOR_WMSClient __svc__ = (ZFI_CREATE_AR_FOR_WMSClient)_service;
-                __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)(__svc__._stateMgrs[0]);
                 __ZFI_CREATE_AR_FOR_WMSClient_1 __ctx1__ = (__ZFI_CREATE_AR_FOR_WMSClient_1)(__svc__._stateMgrs[1]);
+                __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)(__svc__._stateMgrs[0]);
 
-                if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
-                {
-                    __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
-                    __ctx0__.__subWrapper1 = null;
-                }
+                if (__ctx1__ != null)
+                    __ctx1__.__batchid = null;
                 if (__ctx1__ != null)
                     __ctx1__.__sapbkid = null;
                 if (__ctx1__ != null)
                     __ctx1__.__sapmsg = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__CountStr = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__batchid = null;
-                if (__ctx1__ != null && __ctx1__.__CustARReport_Message != null)
+                if (__ctx1__ != null && __ctx1__.__ARResponse != null)
                 {
-                    __ctx1__.UnrefMessage(__ctx1__.__CustARReport_Message);
-                    __ctx1__.__CustARReport_Message = null;
+                    __ctx1__.UnrefMessage(__ctx1__.__ARResponse);
+                    __ctx1__.__ARResponse = null;
                 }
                 if (__ctx1__ != null && __ctx1__.__ARReport_Message != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__ARReport_Message);
                     __ctx1__.__ARReport_Message = null;
                 }
+                if (__ctx1__ != null && __ctx1__.__CustARReport_Message != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CustARReport_Message);
+                    __ctx1__.__CustARReport_Message = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__CountStr = null;
                 if (__ctx1__ != null && __ctx1__.__ARRequest != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__ARRequest);
                     __ctx1__.__ARRequest = null;
                 }
-                if (__ctx1__ != null && __ctx1__.__ARResponse != null)
+                if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
                 {
-                    __ctx1__.UnrefMessage(__ctx1__.__ARResponse);
-                    __ctx1__.__ARResponse = null;
+                    __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
+                    __ctx0__.__subWrapper1 = null;
                 }
                 base.Finally();
             }
@@ -1188,8 +1188,8 @@ namespace Kaifa.B2B.SAP.AR
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)_stateMgrs[0];
             __ZFI_CREATE_AR_FOR_WMSClient_1 __ctx1__ = (__ZFI_CREATE_AR_FOR_WMSClient_1)_stateMgrs[1];
+            __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1236,8 +1236,8 @@ namespace Kaifa.B2B.SAP.AR
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)_stateMgrs[0];
             __ZFI_CREATE_AR_FOR_WMSClient_1 __ctx1__ = (__ZFI_CREATE_AR_FOR_WMSClient_1)_stateMgrs[1];
+            __ZFI_CREATE_AR_FOR_WMSClient_root_0 __ctx0__ = (__ZFI_CREATE_AR_FOR_WMSClient_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1644,7 +1644,7 @@ namespace Kaifa.B2B.SAP.AR
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{5BC5F9F3-9105-4685-9C00-8CB3588B6ADF}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{2EA8D72B-F71A-49CC-8951-80990BD39368}"))
         };
 
     }

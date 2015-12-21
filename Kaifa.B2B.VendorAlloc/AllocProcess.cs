@@ -46,6 +46,13 @@ namespace Kaifa.B2B.VendorAlloc
                 stream.Close();
                 if (result.Tables.Count > 0 && result.Tables[0].Rows.Count>0)
                 {
+                    DataTable notsku=VaildateTable(result.Tables[0]);
+                    if (notsku.Rows.Count>0)
+                    {
+                        MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
+
+                        return;
+                    }
                     using (SqlConnection conn = new SqlConnection(_connectionstring))
                     {
                         conn.Open();
@@ -56,11 +63,14 @@ namespace Kaifa.B2B.VendorAlloc
                              dt = result.Tables[0];
                             foreach (DataRow dr in dt.Rows)
                             {
+
                                 object site = dr["Site"];
                                 if (site == null || string.IsNullOrEmpty(site.ToString()))
                                 {
                                     continue;
                                 }
+
+                                
                                 SqlCommand cmd = conn.CreateCommand();
                                 cmd.Transaction = trx;
                                 cmd.CommandText =string.Format(@"INSERT INTO [wmwhse1].[STXALLOCATION]
@@ -135,6 +145,32 @@ namespace Kaifa.B2B.VendorAlloc
 
             }
 
+        }
+        private DataTable VaildateTable(DataTable datatable)
+        {
+            DataTable dt = new DataTable();
+            foreach (DataRow dr in datatable.Rows)
+            {
+                
+                    if (!VaildationSKU(dr["Alternate Part"].ToString(), dr["Vendor Number"].ToString()))
+                                {
+                                    dt.ImportRow(dr);
+                                }
+            }
+            return dt;
+        }
+        private bool VaildationSKU(string sku, string store)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = string.Format("SELECT COUNT(*) FROM [WMWHSE1].SKU WHERE SKU=N'{0}' AND STORERKEY=N'{1}' ", sku,store);
+                object result = cmd.ExecuteScalar();
+
+                conn.Close();
+                return Convert.ToBoolean(result);
+            }
         }
 
 

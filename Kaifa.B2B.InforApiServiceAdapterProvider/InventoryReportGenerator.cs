@@ -61,7 +61,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 
 
         private IEnumerable<XElement> GetReport() {
-            string sqlcommandtext = string.Format("SELECT * FROM [{0}].[INVENTORYREPORT_SGHUB] INVENTORY WHERE LOTTABLE06 <> N'AM' FOR XML AUTO,ELEMENTS", _warehous);
+            string sqlcommandtext = string.Format("SELECT * FROM [{0}].[INVENTORYREPORT_SGHUB] INVENTORY WHERE LOTTABLE06 <> N'AM' ORDER BY STORERKEY,SKU FOR XML AUTO,ELEMENTS", _warehous);
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();

@@ -128,14 +128,14 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 		                                            RECEIPTDETAIL.SKU,RECEIPTDETAIL.LOTTABLE02,
 		                                            RECEIPTDETAIL.LOTTABLE03,DATEADD(hour,8,RECEIPT.RECEIPTDATE) as LOTTABLE04,RECEIPTDETAIL.LOTTABLE06,
 		                                            CAST(SUM(RECEIPTDETAIL.QTYRECEIVED) AS INT) QTYRECEIVED,
-		                                            '' DOREMARK
+		                                            RECEIPTDETAIL.LOTTABLE08 DOREMARK
                                                     FROM [{0}].[RECEIPT] RECEIPT ,[{0}].[RECEIPTDETAIL] RECEIPTDETAIL
                                                     WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY AND QTYRECEIVED > 0 
                                                     AND  exists ( select sku from [wmwhse1].[SKU] t4 where t4.SKU = [RECEIPTDETAIL].SKU and t4.STORERKEY=[RECEIPTDETAIL].STORERKEY and t4.ITEMCHARACTERISTIC2 is null ) 
                                                     {1}
                                                     GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],RECEIPTDETAIL.SKU,
                                                     RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,RECEIPT.RECEIPTDATE,
-                                                    RECEIPTDETAIL.LOTTABLE06 FOR XML AUTO,ELEMENTS", _warehous, whereexpression);
+                                                    RECEIPTDETAIL.LOTTABLE06,RECEIPTDETAIL.LOTTABLE08  FOR XML AUTO,ELEMENTS", _warehous, whereexpression);
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();

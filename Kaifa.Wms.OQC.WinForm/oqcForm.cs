@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq.Expressions;
 
 namespace Kaifa.Wms.OQC.WinForm
 {
@@ -19,7 +20,7 @@ namespace Kaifa.Wms.OQC.WinForm
             InitializeComponent();
             _connectionstring = System.Configuration.ConfigurationSettings.AppSettings["connectionstring"];
             checker = new OQCChecker(_connectionstring);
-
+            //this.stxqrcode.Enabled = false;
         }
 
         private void clean()
@@ -40,9 +41,14 @@ namespace Kaifa.Wms.OQC.WinForm
 
         private void orderkeytxt_Leave(object sender, EventArgs e)
         {
-            if (this.orderkeytxt.Text.Length != 10)
+            if (this.orderkeytxt.Text.Length != 10 && this.orderkeytxt.Text.Length >0)
             {
-                MessageBox.Show("输入的订单号有误！");
+                checker.PlayAlarm();
+                clean();
+            }
+            else if (this.orderkeytxt.Text.Length == 10 && !checker.checkingOrderKey(this.orderkeytxt.Text))
+            {
+                checker.PlayAlarm();
                 clean();
             }
         }
@@ -54,7 +60,8 @@ namespace Kaifa.Wms.OQC.WinForm
                 DataTable dt = checker.GetOrderQty(this.orderkeytxt.Text);
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("找不到订单记录！");
+                    //MessageBox.Show("找不到订单记录！");
+                    checker.PlayAlarm();
                     clean();
                 }
                 else
@@ -108,6 +115,7 @@ namespace Kaifa.Wms.OQC.WinForm
 
 
             checkrecordgrid.Columns[0].HeaderText = "ID";
+            checkrecordgrid.Columns[0].Width = 40;
             checkrecordgrid.Columns[1].HeaderText = "货主";
             checkrecordgrid.Columns[2].HeaderText = "料号";
             checkrecordgrid.Columns[3].HeaderText = "复检数量";
@@ -122,9 +130,9 @@ namespace Kaifa.Wms.OQC.WinForm
 
         private void dropidtxt_Leave(object sender, EventArgs e)
         {
-            if (checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
+            if ((this.dropidtxt.Text.Length>1) && checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
             {
-
+                //this.stxqrcode.Enabled = true;
                 loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
                 loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
                 int subtotalcheckqty = checker.GetSumCheckedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
@@ -133,9 +141,17 @@ namespace Kaifa.Wms.OQC.WinForm
                 this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
                 this.subtotaldiffqtytxt.Text = (subtotalpickqty - subtotalcheckqty).ToString();
             }
-            else
+            else if(this.dropidtxt.Text.Length>1)
             {
                 MessageBox.Show("找到该落放ID，请重新输入");
+                //this.stxqrcode.Enabled = false;
+
+                int subtotalcheckqty = 0;
+                int subtotalpickqty = 0;
+                this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
+                this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
+                this.subtotaldiffqtytxt.Text = (subtotalpickqty - subtotalcheckqty).ToString();
+                checker.PlayAlarm();
             }
 
         }
@@ -148,7 +164,114 @@ namespace Kaifa.Wms.OQC.WinForm
 
         private void stxqrcode_Leave(object sender, EventArgs e)
         {
-            checker.PlayAlarm();
+            //checker.PlayAlarm();
+            //Console.WriteLine(this.stxqrcode.Text);
+            string[] spilt = stxqrcode.Text.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            Console.WriteLine(spilt);
         }
+
+        private void stxqrcode_TextChanged(object sender, EventArgs e)
+        {
+            //if (!checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
+            //{
+            //    MessageBox.Show("输入的出货单号和落放ID不存在，请重新输入！");
+            //    this.orderkeytxt.Focus();
+
+            //    //checker.PlayAlarm();
+
+             
+            //}
+            //else
+            //{
+            //    if(stxqrcode.Text.IndexOf("\r\n\r\n")>0){
+            //        string[] barcodespilt = stxqrcode.Text.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            //        string orderkey = this.orderkeytxt.Text;
+            //        string dropid = this.dropidtxt.Text;
+            //        string sku = barcodespilt[0];
+            //        string qty = barcodespilt[1];
+            //        string ven = barcodespilt[3];
+
+            //        Console.WriteLine(sku + qty + ven);
+            //        //MessageBox.Show(stxqrcode.Text);
+            //        //this.stxqrcode.Text = string.Empty;
+            //    }
+            //    //2703-002775\r\n\r\n15000\r\n\r\n150917NWL\r\nSG\r\n60542\r\n\r\n150917WL\r\n20150917\r\n
+            //    //string[] barcodespilt = stxqrcode.Text.Split(new string[]{"\r\n"}, StringSplitOptions.None);
+            //    //if (barcodespilt.Length == 8)
+            //    //{
+            //    //    MessageBox.Show(barcodespilt[0] + "\\"+ barcodespilt[1]);
+            //    //    this.stxqrcode.Text = string.Empty;
+            //    //    string orderkey = this.orderkeytxt.Text;
+            //    //    string dropid = this.dropidtxt.Text;
+            //    //    string sku = barcodespilt[0];
+            //    //    string qty = barcodespilt[1];
+            //    //    string lot=barcodespilt[2];
+            //    //    string asl = barcodespilt[3];
+            //    //    string ven = barcodespilt[4];
+            //    //    string trace = barcodespilt[5];
+            //    //    string dcode = barcodespilt[6];
+
+
+            //    //}
+            //    //else if (barcodespilt.Length>8)
+            //    //{
+            //    //    checker.PlayAlarm();
+            //    //    this.stxqrcode.Text = string.Empty;
+            //    //    this.stxqrcode.Focus();
+            //    //}
+            //}
+
+            
+        }
+
+        private void orderkeytxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                SendKeys.Send("{Tab}");
+                e.Handled = false;
+            }
+        }
+
+        private void stxqrcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+
+                string[] barcodes =  this.stxqrcode.Text.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                if (barcodes.Length >= 7)
+                {
+                    string orderkey = this.orderkeytxt.Text;
+                    string dropid = this.dropidtxt.Text;
+                    string sku = barcodes[0];
+                    string qty = barcodes[1];
+                    string ven = barcodes[3];
+
+                    MessageBox.Show(sku + "\\" + qty + "\\" + ven);
+
+                    //this.stxqrcode.Text = string.Empty;
+                }
+                
+            }
+        }
+
+        private void CleanTextBox()
+        {
+            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ParameterizedThreadStart(doCleanEmpty));
+            thread.Start();
+        }
+        private void doCleanEmpty(object obj)
+        {
+            System.Threading.Thread.Sleep(500);
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.stxqrcode.Text = string.Empty; // runs on UI thread
+            });
+        }
+
+        
+    
     }
+
+    
 }

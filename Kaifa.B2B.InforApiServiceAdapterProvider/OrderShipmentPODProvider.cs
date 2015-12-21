@@ -57,6 +57,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             }
             else
             {
+                MailClient.SendNoPODNotificationMail(_args.toAddresses);
                 return null;
             }
         }
@@ -114,6 +115,9 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
         public string connectionstring { get; set; }
         [Description("Xml targetNamespace"), Category("Config")]
         public string tagnamespace { get; set; }
+
+        [Description("To Mail Addresses"), Category("Config")]
+        public string toAddresses { get; set; }
     }
 
 }

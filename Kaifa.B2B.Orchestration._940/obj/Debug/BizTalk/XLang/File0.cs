@@ -792,15 +792,15 @@ namespace Kaifa.B2B.Orchestration.CM940
                 WmsWebServiceClient __svc__ = (WmsWebServiceClient)_service;
                 __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.InvokeInforWebService != null)
-                {
-                    __svc__.InvokeInforWebService.Close(this, null);
-                    __svc__.InvokeInforWebService = null;
-                }
                 if (__svc__.Receive940FlatFile != null)
                 {
                     __svc__.Receive940FlatFile.Close(this, null);
                     __svc__.Receive940FlatFile = null;
+                }
+                if (__svc__.InvokeInforWebService != null)
+                {
+                    __svc__.InvokeInforWebService.Close(this, null);
+                    __svc__.InvokeInforWebService = null;
                 }
                 base.Finally();
             }
@@ -844,41 +844,41 @@ namespace Kaifa.B2B.Orchestration.CM940
                 __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
                 __WmsWebServiceClient_1 __ctx1__ = (__WmsWebServiceClient_1)(__svc__._stateMgrs[1]);
 
-                if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
+                if (__ctx1__ != null)
+                    __ctx1__.__strType = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pulllistNo = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__Reqdate = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__siteCode = null;
+                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
                 {
-                    __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
-                    __ctx0__.__subWrapper1 = null;
+                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
+                    __ctx1__.__ShipmentOrder = null;
+                }
+                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
+                    __ctx1__.__CallServiceRequest = null;
                 }
                 if (__ctx1__ != null && __ctx1__.__CM940Message != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
                     __ctx1__.__CM940Message = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__Reqdate = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__siteCode = null;
-                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
-                    __ctx1__.__CallServiceRequest = null;
-                }
-                if (__ctx1__ != null)
-                    __ctx1__.__pulllistNo = null;
                 if (__ctx1__ != null && __ctx1__.__CallServiceReponse != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceReponse);
                     __ctx1__.__CallServiceReponse = null;
                 }
-                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
-                    __ctx1__.__ShipmentOrder = null;
-                }
                 if (__ctx1__ != null)
                     __ctx1__.__strContent = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strType = null;
+                if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
+                {
+                    __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
+                    __ctx0__.__subWrapper1 = null;
+                }
                 base.Finally();
             }
 
@@ -1407,7 +1407,7 @@ namespace Kaifa.B2B.Orchestration.CM940
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{D0B14022-407C-4C5E-A89D-A97CC57CB5AD}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{EFC96293-43B2-4E02-89BB-F9857CB24E6A}"))
         };
 
     }

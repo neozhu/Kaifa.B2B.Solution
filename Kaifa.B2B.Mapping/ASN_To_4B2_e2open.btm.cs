@@ -191,10 +191,16 @@ public string StringTrimLeft(string str)
 
 
 //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
+
+        //<Site>*<Storer Key>*<Supplier DO#>*< Trace Code as special remark>*<Seagate PO#>*<RTV/Ref Number, if applicable>
+        //Examples:
+        //SZ*SZT12345*U276D11-MC0*TC123*PO1234*
+        //SZ*SZT60558*RBCA-00001040*TC123*PO#123*RTV/rmaref-2015-1222
         public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
         {
-            if (ordertype.Trim().ToUpper()==""20"")
-                return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*{5}"", site.Substring(0, 2), storerkey, suppliterDO, ""RTV"","""" ,seagatePO);
+            if (ordertype.Trim().ToUpper() == ""20"")
+                //return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*{5}"", site.Substring(0, 2), storerkey, suppliterDO, ""RTV"", """", seagatePO);
+                return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*{5}"", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, """", ""RTV/"" + seagatePO);
             else
                 return string.Format(""{0}*SZT{1}*{2}*{3}*{4}*"", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
         }

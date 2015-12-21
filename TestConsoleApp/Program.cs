@@ -76,8 +76,8 @@ namespace TestConsoleApp
 
             //CalendarProcess p = new CalendarProcess("C:\\希捷日历导入模板.xlsx", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
             //p.Read();
-            //AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_quarter20151002000231.xlsx", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
-            //p.Read();
+            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_quarter20151002000231.xlsx", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
+            p.Read();
             //string a = "STZ".Substring(0, 2);
             //string connstring = "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False";
             //string warehouse = "wmwhse1";
@@ -165,6 +165,20 @@ namespace TestConsoleApp
             //asn();
         }
 
+        //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
+
+        //<Site>*<Storer Key>*<Supplier DO#>*< Trace Code as special remark>*<Seagate PO#>*<RTV/Ref Number, if applicable>
+        //Examples:
+        //SZ*SZT12345*U276D11-MC0*TC123*PO1234*
+        //SZ*SZT60558*RBCA-00001040*TC123*PO#123*RTV/rmaref-2015-1222
+        public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
+        {
+            if (ordertype.Trim().ToUpper() == "20")
+                //return string.Format("{0}*SZT{1}*{2}*{3}*{4}*{5}", site.Substring(0, 2), storerkey, suppliterDO, "RTV", "", seagatePO);
+                return string.Format("{0}*SZT{1}*{2}*{3}*{4}*{5}", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, "", "RTV/" + seagatePO);
+            else
+                return string.Format("{0}*SZT{1}*{2}*{3}*{4}*", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
+        }
 
         //For ON Hold Qty
         //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
@@ -184,7 +198,12 @@ namespace TestConsoleApp
                 }
                 if (onholdRemark.ToUpper().Trim() == "RTV")
                 {
-                    return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, "", SeagatePO);
+                    //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Tracecode as special remarks>
+                    //*<Seagate PO#> *<RTV/rtv number>
+                    //Example: SZ/ONHOLD SHIP/AUG252015*SZT60558*RBCA-00001040*TC123*XYZ*RTV/rmaref-2015-1222
+                    return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks, "", "RTV/" + SeagatePO);
+                    //return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, "", "RTV/" + SeagatePO);
+
                 }
                 else
                 {
@@ -269,43 +288,43 @@ namespace TestConsoleApp
         //For ON Hold Qty
         //<Site>/<InventoryType>/<Original Hub Receipt Date>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#> *<RMA/RTV Number>
         //<Site>*<Storer Key>*<Supplier DO#>*<Special Remarks from Supplier DO>*<Seagate PO#>
-        public string ProprietaryLotIdentifier(string Site, string InventoryType,
-             string onholdRemark,
-             string ReceiptDate, string StorerKey, string SupplierDO,
-             string SpecialRemarks, string SeagatePO, string OnHoldQty)
-        {
+        //public string ProprietaryLotIdentifier(string Site, string InventoryType,
+        //     string onholdRemark,
+        //     string ReceiptDate, string StorerKey, string SupplierDO,
+        //     string SpecialRemarks, string SeagatePO, string OnHoldQty)
+        //{
 
-            string receivedate = "";
-            if (decimal.Parse(OnHoldQty) > 0)
-            {
-                if (!string.IsNullOrEmpty(ReceiptDate))
-                {
-                    receivedate = DateTime.Parse(ReceiptDate).ToString("MMMddyyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
-                }
-                if (onholdRemark.ToUpper().Trim() == "RTV")
-                {
-                    return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, "", SeagatePO);
-                }
-                else
-                {
-                    return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks,  SeagatePO,"");
-                }
-            }
-            else
-            {
-                return string.Format("{0}*{1}*{2}*{3}*{4}", Site.Substring(0, 2), StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
-            }
-        }
+        //    string receivedate = "";
+        //    if (decimal.Parse(OnHoldQty) > 0)
+        //    {
+        //        if (!string.IsNullOrEmpty(ReceiptDate))
+        //        {
+        //            receivedate = DateTime.Parse(ReceiptDate).ToString("MMMddyyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+        //        }
+        //        if (onholdRemark.ToUpper().Trim() == "RTV")
+        //        {
+        //            return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, onholdRemark, "", SeagatePO);
+        //        }
+        //        else
+        //        {
+        //            return string.Format("{0}/{1}/{2}*{3}*{4}*{5}*{6}*{7}", Site.Substring(0, 2), InventoryType + " " + onholdRemark, receivedate, StorerKey, SupplierDO, SpecialRemarks,  SeagatePO,"");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return string.Format("{0}*{1}*{2}*{3}*{4}", Site.Substring(0, 2), StorerKey, SupplierDO, SpecialRemarks, SeagatePO);
+        //    }
+        //}
 
 
-        //[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
-        public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
-        {
-            if (ordertype.Trim().ToUpper()=="20")
-                return string.Format("{0}*SZT{1}*{2}*{3}*{4}*{5}", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks,"" ,seagatePO);
-            else
-                return string.Format("{0}*SZT{1}*{2}*{3}*{4}*", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
-        }
+        ////[Site]*[Storer Key]*[Supplier DO#]*[Special Remarks from Supplier DO]*[Seagate PO#] e.g. TH*TTKABC12345*U276D11-MC0*15P/1440*PO1234
+        //public string SeagateProprietaryLocator(string site, string storerkey, string suppliterDO, string specialRemarks, string seagatePO, string ordertype)
+        //{
+        //    if (ordertype.Trim().ToUpper()=="20")
+        //        return string.Format("{0}*SZT{1}*{2}*{3}*{4}*{5}", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks,"" ,seagatePO);
+        //    else
+        //        return string.Format("{0}*SZT{1}*{2}*{3}*{4}*", site.Substring(0, 2), storerkey, suppliterDO, specialRemarks, seagatePO);
+        //}
 
         public string getrequestime(string datetime) {
             //2015-09-22T01:10:00;
