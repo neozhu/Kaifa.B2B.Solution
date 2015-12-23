@@ -25,6 +25,7 @@ namespace Kaifa.Dashboards.Repository
 
                 while (await reader.ReadAsync())
                 {
+                    
                     if (reader.GetString(0) == "0")
                     {
                         ordercount.New += reader.GetInt32(1);
