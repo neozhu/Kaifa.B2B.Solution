@@ -66,7 +66,7 @@
         <om:Element Type="ServiceDeclaration" OID="858e27df-cd07-4807-982b-999c975c55b0" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="67.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
-            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="TypeModifier" Value="Public" />
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="TDN_Orchestration" />
             <om:Property Name="Signal" Value="False" />
@@ -260,7 +260,7 @@ module Kaifa.B2B.Orchestration.TDN
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
-    internal service TDN_Orchestration
+    public service TDN_Orchestration
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port implements PortType_ReceiveTDN940 ReceiveTDN940;

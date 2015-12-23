@@ -185,14 +185,14 @@ namespace Kaifa.B2B.Orchestration.TDN
         }
     )]
     [Microsoft.XLANGs.BaseTypes.ServiceAttribute(
-        Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal,
+        Microsoft.XLANGs.BaseTypes.EXLangSAccess.ePublic,
         Microsoft.XLANGs.BaseTypes.EXLangSServiceInfo.eNone
     )]
     [System.SerializableAttribute]
     [Microsoft.XLANGs.BaseTypes.BPELExportableAttribute(false)]
-    sealed internal class TDN_Orchestration : Microsoft.BizTalk.XLANGs.BTXEngine.BTXService
+    sealed public class TDN_Orchestration : Microsoft.BizTalk.XLANGs.BTXEngine.BTXService
     {
-        public static readonly Microsoft.XLANGs.BaseTypes.EXLangSAccess __access = Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal;
+        public static readonly Microsoft.XLANGs.BaseTypes.EXLangSAccess __access = Microsoft.XLANGs.BaseTypes.EXLangSAccess.ePublic;
         public static readonly bool __execable = false;
         [Microsoft.XLANGs.BaseTypes.CallCompensationAttribute(
             Microsoft.XLANGs.BaseTypes.EXLangSCallCompensationInfo.eNone,
@@ -313,7 +313,7 @@ namespace Kaifa.B2B.Orchestration.TDN
   </ProcessFlow><Metadata>
 
 <TrkMetadata>
-<ActionName>'TDN_Orchestration'</ActionName><IsAtomic>0</IsAtomic><Line>263</Line><Position>14</Position><ShapeID>'e211a116-cb8b-44e7-a052-0de295aa0001'</ShapeID>
+<ActionName>'TDN_Orchestration'</ActionName><IsAtomic>0</IsAtomic><Line>263</Line><Position>12</Position><ShapeID>'e211a116-cb8b-44e7-a052-0de295aa0001'</ShapeID>
 </TrkMetadata>
 
 <TrkMetadata>
@@ -422,7 +422,7 @@ namespace Kaifa.B2B.Orchestration.TDN
         <om:Element Type='ServiceDeclaration' OID='858e27df-cd07-4807-982b-999c975c55b0' ParentLink='Module_ServiceDeclaration' LowerBound='25.1' HigherBound='67.1'>
             <om:Property Name='InitializedTransactionType' Value='False' />
             <om:Property Name='IsInvokable' Value='False' />
-            <om:Property Name='TypeModifier' Value='Internal' />
+            <om:Property Name='TypeModifier' Value='Public' />
             <om:Property Name='ReportToAnalyst' Value='True' />
             <om:Property Name='Name' Value='TDN_Orchestration' />
             <om:Property Name='Signal' Value='False' />
@@ -623,6 +623,11 @@ namespace Kaifa.B2B.Orchestration.TDN
                 TDN_Orchestration __svc__ = (TDN_Orchestration)_service;
                 __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
+                if (__svc__.SendTDN940ToCCS != null)
+                {
+                    __svc__.SendTDN940ToCCS.Close(this, null);
+                    __svc__.SendTDN940ToCCS = null;
+                }
                 if (__svc__.ReceiveTDN940 != null)
                 {
                     __svc__.ReceiveTDN940.Close(this, null);
@@ -632,11 +637,6 @@ namespace Kaifa.B2B.Orchestration.TDN
                 {
                     __svc__.SendTDN940ToKFS.Close(this, null);
                     __svc__.SendTDN940ToKFS = null;
-                }
-                if (__svc__.SendTDN940ToCCS != null)
-                {
-                    __svc__.SendTDN940ToCCS.Close(this, null);
-                    __svc__.SendTDN940ToCCS = null;
                 }
                 base.Finally();
             }
@@ -678,19 +678,19 @@ namespace Kaifa.B2B.Orchestration.TDN
                 TDN_Orchestration __svc__ = (TDN_Orchestration)_service;
                 __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)(__svc__._stateMgrs[1]);
 
-                if (__ctx1__ != null && __ctx1__.__OrderTDNMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__OrderTDNMessage);
-                    __ctx1__.__OrderTDNMessage = null;
-                }
-                if (__ctx1__ != null)
-                    __ctx1__.__FileName = null;
                 if (__ctx1__ != null)
                     __ctx1__.__cmsite = null;
                 if (__ctx1__ != null && __ctx1__.__TDN940Message != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__TDN940Message);
                     __ctx1__.__TDN940Message = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__FileName = null;
+                if (__ctx1__ != null && __ctx1__.__OrderTDNMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__OrderTDNMessage);
+                    __ctx1__.__OrderTDNMessage = null;
                 }
                 base.Finally();
             }
@@ -856,8 +856,8 @@ namespace Kaifa.B2B.Orchestration.TDN
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)_stateMgrs[0];
             __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)_stateMgrs[1];
+            __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -904,8 +904,8 @@ namespace Kaifa.B2B.Orchestration.TDN
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)_stateMgrs[0];
             __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)_stateMgrs[1];
+            __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
