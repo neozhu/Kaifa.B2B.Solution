@@ -45,7 +45,7 @@ namespace Kaifa.Dashboards.Repository
                         ordercount.Shipped += reader.GetInt32(1);
                     }
                 }
-
+                db.Close();
                 return ordercount;
 
             }
