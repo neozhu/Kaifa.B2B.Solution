@@ -6,6 +6,67 @@
     <!-- Main content -->
     <section class="content">
 
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion ion-android-bulb"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">新增订单</span>
+                        <span class="info-box-number">10</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="fa ion-clipboard"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">捡货中</span>
+                        <span class="info-box-number">5</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <!-- fix for small devices only -->
+            <div class="clearfix visible-sm-block"></div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">装载完成</span>
+                        <span class="info-box-number">10</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="ion ion-checkmark"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">发运完成</span>
+                        <span class="info-box-number">2,000</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
@@ -82,7 +143,7 @@
      $(function () {
         var $table= $('#taskgrid').DataTable({
              "paging": false,
-             "searching": false
+             "searching": true
          });
         //$('#taskgrid_filter').hidden();
 
