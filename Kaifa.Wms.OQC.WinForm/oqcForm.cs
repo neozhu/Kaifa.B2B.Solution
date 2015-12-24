@@ -245,10 +245,19 @@ namespace Kaifa.Wms.OQC.WinForm
                     string dropid = this.dropidtxt.Text;
                     string sku = barcodes[0];
                     string qty = barcodes[1];
-                    string ven = barcodes[3];
+                    string ven = barcodes[4];
+                    bool isok = checker.checkingSku(orderkey, dropid, ven, sku);
+                    if (isok)
+                    {
 
-                    MessageBox.Show(sku + "\\" + qty + "\\" + ven);
-
+                    }
+                    else
+                    {
+                        checker.PlayAlarm();
+                        CleanTextBox();
+                    }
+                    //MessageBox.Show(sku + "\\" + qty + "\\" + ven);
+                    
                     //this.stxqrcode.Text = string.Empty;
                 }
                 

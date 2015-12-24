@@ -18,7 +18,7 @@ namespace Kaifa.Dashboards.Repository
                 await db.OpenAsync();
                 SqlCommand command = db.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "select * from wmwhse1.taskdetail where status <>'9' and tasktype='PK' ";
+                command.CommandText = "select * from wmwhse1.taskdetail where status <>'9' and tasktype='PK' order by status desc,ORDERKEY desc,TASKDETAILKEY desc ";
                 SqlDataReader reader = await command.ExecuteReaderAsync();
                 List<TaskViewModels> list = new List<TaskViewModels>();
                 while (await reader.ReadAsync())
@@ -33,6 +33,7 @@ namespace Kaifa.Dashboards.Repository
                     item.Sku = reader["SKU"].ToString();
                     item.Status = reader["STATUS"].ToString();
                     item.Store = reader["STORERKEY"].ToString();
+                    item.StartTime = Convert.ToDateTime(reader["STARTTIME"]);
 
                 }
                 db.Close();

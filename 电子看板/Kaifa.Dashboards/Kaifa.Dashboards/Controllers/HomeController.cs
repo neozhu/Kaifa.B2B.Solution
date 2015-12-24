@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Kaifa.Dashboards.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,9 +10,19 @@ namespace Kaifa.Dashboards.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private OrderRepository orderRepository = null;
+        private TaskRepository taskRepository = null;
+        public HomeController()
         {
-            return View();
+            orderRepository = new OrderRepository();
+            taskRepository = new TaskRepository();
+        }
+        public async Task<ActionResult> Index()
+        {
+            var order = await orderRepository.GetCount();
+            ViewBag.OrderCount = order;
+            var tasks = await taskRepository.Get();
+            return View(tasks );
         }
 
         public ActionResult About()

@@ -40,9 +40,9 @@ namespace Kaifa.Dashboards.Repository
                         ordercount.Loaded += reader.GetInt32(1);
                     }
 
-                    if (Convert.ToInt32(reader.GetString(0)) ==95)
+                    if (Convert.ToInt32(reader["status"]) == 95)
                     {
-                        ordercount.Shipped += reader.GetInt32(1);
+                        ordercount.Shipped += Convert.ToInt32(reader["count"]);
                     }
                 }
                 db.Close();

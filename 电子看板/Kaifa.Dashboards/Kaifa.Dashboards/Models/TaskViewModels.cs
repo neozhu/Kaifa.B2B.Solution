@@ -8,6 +8,7 @@ namespace Kaifa.Dashboards.Models
     public class TaskViewModels
     {
         public string TaskKey { get; set; }
+        public DateTime StartTime { get; set; }
         public string OrderKey { get; set; }
         public string Owner { get; set; }
         public string Store { get; set; }
