@@ -11,6 +11,34 @@ namespace Kaifa.Dashboards.Repository
 {
     public class OrderRepository
     {
+        public async Task<List<TransactionWeekSummaryModel>> GetWeekSummary()
+        {
+            using (SqlConnection db = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["wmsConnection"].ConnectionString))
+            {
+                await db.OpenAsync();
+                SqlCommand command = db.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "select * from wmwhse1.v_TransactionWeekSummary";
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+                List<TransactionWeekSummaryModel> list = new List<TransactionWeekSummaryModel>();
+
+                while (await reader.ReadAsync())
+                {
+                   
+                    if (!await reader.IsDBNullAsync(0))
+                    {
+                         TransactionWeekSummaryModel item = new TransactionWeekSummaryModel();
+                        item.Week = reader[0].ToString() + " W" + reader[1].ToString();
+                        item.ReceiptQty = Convert.ToInt32(reader[2]);
+                        item.ShippedQty = Convert.ToInt32(reader[3]);
+                        list.Add(item);
+                    }
+                }
+
+                db.Close();
+                return list;
+            }
+        }
 
         public async Task<OrderCountViewModels> GetCount()
         {

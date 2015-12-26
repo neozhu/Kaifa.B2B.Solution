@@ -18,7 +18,10 @@ namespace Kaifa.Dashboards.Controllers
             taskRepository = new TaskRepository();
         }
         public async Task<ActionResult> Index()
+
         {
+            ViewBag.Title = "Task Dashboard";
+            ViewBag.subTitle = " all tasks here";
             var order = await orderRepository.GetCount();
             ViewBag.OrderCount = order;
             var tasks = await taskRepository.Get();
@@ -37,6 +40,22 @@ namespace Kaifa.Dashboards.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+
+        public ActionResult WeekSummary()
+        {
+            ViewBag.Title = "Summary Dashboard";
+            ViewBag.subTitle = " transaction summary";
+            return View();
+        }
+
+        public async Task<ActionResult> GetWeekSummary()
+        {
+            var list = await orderRepository.GetWeekSummary();
+
+            return Json(list, JsonRequestBehavior.AllowGet);
+
         }
     }
 }

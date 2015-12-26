@@ -19,7 +19,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/23/2015 18:47:45</publishTime>
     </File>
     <File Include="bin/Kaifa.Dashboards.dll">
-      <publishTime>12/24/2015 13:28:12</publishTime>
+      <publishTime>12/24/2015 21:15:53</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>12/23/2015 18:47:46</publishTime>
@@ -2367,6 +2367,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/plugins/morris/morris.min.js">
       <publishTime>12/23/2015 18:47:42</publishTime>
     </File>
+    <File Include="Content/plugins/morris/raphael-min.js">
+      <publishTime>12/24/2015 21:03:45</publishTime>
+    </File>
     <File Include="Content/plugins/pace/pace.css">
       <publishTime>12/23/2015 18:47:42</publishTime>
     </File>
@@ -2629,7 +2632,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/23/2015 18:47:43</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>12/23/2015 18:47:43</publishTime>
+      <publishTime>12/24/2015 21:03:46</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>12/23/2015 18:47:43</publishTime>
@@ -2676,6 +2679,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/Index.cshtml">
       <publishTime>12/24/2015 13:25:58</publishTime>
     </File>
+    <File Include="Views/Home/WeekSummary.cshtml">
+      <publishTime>12/24/2015 21:06:58</publishTime>
+    </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>12/23/2015 18:47:43</publishTime>
     </File>
@@ -2701,7 +2707,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/23/2015 18:47:43</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/23/2015 18:47:43</publishTime>
+      <publishTime>12/24/2015 21:12:59</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>12/23/2015 18:47:43</publishTime>
@@ -2713,7 +2719,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/23/2015 18:47:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/24/2015 13:28:18</publishTime>
+      <publishTime>12/24/2015 21:15:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

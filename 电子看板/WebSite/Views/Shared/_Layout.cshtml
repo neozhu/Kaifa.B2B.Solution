@@ -13,6 +13,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="~/Content/ionicons.min.css">
     <!-- Theme style -->
+    <link href="~/Content/plugins/morris/morris.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -223,8 +224,8 @@
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Task Dashboard</a></li>
-                            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Order Dashboard</a></li>
+                            <li><a href="/Home/Index"><i class="fa fa-circle-o"></i>Task Dashboard</a></li>
+                            <li><a href="/Home/WeekSummary"><i class="fa fa-circle-o"></i>Summary Dashboard</a></li>
                         </ul>
                     </li>
                      
@@ -239,8 +240,8 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Task Dashboard
-                    <small> all tasks here</small>
+                    @ViewBag.Title
+                    <small> @ViewBag.subTitle</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -475,7 +476,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/dist/js/demo.js"></script>
     <script src="~/Content/plugins/datatables/jquery.dataTables.js"></script>
-
+    <script src="~/Content/plugins/morris/raphael-min.js"></script>
+    <script src="~/Content/plugins/morris/morris.js"></script>
 
     @RenderSection("scripts", required: false)
 </body>

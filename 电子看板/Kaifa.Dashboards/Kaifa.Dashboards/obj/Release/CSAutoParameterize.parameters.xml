@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-Kaifa.Dashboards-20151223121854.mdf;Initial Catalog=aspnet-Kaifa.Dashboards-20151223121854;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\长城开发项目\\SourceCode\\Kaifa\.B2B\.Solution\\电子看板\\Kaifa\.Dashboards\\Kaifa\.Dashboards\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="wmsConnection-Web.config Connection String" description="wmsConnection Connection String used in web.config by the application to access the database." defaultValue="Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\长城开发项目\\SourceCode\\Kaifa\.B2B\.Solution\\电子看板\\Kaifa\.Dashboards\\Kaifa\.Dashboards\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='wmsConnection']/@connectionString" />
-  </parameter>
-</parameters>

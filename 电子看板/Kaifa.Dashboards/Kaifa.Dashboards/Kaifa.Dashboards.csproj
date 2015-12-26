@@ -169,6 +169,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderCountViewModels.cs" />
     <Compile Include="Models\TaskViewModels.cs" />
+    <Compile Include="Models\WeekSummaryViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\async.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
@@ -909,6 +910,7 @@
     <Content Include="Content\plugins\morris\morris.css" />
     <Content Include="Content\plugins\morris\morris.js" />
     <Content Include="Content\plugins\morris\morris.min.js" />
+    <Content Include="Content\plugins\morris\raphael-min.js" />
     <Content Include="Content\plugins\pace\pace.css" />
     <Content Include="Content\plugins\pace\pace.js" />
     <Content Include="Content\plugins\pace\pace.min.css" />
@@ -1022,7 +1024,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1057,6 +1061,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\WeekSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
