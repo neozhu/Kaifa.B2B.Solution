@@ -52,36 +52,40 @@ namespace Kaifa.Wms.OQC.WinForm
                 clean();
             }
         }
+       
 
         private void orderkeytxt_TextChanged(object sender, EventArgs e)
         {
             if (this.orderkeytxt.Text.Length == 10)
             {
-                DataTable dt = checker.GetOrderQty(this.orderkeytxt.Text);
-                if (dt.Rows.Count == 0)
-                {
-                    //MessageBox.Show("找不到订单记录！");
-                    checker.PlayAlarm();
-                    clean();
-                }
-                else
-                {
-                    this.statustxt.Text = dt.Rows[0]["STATUS"].ToString();
-                    this.openqtytxt.Text = Convert.ToInt32(dt.Rows[0]["OPENQTY"]).ToString();
-                    this.pickedqty.Text = Convert.ToInt32(dt.Rows[0]["QTYPICKED"]).ToString();
+                GetOrderQtyInfo();
+            }
+        }
 
-                    int checkedqty = checker.GetSumCheckedQty(this.orderkeytxt.Text);
+        private void GetOrderQtyInfo()
+        {
+            DataTable dt = checker.GetOrderQty(this.orderkeytxt.Text);
+            if (dt.Rows.Count == 0)
+            {
+                //MessageBox.Show("找不到订单记录！");
+                checker.PlayAlarm();
+                clean();
+            }
+            else
+            {
+                this.statustxt.Text = dt.Rows[0]["STATUS"].ToString();
+                this.openqtytxt.Text = Convert.ToInt32(dt.Rows[0]["OPENQTY"]).ToString();
+                this.pickedqty.Text = Convert.ToInt32(dt.Rows[0]["QTYPICKED"]).ToString();
 
-                    this.checkedqtytxt.Text = checkedqty.ToString();
-                    this.diffqtytxt.Text = (Convert.ToInt32(dt.Rows[0]["QTYPICKED"]) - checkedqty).ToString();
+                int checkedqty = checker.GetSumCheckedQty(this.orderkeytxt.Text);
+
+                this.checkedqtytxt.Text = checkedqty.ToString();
+                this.diffqtytxt.Text = (Convert.ToInt32(dt.Rows[0]["QTYPICKED"]) - checkedqty).ToString();
 
 
 
-                    loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
-                    loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
-                }
-
-
+                loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
+                loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
             }
         }
         private void loadOQCResult(string orderkey, string dropid, bool onlydiff)
@@ -132,14 +136,7 @@ namespace Kaifa.Wms.OQC.WinForm
         {
             if ((this.dropidtxt.Text.Length>1) && checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
             {
-                //this.stxqrcode.Enabled = true;
-                loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
-                loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
-                int subtotalcheckqty = checker.GetSumCheckedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
-                int subtotalpickqty = checker.GetSumPickedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
-                this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
-                this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
-                this.subtotaldiffqtytxt.Text = (subtotalpickqty - subtotalcheckqty).ToString();
+                ReloadCheckResult();
             }
             else if(this.dropidtxt.Text.Length>1)
             {
@@ -154,6 +151,17 @@ namespace Kaifa.Wms.OQC.WinForm
                 checker.PlayAlarm();
             }
 
+        }
+
+        private void ReloadCheckResult()
+        {
+            loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
+            loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
+            int subtotalcheckqty = checker.GetSumCheckedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
+            int subtotalpickqty = checker.GetSumPickedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
+            this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
+            this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
+            this.subtotaldiffqtytxt.Text = (subtotalpickqty - subtotalcheckqty).ToString();
         }
 
         private void diffck_CheckedChanged(object sender, EventArgs e)
@@ -239,23 +247,28 @@ namespace Kaifa.Wms.OQC.WinForm
             {
 
                 string[] barcodes =  this.stxqrcode.Text.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                if (barcodes.Length >= 7)
+                if (barcodes.Length >= 6)
                 {
                     string orderkey = this.orderkeytxt.Text;
                     string dropid = this.dropidtxt.Text;
                     string sku = barcodes[0];
                     string qty = barcodes[1];
                     string ven = barcodes[4];
-                    bool isok = checker.checkingSku(orderkey, dropid, ven, sku);
+                    bool isok = checker.checkingSku(orderkey, dropid, ven.Replace("\n", ""), sku.Replace("\n", ""));
+                    
                     if (isok)
                     {
-
+                        checker.insertLog(this.orderkeytxt.Text, this.dropidtxt.Text, ven.Replace("\n", ""), sku.Replace("\n", ""), Convert.ToInt32(qty.Replace("\n", "")), this.stxqrcode.Text);
+     
+                        CleanTextBox();
                     }
                     else
                     {
                         checker.PlayAlarm();
                         CleanTextBox();
                     }
+                    this.GetOrderQtyInfo();
+                    this.ReloadCheckResult();
                     //MessageBox.Show(sku + "\\" + qty + "\\" + ven);
                     
                     //this.stxqrcode.Text = string.Empty;
@@ -275,6 +288,8 @@ namespace Kaifa.Wms.OQC.WinForm
             this.Invoke((MethodInvoker)delegate
             {
                 this.stxqrcode.Text = string.Empty; // runs on UI thread
+                this.stxqrcode.SelectAll();
+                this.stxqrcode.Focus();
             });
         }
 

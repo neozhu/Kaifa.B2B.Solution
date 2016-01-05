@@ -62,8 +62,12 @@
             this.diffqtytxt = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.diffck = new System.Windows.Forms.CheckBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.pickdetailgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkrecordgrid)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -283,9 +287,6 @@
             // 
             this.pickdetailgrid.AllowUserToAddRows = false;
             this.pickdetailgrid.AllowUserToDeleteRows = false;
-            this.pickdetailgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -303,7 +304,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.pickdetailgrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.pickdetailgrid.Location = new System.Drawing.Point(442, 155);
+            this.pickdetailgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pickdetailgrid.Location = new System.Drawing.Point(0, 0);
             this.pickdetailgrid.Name = "pickdetailgrid";
             this.pickdetailgrid.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -314,7 +316,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.pickdetailgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.pickdetailgrid.Size = new System.Drawing.Size(604, 224);
+            this.pickdetailgrid.Size = new System.Drawing.Size(540, 225);
             this.pickdetailgrid.TabIndex = 230;
             // 
             // label13
@@ -330,8 +332,6 @@
             // 
             this.checkrecordgrid.AllowUserToAddRows = false;
             this.checkrecordgrid.AllowUserToDeleteRows = false;
-            this.checkrecordgrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -349,7 +349,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.checkrecordgrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.checkrecordgrid.Location = new System.Drawing.Point(12, 155);
+            this.checkrecordgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkrecordgrid.Location = new System.Drawing.Point(0, 0);
             this.checkrecordgrid.Name = "checkrecordgrid";
             this.checkrecordgrid.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -360,7 +361,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.checkrecordgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.checkrecordgrid.Size = new System.Drawing.Size(409, 224);
+            this.checkrecordgrid.Size = new System.Drawing.Size(490, 225);
             this.checkrecordgrid.TabIndex = 250;
             // 
             // diffqtytxt
@@ -395,17 +396,35 @@
             this.diffck.UseVisualStyleBackColor = true;
             this.diffck.CheckedChanged += new System.EventHandler(this.diffck_CheckedChanged);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(12, 155);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.checkrecordgrid);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pickdetailgrid);
+            this.splitContainer1.Size = new System.Drawing.Size(1034, 225);
+            this.splitContainer1.SplitterDistance = 490;
+            this.splitContainer1.TabIndex = 281;
+            // 
             // oqcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 440);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.stxqrcode);
             this.Controls.Add(this.diffqtytxt);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.checkrecordgrid);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.pickdetailgrid);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.checkedqtytxt);
             this.Controls.Add(this.label11);
@@ -432,6 +451,9 @@
             this.Text = "出货复检程序";
             ((System.ComponentModel.ISupportInitialize)(this.pickdetailgrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkrecordgrid)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,6 +488,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox diffck;
         private System.Windows.Forms.DataGridView pickdetailgrid;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 

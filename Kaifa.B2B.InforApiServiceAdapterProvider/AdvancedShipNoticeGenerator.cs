@@ -103,7 +103,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();
-                string sql = string.Format("select t3.DUNSID from [wmwhse1].STORER t3 where t3.STORERKEY=N'{0}' and t3.[TYPE]=N'1' ", storerkey);
+                string sql = string.Format("select t3.DUNSID from [{1}].STORER t3 where t3.STORERKEY=N'{0}' and t3.[TYPE]=N'1' ", storerkey, _warehous);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
                 return cmd.ExecuteScalar().ToString();
@@ -131,7 +131,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 		                                            RECEIPTDETAIL.LOTTABLE08 DOREMARK
                                                     FROM [{0}].[RECEIPT] RECEIPT ,[{0}].[RECEIPTDETAIL] RECEIPTDETAIL
                                                     WHERE RECEIPT.RECEIPTKEY = RECEIPTDETAIL.RECEIPTKEY AND QTYRECEIVED > 0 
-                                                    AND  exists ( select sku from [wmwhse1].[SKU] t4 where t4.SKU = [RECEIPTDETAIL].SKU and t4.STORERKEY=[RECEIPTDETAIL].STORERKEY and t4.ITEMCHARACTERISTIC2 is null ) 
+                                                    AND  exists ( select sku from [{0}].[SKU] t4 where t4.SKU = [RECEIPTDETAIL].SKU and t4.STORERKEY=[RECEIPTDETAIL].STORERKEY and t4.ITEMCHARACTERISTIC2 is null ) 
                                                     {1}
                                                     GROUP BY RECEIPT.WHSEID,RECEIPT.RECEIPTKEY,RECEIPT.STORERKEY,RECEIPT.[TYPE],RECEIPTDETAIL.SKU,
                                                     RECEIPTDETAIL.LOTTABLE02,RECEIPTDETAIL.LOTTABLE03,RECEIPT.RECEIPTDATE,

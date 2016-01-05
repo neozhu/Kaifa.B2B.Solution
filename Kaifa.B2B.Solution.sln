@@ -55,6 +55,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.SAP.AR", "Kaifa.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.Wms.OQC.WinForm", "Kaifa.Wms.OQC.WinForm\Kaifa.Wms.OQC.WinForm.csproj", "{B2AA5994-3ACD-4BA7-BE99-9393E1D4C116}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "关务接口", "关务接口", "{17D4A575-3510-4CDA-9857-240E22E58E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.CLS.Orchestration", "关务接口\Kaifa.B2B.CLS.Orchestration\Kaifa.B2B.CLS.Orchestration.btproj", "{92E63672-09D3-4D4D-A3EC-163355B43D99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,8 +189,17 @@ Global
 		{B2AA5994-3ACD-4BA7-BE99-9393E1D4C116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2AA5994-3ACD-4BA7-BE99-9393E1D4C116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2AA5994-3ACD-4BA7-BE99-9393E1D4C116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{92E63672-09D3-4D4D-A3EC-163355B43D99} = {17D4A575-3510-4CDA-9857-240E22E58E13}
 	EndGlobalSection
 EndGlobal

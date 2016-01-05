@@ -114,7 +114,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();
-                string sql = string.Format("select t3.DUNSID from [wmwhse1].STORER t3 where t3.STORERKEY=N'{0}' and t3.[TYPE]=N'1' ", storerkey);
+                string sql = string.Format("select t3.DUNSID from [{1}].STORER t3 where t3.STORERKEY=N'{0}' and t3.[TYPE]=N'1' ", storerkey,_warehous);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
                 return cmd.ExecuteScalar().ToString();
