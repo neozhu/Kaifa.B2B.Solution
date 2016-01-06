@@ -105,7 +105,7 @@ namespace Kaifa.B2B.Utility
             string content = ConstructContent(pulllistNo, siteCode, RequestDate, Type, orderno, error);
             content = TemplateHTML().Replace("#Email Content#", content);
 
-            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "hzhu@ataway.cn", "jjiang@ataway.cn", "HaiYangLi@kaifa.cn", "JessieZeng@kaifa.cn", "JieLingYe@kaifa.cn","HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn" }, siteCode + "-940-" + pulllistNo, content, null, true, "", "", "10.2.232.75");
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "KFSU-WSC-B2B@kaifa.cn" }, siteCode + "-940-" + pulllistNo, content, null, true, "", "", "10.2.232.75");
             
         }
 

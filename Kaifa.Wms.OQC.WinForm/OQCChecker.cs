@@ -35,6 +35,19 @@ namespace Kaifa.Wms.OQC.WinForm
             }
         }
 
+        public void DelCheckLog(int Id)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                string sqltxt = string.Format(@"delete from [wmwhse1].[ORDERSHIPREVIEW] where SERIALKEY={0}", Id);
+                cmd.CommandText = sqltxt;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
         public DataTable GetOQCResult(string orderkey,string dropid,bool onlydiff) {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
@@ -64,7 +77,7 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                string sqltxt = string.Format(@"SELECT SERIALKEY ,STORERKEY,SKU,CHECKQTY,DROPID ,ORDERKEY FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ", orderkey);
+                string sqltxt = string.Format(@"SELECT SERIALKEY ,STORERKEY,SKU,CHECKQTY,DROPID,Q2CODE,ORDERKEY FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ", orderkey);
                 if (!string.IsNullOrEmpty(dropid))
                 {
                     sqltxt += string.Format(" AND DROPID='{0}' ", dropid);

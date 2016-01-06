@@ -124,7 +124,9 @@ namespace Kaifa.Wms.OQC.WinForm
             checkrecordgrid.Columns[2].HeaderText = "料号";
             checkrecordgrid.Columns[3].HeaderText = "复检数量";
             checkrecordgrid.Columns[4].HeaderText = "落放";
-            checkrecordgrid.Columns[5].HeaderText = "订单号";
+            checkrecordgrid.Columns[6].HeaderText = "订单号";
+            checkrecordgrid.Columns[5].HeaderText = "条码信息";
+            
          
         }
         private void subpickedqtytxt_TextChanged(object sender, EventArgs e)
@@ -147,7 +149,7 @@ namespace Kaifa.Wms.OQC.WinForm
                 int subtotalpickqty = 0;
                 this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
                 this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
-                this.subtotaldiffqtytxt.Text = (subtotalpickqty - subtotalcheckqty).ToString();
+                this.subtotaldiffqtytxt.Text = (subtotalcheckqty - subtotalpickqty).ToString();
                 checker.PlayAlarm();
             }
 
@@ -161,7 +163,7 @@ namespace Kaifa.Wms.OQC.WinForm
             int subtotalpickqty = checker.GetSumPickedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
             this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
             this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
-            this.subtotaldiffqtytxt.Text = (subtotalpickqty - subtotalcheckqty).ToString();
+            this.subtotaldiffqtytxt.Text = (subtotalcheckqty - subtotalpickqty  ).ToString();
         }
 
         private void diffck_CheckedChanged(object sender, EventArgs e)
@@ -291,6 +293,22 @@ namespace Kaifa.Wms.OQC.WinForm
                 this.stxqrcode.SelectAll();
                 this.stxqrcode.Focus();
             });
+        }
+
+        private void delmenu_Click(object sender, EventArgs e)
+        {
+            if (this.checkrecordgrid.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("请选中要删除的记录！");
+            }
+            else
+            {
+                object id = this.checkrecordgrid.SelectedRows[0].Cells[0].Value;
+                checker.DelCheckLog(Convert.ToInt32(id));
+
+                this.GetOrderQtyInfo();
+                this.ReloadCheckResult();
+            };
         }
 
         
