@@ -86,6 +86,10 @@
       <Project>{44EC0268-405A-45E3-9038-EC32333AED63}</Project>
       <Name>Kaifa.B2B.VendorAlloc</Name>
     </ProjectReference>
+    <ProjectReference Include="..\关务接口\Kaifa.B2B.CLS.XmlHelper\Kaifa.B2B.CLS.XmlHelper.csproj">
+      <Project>{98E80C42-50B8-4C93-BA24-EACC7692BB46}</Project>
+      <Name>Kaifa.B2B.CLS.XmlHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

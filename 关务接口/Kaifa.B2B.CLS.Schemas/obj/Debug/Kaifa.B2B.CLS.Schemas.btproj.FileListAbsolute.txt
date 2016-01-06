@@ -1,0 +1,4 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\bin\Debug\Kaifa.B2B.CLS.Schemas.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\bin\Debug\Kaifa.B2B.CLS.Schemas.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\obj\Debug\Kaifa.B2B.CLS.Schemas.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\obj\Debug\Kaifa.B2B.CLS.Schemas.pdb

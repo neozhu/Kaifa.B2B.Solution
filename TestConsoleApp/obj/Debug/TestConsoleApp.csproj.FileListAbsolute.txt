@@ -14,3 +14,5 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Exc
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Excel.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Kaifa.B2B.VendorAlloc.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\TestConsoleApp.exe.config
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Kaifa.B2B.CLS.XmlHelper.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Kaifa.B2B.CLS.XmlHelper.pdb

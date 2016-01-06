@@ -13,12 +13,18 @@ using Kaifa.B2B.VendorAlloc;
 using System.IO;
 using Excel;
 using System.Data;
+using Kaifa.B2B.CLS.XmlHelper;
 namespace TestConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("c:\\hddec.xml");
+            //HBDec.Read(doc);
+            //DisB2B.Read(doc);
 
             //run();
             //Console.ReadLine();
@@ -76,8 +82,8 @@ namespace TestConsoleApp
 
             //CalendarProcess p = new CalendarProcess("C:\\希捷日历导入模板.xlsx", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
             //p.Read();
-            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_quarter20151002000231.xlsx", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
-            p.Read();
+            //AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_quarter20151002000231.xlsx", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
+            //p.Read();
             //string a = "STZ".Substring(0, 2);
             //string connstring = "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False";
             //string warehouse = "wmwhse1";
@@ -93,7 +99,7 @@ namespace TestConsoleApp
         //    user.UserName = "sceadmin";
         //    user.Password = "123";
         //    user.Whcode = "SCPRD_wmwhse1";
-            string[] keys = new string[] { "0000000348", "0000000348", "0000000348" };
+        //    string[] keys = new string[] { "0000000348", "0000000348", "0000000348" };
         //    string str = DateTime.Now.ToString("yyyyMMddTHHmmss.fff") + "Z";
             //string str = DateTime.Now.ToString("MMMddyyyy", CultureInfo.CreateSpecificCulture("en-US"));
             //string str = DateTime.Now.ToString("yyyyMMddHHmmssfff");
@@ -124,12 +130,12 @@ namespace TestConsoleApp
             //XDocument asn = g.Generator();
             //Console.WriteLine(asn);
 
-            InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
-                    "SZT", "Seagate", "e2open", "wmwhse1",
-                "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
-                "http://kaifa.b2b.schemas/InventoryReport");
-            XDocument doc = inv.Generator();
-            Console.WriteLine(doc);
+            //InventoryReportGenerator inv = new InventoryReportGenerator(true, "c:\\config.xml",
+            //        "SZT", "Seagate", "e2open", "wmwhse1",
+            //    "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False",
+            //    "http://kaifa.b2b.schemas/InventoryReport");
+            //XDocument doc = inv.Generator();
+            //Console.WriteLine(doc);
 
             //DataReader();
             //LoginTest(user);

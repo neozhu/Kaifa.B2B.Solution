@@ -59,6 +59,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "关务接口", "关务接�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.CLS.Orchestration", "关务接口\Kaifa.B2B.CLS.Orchestration\Kaifa.B2B.CLS.Orchestration.btproj", "{92E63672-09D3-4D4D-A3EC-163355B43D99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.CLS.Schemas", "关务接口\Kaifa.B2B.CLS.Schemas\Kaifa.B2B.CLS.Schemas.btproj", "{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.CLS.XmlHelper", "关务接口\Kaifa.B2B.CLS.XmlHelper\Kaifa.B2B.CLS.XmlHelper.csproj", "{98E80C42-50B8-4C93-BA24-EACC7692BB46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,11 +199,23 @@ Global
 		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{92E63672-09D3-4D4D-A3EC-163355B43D99}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{98E80C42-50B8-4C93-BA24-EACC7692BB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E80C42-50B8-4C93-BA24-EACC7692BB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E80C42-50B8-4C93-BA24-EACC7692BB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E80C42-50B8-4C93-BA24-EACC7692BB46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{92E63672-09D3-4D4D-A3EC-163355B43D99} = {17D4A575-3510-4CDA-9857-240E22E58E13}
+		{C61022DD-CA24-4357-BC8B-8838AFDBD6DE} = {17D4A575-3510-4CDA-9857-240E22E58E13}
+		{98E80C42-50B8-4C93-BA24-EACC7692BB46} = {17D4A575-3510-4CDA-9857-240E22E58E13}
 	EndGlobalSection
 EndGlobal
