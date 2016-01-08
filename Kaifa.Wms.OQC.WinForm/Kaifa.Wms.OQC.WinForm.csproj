@@ -92,6 +92,8 @@
     <Content Include="1450275990_Shipping1.ico" />
     <Content Include="1450276017_palet02.ico" />
     <Content Include="app.png" />
+    <None Include="Resources\DRBELL.WAV" />
+    <None Include="Resources\BLEEP1_S.WAV" />
     <None Include="Resources\app.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

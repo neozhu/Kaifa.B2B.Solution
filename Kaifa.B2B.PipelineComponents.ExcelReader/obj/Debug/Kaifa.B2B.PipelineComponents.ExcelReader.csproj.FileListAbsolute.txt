@@ -1,0 +1,7 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\obj\Debug\ResolveAssemblyReference.cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\obj\Debug\Kaifa.B2B.PipelineComponents.ExcelReader.Properties.Resources.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\obj\Debug\Kaifa.B2B.PipelineComponents.ExcelReader.csproj.GenerateResource.Cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\bin\Debug\Kaifa.B2B.PipelineComponents.ExcelReader.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\bin\Debug\Kaifa.B2B.PipelineComponents.ExcelReader.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\obj\Debug\Kaifa.B2B.PipelineComponents.ExcelReader.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.PipelineComponents.ExcelReader\obj\Debug\Kaifa.B2B.PipelineComponents.ExcelReader.pdb

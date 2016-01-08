@@ -12,12 +12,14 @@ namespace Kaifa.B2B.VendorAlloc
         private string _strDir;
         private string _connstring;
         private string _backupDir;
-        public CalendarTask(string strDir, string backupDir, string connstring)
+        private string _warehouse;
+
+        public CalendarTask(string strDir, string backupDir, string connstring,string warehouse)
         {
             _strDir = strDir;
             _connstring = connstring;
             _backupDir = backupDir;
-
+            _warehouse = warehouse;
 
             if (!Directory.Exists(_backupDir))
             {
@@ -51,7 +53,7 @@ namespace Kaifa.B2B.VendorAlloc
                             if (!file.IsReadOnly && (file.Extension.ToLower() == ".xls" || file.Extension.ToLower() == ".xlsx"))
                             {
                                 Console.WriteLine(file.FullName);
-                                CalendarProcess calendar = new CalendarProcess(file.FullName, _connstring);
+                                CalendarProcess calendar = new CalendarProcess(file.FullName, _connstring,_warehouse);
                                 calendar.Read();
                                 //Thread.Sleep(100);
 

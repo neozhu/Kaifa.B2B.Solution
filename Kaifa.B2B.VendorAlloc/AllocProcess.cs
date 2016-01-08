@@ -15,10 +15,12 @@ namespace Kaifa.B2B.VendorAlloc
         private string _excelFile;
         private string _connectionstring;
         public const string WAREHOUSE = "WMWHSE1";
+        private string _warehouse = "WMWHSE1";
         private string _fileName = "";
-        public AllocProcess(string allocFile, string connectionstring)
+        public AllocProcess(string allocFile, string connectionstring,string warehouse)
         {
             _excelFile = allocFile;
+            _warehouse = warehouse;
             _connectionstring = connectionstring;
 
             FileInfo fs = new FileInfo(_excelFile);
@@ -165,7 +167,7 @@ namespace Kaifa.B2B.VendorAlloc
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("SELECT COUNT(*) FROM [WMWHSE1].SKU WHERE SKU=N'{0}' AND STORERKEY=N'{1}' ", sku,store);
+                cmd.CommandText = string.Format("SELECT COUNT(*) FROM [{2}].SKU WHERE SKU=N'{0}' AND STORERKEY=N'{1}' ", sku,store,_warehouse);
                 object result = cmd.ExecuteScalar();
 
                 conn.Close();
@@ -181,7 +183,7 @@ namespace Kaifa.B2B.VendorAlloc
                 conn.Open();
 
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format(" Select * FROM [SCPRD].[wmwhse1].[STXALLOCATION] where STXAGRP = N'{0}'",filename);
+                cmd.CommandText = string.Format(" Select * FROM [{1}].[STXALLOCATION] where STXAGRP = N'{0}'",filename,_warehouse);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                  adapter.Fill(ds);
@@ -218,7 +220,7 @@ namespace Kaifa.B2B.VendorAlloc
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
                 #region insert sql
-                cmd.CommandText = string.Format(@"INSERT INTO [wmwhse1].[STXALLOCATION_RPT]
+                cmd.CommandText = string.Format(@"INSERT INTO [{14}].[STXALLOCATION_RPT]
            ([WHSEID]
            ,[STXAGRP]
            ,[STXAKEY]
@@ -251,7 +253,7 @@ namespace Kaifa.B2B.VendorAlloc
            ,'{13}'
 		 
          )"
-           , "wmwhse1"
+           , _warehouse
            , filename
            , getmaxkey()
            , calendar.Year
@@ -265,6 +267,7 @@ namespace Kaifa.B2B.VendorAlloc
            , dr["QPERCENT"].ToString()  
            , "importservice"
            , calendar.BeginWeek
+           ,_warehouse
                     );
                 #endregion
                 cmd.ExecuteNonQuery();
@@ -286,8 +289,8 @@ namespace Kaifa.B2B.VendorAlloc
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("select count(*) from [wmwhse1].[STXALLOCATION_RPT] r where   r.PRISKU='{0}' and r.sku='{1}' and r.FISCALYEAR='{2}' and r.QUARTER='{3}' ",
-                    psku, sku, calendar.Year, calendar.Quarter);
+                cmd.CommandText = string.Format("select count(*) from [{4}].[STXALLOCATION_RPT] r where   r.PRISKU='{0}' and r.sku='{1}' and r.FISCALYEAR='{2}' and r.QUARTER='{3}' ",
+                    psku, sku, calendar.Year, calendar.Quarter,_warehouse);
 
                 object result = cmd.ExecuteScalar();
                 conn.Close();
@@ -302,8 +305,8 @@ namespace Kaifa.B2B.VendorAlloc
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("select isnull(sum(WALLACTUALQTY),0)  from [wmwhse1].[STXALLOCATION_RPT] r where     r.PRISKU='{0}' and r.FISCALYEAR='{1}' and r.QUARTER='{2}' ", 
-                    psku,calendar.Year,calendar.Quarter);
+                cmd.CommandText = string.Format("select isnull(sum(WALLACTUALQTY),0)  from [{3}].[STXALLOCATION_RPT] r where     r.PRISKU='{0}' and r.FISCALYEAR='{1}' and r.QUARTER='{2}' ", 
+                    psku,calendar.Year,calendar.Quarter,_warehouse);
                 object result = cmd.ExecuteScalar();
                 conn.Close();
                 return Convert.ToInt32(result);
@@ -318,8 +321,8 @@ namespace Kaifa.B2B.VendorAlloc
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("  select Top 1 FISCALYEAR,QUARTER,WEEK from [SCPRD].[wmwhse1].[STXCALENDAR] where CONVERT(datetime,FROM_DATE) >= CONVERT(datetime,'{0}') and CONVERT(datetime,TO_DATE)<=CONVERT(datetime,'{1}')",
-                    startdt,enddt);
+                cmd.CommandText = string.Format("  select Top 1 FISCALYEAR,QUARTER,WEEK from [{2}].[STXCALENDAR] where CONVERT(datetime,FROM_DATE) >= CONVERT(datetime,'{0}') and CONVERT(datetime,TO_DATE)<=CONVERT(datetime,'{1}')",
+                    startdt,enddt,_warehouse);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -359,8 +362,8 @@ namespace Kaifa.B2B.VendorAlloc
                 conn.Open();
                 
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("select max(WEEK) from [SCPRD].[wmwhse1].[STXCALENDAR] where FISCALYEAR='{0}' and QUARTER='{1}'",
-                    year, quarter);
+                cmd.CommandText = string.Format("select max(WEEK) from  [{2}].[STXCALENDAR] where FISCALYEAR='{0}' and QUARTER='{1}'",
+                    year, quarter,_warehouse);
 
                 object result = cmd.ExecuteScalar();
                  maxweek = Convert.ToInt32(result);
@@ -378,8 +381,8 @@ namespace Kaifa.B2B.VendorAlloc
                 conn.Open();
 
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("select max(WEEK) from [SCPRD].[wmwhse1].[STXCALENDAR] where FISCALYEAR='{0}'",
-                    year, quarter);
+                cmd.CommandText = string.Format("select max(WEEK) from  [{1}].[STXCALENDAR] where FISCALYEAR='{0}'",
+                    year, _warehouse);
 
                 object result = cmd.ExecuteScalar();
                 maxQuarter = Convert.ToInt32(result);
@@ -399,8 +402,8 @@ namespace Kaifa.B2B.VendorAlloc
                 conn.Open();
 
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("select min(r.[week]) from  [wmwhse1].[STXCALENDAR] r where r.FISCALYEAR='{0}' and r.[QUARTER]='{1}'",
-                    year, quarter);
+                cmd.CommandText = string.Format("select min(r.[week]) from  [{2}].[STXCALENDAR] r where r.FISCALYEAR='{0}' and r.[QUARTER]='{1}'",
+                    year, quarter,_warehouse);
 
                 object result = cmd.ExecuteScalar();
                 minweek = Convert.ToInt32(result);
@@ -418,7 +421,7 @@ namespace Kaifa.B2B.VendorAlloc
                 conn.Open();
 
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("select max(convert(int,stxakey)) + 1 from [wmwhse1].[STXALLOCATION_RPT]"
+                cmd.CommandText = string.Format("select max(convert(int,stxakey)) + 1 from [{0}].[STXALLOCATION_RPT]",_warehouse
                      );
 
                 object result = cmd.ExecuteScalar();

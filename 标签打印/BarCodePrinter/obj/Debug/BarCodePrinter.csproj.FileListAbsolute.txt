@@ -1,0 +1,10 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\bin\Debug\BarCodePrinter.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\bin\Debug\BarCodePrinter.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\ResolveAssemblyReference.cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.Form1.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.Properties.Resources.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.csproj.GenerateResource.Cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\bin\Debug\Spire.Barcode.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\bin\Debug\Spire.Barcode.xml

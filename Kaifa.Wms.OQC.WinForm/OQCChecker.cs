@@ -12,7 +12,7 @@ namespace Kaifa.Wms.OQC.WinForm
         private string _connectionstring;
         public OQCChecker(string connectionstring)
         {
-            _connectionstring = connectionstring;
+            _connectionstring = "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False";
         }
 
         public DataTable GetOrderQty(string orderkey)
@@ -53,14 +53,14 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                string sqltxt = string.Format(@"SELECT ORDERKEY ,STORERKEY,SKU,QTY,CHECKEDQTY,DIFFQTY,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}'", orderkey);
+                string sqltxt = string.Format(@"SELECT ORDERKEY ,STORERKEY,SKU,QTY,CHECKEDQTY,DIFFQTY,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}' ", orderkey);
                 if(!string.IsNullOrEmpty(dropid)){
                     sqltxt +=string.Format(" AND DROPID='{0}'",dropid);
                 }
                 if(onlydiff){
                      sqltxt +=string.Format(" AND DIFFQTY<>0 ");
                 }
-                cmd.CommandText = sqltxt;
+                cmd.CommandText = sqltxt + "  order by CHECKEDQTY desc";
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -77,13 +77,13 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                string sqltxt = string.Format(@"SELECT SERIALKEY ,STORERKEY,SKU,CHECKQTY,DROPID,Q2CODE,ORDERKEY FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ", orderkey);
+                string sqltxt = string.Format(@"SELECT SERIALKEY ,STORERKEY,SKU,CHECKQTY,DROPID,Q2CODE,ORDERKEY FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}'  ", orderkey);
                 if (!string.IsNullOrEmpty(dropid))
                 {
                     sqltxt += string.Format(" AND DROPID='{0}' ", dropid);
                 }
                
-                cmd.CommandText = sqltxt + " ORDER BY SERIALKEY ";
+                cmd.CommandText = sqltxt + " ORDER BY SERIALKEY desc";
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -211,7 +211,13 @@ namespace Kaifa.Wms.OQC.WinForm
   
             player.Play();
         }
+        public void PlayOK()
+        {
 
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.DRBELL);
+
+            player.Play();
+        }
 
     }
 

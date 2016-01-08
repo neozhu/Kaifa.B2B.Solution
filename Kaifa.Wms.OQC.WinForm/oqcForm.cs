@@ -18,7 +18,7 @@ namespace Kaifa.Wms.OQC.WinForm
         public oqcForm()
         {
             InitializeComponent();
-            _connectionstring = System.Configuration.ConfigurationSettings.AppSettings["connectionstring"];
+            //_connectionstring = System.Configuration.ConfigurationSettings.AppSettings["connectionstring"];
             checker = new OQCChecker(_connectionstring);
             //this.stxqrcode.Enabled = false;
         }
@@ -249,24 +249,41 @@ namespace Kaifa.Wms.OQC.WinForm
             {
 
                 string[] barcodes =  this.stxqrcode.Text.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                if (barcodes.Length >= 6)
+                if (barcodes.Length >= 7)
                 {
                     string orderkey = this.orderkeytxt.Text;
                     string dropid = this.dropidtxt.Text;
                     string sku = barcodes[0];
                     string qty = barcodes[1];
+                    int intqty=0;
+                    if (!int.TryParse(qty, out intqty))
+                    {
+                        checker.PlayAlarm();
+                        this.stxqrcode.Text = string.Empty;
+                        CleanTextBox();
+                        //string[] spqty = qty.Split(new string[]{"K"}, StringSplitOptions.RemoveEmptyEntries);
+                        //if (spqty.Length > 0)
+                        //{
+                        //    string kqty = spqty[0];
+
+                        //    if()
+                        //}
+
+                    }
                     string ven = barcodes[4];
                     bool isok = checker.checkingSku(orderkey, dropid, ven.Replace("\n", ""), sku.Replace("\n", ""));
                     
                     if (isok)
                     {
                         checker.insertLog(this.orderkeytxt.Text, this.dropidtxt.Text, ven.Replace("\n", ""), sku.Replace("\n", ""), Convert.ToInt32(qty.Replace("\n", "")), this.stxqrcode.Text);
-     
+                        checker.PlayOK();
+                        this.stxqrcode.Text = string.Empty;
                         CleanTextBox();
                     }
                     else
                     {
                         checker.PlayAlarm();
+                        this.stxqrcode.Text = string.Empty;
                         CleanTextBox();
                     }
                     this.GetOrderQtyInfo();

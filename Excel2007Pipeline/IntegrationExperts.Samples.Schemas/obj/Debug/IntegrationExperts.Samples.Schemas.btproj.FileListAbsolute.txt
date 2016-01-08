@@ -1,0 +1,12 @@
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Schemas\bin\Debug\IntegrationExperts.Samples.Schemas.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Schemas\bin\Debug\IntegrationExperts.Samples.Schemas.pdb
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Schemas\obj\Debug\IntegrationExperts.Samples.Schemas.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Schemas\obj\Debug\IntegrationExperts.Samples.Schemas.pdb
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\bin\Debug\IntegrationExperts.Samples.Schemas.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\bin\Debug\IntegrationExperts.Samples.Schemas.pdb
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\obj\Debug\IntegrationExperts.Samples.Schemas.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\obj\Debug\IntegrationExperts.Samples.Schemas.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\bin\Debug\IntegrationExperts.Samples.Schemas.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\bin\Debug\IntegrationExperts.Samples.Schemas.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\obj\Debug\IntegrationExperts.Samples.Schemas.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Schemas\obj\Debug\IntegrationExperts.Samples.Schemas.pdb

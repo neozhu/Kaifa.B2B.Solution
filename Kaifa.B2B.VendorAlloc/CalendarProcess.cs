@@ -14,9 +14,11 @@ namespace Kaifa.B2B.VendorAlloc
         private string _excelFile;
         private string _connectionstring;
         public const string WAREHOUSE = "WMWHSE1";
-        public CalendarProcess(string excelFile, string connectionstring)
+        private string _warehouse = "WMWHSE1";
+        public CalendarProcess(string excelFile, string connectionstring,string warehouse)
         {
             _excelFile = excelFile;
+            _warehouse = warehouse;
             _connectionstring = connectionstring;
         }
         
@@ -47,7 +49,7 @@ namespace Kaifa.B2B.VendorAlloc
                                 }
                                 SqlCommand cmd = conn.CreateCommand();
                                 cmd.Transaction = trx;
-                                cmd.CommandText = string.Format(@"INSERT INTO [wmwhse1].[STXCALENDAR]
+                                cmd.CommandText = string.Format(@"INSERT INTO [{7}].[STXCALENDAR]
                                                     ([WHSEID]
                                                     ,[FISCALYEAR]
                                                     ,[QUARTER]
@@ -66,13 +68,14 @@ namespace Kaifa.B2B.VendorAlloc
                                                           ,'{6}'
                                                           )"
 
-                                    , WAREHOUSE
+                                    , _warehouse
                                     , dr["财务年"]
                                     , dr["季度"]
                                     , dr["第几周"]
                                     , dr["开始日期"]
-                                    , dr["结束日期"]    
-                                    , WAREHOUSE
+                                    , dr["结束日期"]
+                                    , _warehouse
+                                    ,_warehouse
                                    
                                     );
 

@@ -65,5 +65,17 @@ namespace Kaifa.Wms.OQC.WinForm.Properties {
                 return ResourceManager.GetStream("ALARM5", resourceCulture);
             }
         }
+        
+        internal static System.IO.UnmanagedMemoryStream BLEEP1_S {
+            get {
+                return ResourceManager.GetStream("BLEEP1_S", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream DRBELL {
+            get {
+                return ResourceManager.GetStream("DRBELL", resourceCulture);
+            }
+        }
     }
 }

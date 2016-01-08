@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationExperts.Samples.PipelineComponents", "IntegrationExperts.Samples.PipelineComponents\IntegrationExperts.Samples.PipelineComponents.csproj", "{4FF5BEC3-2739-4A30-9F71-F92245F35B9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationExperts.Samples.Pipelines", "IntegrationExperts.Samples.Pipelines\IntegrationExperts.Samples.Pipelines.btproj", "{1EF85CED-739F-4B0F-B52C-7B6AAB566E3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keys", "Keys", "{F4B0A030-DE15-4048-9340-72210A0A7C87}"
+	ProjectSection(SolutionItems) = preProject
+		Key\IntExp.snk = Key\IntExp.snk
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationExperts.Samples.Schemas", "IntegrationExperts.Samples.Schemas\IntegrationExperts.Samples.Schemas.btproj", "{3EDAB538-18AF-462B-BA7B-44EA15FEF853}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{29362C5D-E94C-43F6-837D-533938FBDECC}"
+	ProjectSection(SolutionItems) = preProject
+		Input\Sample.xlsx = Input\Sample.xlsx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FF5BEC3-2739-4A30-9F71-F92245F35B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF5BEC3-2739-4A30-9F71-F92245F35B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF5BEC3-2739-4A30-9F71-F92245F35B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF5BEC3-2739-4A30-9F71-F92245F35B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF85CED-739F-4B0F-B52C-7B6AAB566E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF85CED-739F-4B0F-B52C-7B6AAB566E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF85CED-739F-4B0F-B52C-7B6AAB566E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF85CED-739F-4B0F-B52C-7B6AAB566E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF85CED-739F-4B0F-B52C-7B6AAB566E3C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3EDAB538-18AF-462B-BA7B-44EA15FEF853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDAB538-18AF-462B-BA7B-44EA15FEF853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDAB538-18AF-462B-BA7B-44EA15FEF853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDAB538-18AF-462B-BA7B-44EA15FEF853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDAB538-18AF-462B-BA7B-44EA15FEF853}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.Pipelines.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.Pipelines.pdb
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Pipelines\obj\Debug\IntegrationExperts.Samples.Pipelines.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Pipelines\obj\Debug\IntegrationExperts.Samples.Pipelines.pdb
+C:\Users\davlani.AHLDEV\Desktop\Excel2007ReadWrite\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.PipelineComponents.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.Pipelines.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.Pipelines.pdb
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.PipelineComponents.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\obj\Debug\IntegrationExperts.Samples.Pipelines.dll
+C:\Users\davlani.AHLDEV\Desktop\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\obj\Debug\IntegrationExperts.Samples.Pipelines.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.Pipelines.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.Pipelines.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\bin\Debug\IntegrationExperts.Samples.PipelineComponents.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\obj\Debug\IntegrationExperts.Samples.Pipelines.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Excel2007Pipeline\IntegrationExperts.Samples.Pipelines\obj\Debug\IntegrationExperts.Samples.Pipelines.pdb

@@ -12,13 +12,14 @@ namespace Kaifa.B2B.VendorAlloc
         private string _strDir;
         private string _connstring;
         private string _backupDir;
-        public AllocTask(string strDir, string backupDir, string connstring)
+        private string _warehouse;
+        public AllocTask(string strDir, string backupDir, string connstring,string warehouse)
         {
             _strDir = strDir;
             _connstring = connstring;
             _backupDir = backupDir;
 
-
+            _warehouse = warehouse;
             if (!Directory.Exists(_backupDir))
             {
                 Directory.CreateDirectory(_backupDir);
@@ -49,7 +50,7 @@ namespace Kaifa.B2B.VendorAlloc
                         if (!file.IsReadOnly && (file.Extension.ToLower() == ".xls" || file.Extension.ToLower() == ".xlsx"))
                         {
                             Console.WriteLine(file.FullName);
-                            AllocProcess alloc = new AllocProcess(file.FullName, _connstring);
+                            AllocProcess alloc = new AllocProcess(file.FullName, _connstring, _warehouse);
                             alloc.Read();
 
                             file.MoveTo(Path.Combine(_backupDir, file.Name + DateTime.Now.ToString(".yyyyMMddHHmmssfff") + ".bk"));

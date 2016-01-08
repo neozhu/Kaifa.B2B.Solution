@@ -14,11 +14,11 @@ namespace Kaifa.B2B.Mapping {
   <xsl:template match=""/s0:OrderTDN940"">
     <ns0:CM_TDN_940_Oubound>
       <xsl:for-each select=""s0:CM_TDN_940"">
-        <xsl:variable name=""var:v1"" select=""userCSharp:StringConcat(string(s0:ORDERKEY/text()) , string(s0:ORDERLINENUMBER/text()))"" />
         <ns0:Row>
           <ns0:DeliveryOrder>
             <xsl:value-of select=""s0:ORDERKEY/text()"" />
           </ns0:DeliveryOrder>
+          <xsl:variable name=""var:v1"" select=""userCSharp:MyStringConcat(string(s0:ORDERKEY/text()) , string(s0:ORDERLINENUMBER/text()))"" />
           <ns0:CASEID>
             <xsl:value-of select=""$var:v1"" />
           </ns0:CASEID>
@@ -77,12 +77,6 @@ namespace Kaifa.B2B.Mapping {
     </ns0:CM_TDN_940_Oubound>
   </xsl:template>
   <msxsl:script language=""C#"" implements-prefix=""userCSharp""><![CDATA[
-public string StringConcat(string param0, string param1)
-{
-   return param0 + param1;
-}
-
-
 public string POformatter(string asic, string po, string cmsite)
         {
             if (asic.ToUpper().Trim() == ""ASIC"")
@@ -95,10 +89,15 @@ public string POformatter(string asic, string po, string cmsite)
             }
         }
 
-public string getrequestime(string datetime) {
+public string getrequestime(string strdatetime){
             //2015-09-22T01:10:00;
-            return datetime.Substring(11, 5).Replace("":"", ""-"");
+            return strdatetime.Substring(11, 5).Replace("":"", ""-"");
         }
+
+public string MyStringConcat(string param1, string param2)
+{
+	return param1+param2;
+}
 
 
 ]]></msxsl:script>

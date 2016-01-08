@@ -19,12 +19,13 @@ namespace Kaifa.B2B.ImportService
             string connectionstring = System.Configuration.ConfigurationManager.AppSettings["connectionstring"];
             string alldir = System.Configuration.ConfigurationManager.AppSettings["allocDir"];
             string allbakdir = System.Configuration.ConfigurationManager.AppSettings["allocBakDir"];
+            string warehouse = System.Configuration.ConfigurationManager.AppSettings["warehouse"];
 
-            allTask = new AllocTask(alldir, allbakdir, connectionstring);
+            allTask = new AllocTask(alldir, allbakdir, connectionstring,warehouse);
             string caldir = System.Configuration.ConfigurationManager.AppSettings["calDir"];
             string calbakdir = System.Configuration.ConfigurationManager.AppSettings["calBakDir"];
 
-            calTask = new CalendarTask(caldir, calbakdir, connectionstring);
+            calTask = new CalendarTask(caldir, calbakdir, connectionstring, warehouse);
         }
 
         protected override void OnStart(string[] args)

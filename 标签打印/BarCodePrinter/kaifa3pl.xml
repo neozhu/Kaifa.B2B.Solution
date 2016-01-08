@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--Type:ASUSCASE_CM01_205 ORDERKEY=0000013196-->
+<!DOCTYPE labels SYSTEM "..\..\Batch\label.dtd">
+<labels _FORMAT="KAIFA_3PL_1" _PRINTERNAME="{0}" _QUANTITY="{1}">
+	<label>
+		<variable name="PO">{2}</variable>
+		<variable name="DO">{3}</variable>
+		<variable name="PN">{4}</variable>
+		<variable name="QTY">{5}</variable>
+		<variable name="TRACE">{6}</variable>
+		<variable name="GTS">{7}</variable>
+	</label>
+</labels>
