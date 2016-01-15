@@ -10,6 +10,7 @@ namespace Kaifa.Wms.OQC.WinForm
     class OQCChecker
     {
         private string _connectionstring;
+        private DataTable _cacheTable = null;
         public OQCChecker(string connectionstring)
         {
             _connectionstring = "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False";
@@ -133,16 +134,47 @@ namespace Kaifa.Wms.OQC.WinForm
         }
         public bool checkingSku(string orderkey, string dropid, string storer, string sku)
         {
+            if (this._cacheTable == null)
+            {
+                loadcacheTable(orderkey, dropid);
+            }
+            string filter=string.Format("ORDERKEY = '{0}' AND STORERKEY = '{1}' AND SKU = '{2}' AND DROPID = '{3}'",orderkey,storer,sku,dropid);
+            DataRow[] rows = this._cacheTable.Select(filter);
+            if (rows.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+              return  false;
+            }
+
+            //using (SqlConnection conn = new SqlConnection(_connectionstring))
+            //{
+            //    conn.Open();
+            //    SqlCommand cmd = conn.CreateCommand();
+            //    cmd.CommandText = string.Format(@"select count(*) from [wmwhse1].pickdetail where orderkey='{0}' and  status in(5,8) and dropid='{1}' and sku='{2}' and storerkey='{3}'", orderkey, dropid, sku, storer);
+            //    object result = cmd.ExecuteScalar();
+            //    conn.Close();
+            //    return Convert.ToBoolean(result);
+            //}
+        }
+
+        public void loadcacheTable(string orderkey,string dropid)
+        {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format(@"select count(*) from [wmwhse1].pickdetail where orderkey='{0}' and  status in(5,8) and dropid='{1}' and sku='{2}' and storerkey='{3}'", orderkey, dropid,sku,storer);
-                object result = cmd.ExecuteScalar();
-                conn.Close();
-                return Convert.ToBoolean(result);
+                cmd.CommandText = string.Format("SELECT ORDERKEY ,STORERKEY,SKU,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}'   and   DROPID='{1}'", orderkey, dropid);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                this._cacheTable = ds.Tables[0];
+
             }
         }
+       
         public bool checkingOrderKey(string orderkey)
         {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
@@ -207,16 +239,19 @@ namespace Kaifa.Wms.OQC.WinForm
         public void PlayAlarm()
         {
 
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.ALARM5);
+            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.ALARM5);
   
-            player.Play();
+            //player.Play();
+            System.Media.SystemSounds.Asterisk.Play();
         }
         public void PlayOK()
         {
 
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.DRBELL);
+            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.DRBELL);
 
-            player.Play();
+            //player.Play();
+
+            System.Media.SystemSounds.Question.Play();
         }
 
     }

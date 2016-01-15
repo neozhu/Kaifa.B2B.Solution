@@ -62,7 +62,7 @@ namespace BarCodePrinter.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?&gt;
-        ///&lt;!--Type:ASUSCASE_CM01_205 ORDERKEY=0000013196--&gt;
+        ///&lt;!--Type:KAIFA_3PL_1 DO={3}--&gt;
         ///&lt;!DOCTYPE labels SYSTEM &quot;..\..\Batch\label.dtd&quot;&gt;
         ///&lt;labels _FORMAT=&quot;KAIFA_3PL_1&quot; _PRINTERNAME=&quot;{0}&quot; _QUANTITY=&quot;{1}&quot;&gt;
         ///	&lt;label&gt;
@@ -72,7 +72,7 @@ namespace BarCodePrinter.Properties {
         ///		&lt;variable name=&quot;QTY&quot;&gt;{5}&lt;/variable&gt;
         ///		&lt;variable name=&quot;TRACE&quot;&gt;{6}&lt;/variable&gt;
         ///		&lt;variable name=&quot;GTS&quot;&gt;{7}&lt;/variable&gt;
-        ///                                     &lt;variabl [rest of string was truncated]&quot;;.
+        ///                                     &lt;variable name=&quot;COO&quot;&gt;{8}&lt;/v [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string kf3pl {
             get {
@@ -84,6 +84,28 @@ namespace BarCodePrinter.Properties {
             get {
                 object obj = ResourceManager.GetObject("rugged_climbing1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?&gt;
+        ///&lt;!--Type:KAIFA_STX_1 TRACE={7}--&gt;
+        ///&lt;!DOCTYPE labels SYSTEM &quot;..\..\Batch\label.dtd&quot;&gt;
+        ///&lt;labels _FORMAT=&quot;KAIFA_STX_1&quot; _PRINTERNAME=&quot;{0}&quot; _QUANTITY=&quot;{1}&quot;&gt;
+        ///	&lt;label&gt;
+        ///		&lt;variable name=&quot;PART&quot;&gt;{2}&lt;/variable&gt;
+        ///		&lt;variable name=&quot;QTY&quot;&gt;{3}&lt;/variable&gt;
+        ///		&lt;variable name=&quot;LOT&quot;&gt;{4}&lt;/variable&gt;
+        ///		&lt;variable name=&quot;ASL&quot;&gt;{5}&lt;/variable&gt;
+        ///		&lt;variable name=&quot;VEN&quot;&gt;{6}&lt;/variable&gt;
+        ///		&lt;variable name=&quot;TRACE&quot;&gt;{7}&lt;/variable&gt;
+        ///		&lt;variable name=&quot;DCODE&quot;&gt;{8}&lt;/variable&gt;
+        ///	&lt;/label&gt;
+        ///&lt;/lab [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string stxpl {
+            get {
+                return ResourceManager.GetString("stxpl", resourceCulture);
             }
         }
     }

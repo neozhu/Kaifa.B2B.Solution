@@ -1,0 +1,382 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="ed6f4cd7-d11d-446d-af4b-69a9f5ba836b" LowerBound="1.1" HigherBound="83.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.Orchestration.SZD940" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="6b866216-d3c7-4586-9fe7-74cfa09c4db2" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:portType name=&quot;WmsWebServicePortType&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="WmsWebServicePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="158e0281-4d10-4609-bda0-a92753668496" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;callBackEnd&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="callBackEnd" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="e959d6e0-b833-49c6-bafa-bdbc273c101c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.31">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Orchestration.SZD940.callBackEndRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;http://com.ssaglobal.com:callBackEndRequest&quot;/&gt;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="callBackEndRequest" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="779c9dee-60d3-4216-b34c-b7f3fb2ec673" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="16.33" HigherBound="16.52">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Orchestration.SZD940.callBackEndResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;http://com.ssaglobal.com:callBackEndResponse&quot;/&gt;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="callBackEndResponse" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d6fe7725-5181-48da-8de4-2a8cd9682f30" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive940FlatFile" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="bba3e742-f098-43a2-8df2-bc08d94ca9b2" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="65be2e81-8c15-4d67-8c0a-57158b7a09ea" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.50">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas._940.CM_940_Inbound" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="1fef6622-f28d-4474-adb3-11d57ca19bd4" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;callBackEndRequest&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="callBackEndRequest" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="58d4ab5f-b929-4403-8c6a-15b57ffb03ac" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9247937f-2134-43c5-aeb5-1116111be762" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;callBackEndResponse&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="callBackEndResponse" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="45461ed4-41e2-44d3-a467-268a4f783699" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b8cad8af-376f-49b1-becf-2af6f6b00a62" ParentLink="Module_ServiceDeclaration" LowerBound="26.1" HigherBound="82.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:service name=&quot;WmsWebService&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="SZDWmsWebServiceClient" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="317cde9c-a2c7-4915-98ca-ba0962ecaec5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strContent" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3c37cc48-fcb1-430d-9241-cdb247e52d4d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="pulllistNo" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="167a64e9-205c-40f7-9e1f-4cfe4e9bde34" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="siteCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="16d28241-4935-42f5-9180-c09e2ac273e9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Reqdate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="fddf9dec-ae0b-4748-a24a-ced64672851c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4bd0a46f-a79a-4722-8eaa-495d8b3ece6c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas._940.CM_940_Inbound" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CM940Message" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="178f41f6-097a-4bca-88cf-999ea36791b9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.InforAPI.InforShipmentOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipmentOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="85100f6c-75f8-4961-8b37-b171cc150e2c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.SZD940.callBackEndRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CallServiceRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4c030b82-54e8-4830-8ba9-9eba9abc8595" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.SZD940.callBackEndResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CallServiceReponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="db933755-af48-4729-86d6-4bc1f4ad231e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="b87b1964-7141-4dad-ab91-241ed1139688" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="51.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Receive940FlatFile" />
+                    <om:Property Name="MessageName" Value="CM940Message" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_CM940Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="983570aa-762e-423a-bc1c-051837d85bfa" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="57.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_ShipmentOrder" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="3672b064-1a9e-48cd-9335-ace7588ec298" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="56.1">
+                        <om:Property Name="ClassName" Value="Kaifa.B2B.Orchestration.SZD940.Mapping.Cm_940_To_ShipmentOrder" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="7a7528a5-ad38-4aad-8816-279516bd582f" ParentLink="Transform_InputMessagePartRef" LowerBound="55.109" HigherBound="55.121">
+                            <om:Property Name="MessageRef" Value="CM940Message" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="6c5913aa-486c-4e7e-a015-bffa262731fe" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.28" HigherBound="55.41">
+                            <om:Property Name="MessageRef" Value="ShipmentOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="924f53aa-2711-4c7b-a677-00ffb492fd25" ParentLink="Construct_MessageRef" LowerBound="52.23" HigherBound="52.36">
+                        <om:Property Name="Ref" Value="ShipmentOrder" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="27ac5291-767d-4f77-b5c9-18fb95802903" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="70.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Request" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="fd21e5c3-6658-418c-bb11-42ce103de014" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="62.1">
+                        <om:Property Name="ClassName" Value="Kaifa.B2B.Orchestration.SZD940.Mapping.initMap" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="d8a4821c-31cd-46de-8096-f6c6b73fbb42" ParentLink="Transform_InputMessagePartRef" LowerBound="61.109" HigherBound="61.122">
+                            <om:Property Name="MessageRef" Value="ShipmentOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="32750063-5400-4512-94b0-63f85b91b081" ParentLink="Transform_OutputMessagePartRef" LowerBound="61.28" HigherBound="61.57">
+                            <om:Property Name="MessageRef" Value="CallServiceRequest" />
+                            <om:Property Name="PartRef" Value="parameters" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="14a0e229-9770-4ff3-b2e3-05fe505ede55" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="69.1">
+                        <om:Property Name="Expression" Value=" &#xD;&#xA;strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);&#xD;&#xA;//requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString&#xD;&#xA; Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,&quot;MessageProcessor&quot;,&quot;ShipmentOrder&quot;,&quot;storeByQuote&quot;,strContent);&#xD;&#xA;&#xD;&#xA; " />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="67c2415a-72f6-477f-aeae-5a5aa52831f8" ParentLink="Construct_MessageRef" LowerBound="58.23" HigherBound="58.41">
+                        <om:Property Name="Ref" Value="CallServiceRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="9743f4b5-a3ea-4fdc-ac4b-81b50cc09368" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="72.1">
+                    <om:Property Name="PortName" Value="InvokeInforWebService" />
+                    <om:Property Name="MessageName" Value="CallServiceRequest" />
+                    <om:Property Name="OperationName" Value="callBackEnd" />
+                    <om:Property Name="OperationMessageName" Value="callBackEndRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CallRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="1b4a1fac-db8b-49d2-8a32-f206be9ea571" ParentLink="ServiceBody_Statement" LowerBound="72.1" HigherBound="74.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="InvokeInforWebService" />
+                    <om:Property Name="MessageName" Value="CallServiceReponse" />
+                    <om:Property Name="OperationName" Value="callBackEnd" />
+                    <om:Property Name="OperationMessageName" Value="callBackEndResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CallReponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="6827bc79-288e-43e5-8b26-07ad41a1bb65" ParentLink="ServiceBody_Statement" LowerBound="74.1" HigherBound="80.1">
+                    <om:Property Name="Expression" Value="pulllistNo = System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='PullNo' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])&quot;));&#xD;&#xA;siteCode =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='Site' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])&quot;));&#xD;&#xA;strType =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='PrimeOnly' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])&quot;));&#xD;&#xA;Reqdate =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='RequestDate' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])&quot;));&#xD;&#xA;Kaifa.B2B.Utility.MailClient.Send940NotificationMail(CallServiceReponse.parameters,pulllistNo,siteCode,Reqdate,strType);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Expression_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="008a8d29-5312-43f1-8228-c22764b8630a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="29.1" HigherBound="31.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.SZD940.PortType_Receive940FlatFile" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive940FlatFile" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="1a8a67e6-5ec9-41f3-8d7f-d057300e9b1b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="29.1" HigherBound="30.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="4c5ee119-7252-4fe1-a60a-e82f8856323b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="31.1" HigherBound="33.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.SZD940.WmsWebServicePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InvokeInforWebService" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="14d5108f-3acf-4e62-b6d8-71fd8c2b3e0f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="31.1" HigherBound="32.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.Orchestration.SZD940
+{
+    internal messagetype callBackEndRequest
+    {
+        body Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd parameters;
+    };
+    internal messagetype callBackEndResponse
+    {
+        body Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse parameters;
+    };
+    internal porttype WmsWebServicePortType
+    {
+        requestresponse callBackEnd
+        {
+            callBackEndRequest, callBackEndResponse
+        };
+    };
+    public porttype PortType_Receive940FlatFile
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.Schemas._940.CM_940_Inbound
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SZDWmsWebServiceClient
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_Receive940FlatFile Receive940FlatFile;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses WmsWebServicePortType InvokeInforWebService;
+        message Kaifa.B2B.Schemas._940.CM_940_Inbound CM940Message;
+        message Kaifa.B2B.Schemas.InforAPI.InforShipmentOrder ShipmentOrder;
+        message callBackEndRequest CallServiceRequest;
+        message callBackEndResponse CallServiceReponse;
+        System.String strContent;
+        System.String pulllistNo;
+        System.String siteCode;
+        System.String Reqdate;
+        System.String strType;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b87b1964-7141-4dad-ab91-241ed1139688")]
+            activate receive (Receive940FlatFile.Operation_1, CM940Message);
+            strContent = "";
+            pulllistNo = "";
+            siteCode = "";
+            Reqdate = "";
+            strType = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("983570aa-762e-423a-bc1c-051837d85bfa")]
+            construct ShipmentOrder
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3672b064-1a9e-48cd-9335-ace7588ec298")]
+                transform (ShipmentOrder) = Kaifa.B2B.Orchestration.SZD940.Mapping.Cm_940_To_ShipmentOrder (CM940Message);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("27ac5291-767d-4f77-b5c9-18fb95802903")]
+            construct CallServiceRequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fd21e5c3-6658-418c-bb11-42ce103de014")]
+                transform (CallServiceRequest.parameters) = Kaifa.B2B.Orchestration.SZD940.Mapping.initMap (ShipmentOrder);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("14a0e229-9770-4ff3-b2e3-05fe505ede55")]
+                 
+                strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);
+                //requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString
+                 Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,"MessageProcessor","ShipmentOrder","storeByQuote",strContent);
+                
+                 
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9743f4b5-a3ea-4fdc-ac4b-81b50cc09368")]
+            send (InvokeInforWebService.callBackEnd, CallServiceRequest);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1b4a1fac-db8b-49d2-8a32-f206be9ea571")]
+            receive (InvokeInforWebService.callBackEnd, CallServiceReponse);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6827bc79-288e-43e5-8b26-07ad41a1bb65")]
+            pulllistNo = System.Convert.ToString(xpath(CM940Message,"string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='PullNo' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])"));
+            siteCode =  System.Convert.ToString(xpath(CM940Message,"string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='Site' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])"));
+            strType =  System.Convert.ToString(xpath(CM940Message,"string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='PrimeOnly' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])"));
+            Reqdate =  System.Convert.ToString(xpath(CM940Message,"string(/*[local-name()='CMInbound' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound']/*[local-name()='Row' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'][1]/*[local-name()='RequestDate' and namespace-uri()='http://Kaifa.B2B.Schemas.940.CM_940_Inbound'])"));
+            Kaifa.B2B.Utility.MailClient.Send940NotificationMail(CallServiceReponse.parameters,pulllistNo,siteCode,Reqdate,strType);
+        }
+    }
+}
+

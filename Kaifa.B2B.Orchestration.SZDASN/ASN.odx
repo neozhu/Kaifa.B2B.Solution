@@ -1,0 +1,505 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="922ec423-f9f0-46f7-8c3b-118ff1153329" LowerBound="1.1" HigherBound="131.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.Orchestration.SZDASN" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="6a49eabd-ed2d-465c-8620-1cd4f628827c" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveOrderShipmentMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b35c0352-7529-4e91-8171-b3c4cd0326cc" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="cbfacd17-5ebd-40e6-bf98-6e812fc48088" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.48">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas.Wms.OrderShipment" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="fc5977a9-d73d-4528-9b6c-16e29d5ec5be" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendPip3B2Message" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5a001dea-a152-490e-8965-4edcdbc08c28" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="14828ea6-a297-47a0-9694-4bec19af56cf" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.75">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.Schemas.RosettaNet.Pip3B2AdvanceShipmentNotification" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="2baa63b8-dd0d-4312-bce4-6644f193e3dd" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="130.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SZDASN_Orchestration" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="69a657da-94ca-473f-ad05-fa08b81bcd4b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Microsoft.Solutions.BTARN.Shared.SubmitRNIF" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SubmitRNIF" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="898e9363-81f1-4525-ac3a-07beaecff826" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPipMessageForSTX" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="dd958a78-4e5d-4f6b-9ae9-34739c4ebfc9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPipMessageFore2open" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="601e90b6-bb27-4ec4-a66d-c3337e4b605b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="pipInstanceMessageIdForSTX" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="81de8073-d9de-494b-bb07-765e1b28df66" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="pipInstanceMessageIdFore2open" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="0468bc00-40b0-444f-9ce2-e442431bb12f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="pipInstanceIdentifierForSTX" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9ced1986-9037-4b8a-8151-df4f6bb1c25b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="pipInstanceIdentifierFore2open" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8d50434d-4339-48ff-9d21-4cdbce0dec7d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Increase" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e8a82767-7568-4139-bed3-f13aa6b4f493" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CountStr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="95623643-1b42-464e-b13f-88ad28a653c0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Count" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2f62cdf1-b193-41ec-9ff1-09a07eb19123" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ASIC" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="55636797-b128-4f4e-ba8f-4108d36bd591" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.Wms.OrderShipment" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OrderShipmentMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9e70b3bd-1715-408d-bc6f-b57bc1746bb7" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.Wms.VendorShipmentReport" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="VendorShipmentReportMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3be69d25-37b3-4873-97a6-2a9caeb4e248" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.RosettaNet.Pip3B2AdvanceShipmentNotification" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Pip3B2MessageForSTX" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="558d625f-c642-463e-bd61-df43a542bb9e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.Schemas.RosettaNet.Pip3B2AdvanceShipmentNotification" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Pip3B2MessageForE2open" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="18cd775c-78e2-4dd4-95ce-3e359355f3e7" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="a804b5d6-7a43-45f9-8028-b9e754308a5e" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="52.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveOrderShipmentMessage" />
+                    <om:Property Name="MessageName" Value="OrderShipmentMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveOrderShipmentMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="254a1071-3dc7-4c3b-bdfe-3cc0b2eb38dc" ParentLink="ServiceBody_Statement" LowerBound="52.1" HigherBound="54.1">
+                    <om:Property Name="Expression" Value="ASIC = xpath(OrderShipmentMessage, &quot;count(/*[local-name()='OrderShipment' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment']/*[local-name()='ASIC' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment'])&quot;); " />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="HasASICMessages" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="21bcb9df-1f56-44b9-8267-8d044638b8f5" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="85.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Decide_ASIC" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="8f83c3d1-a7de-4dfb-b72a-a2570550afdf" ParentLink="ReallyComplexStatement_Branch" LowerBound="55.13" HigherBound="85.1">
+                        <om:Property Name="Expression" Value="ASIC&gt;0" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Has ASIC" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="9bfc8034-ee26-43e6-bb5c-45a0e4ade0d9" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="67.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_Pip3B2_STX" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="dde8bb98-5b07-4c0e-ae1a-edda9bf94735" ParentLink="Construct_MessageRef" LowerBound="58.27" HigherBound="58.46">
+                                <om:Property Name="Ref" Value="Pip3B2MessageForSTX" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="f8ff329d-8a0e-4dd4-b316-06b29b673640" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="62.1">
+                                <om:Property Name="ClassName" Value="Kaifa.B2B.SZD.Mapping.Order_To_3B2_STX_ASIC" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_to_STX" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="30aee4cc-9f69-4b3b-8613-7662e076c10f" ParentLink="Transform_OutputMessagePartRef" LowerBound="61.32" HigherBound="61.51">
+                                    <om:Property Name="MessageRef" Value="Pip3B2MessageForSTX" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="d8416f76-a111-4b96-94a1-eb8623e10cd9" ParentLink="Transform_InputMessagePartRef" LowerBound="61.100" HigherBound="61.120">
+                                    <om:Property Name="MessageRef" Value="OrderShipmentMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="5c2d5c70-fb45-4dce-895b-03950e2861e2" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="66.1">
+                                <om:Property Name="Expression" Value="pipInstanceIdentifierForSTX =  Pip3B2MessageForSTX.thisDocumentIdentifier.ProprietaryDocumentIdentifier;&#xD;&#xA;Pip3B2MessageForSTX(FILE.ReceivedFileName) = &quot;ASN_To_STX＿&quot;  + pipInstanceIdentifierForSTX + &quot;.xml&quot;;&#xD;&#xA;//pipInstanceMessageIdFore2open = Pip4B2MessageForE2Open(BTS.MessageID);" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_3" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="1cc8eb7b-e23b-4782-bf22-2c235fab2d65" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
+                            <om:Property Name="PortName" Value="SendPip3B2Message" />
+                            <om:Property Name="MessageName" Value="Pip3B2MessageForSTX" />
+                            <om:Property Name="OperationName" Value="Operation_1" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_Pip3B2Message" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="d1453bcf-f0d5-4eb8-b09d-e67c38afb6e8" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="84.1">
+                            <om:Property Name="Expression" Value="//&#xD;&#xA;pipInstanceMessageIdForSTX = Pip3B2MessageForSTX(BTS.MessageID);&#xD;&#xA;strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip3B2MessageForSTX,&quot;3B2SG0100&quot;);&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To STX &quot; + pipInstanceMessageIdForSTX + &quot; - &quot; + pipInstanceIdentifierForSTX,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;SEAGATE-US&quot;,&#xD;&#xA; &quot;3B2&quot;,&#xD;&#xA; pipInstanceIdentifierForSTX,&#xD;&#xA; &quot;V01.00&quot;,&#xD;&#xA;  strPipMessageForSTX&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA; " />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="InvokeSubmitRNIFAPI" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="afce82e0-a35d-43d9-8c4d-d6f72d871766" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="09543bd5-8221-43ce-9f21-648582ff2300" ParentLink="ServiceBody_Statement" LowerBound="85.1" HigherBound="89.1">
+                    <om:Property Name="Expression" Value="Count = xpath(OrderShipmentMessage, &quot;count(/*[local-name()='OrderShipment' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment']/*[local-name()='VendorShipmentReport' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetCount" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="While" OID="4893a3f7-0cac-4491-856b-53d8ef2e53ed" ParentLink="ServiceBody_Statement" LowerBound="89.1" HigherBound="128.1">
+                    <om:Property Name="Expression" Value="Increase&lt;=Count " />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop_SplitOrderShipmentMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="25c3a17b-f5e6-46e7-b217-e4ba9648469f" ParentLink="ComplexStatement_Statement" LowerBound="92.1" HigherBound="99.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_VendorShipmentMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="4f476deb-6bfb-4917-9d12-db95bdd28f3a" ParentLink="Construct_MessageRef" LowerBound="93.27" HigherBound="93.54">
+                            <om:Property Name="Ref" Value="VendorShipmentReportMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="fef09f37-a621-423d-b6cf-a087def3c129" ParentLink="ComplexStatement_Statement" LowerBound="95.1" HigherBound="98.1">
+                            <om:Property Name="Expression" Value="CountStr = Increase.ToString();&#xD;&#xA;VendorShipmentReportMessage =  xpath(OrderShipmentMessage, &quot;/*[local-name()='OrderShipment' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment']/*[local-name()='VendorShipmentReport' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment'][&quot; + CountStr + &quot;]&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="5e341544-225f-4604-a396-645ee3631bb5" ParentLink="ComplexStatement_Statement" LowerBound="99.1" HigherBound="109.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_Pip3B2_e2open" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="64dafa56-0b96-4122-aa75-7d265acea232" ParentLink="Construct_MessageRef" LowerBound="100.27" HigherBound="100.49">
+                            <om:Property Name="Ref" Value="Pip3B2MessageForE2open" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="536d7e93-96e8-476d-890b-031e0d8dbf52" ParentLink="ComplexStatement_Statement" LowerBound="102.1" HigherBound="104.1">
+                            <om:Property Name="ClassName" Value="Kaifa.B2B.SZD.Mapping.Order_To_3B2_e2open" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_e2open" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="8a9d6a69-843a-4f2c-a6e0-30e62c5b439a" ParentLink="Transform_InputMessagePartRef" LowerBound="103.101" HigherBound="103.128">
+                                <om:Property Name="MessageRef" Value="VendorShipmentReportMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="2121fd25-fde9-4eea-8ea8-822a9408f046" ParentLink="Transform_OutputMessagePartRef" LowerBound="103.32" HigherBound="103.54">
+                                <om:Property Name="MessageRef" Value="Pip3B2MessageForE2open" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="545e151f-dbb2-430b-aa94-5a5a69daf9c2" ParentLink="ComplexStatement_Statement" LowerBound="104.1" HigherBound="108.1">
+                            <om:Property Name="Expression" Value="pipInstanceIdentifierFore2open =  Pip3B2MessageForE2open.thisDocumentIdentifier.ProprietaryDocumentIdentifier;&#xD;&#xA;Pip3B2MessageForE2open(FILE.ReceivedFileName) = &quot;ASN_To_e2open＿&quot;  + pipInstanceIdentifierFore2open + &quot;.xml&quot;;&#xD;&#xA;//pipInstanceMessageIdFore2open = Pip4B2MessageForE2Open(BTS.MessageID);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="e497b078-67c6-4dd2-b065-b42b4650bd94" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="111.1">
+                        <om:Property Name="PortName" Value="SendPip3B2Message" />
+                        <om:Property Name="MessageName" Value="Pip3B2MessageForE2open" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Pip3B2Message" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="9dddb456-6ac4-49ce-b66b-e968de7b59f4" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="125.1">
+                        <om:Property Name="Expression" Value="//&#xD;&#xA;pipInstanceMessageIdFore2open = Pip3B2MessageForE2open(BTS.MessageID);&#xD;&#xA;strPipMessageFore2open  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip3B2MessageForE2open,&quot;3B2SG0100&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;SubmitRNIF.SubmitMessage To e2open &quot; + pipInstanceMessageIdFore2open + &quot; - &quot; + pipInstanceIdentifierFore2open,&quot;kaifa.b2b&quot;);&#xD;&#xA; SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,&#xD;&#xA; &quot;KAIFA&quot;,&#xD;&#xA; &quot;E2OPEN&quot;,&#xD;&#xA; &quot;3B2&quot;,&#xD;&#xA; pipInstanceIdentifierFore2open,&#xD;&#xA; &quot;V01.00&quot;,&#xD;&#xA;  strPipMessageFore2open&#xD;&#xA;);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="InvokeSubmitRNIFAPI" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="95adbe76-d01c-4a72-9e75-3803800001fd" ParentLink="ComplexStatement_Statement" LowerBound="125.1" HigherBound="127.1">
+                        <om:Property Name="Expression" Value="Increase = Increase + 1;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Increasing" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="70bbc23e-4820-4f47-8a32-45c7243237a3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.SZDASN.PortType_ReceiveOrderShipmentMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveOrderShipmentMessage" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="549c0714-1949-4a97-8a79-704d2f1abb77" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="444397f4-e69c-4141-aacd-ce735f5ba6ef" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.Orchestration.SZDASN.PortType_SendPip3B2Message" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendPip3B2Message" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="9e28215e-0d40-42cc-842f-7bdde6e2f269" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.Orchestration.SZDASN
+{
+    public porttype PortType_ReceiveOrderShipmentMessage
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.Schemas.Wms.OrderShipment
+        };
+    };
+    public porttype PortType_SendPip3B2Message
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.Schemas.RosettaNet.Pip3B2AdvanceShipmentNotification
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SZDASN_Orchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveOrderShipmentMessage ReceiveOrderShipmentMessage;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendPip3B2Message SendPip3B2Message;
+        message Kaifa.B2B.Schemas.Wms.OrderShipment OrderShipmentMessage;
+        message Kaifa.B2B.Schemas.Wms.VendorShipmentReport VendorShipmentReportMessage;
+        message Kaifa.B2B.Schemas.RosettaNet.Pip3B2AdvanceShipmentNotification Pip3B2MessageForSTX;
+        message Kaifa.B2B.Schemas.RosettaNet.Pip3B2AdvanceShipmentNotification Pip3B2MessageForE2open;
+        Microsoft.Solutions.BTARN.Shared.SubmitRNIF SubmitRNIF;
+        System.String strPipMessageForSTX;
+        System.String strPipMessageFore2open;
+        System.String pipInstanceMessageIdForSTX;
+        System.String pipInstanceMessageIdFore2open;
+        System.String pipInstanceIdentifierForSTX;
+        System.String pipInstanceIdentifierFore2open;
+        System.Int32 Increase;
+        System.String CountStr;
+        System.Int32 Count;
+        System.Int32 ASIC;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a804b5d6-7a43-45f9-8028-b9e754308a5e")]
+            activate receive (ReceiveOrderShipmentMessage.Operation_1, OrderShipmentMessage);
+            SubmitRNIF = new Microsoft.Solutions.BTARN.Shared.SubmitRNIF();
+            strPipMessageForSTX = "";
+            strPipMessageFore2open = "";
+            pipInstanceMessageIdForSTX = "";
+            pipInstanceMessageIdFore2open = "";
+            pipInstanceIdentifierForSTX = "";
+            pipInstanceIdentifierFore2open = "";
+            CountStr = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("254a1071-3dc7-4c3b-bdfe-3cc0b2eb38dc")]
+            ASIC = xpath(OrderShipmentMessage, "count(/*[local-name()='OrderShipment' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment']/*[local-name()='ASIC' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment'])"); 
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("21bcb9df-1f56-44b9-8267-8d044638b8f5")]
+            if (ASIC>0)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9bfc8034-ee26-43e6-bb5c-45a0e4ade0d9")]
+                construct Pip3B2MessageForSTX
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f8ff329d-8a0e-4dd4-b316-06b29b673640")]
+                    transform (Pip3B2MessageForSTX) = Kaifa.B2B.SZD.Mapping.Order_To_3B2_STX_ASIC (OrderShipmentMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5c2d5c70-fb45-4dce-895b-03950e2861e2")]
+                    pipInstanceIdentifierForSTX =  Pip3B2MessageForSTX.thisDocumentIdentifier.ProprietaryDocumentIdentifier;
+                    Pip3B2MessageForSTX(FILE.ReceivedFileName) = "ASN_To_STX＿"  + pipInstanceIdentifierForSTX + ".xml";
+                    //pipInstanceMessageIdFore2open = Pip4B2MessageForE2Open(BTS.MessageID);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1cc8eb7b-e23b-4782-bf22-2c235fab2d65")]
+                send (SendPip3B2Message.Operation_1, Pip3B2MessageForSTX);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d1453bcf-f0d5-4eb8-b09d-e67c38afb6e8")]
+                //
+                pipInstanceMessageIdForSTX = Pip3B2MessageForSTX(BTS.MessageID);
+                strPipMessageForSTX  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip3B2MessageForSTX,"3B2SG0100");
+                System.Diagnostics.Trace.WriteLine("SubmitRNIF.SubmitMessage To STX " + pipInstanceMessageIdForSTX + " - " + pipInstanceIdentifierForSTX,"kaifa.b2b");
+                 SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,
+                 "KAIFA",
+                 "SEAGATE-US",
+                 "3B2",
+                 pipInstanceIdentifierForSTX,
+                 "V01.00",
+                  strPipMessageForSTX
+                );
+                
+                 
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("09543bd5-8221-43ce-9f21-648582ff2300")]
+            Count = xpath(OrderShipmentMessage, "count(/*[local-name()='OrderShipment' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment']/*[local-name()='VendorShipmentReport' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment'])"); 
+            CountStr = Count.ToString();
+            Increase = 1;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4893a3f7-0cac-4491-856b-53d8ef2e53ed")]
+            while (Increase<=Count )
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("25c3a17b-f5e6-46e7-b217-e4ba9648469f")]
+                construct VendorShipmentReportMessage
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("fef09f37-a621-423d-b6cf-a087def3c129")]
+                    CountStr = Increase.ToString();
+                    VendorShipmentReportMessage =  xpath(OrderShipmentMessage, "/*[local-name()='OrderShipment' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment']/*[local-name()='VendorShipmentReport' and namespace-uri()='http://kaifa.b2b.schemas/OrderShipment'][" + CountStr + "]");
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("5e341544-225f-4604-a396-645ee3631bb5")]
+                construct Pip3B2MessageForE2open
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("536d7e93-96e8-476d-890b-031e0d8dbf52")]
+                    transform (Pip3B2MessageForE2open) = Kaifa.B2B.SZD.Mapping.Order_To_3B2_e2open (VendorShipmentReportMessage);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("545e151f-dbb2-430b-aa94-5a5a69daf9c2")]
+                    pipInstanceIdentifierFore2open =  Pip3B2MessageForE2open.thisDocumentIdentifier.ProprietaryDocumentIdentifier;
+                    Pip3B2MessageForE2open(FILE.ReceivedFileName) = "ASN_To_e2open＿"  + pipInstanceIdentifierFore2open + ".xml";
+                    //pipInstanceMessageIdFore2open = Pip4B2MessageForE2Open(BTS.MessageID);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e497b078-67c6-4dd2-b065-b42b4650bd94")]
+                send (SendPip3B2Message.Operation_1, Pip3B2MessageForE2open);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9dddb456-6ac4-49ce-b66b-e968de7b59f4")]
+                //
+                pipInstanceMessageIdFore2open = Pip3B2MessageForE2open(BTS.MessageID);
+                strPipMessageFore2open  =  Kaifa.B2B.Utility.HeaderHelper.ReturnSCWithDocType(Pip3B2MessageForE2open,"3B2SG0100");
+                
+                System.Diagnostics.Trace.WriteLine("SubmitRNIF.SubmitMessage To e2open " + pipInstanceMessageIdFore2open + " - " + pipInstanceIdentifierFore2open,"kaifa.b2b");
+                 SubmitRNIF.SubmitMessage(Microsoft.Solutions.BTARN.Shared.MessageCategory.AsyncAction,
+                 "KAIFA",
+                 "E2OPEN",
+                 "3B2",
+                 pipInstanceIdentifierFore2open,
+                 "V01.00",
+                  strPipMessageFore2open
+                );
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("95adbe76-d01c-4a72-9e75-3803800001fd")]
+                Increase = Increase + 1;
+            }
+        }
+    }
+}
+

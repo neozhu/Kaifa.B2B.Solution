@@ -1,4 +1,4 @@
-namespace Kaifa.B2B.Orchestration.CM940 {
+namespace Kaifa.B2B.Schemas.InforAPI {
     using Microsoft.XLANGs.BaseTypes;
     
     

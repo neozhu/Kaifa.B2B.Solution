@@ -2,7 +2,7 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
     
     
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Kaifa.B2B.Schemas.InforAPI.InforShipmentOrder", typeof(Kaifa.B2B.Schemas.InforAPI.InforShipmentOrder))]
-    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com+callBackEnd", typeof(Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com+callBackEnd", typeof(Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd))]
     public sealed class initMap : Microsoft.XLANGs.BaseTypes.TransformBase {
         
         private const string _strMap = @"<?xml version=""1.0"" encoding=""UTF-16""?>
@@ -35,9 +35,9 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
         
         private const Kaifa.B2B.Schemas.InforAPI.InforShipmentOrder _srcSchemaTypeReference0 = null;
         
-        private const string _strTrgSchemasList0 = @"Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com+callBackEnd";
+        private const string _strTrgSchemasList0 = @"Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com+callBackEnd";
         
-        private const Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd _trgSchemaTypeReference0 = null;
+        private const Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd _trgSchemaTypeReference0 = null;
         
         public override string XmlContent {
             get {
@@ -62,7 +62,7 @@ namespace Kaifa.B2B.Orchestration._940.Mapping {
         public override string[] TargetSchemas {
             get {
                 string[] _TrgSchemas = new string [1];
-                _TrgSchemas[0] = @"Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com+callBackEnd";
+                _TrgSchemas[0] = @"Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com+callBackEnd";
                 return _TrgSchemas;
             }
         }

@@ -73,41 +73,41 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Inventory_To_4C1_STX.btm">
+    <Map Include="Inventory_To_4C1_STX.btm">
       <TypeName>Inventory_To_4C1_STX</TypeName>
       <Namespace>Kaifa.B2B.SZD.Mapping</Namespace>
-    </None>
+    </Map>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Inventory_To_4C1_e2open.btm">
+    <Map Include="Inventory_To_4C1_e2open.btm">
       <TypeName>Inventory_To_4C1_e2open</TypeName>
       <Namespace>Kaifa.B2B.SZD.Mapping</Namespace>
-    </None>
+    </Map>
     <None Include="kaifa.snk" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ASN_To_4B2_e2open.btm">
+    <Map Include="ASN_To_4B2_e2open.btm">
       <TypeName>ASN_To_4B2_e2open</TypeName>
       <Namespace>Kaifa.B2B.SZD.Mapping</Namespace>
-    </None>
+    </Map>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ASN_To_4B2_STX.btm">
+    <Map Include="ASN_To_4B2_STX.btm">
       <TypeName>ASN_To_4B2_STX</TypeName>
       <Namespace>Kaifa.B2B.SZD.Mapping</Namespace>
-    </None>
+    </Map>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Order_To_3B2_e2open.btm">
+    <Map Include="Order_To_3B2_e2open.btm">
       <TypeName>Order_To_3B2_e2open</TypeName>
       <Namespace>Kaifa.B2B.SZD.Mapping</Namespace>
-    </None>
+    </Map>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Order_To_3B2_STX_ASIC.btm">
+    <Map Include="Order_To_3B2_STX_ASIC.btm">
       <TypeName>Order_To_3B2_STX_ASIC</TypeName>
       <Namespace>Kaifa.B2B.SZD.Mapping</Namespace>
-    </None>
+    </Map>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

@@ -61,12 +61,12 @@
             <om:Property Name="Name" Value="callBackEndRequest" />
             <om:Property Name="Signal" Value="False" />
             <om:Element Type="PartDeclaration" OID="58d4ab5f-b929-4403-8c6a-15b57ffb03ac" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
-                <om:Property Name="ClassName" Value="Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd" />
+                <om:Property Name="ClassName" Value="Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd" />
                 <om:Property Name="IsBodyPart" Value="True" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
                 <om:Property Name="Name" Value="parameters" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Signal" Value="True" />
             </om:Element>
         </om:Element>
         <om:Element Type="MultipartMessageType" OID="9247937f-2134-43c5-aeb5-1116111be762" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
@@ -76,12 +76,12 @@
             <om:Property Name="Name" Value="callBackEndResponse" />
             <om:Property Name="Signal" Value="False" />
             <om:Element Type="PartDeclaration" OID="45461ed4-41e2-44d3-a467-268a4f783699" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
-                <om:Property Name="ClassName" Value="Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEndResponse" />
+                <om:Property Name="ClassName" Value="Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse" />
                 <om:Property Name="IsBodyPart" Value="True" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
                 <om:Property Name="Name" Value="parameters" />
-                <om:Property Name="Signal" Value="False" />
+                <om:Property Name="Signal" Value="True" />
             </om:Element>
         </om:Element>
         <om:Element Type="ServiceDeclaration" OID="b8cad8af-376f-49b1-becf-2af6f6b00a62" ParentLink="Module_ServiceDeclaration" LowerBound="26.1" HigherBound="82.1">
@@ -224,10 +224,10 @@
                         </om:Element>
                     </om:Element>
                     <om:Element Type="MessageAssignment" OID="14a0e229-9770-4ff3-b2e3-05fe505ede55" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="69.1">
-                        <om:Property Name="Expression" Value=" &#xD;&#xA;strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);&#xD;&#xA;//requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString&#xD;&#xA; Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,&quot;MessageProcessor&quot;,&quot;ShipmentOrder&quot;,&quot;storeByQuote&quot;,strContent);&#xD;&#xA;&#xD;&#xA; " />
+                        <om:Property Name="Expression" Value="// &#xD;&#xA;strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);&#xD;&#xA;//requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString&#xD;&#xA; Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,&quot;MessageProcessor&quot;,&quot;ShipmentOrder&quot;,&quot;storeByQuote&quot;,strContent);&#xD;&#xA;&#xD;&#xA; " />
                         <om:Property Name="ReportToAnalyst" Value="False" />
                         <om:Property Name="Name" Value="MessageAssignment_1" />
-                        <om:Property Name="Signal" Value="False" />
+                        <om:Property Name="Signal" Value="True" />
                     </om:Element>
                     <om:Element Type="MessageRef" OID="67c2415a-72f6-477f-aeae-5a5aa52831f8" ParentLink="Construct_MessageRef" LowerBound="58.23" HigherBound="58.41">
                         <om:Property Name="Ref" Value="CallServiceRequest" />
@@ -302,11 +302,11 @@ module Kaifa.B2B.Orchestration.CM940
 {
     internal messagetype callBackEndRequest
     {
-        body WmsWebService_com_ssaglobal_com.callBackEnd parameters;
+        body Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd parameters;
     };
     internal messagetype callBackEndResponse
     {
-        body WmsWebService_com_ssaglobal_com.callBackEndResponse parameters;
+        body Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse parameters;
     };
     internal porttype WmsWebServicePortType
     {
@@ -359,7 +359,7 @@ module Kaifa.B2B.Orchestration.CM940
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("fd21e5c3-6658-418c-bb11-42ce103de014")]
                 transform (CallServiceRequest.parameters) = Kaifa.B2B.Orchestration._940.Mapping.initMap (ShipmentOrder);
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("14a0e229-9770-4ff3-b2e3-05fe505ede55")]
-                 
+                // 
                 strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);
                 //requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString
                  Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,"MessageProcessor","ShipmentOrder","storeByQuote",strContent);

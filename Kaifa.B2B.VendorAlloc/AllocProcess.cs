@@ -15,7 +15,7 @@ namespace Kaifa.B2B.VendorAlloc
         private string _excelFile;
         private string _connectionstring;
         public const string WAREHOUSE = "WMWHSE1";
-        private string _warehouse = "WMWHSE1";
+        private string _warehouse = "wmwhse1";
         private string _fileName = "";
         public AllocProcess(string allocFile, string connectionstring,string warehouse)
         {
@@ -48,12 +48,19 @@ namespace Kaifa.B2B.VendorAlloc
                 stream.Close();
                 if (result.Tables.Count > 0 && result.Tables[0].Rows.Count>0)
                 {
-                    DataTable notsku=VaildateTable(result.Tables[0]);
-                    if (notsku.Rows.Count>0)
+                    try
                     {
-                        MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
+                        DataTable notsku = VaildateTable(result.Tables[0]);
+                        if (notsku.Rows.Count > 0)
+                        {
+                            MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
 
-                        return;
+                            return;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
                     }
                     using (SqlConnection conn = new SqlConnection(_connectionstring))
                     {
@@ -72,10 +79,10 @@ namespace Kaifa.B2B.VendorAlloc
                                     continue;
                                 }
 
-                                
+                                #region sqlcmd
                                 SqlCommand cmd = conn.CreateCommand();
                                 cmd.Transaction = trx;
-                                cmd.CommandText =string.Format(@"INSERT INTO [wmwhse1].[STXALLOCATION]
+                                cmd.CommandText =string.Format(@"INSERT INTO [{0}].[STXALLOCATION]
                                                     ([WHSEID]
                                                     ,[PLANNERCODE]
                                                     ,[STXAGRP]
@@ -108,7 +115,7 @@ namespace Kaifa.B2B.VendorAlloc
                                                           ,'{12}'
                                                           ,'{13}')"
 
-                                    , WAREHOUSE
+                                    , _warehouse
                                     , dr["Planner Code"]
                                     , dr["SITE"]
                                     , GetAllocType(_excelFile)
@@ -120,11 +127,12 @@ namespace Kaifa.B2B.VendorAlloc
                                     , dr["Start Date Active"]
                                     , dr["End Date Active"]
                                     , DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                                    , WAREHOUSE
+                                    , _warehouse
                                     , ""
                                     , _fileName
                                     );
                                 Console.WriteLine("reading....." + dr["Planner Code"].ToString());
+                                #endregion
                                 //Site	Prime Part	Alternate Part	Vendor Number	Allocation Percentage	Start Date Active	End Date Active	Planner Code	Non ASIC Indicator
                                 cmd.ExecuteNonQuery();
                             }
@@ -157,6 +165,7 @@ namespace Kaifa.B2B.VendorAlloc
                     if (!VaildationSKU(dr["Alternate Part"].ToString(), dr["Vendor Number"].ToString()))
                                 {
                                     dt.ImportRow(dr);
+                                    Console.WriteLine(dr["Alternate Part"].ToString(), dr["Vendor Number"].ToString());
                                 }
             }
             return dt;

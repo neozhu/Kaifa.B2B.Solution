@@ -5,11 +5,11 @@ namespace Kaifa.B2B.Orchestration.CM940
 {
 
     [System.SerializableAttribute]
-    sealed public class __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEnd__ : Microsoft.XLANGs.Core.XSDPart
+    sealed public class __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEnd__ : Microsoft.XLANGs.Core.XSDPart
     {
-        private static Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd _schema = new Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd();
+        private static Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd _schema = new Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd();
 
-        public __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEnd__(Microsoft.XLANGs.Core.XMessage msg, string name, int index) : base(msg, name, index) { }
+        public __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEnd__(Microsoft.XLANGs.Core.XMessage msg, string name, int index) : base(msg, name, index) { }
 
         
         #region part reflection support
@@ -22,13 +22,13 @@ namespace Kaifa.B2B.Orchestration.CM940
         Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eNone,
         "",
         new System.Type[]{
-            typeof(Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd)
+            typeof(Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd)
         },
         new string[]{
             "parameters"
         },
         new System.Type[]{
-            typeof(__Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEnd__)
+            typeof(__Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEnd__)
         },
         0,
         @"http://com.ssaglobal.com#callBackEnd"
@@ -36,11 +36,11 @@ namespace Kaifa.B2B.Orchestration.CM940
     [System.SerializableAttribute]
     sealed internal class callBackEndRequest : Microsoft.BizTalk.XLANGs.BTXEngine.BTXMessage
     {
-        public __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEnd__ parameters;
+        public __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEnd__ parameters;
 
         private void __CreatePartWrappers()
         {
-            parameters = new __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEnd__(this, "parameters", 0);
+            parameters = new __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEnd__(this, "parameters", 0);
             this.AddPart("parameters", 0, parameters);
         }
 
@@ -51,11 +51,11 @@ namespace Kaifa.B2B.Orchestration.CM940
     }
 
     [System.SerializableAttribute]
-    sealed public class __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEndResponse__ : Microsoft.XLANGs.Core.XSDPart
+    sealed public class __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEndResponse__ : Microsoft.XLANGs.Core.XSDPart
     {
-        private static Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEndResponse _schema = new Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEndResponse();
+        private static Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse _schema = new Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse();
 
-        public __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEndResponse__(Microsoft.XLANGs.Core.XMessage msg, string name, int index) : base(msg, name, index) { }
+        public __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEndResponse__(Microsoft.XLANGs.Core.XMessage msg, string name, int index) : base(msg, name, index) { }
 
         
         #region part reflection support
@@ -68,13 +68,13 @@ namespace Kaifa.B2B.Orchestration.CM940
         Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eNone,
         "",
         new System.Type[]{
-            typeof(Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEndResponse)
+            typeof(Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse)
         },
         new string[]{
             "parameters"
         },
         new System.Type[]{
-            typeof(__Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEndResponse__)
+            typeof(__Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEndResponse__)
         },
         0,
         @"http://com.ssaglobal.com#callBackEndResponse"
@@ -82,11 +82,11 @@ namespace Kaifa.B2B.Orchestration.CM940
     [System.SerializableAttribute]
     sealed internal class callBackEndResponse : Microsoft.BizTalk.XLANGs.BTXEngine.BTXMessage
     {
-        public __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEndResponse__ parameters;
+        public __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEndResponse__ parameters;
 
         private void __CreatePartWrappers()
         {
-            parameters = new __Kaifa_B2B_Orchestration_CM940_WmsWebService_com_ssaglobal_com_callBackEndResponse__(this, "parameters", 0);
+            parameters = new __Kaifa_B2B_Schemas_InforAPI_WmsWebService_com_ssaglobal_com_callBackEndResponse__(this, "parameters", 0);
             this.AddPart("parameters", 0, parameters);
         }
 
@@ -433,7 +433,7 @@ namespace Kaifa.B2B.Orchestration.CM940
 <TrkMetadata>
 <Line>357</Line><Position>13</Position><ShapeID>'27ac5291-767d-4f77-b5c9-18fb95802903'</ShapeID>
 <Messages>
-	<MsgInfo><name>CallServiceRequest</name><part>parameters</part><schema>Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com+callBackEnd</schema><direction>Out</direction></MsgInfo>
+	<MsgInfo><name>CallServiceRequest</name><part>parameters</part><schema>Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com+callBackEnd</schema><direction>Out</direction></MsgInfo>
 	<MsgInfo><name>ShipmentOrder</name><part>part</part><schema>Kaifa.B2B.Schemas.InforAPI.InforShipmentOrder</schema><direction>In</direction></MsgInfo>
 </Messages>
 </TrkMetadata>
@@ -441,14 +441,14 @@ namespace Kaifa.B2B.Orchestration.CM940
 <TrkMetadata>
 <Line>370</Line><Position>13</Position><ShapeID>'9743f4b5-a3ea-4fdc-ac4b-81b50cc09368'</ShapeID>
 <Messages>
-	<MsgInfo><name>CallServiceRequest</name><part>parameters</part><schema>Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com+callBackEnd</schema><direction>Out</direction></MsgInfo>
+	<MsgInfo><name>CallServiceRequest</name><part>parameters</part><schema>Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com+callBackEnd</schema><direction>Out</direction></MsgInfo>
 </Messages>
 </TrkMetadata>
 
 <TrkMetadata>
 <Line>372</Line><Position>13</Position><ShapeID>'1b4a1fac-db8b-49d2-8a32-f206be9ea571'</ShapeID>
 <Messages>
-	<MsgInfo><name>CallServiceReponse</name><part>parameters</part><schema>Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com+callBackEndResponse</schema><direction>Out</direction></MsgInfo>
+	<MsgInfo><name>CallServiceReponse</name><part>parameters</part><schema>Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com+callBackEndResponse</schema><direction>Out</direction></MsgInfo>
 </Messages>
 </TrkMetadata>
 
@@ -524,12 +524,12 @@ namespace Kaifa.B2B.Orchestration.CM940
             <om:Property Name='Name' Value='callBackEndRequest' />
             <om:Property Name='Signal' Value='False' />
             <om:Element Type='PartDeclaration' OID='58d4ab5f-b929-4403-8c6a-15b57ffb03ac' ParentLink='MultipartMessageType_PartDeclaration' LowerBound='6.1' HigherBound='7.1'>
-                <om:Property Name='ClassName' Value='Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEnd' />
+                <om:Property Name='ClassName' Value='Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEnd' />
                 <om:Property Name='IsBodyPart' Value='True' />
                 <om:Property Name='ReportToAnalyst' Value='True' />
                 <om:Property Name='AnalystComments' Value='&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;' />
                 <om:Property Name='Name' Value='parameters' />
-                <om:Property Name='Signal' Value='False' />
+                <om:Property Name='Signal' Value='True' />
             </om:Element>
         </om:Element>
         <om:Element Type='MultipartMessageType' OID='9247937f-2134-43c5-aeb5-1116111be762' ParentLink='Module_MessageType' LowerBound='8.1' HigherBound='12.1'>
@@ -539,12 +539,12 @@ namespace Kaifa.B2B.Orchestration.CM940
             <om:Property Name='Name' Value='callBackEndResponse' />
             <om:Property Name='Signal' Value='False' />
             <om:Element Type='PartDeclaration' OID='45461ed4-41e2-44d3-a467-268a4f783699' ParentLink='MultipartMessageType_PartDeclaration' LowerBound='10.1' HigherBound='11.1'>
-                <om:Property Name='ClassName' Value='Kaifa.B2B.Orchestration.CM940.WmsWebService_com_ssaglobal_com.callBackEndResponse' />
+                <om:Property Name='ClassName' Value='Kaifa.B2B.Schemas.InforAPI.WmsWebService_com_ssaglobal_com.callBackEndResponse' />
                 <om:Property Name='IsBodyPart' Value='True' />
                 <om:Property Name='ReportToAnalyst' Value='True' />
                 <om:Property Name='AnalystComments' Value='&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;' />
                 <om:Property Name='Name' Value='parameters' />
-                <om:Property Name='Signal' Value='False' />
+                <om:Property Name='Signal' Value='True' />
             </om:Element>
         </om:Element>
         <om:Element Type='ServiceDeclaration' OID='b8cad8af-376f-49b1-becf-2af6f6b00a62' ParentLink='Module_ServiceDeclaration' LowerBound='26.1' HigherBound='82.1'>
@@ -687,10 +687,10 @@ namespace Kaifa.B2B.Orchestration.CM940
                         </om:Element>
                     </om:Element>
                     <om:Element Type='MessageAssignment' OID='14a0e229-9770-4ff3-b2e3-05fe505ede55' ParentLink='ComplexStatement_Statement' LowerBound='62.1' HigherBound='69.1'>
-                        <om:Property Name='Expression' Value=' &#xD;&#xA;strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);&#xD;&#xA;//requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString&#xD;&#xA; Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,&quot;MessageProcessor&quot;,&quot;ShipmentOrder&quot;,&quot;storeByQuote&quot;,strContent);&#xD;&#xA;&#xD;&#xA; ' />
+                        <om:Property Name='Expression' Value='// &#xD;&#xA;strContent = Kaifa.B2B.Utility.HeaderHelper.ReturnStringRemoveNamespace(ShipmentOrder);&#xD;&#xA;//requestMessage.RequestType.ToString(), requestMessage.MessageType.ToString(), requestMessage.RequestMethod.ToString(), requestMessage.XmlString&#xD;&#xA; Kaifa.B2B.Utility.HeaderHelper.AssignmentInforRequest(CallServiceRequest.parameters,&quot;MessageProcessor&quot;,&quot;ShipmentOrder&quot;,&quot;storeByQuote&quot;,strContent);&#xD;&#xA;&#xD;&#xA; ' />
                         <om:Property Name='ReportToAnalyst' Value='False' />
                         <om:Property Name='Name' Value='MessageAssignment_1' />
-                        <om:Property Name='Signal' Value='False' />
+                        <om:Property Name='Signal' Value='True' />
                     </om:Element>
                     <om:Element Type='MessageRef' OID='67c2415a-72f6-477f-aeae-5a5aa52831f8' ParentLink='Construct_MessageRef' LowerBound='58.23' HigherBound='58.41'>
                         <om:Property Name='Ref' Value='CallServiceRequest' />
@@ -792,15 +792,15 @@ namespace Kaifa.B2B.Orchestration.CM940
                 WmsWebServiceClient __svc__ = (WmsWebServiceClient)_service;
                 __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.Receive940FlatFile != null)
-                {
-                    __svc__.Receive940FlatFile.Close(this, null);
-                    __svc__.Receive940FlatFile = null;
-                }
                 if (__svc__.InvokeInforWebService != null)
                 {
                     __svc__.InvokeInforWebService.Close(this, null);
                     __svc__.InvokeInforWebService = null;
+                }
+                if (__svc__.Receive940FlatFile != null)
+                {
+                    __svc__.Receive940FlatFile.Close(this, null);
+                    __svc__.Receive940FlatFile = null;
                 }
                 base.Finally();
             }
@@ -844,36 +844,36 @@ namespace Kaifa.B2B.Orchestration.CM940
                 __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
                 __WmsWebServiceClient_1 __ctx1__ = (__WmsWebServiceClient_1)(__svc__._stateMgrs[1]);
 
-                if (__ctx1__ != null)
-                    __ctx1__.__strType = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pulllistNo = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__Reqdate = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__siteCode = null;
-                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
-                    __ctx1__.__ShipmentOrder = null;
-                }
-                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
-                    __ctx1__.__CallServiceRequest = null;
-                }
-                if (__ctx1__ != null && __ctx1__.__CM940Message != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
-                    __ctx1__.__CM940Message = null;
-                }
                 if (__ctx1__ != null && __ctx1__.__CallServiceReponse != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceReponse);
                     __ctx1__.__CallServiceReponse = null;
                 }
                 if (__ctx1__ != null)
+                    __ctx1__.__siteCode = null;
+                if (__ctx1__ != null)
                     __ctx1__.__strContent = null;
+                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
+                    __ctx1__.__ShipmentOrder = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__Reqdate = null;
+                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
+                    __ctx1__.__CallServiceRequest = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__pulllistNo = null;
+                if (__ctx1__ != null && __ctx1__.__CM940Message != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
+                    __ctx1__.__CM940Message = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__strType = null;
                 if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
                 {
                     __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
@@ -1407,7 +1407,7 @@ namespace Kaifa.B2B.Orchestration.CM940
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{EFC96293-43B2-4E02-89BB-F9857CB24E6A}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{A17CFBB2-AE65-4062-9C7E-C9C661B99AE8}"))
         };
 
     }

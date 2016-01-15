@@ -72,6 +72,10 @@
       <TypeName>ShipmentOrderAPI_store</TypeName>
       <Namespace>Kaifa.B2B.Schemas.InforAPI</Namespace>
     </None>
+    <Schema Include="WmsWebService_com_ssaglobal_com.xsd">
+      <TypeName>WmsWebService_com_ssaglobal_com</TypeName>
+      <Namespace>Kaifa.B2B.Schemas.InforAPI</Namespace>
+    </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

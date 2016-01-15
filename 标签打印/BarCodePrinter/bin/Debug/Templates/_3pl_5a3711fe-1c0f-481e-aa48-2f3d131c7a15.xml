@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--Type:KAIFA_3PL_1 DO=4-->
+<!DOCTYPE labels SYSTEM "..\..\Batch\label.dtd">
+<labels _FORMAT="KAIFA_3PL_1" _PRINTERNAME="" _QUANTITY="1">
+	<label>
+		<variable name="PO">4</variable>
+		<variable name="DO">4</variable>
+		<variable name="PN">iuu</variable>
+		<variable name="QTY">88</variable>
+		<variable name="TRACE">98</variable>
+		<variable name="GTS">98</variable>
+                                     <variable name="COO">333</variable>
+	</label>
+</labels>

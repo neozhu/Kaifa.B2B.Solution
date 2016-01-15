@@ -21,8 +21,8 @@ namespace TestConsoleApp
         static void Main(string[] args)
         {
 
-            XmlDocument doc = new XmlDocument();
-            doc.Load("c:\\hddec.xml");
+            //XmlDocument doc = new XmlDocument();
+            //doc.Load("c:\\hddec.xml");
             //HBDec.Read(doc);
             //DisB2B.Read(doc);
 
@@ -80,10 +80,10 @@ namespace TestConsoleApp
             //Console.ReadLine();
             //t.Stop();
 
-            //CalendarProcess p = new CalendarProcess("C:\\希捷日历导入模板.xlsx", "Server=10.10.205.37;Database=STEST;User ID=sa;Password=1;Trusted_Connection=False;");
+            //CalendarProcess p = new CalendarProcess("C:\\希捷日历11.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse2");
             //p.Read();
-            //AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_quarter20151002000231.xlsx", "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False");
-            //p.Read();
+            AllocProcess p = new AllocProcess("c:\\SZD_vendor_alloc_quarter20160104.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse2");
+            p.Read();
             //string a = "STZ".Substring(0, 2);
             //string connstring = "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False";
             //string warehouse = "wmwhse1";
@@ -228,11 +228,11 @@ namespace TestConsoleApp
             string alldir = System.Configuration.ConfigurationManager.AppSettings["allocDir"];
             string allbakdir = System.Configuration.ConfigurationManager.AppSettings["allocBakDir"];
 
-            AllocTask allTask = new AllocTask(alldir, allbakdir, connectionstring);
+            AllocTask allTask = new AllocTask(alldir, allbakdir, connectionstring, "wmwhse2");
             string caldir = System.Configuration.ConfigurationManager.AppSettings["calDir"];
             string calbakdir = System.Configuration.ConfigurationManager.AppSettings["calBakDir"];
 
-            CalendarTask calTask = new CalendarTask(caldir, calbakdir, connectionstring);
+            CalendarTask calTask = new CalendarTask(caldir, calbakdir, connectionstring, "wmwhse2");
 
             allTask.Start();
             calTask.Start();

@@ -83,12 +83,6 @@
     </Map>
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="WmsWebService_com_ssaglobal_com.xsd">
-      <TypeName>WmsWebService_com_ssaglobal_com</TypeName>
-      <Namespace>Kaifa.B2B.Orchestration.CM940</Namespace>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
     <XLang Include="WmsWebService.odx">
       <TypeName>WmsWebService</TypeName>
       <Namespace>Kaifa.B2B.Orchestration._940</Namespace>

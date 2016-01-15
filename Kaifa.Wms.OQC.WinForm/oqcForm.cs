@@ -10,8 +10,12 @@ using System.Linq.Expressions;
 
 namespace Kaifa.Wms.OQC.WinForm
 {
+
     public partial class oqcForm : Form
     {
+        public delegate DataTable QueryQCDelegate(string orderkey, string dropid, bool onlydiff);
+        public delegate DataTable QueryLogDelegate(string orderkey, string dropid);
+        public delegate void QueryCompleted(DataTable dt);
         private string _connectionstring = "";
 
         private OQCChecker checker = null;
@@ -90,42 +94,75 @@ namespace Kaifa.Wms.OQC.WinForm
         }
         private void loadOQCResult(string orderkey, string dropid, bool onlydiff)
         {
-            DataTable dt = checker.GetOQCResult(orderkey, dropid, onlydiff);
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = dt;
-           
+            //DataTable dt = checker.GetOQCResult(orderkey, dropid, onlydiff);
 
-           
+            QueryQCDelegate querydelegate = new QueryQCDelegate(checker.GetOQCResult);
 
-            this.pickdetailgrid.DataSource = bindingSource;
+            querydelegate.BeginInvoke(orderkey, dropid, onlydiff, new AsyncCallback(res => {
 
-            //pickdetailgrid.Columns[0].Name = "ORDERKEY";
-            //pickdetailgrid.Columns[0].DataPropertyName = "ORDERKEY";
-            pickdetailgrid.Columns[0].HeaderText = "订单号";
-            //pickdetailgrid.Columns[1].Name = "DROPID";
-            //pickdetailgrid.Columns[1].DataPropertyName = "DROPID";
-            pickdetailgrid.Columns[1].HeaderText = "货主";
-            pickdetailgrid.Columns[2].HeaderText = "料号";
-            pickdetailgrid.Columns[3].HeaderText = "捡货数量";
-            pickdetailgrid.Columns[4].HeaderText = "复检数量";
-            pickdetailgrid.Columns[5].HeaderText = "差异数量";
-            pickdetailgrid.Columns[6].HeaderText = "落放ID";
+                QueryQCDelegate query = (QueryQCDelegate)res.AsyncState;
+                DataTable dt = query.EndInvoke(res);
+
+                this.Invoke((QueryCompleted)delegate
+                {
+                    BindingSource bindingSource = new BindingSource();
+                    bindingSource.DataSource = dt;
+
+
+
+
+                    this.pickdetailgrid.DataSource = bindingSource;
+
+                    //pickdetailgrid.Columns[0].Name = "ORDERKEY";
+                    //pickdetailgrid.Columns[0].DataPropertyName = "ORDERKEY";
+                    pickdetailgrid.Columns[0].HeaderText = "订单号";
+                    //pickdetailgrid.Columns[1].Name = "DROPID";
+                    //pickdetailgrid.Columns[1].DataPropertyName = "DROPID";
+                    pickdetailgrid.Columns[1].HeaderText = "货主";
+                    pickdetailgrid.Columns[2].HeaderText = "料号";
+                    pickdetailgrid.Columns[3].HeaderText = "捡货数量";
+                    pickdetailgrid.Columns[4].HeaderText = "复检数量";
+                    pickdetailgrid.Columns[5].HeaderText = "差异数量";
+                    pickdetailgrid.Columns[6].HeaderText = "落放ID";
+                }, dt
+                );
+
+                
+
+            
+            }), querydelegate);
+
+            
            
         }
         private void loadCheckLog(string orderkey, string dropid)
         {
-            DataTable dt = checker.GetCheckLog(orderkey, dropid);
-            this.checkrecordgrid.DataSource = dt;
+            //DataTable dt = checker.GetCheckLog(orderkey, dropid);
+              QueryLogDelegate querydelegate = new QueryLogDelegate(checker.GetCheckLog);
+
+            querydelegate.BeginInvoke(orderkey, dropid, new AsyncCallback(res => {
+
+                 QueryLogDelegate query = (QueryLogDelegate)res.AsyncState;
+                DataTable dt = query.EndInvoke(res);
+
+                this.Invoke((QueryCompleted)delegate
+                {
 
 
-            checkrecordgrid.Columns[0].HeaderText = "ID";
-            checkrecordgrid.Columns[0].Width = 40;
-            checkrecordgrid.Columns[1].HeaderText = "货主";
-            checkrecordgrid.Columns[2].HeaderText = "料号";
-            checkrecordgrid.Columns[3].HeaderText = "复检数量";
-            checkrecordgrid.Columns[4].HeaderText = "落放";
-            checkrecordgrid.Columns[6].HeaderText = "订单号";
-            checkrecordgrid.Columns[5].HeaderText = "条码信息";
+                    this.checkrecordgrid.DataSource = dt;
+
+
+                    checkrecordgrid.Columns[0].HeaderText = "ID";
+                    checkrecordgrid.Columns[0].Width = 40;
+                    checkrecordgrid.Columns[1].HeaderText = "货主";
+                    checkrecordgrid.Columns[2].HeaderText = "料号";
+                    checkrecordgrid.Columns[3].HeaderText = "复检数量";
+                    checkrecordgrid.Columns[4].HeaderText = "落放";
+                    checkrecordgrid.Columns[6].HeaderText = "订单号";
+                    checkrecordgrid.Columns[5].HeaderText = "条码信息";
+                }, dt);
+
+                }),querydelegate);
             
          
         }
@@ -139,6 +176,7 @@ namespace Kaifa.Wms.OQC.WinForm
             if ((this.dropidtxt.Text.Length>1) && checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
             {
                 ReloadCheckResult();
+                checker.loadcacheTable(this.orderkeytxt.Text, this.dropidtxt.Text);
             }
             else if(this.dropidtxt.Text.Length>1)
             {
@@ -248,7 +286,7 @@ namespace Kaifa.Wms.OQC.WinForm
             if (e.KeyChar == 13)
             {
 
-                string[] barcodes =  this.stxqrcode.Text.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] barcodes =  this.stxqrcode.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
                 if (barcodes.Length >= 7)
                 {
                     string orderkey = this.orderkeytxt.Text;
@@ -277,14 +315,18 @@ namespace Kaifa.Wms.OQC.WinForm
                     {
                         checker.insertLog(this.orderkeytxt.Text, this.dropidtxt.Text, ven.Replace("\n", ""), sku.Replace("\n", ""), Convert.ToInt32(qty.Replace("\n", "")), this.stxqrcode.Text);
                         checker.PlayOK();
-                        this.stxqrcode.Text = string.Empty;
+                        
                         CleanTextBox();
+                        this.stxqrcode.BackColor = Color.Green;
+                        this.stxqrcode.Text = string.Empty;
                     }
                     else
                     {
                         checker.PlayAlarm();
-                        this.stxqrcode.Text = string.Empty;
+                        
                         CleanTextBox();
+                        this.stxqrcode.BackColor = Color.Red;
+                        this.stxqrcode.Text = string.Empty;
                     }
                     this.GetOrderQtyInfo();
                     this.ReloadCheckResult();

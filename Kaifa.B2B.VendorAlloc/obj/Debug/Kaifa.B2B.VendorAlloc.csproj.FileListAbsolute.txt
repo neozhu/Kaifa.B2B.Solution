@@ -3,8 +3,8 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\bin\De
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\bin\Debug\Excel.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\bin\Debug\Excel.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\ResolveAssemblyReference.cache
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\Kaifa.B2B.VendorAlloc.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\Kaifa.B2B.VendorAlloc.pdb
-D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.dll
-D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.pdb
