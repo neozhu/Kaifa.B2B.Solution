@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq.Expressions;
+using System.IO;
 
 namespace Kaifa.Wms.OQC.WinForm
 {
@@ -148,7 +149,7 @@ namespace Kaifa.Wms.OQC.WinForm
                 this.Invoke((QueryCompleted)delegate
                 {
 
-
+                    this.countlb.Text = string.Format("({0}) 盘", dt.Rows.Count);
                     this.checkrecordgrid.DataSource = dt;
 
 
@@ -368,6 +369,37 @@ namespace Kaifa.Wms.OQC.WinForm
                 this.GetOrderQtyInfo();
                 this.ReloadCheckResult();
             };
+        }
+
+        private void exportbtn_Click(object sender, EventArgs e)
+        {
+            if (this.orderkeytxt.Text.Length > 0)
+            {
+                MemoryStream filestrem = checker.ExportExcel(this.orderkeytxt.Text);
+                Stream myStream;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+                saveFileDialog1.Filter = "Excel文件|*.xls";
+                saveFileDialog1.FilterIndex = 2;
+                saveFileDialog1.RestoreDirectory = true;
+                saveFileDialog1.FileName = this.orderkeytxt.Text + "复检结果.xls";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    if ((myStream = saveFileDialog1.OpenFile()) != null)
+                    {
+                        // Code to write the stream goes here.
+                        myStream.Write(filestrem.GetBuffer(), 0, filestrem.GetBuffer().Length);
+                        myStream.Close();
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("请输入订单号！");
+                this.orderkeytxt.Focus();
+            }
         }
 
         

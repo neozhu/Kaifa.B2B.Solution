@@ -60,18 +60,20 @@
             this.pickdetailgrid = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.checkrecordgrid = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.delmenu = new System.Windows.Forms.ToolStripMenuItem();
             this.diffqtytxt = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.diffck = new System.Windows.Forms.CheckBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.delmenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportbtn = new System.Windows.Forms.Button();
+            this.countlb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pickdetailgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkrecordgrid)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -452,6 +454,22 @@
             this.checkrecordgrid.Size = new System.Drawing.Size(490, 225);
             this.checkrecordgrid.TabIndex = 250;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.contextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.delmenu});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
+            // 
+            // delmenu
+            // 
+            this.delmenu.Name = "delmenu";
+            this.delmenu.Size = new System.Drawing.Size(152, 22);
+            this.delmenu.Text = "删除扫码记录";
+            this.delmenu.Click += new System.EventHandler(this.delmenu_Click);
+            // 
             // diffqtytxt
             // 
             this.diffqtytxt.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -527,28 +545,43 @@
             this.splitContainer1.SplitterDistance = 490;
             this.splitContainer1.TabIndex = 281;
             // 
-            // contextMenuStrip1
+            // exportbtn
             // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.contextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.delmenu});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
+            this.exportbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportbtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.exportbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exportbtn.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.exportbtn.Location = new System.Drawing.Point(940, 10);
+            this.exportbtn.Name = "exportbtn";
+            this.exportbtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.exportbtn.Size = new System.Drawing.Size(106, 74);
+            this.exportbtn.TabIndex = 282;
+            this.exportbtn.Text = "导出复检结果";
+            this.exportbtn.UseVisualStyleBackColor = true;
+            this.exportbtn.Click += new System.EventHandler(this.exportbtn_Click);
             // 
-            // delmenu
+            // countlb
             // 
-            this.delmenu.Name = "delmenu";
-            this.delmenu.Size = new System.Drawing.Size(152, 22);
-            this.delmenu.Text = "删除扫码记录";
-            this.delmenu.Click += new System.EventHandler(this.delmenu_Click);
+            this.countlb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.countlb.AutoSize = true;
+            this.countlb.Cursor = System.Windows.Forms.Cursors.Default;
+            this.countlb.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.countlb.ForeColor = System.Drawing.Color.Green;
+            this.countlb.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.countlb.Location = new System.Drawing.Point(213, 397);
+            this.countlb.Name = "countlb";
+            this.countlb.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.countlb.Size = new System.Drawing.Size(57, 39);
+            this.countlb.TabIndex = 283;
+            this.countlb.Text = "(1)";
             // 
             // oqcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1058, 440);
+            this.Controls.Add(this.countlb);
+            this.Controls.Add(this.exportbtn);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.stxqrcode);
             this.Controls.Add(this.diffqtytxt);
@@ -575,19 +608,15 @@
             this.Controls.Add(this.orderkeytxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.diffck);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "oqcForm";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "出货复检程序";
             ((System.ComponentModel.ISupportInitialize)(this.pickdetailgrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkrecordgrid)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,6 +654,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem delmenu;
+        private System.Windows.Forms.Button exportbtn;
+        private System.Windows.Forms.Label countlb;
     }
 }
 

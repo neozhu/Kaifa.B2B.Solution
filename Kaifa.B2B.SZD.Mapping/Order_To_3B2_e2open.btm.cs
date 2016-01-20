@@ -17,7 +17,7 @@ namespace Kaifa.B2B.SZD.Mapping {
     <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimLeft(&quot;KFS&quot;)"" />
     <xsl:variable name=""var:v4"" select=""userCSharp:StringTrimLeft(&quot;Same Day&quot;)"" />
     <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;1&quot;)"" />
-    <xsl:variable name=""var:v6"" select=""userCSharp:StringTrimLeft(&quot;545196698&quot;)"" />
+    <xsl:variable name=""var:v6"" select=""userCSharp:StringTrimLeft(&quot;894720952&quot;)"" />
     <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;CN&quot;)"" />
     <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
     <xsl:variable name=""var:v16"" select=""userCSharp:StringTrimLeft(&quot;No&quot;)"" />

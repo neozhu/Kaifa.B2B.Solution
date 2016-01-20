@@ -8,3 +8,11 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\De
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\Kaifa.Wms.OQC.WinForm.exe.config
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\obj\Debug\Kaifa.Wms.OQC.WinForm.g.resources
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.OOXML.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.OpenXml4Net.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.OpenXml4Net.xml
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.xml
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.Wms.OQC.WinForm\bin\Debug\NPOI.OOXML.xml

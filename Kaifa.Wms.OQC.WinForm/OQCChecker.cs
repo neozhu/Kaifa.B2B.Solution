@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using NPOI.HSSF.UserModel;
+using System.IO;
+using NPOI;
+using NPOI.HPSF;
+using NPOI.HSSF;
+using NPOI.HSSF.UserModel;
+using NPOI.POIFS;
+using NPOI.Util;
 
 namespace Kaifa.Wms.OQC.WinForm
 {
@@ -252,6 +260,58 @@ namespace Kaifa.Wms.OQC.WinForm
             //player.Play();
 
             System.Media.SystemSounds.Question.Play();
+        }
+
+
+        private MemoryStream ExportDataSetToExcel(DataSet sourceDs, string sheetName)
+        {
+            HSSFWorkbook workbook = new HSSFWorkbook();
+            MemoryStream ms = new MemoryStream();
+            string[] sheetNames = sheetName.Split(',');
+            for (int i = 0; i < sheetNames.Length; i++)
+            {
+                HSSFSheet sheet = (HSSFSheet)workbook.CreateSheet(sheetNames[i]);
+                HSSFRow headerRow = (HSSFRow)sheet.CreateRow(0);
+                // handling header.
+                foreach (DataColumn column in sourceDs.Tables[i].Columns)
+                    headerRow.CreateCell(column.Ordinal).SetCellValue(column.ColumnName);
+                // handling value.
+                int rowIndex = 1;
+                foreach (DataRow row in sourceDs.Tables[i].Rows)
+                {
+                    HSSFRow dataRow = (HSSFRow)sheet.CreateRow(rowIndex);
+                    foreach (DataColumn column in sourceDs.Tables[i].Columns)
+                    {
+                        dataRow.CreateCell(column.Ordinal).SetCellValue(row[column].ToString());
+                    }
+                    rowIndex++;
+                }
+            }
+            workbook.Write(ms);
+            ms.Flush();
+            ms.Position = 0;
+            workbook = null;
+            return ms;
+        }
+
+        public MemoryStream ExportExcel(string orderkey)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = string.Format("SELECT ORDERKEY as '订单号' ,STORERKEY as '货主',SKU,QTY as '订单数量',CHECKEDQTY as '复检数量',DIFFQTY as '差异数量',DROPID as '落放ID' FROM [WMWHSE1].OQC  WHERE ORDERKEY='{0}' ; SELECT SERIALKEY as 'ID' ,STORERKEY as '货主',SKU,CHECKQTY as '扫描数量',DROPID as '落放ID',Q2CODE as '二维码信息',ORDERKEY as '订单号' FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ", orderkey);
+                
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+
+                MemoryStream file = ExportDataSetToExcel(ds, "复检结果,扫描记录");
+
+                return file;
+
+            }
         }
 
     }
