@@ -200,10 +200,10 @@
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="0621ed13-18f1-4a3c-8d63-d5d79c4481c8" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="60.1">
-                    <om:Property Name="Expression" Value="Count = xpath(InventoryReportMessage, &quot;count(/*[local-name()='InventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport']/*[local-name()='VendorInventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;" />
+                    <om:Property Name="Expression" Value="Count = xpath(InventoryReportMessage, &quot;count(/*[local-name()='InventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport']/*[local-name()='VendorInventoryReport' and namespace-uri()='http://kaifa.b2b.schemas/InventoryReport'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;&#xD;&#xA;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GetCount" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="a96e68fd-ee04-4f57-9619-0bff09deb265" ParentLink="ServiceBody_Statement" LowerBound="60.1" HigherBound="62.1">
                     <om:Property Name="Expression" Value="SCHEDULELocation = InventoryReportMessage(BTS.InboundTransportLocation);" />

@@ -155,10 +155,10 @@
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
                 <om:Element Type="VariableAssignment" OID="6f911b84-fd30-432a-85cb-548a5af86ffc" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="59.1">
-                    <om:Property Name="Expression" Value="Count = xpath(AdvancedShipNoticeMessage, &quot;count(/*[local-name()='AdvancedShipNotice' and namespace-uri()='http://kaifa.b2b.schemas/AdvancedShipNotice']/*[local-name()='VendorReceiptReport' and namespace-uri()='http://kaifa.b2b.schemas/AdvancedShipNotice'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;" />
+                    <om:Property Name="Expression" Value="Count = xpath(AdvancedShipNoticeMessage, &quot;count(/*[local-name()='AdvancedShipNotice' and namespace-uri()='http://kaifa.b2b.schemas/AdvancedShipNotice']/*[local-name()='VendorReceiptReport' and namespace-uri()='http://kaifa.b2b.schemas/AdvancedShipNotice'])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;&#xD;&#xA;" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GetCount" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
                 <om:Element Type="While" OID="d7377d02-7445-4ecb-8841-ed57d5f2dd33" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="139.1">
                     <om:Property Name="Expression" Value="Increase&lt;=Count " />

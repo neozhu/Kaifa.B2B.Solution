@@ -78,7 +78,10 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                
                 DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
                 DateTime edt = new DateTime(date.Year, date.Month, 21);
-
+                if (_args.warehous.ToLower() == "wmwhse2")
+                {
+                    this.sp_zh_wmstobill(_args, sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
+                }
                 batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                 using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                 {
@@ -144,7 +147,8 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
 
            
         }
-        private void UpdateFlag(TDN940ProviderParameters _args, string orderkey) {
+        private void UpdateFlag(ARProviderParameters _args, string orderkey)
+        {
             using (SqlConnection conn = new SqlConnection(_args.connectionstring))
             {
                 conn.Open();
@@ -154,6 +158,21 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                 cmd.CommandText = sqlcmd;
                 cmd.ExecuteNonQuery();
 
+            }
+        }
+
+
+        private void sp_zh_wmstobill(ARProviderParameters _args, string fdin, string edin)
+        {
+            using (SqlConnection conn = new SqlConnection(_args.connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SCPRD.wmwhse2.sp_zh_wmstobill";
+                cmd.Parameters.Add(new SqlParameter("@v_fdin", fdin));
+                cmd.Parameters.Add(new SqlParameter("@v_edin", edin));
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
         }
 

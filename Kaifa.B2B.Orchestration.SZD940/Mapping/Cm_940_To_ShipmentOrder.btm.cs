@@ -15,7 +15,7 @@ namespace Kaifa.B2B.Orchestration.SZD940.Mapping {
     <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimLeft(&quot;ShipmentOrder&quot;)"" />
     <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimLeft(&quot;EXceed&quot;)"" />
     <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimLeft(&quot;sceadmin&quot;)"" />
-    <xsl:variable name=""var:v4"" select=""userCSharp:StringTrimLeft(&quot;STEST_wmwhse2&quot;)"" />
+    <xsl:variable name=""var:v4"" select=""userCSharp:StringTrimLeft(&quot;SCPRD_wmwhse2&quot;)"" />
     <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;SZD&quot;)"" />
     <xsl:variable name=""var:v6"" select=""./s0:Row[1]/s0:PullNo/text()"" />
     <xsl:variable name=""var:v7"" select=""./s0:Row[1]/s0:PO/text()"" />

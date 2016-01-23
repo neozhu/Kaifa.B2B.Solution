@@ -453,7 +453,7 @@ namespace Kaifa.B2B.Orchestration.SZD940
 </TrkMetadata>
 
 <TrkMetadata>
-<Line>374</Line><Position>24</Position><ShapeID>'6827bc79-288e-43e5-8b26-07ad41a1bb65'</ShapeID>
+<Line>375</Line><Position>24</Position><ShapeID>'6827bc79-288e-43e5-8b26-07ad41a1bb65'</ShapeID>
 <Messages>
 </Messages>
 </TrkMetadata>
@@ -465,7 +465,7 @@ namespace Kaifa.B2B.Orchestration.SZD940
         private const string _symODXML = @"
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <om:MetaModel MajorVersion='1' MinorVersion='3' Core='2b131234-7959-458d-834f-2dc0769ce683' ScheduleModel='66366196-361d-448d-976f-cab5e87496d2' xmlns:om='http://schemas.microsoft.com/BizTalk/2003/DesignerData'>
-    <om:Element Type='Module' OID='ed6f4cd7-d11d-446d-af4b-69a9f5ba836b' LowerBound='1.1' HigherBound='83.1'>
+    <om:Element Type='Module' OID='ed6f4cd7-d11d-446d-af4b-69a9f5ba836b' LowerBound='1.1' HigherBound='84.1'>
         <om:Property Name='ReportToAnalyst' Value='True' />
         <om:Property Name='Name' Value='Kaifa.B2B.Orchestration.SZD940' />
         <om:Property Name='Signal' Value='False' />
@@ -547,7 +547,7 @@ namespace Kaifa.B2B.Orchestration.SZD940
                 <om:Property Name='Signal' Value='True' />
             </om:Element>
         </om:Element>
-        <om:Element Type='ServiceDeclaration' OID='b8cad8af-376f-49b1-becf-2af6f6b00a62' ParentLink='Module_ServiceDeclaration' LowerBound='26.1' HigherBound='82.1'>
+        <om:Element Type='ServiceDeclaration' OID='b8cad8af-376f-49b1-becf-2af6f6b00a62' ParentLink='Module_ServiceDeclaration' LowerBound='26.1' HigherBound='83.1'>
             <om:Property Name='InitializedTransactionType' Value='False' />
             <om:Property Name='IsInvokable' Value='False' />
             <om:Property Name='TypeModifier' Value='Internal' />
@@ -717,11 +717,11 @@ namespace Kaifa.B2B.Orchestration.SZD940
                     <om:Property Name='Name' Value='CallReponse' />
                     <om:Property Name='Signal' Value='True' />
                 </om:Element>
-                <om:Element Type='VariableAssignment' OID='6827bc79-288e-43e5-8b26-07ad41a1bb65' ParentLink='ServiceBody_Statement' LowerBound='74.1' HigherBound='80.1'>
-                    <om:Property Name='Expression' Value='pulllistNo = System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;PullNo&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;siteCode =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;Site&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;strType =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;PrimeOnly&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;Reqdate =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;RequestDate&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;Kaifa.B2B.Utility.MailClient.Send940NotificationMail(CallServiceReponse.parameters,pulllistNo,siteCode,Reqdate,strType);' />
+                <om:Element Type='VariableAssignment' OID='6827bc79-288e-43e5-8b26-07ad41a1bb65' ParentLink='ServiceBody_Statement' LowerBound='74.1' HigherBound='81.1'>
+                    <om:Property Name='Expression' Value='&#xD;&#xA;pulllistNo = System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;PullNo&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;siteCode =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;Site&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;strType =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;PrimeOnly&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;Reqdate =  System.Convert.ToString(xpath(CM940Message,&quot;string(/*[local-name()=&apos;CMInbound&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;]/*[local-name()=&apos;Row&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;][1]/*[local-name()=&apos;RequestDate&apos; and namespace-uri()=&apos;http://Kaifa.B2B.Schemas.940.CM_940_Inbound&apos;])&quot;));&#xD;&#xA;Kaifa.B2B.Utility.MailClient.Send940NotificationMail(CallServiceReponse.parameters,pulllistNo,siteCode,Reqdate,strType);' />
                     <om:Property Name='ReportToAnalyst' Value='True' />
                     <om:Property Name='Name' Value='Expression_1' />
-                    <om:Property Name='Signal' Value='False' />
+                    <om:Property Name='Signal' Value='True' />
                 </om:Element>
             </om:Element>
             <om:Element Type='PortDeclaration' OID='008a8d29-5312-43f1-8228-c22764b8630a' ParentLink='ServiceDeclaration_PortDeclaration' LowerBound='29.1' HigherBound='31.1'>
@@ -792,15 +792,15 @@ namespace Kaifa.B2B.Orchestration.SZD940
                 SZDWmsWebServiceClient __svc__ = (SZDWmsWebServiceClient)_service;
                 __SZDWmsWebServiceClient_root_0 __ctx0__ = (__SZDWmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.InvokeInforWebService != null)
-                {
-                    __svc__.InvokeInforWebService.Close(this, null);
-                    __svc__.InvokeInforWebService = null;
-                }
                 if (__svc__.Receive940FlatFile != null)
                 {
                     __svc__.Receive940FlatFile.Close(this, null);
                     __svc__.Receive940FlatFile = null;
+                }
+                if (__svc__.InvokeInforWebService != null)
+                {
+                    __svc__.InvokeInforWebService.Close(this, null);
+                    __svc__.InvokeInforWebService = null;
                 }
                 base.Finally();
             }
@@ -844,10 +844,11 @@ namespace Kaifa.B2B.Orchestration.SZD940
                 __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)(__svc__._stateMgrs[1]);
                 __SZDWmsWebServiceClient_root_0 __ctx0__ = (__SZDWmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
 
-                if (__ctx1__ != null)
-                    __ctx1__.__strContent = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__siteCode = null;
+                if (__ctx1__ != null && __ctx1__.__CM940Message != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
+                    __ctx1__.__CM940Message = null;
+                }
                 if (__ctx1__ != null && __ctx1__.__CallServiceReponse != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceReponse);
@@ -856,24 +857,23 @@ namespace Kaifa.B2B.Orchestration.SZD940
                 if (__ctx1__ != null)
                     __ctx1__.__strType = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__pulllistNo = null;
+                    __ctx1__.__strContent = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__Reqdate = null;
-                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
-                    __ctx1__.__ShipmentOrder = null;
-                }
+                    __ctx1__.__pulllistNo = null;
                 if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
                     __ctx1__.__CallServiceRequest = null;
                 }
-                if (__ctx1__ != null && __ctx1__.__CM940Message != null)
+                if (__ctx1__ != null)
+                    __ctx1__.__siteCode = null;
+                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
                 {
-                    __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
-                    __ctx1__.__CM940Message = null;
+                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
+                    __ctx1__.__ShipmentOrder = null;
                 }
+                if (__ctx1__ != null)
+                    __ctx1__.__Reqdate = null;
                 if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
                 {
                     __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
@@ -1407,7 +1407,7 @@ namespace Kaifa.B2B.Orchestration.SZD940
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{9E774913-B9FF-40A6-B522-E193939B8221}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{A3A91A4E-14E7-46E8-8AC0-5780ABDC0859}"))
         };
 
     }

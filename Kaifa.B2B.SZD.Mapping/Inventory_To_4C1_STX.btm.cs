@@ -15,9 +15,9 @@ namespace Kaifa.B2B.SZD.Mapping {
     <xsl:variable name=""var:v1"" select=""userCSharp:StringTrimLeft(&quot;Inventory Information Provider&quot;)"" />
     <xsl:variable name=""var:v2"" select=""userCSharp:StringTrimLeft(&quot;894720952&quot;)"" />
     <xsl:variable name=""var:v3"" select=""userCSharp:StringTrimLeft(&quot;Request&quot;)"" />
-    <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;Inventory Information User&quot;)"" />
-    <xsl:variable name=""var:v16"" select=""userCSharp:StringTrimLeft(&quot;Electronic Components&quot;)"" />
-    <xsl:variable name=""var:v17"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
+    <xsl:variable name=""var:v14"" select=""userCSharp:StringTrimLeft(&quot;Inventory Information User&quot;)"" />
+    <xsl:variable name=""var:v15"" select=""userCSharp:StringTrimLeft(&quot;Electronic Components&quot;)"" />
+    <xsl:variable name=""var:v16"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
     <ns0:Pip4C1InventoryReportNotification>
       <ns0:fromRole>
         <ns0:PartnerRoleDescription>
@@ -87,9 +87,8 @@ namespace Kaifa.B2B.SZD.Mapping {
           <xsl:variable name=""var:v5"" select=""userCSharp:StringTrimLeft(&quot;Each&quot;)"" />
           <xsl:variable name=""var:v6"" select=""userCSharp:StringTrimLeft(&quot;Manufacturer&quot;)"" />
           <xsl:variable name=""var:v7"" select=""userCSharp:StringTrimLeft(&quot;Available&quot;)"" />
-          <xsl:variable name=""var:v9"" select=""userCSharp:StringConcat(string(../s0:config/s0:fromRole/s0:Site/text()) , string(s0:STORERKEY/text()))"" />
-          <xsl:variable name=""var:v10"" select=""string(../s0:config/s0:fromRole/s0:Site/text())"" />
-          <xsl:variable name=""var:v11"" select=""string(s0:LOTTABLE04/text())"" />
+          <xsl:variable name=""var:v9"" select=""userCSharp:StringConcat(&quot;SZD&quot; , string(s0:STORERKEY/text()))"" />
+          <xsl:variable name=""var:v10"" select=""string(s0:LOTTABLE04/text())"" />
           <ns0:InventoryReportLineItem>
             <ns0:GlobalProductUnitOfMeasureCode>
               <xsl:value-of select=""$var:v5"" />
@@ -119,9 +118,9 @@ namespace Kaifa.B2B.SZD.Mapping {
                     <xsl:value-of select=""$var:v8"" />
                   </ns0:DateTimeStamp>
                 </ns0:manufactureDate>
-                <xsl:variable name=""var:v12"" select=""userCSharp:ProprietaryLotIdentifier($var:v10 , &quot;ONHOLD&quot; , string(s0:LOTTABLE06/text()) , $var:v11 , string($var:v9) , string(s0:LOTTABLE02/text()) , string(s0:LOTTABLE08/text()) , string(s0:LOTTABLE03/text()) , string(s0:HOLDQTY/text()))"" />
+                <xsl:variable name=""var:v11"" select=""userCSharp:ProprietaryLotIdentifier(string(../s0:config/s0:fromRole/s0:Site/text()) , &quot;ONHOLD&quot; , string(s0:LOTTABLE06/text()) , $var:v10 , string($var:v9) , string(s0:LOTTABLE02/text()) , string(s0:LOTTABLE10/text()) , string(s0:LOTTABLE03/text()) , string(s0:HOLDQTY/text()))"" />
                 <ns0:ProprietaryLotIdentifier>
-                  <xsl:value-of select=""$var:v12"" />
+                  <xsl:value-of select=""$var:v11"" />
                 </ns0:ProprietaryLotIdentifier>
               </ns0:InventoryItemIdentification>
               <xsl:if test=""s0:QTY"">
@@ -153,21 +152,21 @@ namespace Kaifa.B2B.SZD.Mapping {
         </xsl:for-each>
       </ns0:InventoryReport>
       <ns0:thisDocumentGenerationDateTime>
-        <xsl:variable name=""var:v13"" select=""userCSharp:dateTimeNow()"" />
+        <xsl:variable name=""var:v12"" select=""userCSharp:dateTimeNow()"" />
         <ns0:DateTimeStamp>
-          <xsl:value-of select=""$var:v13"" />
+          <xsl:value-of select=""$var:v12"" />
         </ns0:DateTimeStamp>
       </ns0:thisDocumentGenerationDateTime>
       <ns0:thisDocumentIdentifier>
-        <xsl:variable name=""var:v14"" select=""userCSharp:ProprietaryDocumentIdentifier(string(s0:config/s0:fromRole/s0:Site/text()) , &quot;SOI&quot; , string(@VendorDuns))"" />
+        <xsl:variable name=""var:v13"" select=""userCSharp:ProprietaryDocumentIdentifier(string(s0:config/s0:fromRole/s0:Site/text()) , &quot;SOI&quot; , string(@VendorDuns))"" />
         <ns0:ProprietaryDocumentIdentifier>
-          <xsl:value-of select=""$var:v14"" />
+          <xsl:value-of select=""$var:v13"" />
         </ns0:ProprietaryDocumentIdentifier>
       </ns0:thisDocumentIdentifier>
       <ns0:toRole>
         <ns0:PartnerRoleDescription>
           <ns0:GlobalPartnerRoleClassificationCode>
-            <xsl:value-of select=""$var:v15"" />
+            <xsl:value-of select=""$var:v14"" />
           </ns0:GlobalPartnerRoleClassificationCode>
           <ns0:PartnerDescription>
             <ns0:BusinessDescription>
@@ -177,11 +176,11 @@ namespace Kaifa.B2B.SZD.Mapping {
                 </ns0:GlobalBusinessIdentifier>
               </ns0:BusinessIdentification>
               <ns0:GlobalSupplyChainCode>
-                <xsl:value-of select=""$var:v16"" />
+                <xsl:value-of select=""$var:v15"" />
               </ns0:GlobalSupplyChainCode>
             </ns0:BusinessDescription>
             <ns0:GlobalPartnerClassificationCode>
-              <xsl:value-of select=""$var:v17"" />
+              <xsl:value-of select=""$var:v16"" />
             </ns0:GlobalPartnerClassificationCode>
           </ns0:PartnerDescription>
         </ns0:PartnerRoleDescription>

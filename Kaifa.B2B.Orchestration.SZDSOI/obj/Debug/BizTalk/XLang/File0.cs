@@ -691,10 +691,10 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
                     <om:Property Name='Signal' Value='True' />
                 </om:Element>
                 <om:Element Type='VariableAssignment' OID='0621ed13-18f1-4a3c-8d63-d5d79c4481c8' ParentLink='ServiceBody_Statement' LowerBound='56.1' HigherBound='60.1'>
-                    <om:Property Name='Expression' Value='Count = xpath(InventoryReportMessage, &quot;count(/*[local-name()=&apos;InventoryReport&apos; and namespace-uri()=&apos;http://kaifa.b2b.schemas/InventoryReport&apos;]/*[local-name()=&apos;VendorInventoryReport&apos; and namespace-uri()=&apos;http://kaifa.b2b.schemas/InventoryReport&apos;])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;' />
+                    <om:Property Name='Expression' Value='Count = xpath(InventoryReportMessage, &quot;count(/*[local-name()=&apos;InventoryReport&apos; and namespace-uri()=&apos;http://kaifa.b2b.schemas/InventoryReport&apos;]/*[local-name()=&apos;VendorInventoryReport&apos; and namespace-uri()=&apos;http://kaifa.b2b.schemas/InventoryReport&apos;])&quot;); &#xD;&#xA;CountStr = Count.ToString();&#xD;&#xA;Increase = 1;&#xD;&#xA;' />
                     <om:Property Name='ReportToAnalyst' Value='True' />
                     <om:Property Name='Name' Value='GetCount' />
-                    <om:Property Name='Signal' Value='True' />
+                    <om:Property Name='Signal' Value='False' />
                 </om:Element>
                 <om:Element Type='VariableAssignment' OID='a96e68fd-ee04-4f57-9619-0bff09deb265' ParentLink='ServiceBody_Statement' LowerBound='60.1' HigherBound='62.1'>
                     <om:Property Name='Expression' Value='SCHEDULELocation = InventoryReportMessage(BTS.InboundTransportLocation);' />
@@ -988,15 +988,15 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
                 SZDSOI_Orchestration __svc__ = (SZDSOI_Orchestration)_service;
                 __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.SendPip4C1Message != null)
-                {
-                    __svc__.SendPip4C1Message.Close(this, null);
-                    __svc__.SendPip4C1Message = null;
-                }
                 if (__svc__.ReceiveInventoryMessage != null)
                 {
                     __svc__.ReceiveInventoryMessage.Close(this, null);
                     __svc__.ReceiveInventoryMessage = null;
+                }
+                if (__svc__.SendPip4C1Message != null)
+                {
+                    __svc__.SendPip4C1Message.Close(this, null);
+                    __svc__.SendPip4C1Message = null;
                 }
                 base.Finally();
             }
@@ -1039,6 +1039,20 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
                 __SZDSOI_Orchestration_1 __ctx1__ = (__SZDSOI_Orchestration_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx1__ != null)
+                    __ctx1__.__SCHEDULELocation = null;
+                if (__ctx1__ != null && __ctx1__.__Pip4C1ForSTXMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForSTXMessage);
+                    __ctx1__.__Pip4C1ForSTXMessage = null;
+                }
+                if (__ctx1__ != null && __ctx1__.__Pip4C1ForE2OpenMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForE2OpenMessage);
+                    __ctx1__.__Pip4C1ForE2OpenMessage = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null)
                     __ctx1__.__pipInstanceIdentifierFore2open = null;
                 if (__ctx1__ != null && __ctx1__.__VendorReportMessage != null)
                 {
@@ -1048,36 +1062,22 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
                 if (__ctx1__ != null)
                     __ctx1__.__SubmitRNIF = null;
                 if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF1 = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageFore2open = null;
+                if (__ctx1__ != null)
                     __ctx1__.__pipInstanceMessageIdForSTX = null;
-                if (__ctx1__ != null && __ctx1__.__Pip4C1ForE2OpenMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForE2OpenMessage);
-                    __ctx1__.__Pip4C1ForE2OpenMessage = null;
-                }
+                if (__ctx1__ != null)
+                    __ctx1__.__CountStr = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageForSTX = null;
                 if (__ctx1__ != null && __ctx1__.__InventoryReportMessage != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__InventoryReportMessage);
                     __ctx1__.__InventoryReportMessage = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SCHEDULELocation = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF1 = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__CountStr = null;
-                if (__ctx1__ != null && __ctx1__.__Pip4C1ForSTXMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__Pip4C1ForSTXMessage);
-                    __ctx1__.__Pip4C1ForSTXMessage = null;
-                }
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageFore2open = null;
                 base.Finally();
             }
 
@@ -1291,8 +1291,8 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
             __SZDSOI_Orchestration_1 __ctx1__ = (__SZDSOI_Orchestration_1)_stateMgrs[1];
+            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1338,8 +1338,8 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
             __SZDSOI_Orchestration_1 __ctx1__ = (__SZDSOI_Orchestration_1)_stateMgrs[1];
+            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1681,8 +1681,8 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[2];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
             __SZDSOI_Orchestration_1 __ctx1__ = (__SZDSOI_Orchestration_1)_stateMgrs[1];
+            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1961,8 +1961,8 @@ namespace Kaifa.B2B.Orchestration.SZDSOI
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[3];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
             __SZDSOI_Orchestration_1 __ctx1__ = (__SZDSOI_Orchestration_1)_stateMgrs[1];
+            __SZDSOI_Orchestration_root_0 __ctx0__ = (__SZDSOI_Orchestration_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
