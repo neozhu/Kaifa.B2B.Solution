@@ -86,17 +86,17 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                 {
                     sdt = new DateTime(date.Year, (date.Month - 1), 21);
                 }
-                DateTime edt = new DateTime(date.Year, date.Month, 21);
-                //if (_args.warehous.ToLower() == "wmwhse2")
-                //{
+                DateTime edt = new DateTime(date.Year, date.Month, 21).AddSeconds(-1);
+                if (_args.Immediately==false)
+                {
                     this.sp_zh_wmstobill(_args, sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
-                //}
+                }
                 batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                 using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                 {
                     conn.Open();
                     SqlCommand cmd = conn.CreateCommand();
-                    cmd.CommandText = string.Format("select count(*) from BILLADMIN.BIC_CHARGE  where CHARGE_DATE>='{0}' AND CHARGE_DATE<='{1}' AND ARBATCHID IS NULL", 
+                    cmd.CommandText = string.Format("select count(*) from BILLADMIN.BIC_CHARGE  where CHARGE_DATE>='{0}' AND CHARGE_DATE<='{1}' AND （ARBATCHID IS NULL OR ARBATCHID='') ", 
                        sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
                     object res = cmd.ExecuteScalar();
                     int count = Convert.ToInt32(res);
@@ -131,7 +131,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                     {
                         sdt = new DateTime(date.Year, (date.Month - 1), 21);
                     }
-                    DateTime edt = new DateTime(date.Year, date.Month, 21);
+                    DateTime edt = new DateTime(date.Year, date.Month, 21).AddSeconds(-1);
                     batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                     using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                     {
