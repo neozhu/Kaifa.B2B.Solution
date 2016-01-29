@@ -18,9 +18,40 @@ namespace TestConsoleApp
 {
     class Program
     {
+        private static void sp_zh_wmstobill( string fdin, string edin)
+        {
+            using (SqlConnection conn = new SqlConnection("Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False"))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SCPRD.wmwhse2.sp_zh_wmstobill";
+                cmd.Parameters.Add(new SqlParameter("@v_fdin", fdin));
+                cmd.Parameters.Add(new SqlParameter("@v_edin", edin));
+                SqlParameter outp=new SqlParameter("@v_ret","");
+                outp.Direction= ParameterDirection.Output;
+                cmd.Parameters.Add(outp);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
         static void Main(string[] args)
         {
+            DateTime date = DateTime.Now;
+            DateTime firstOfNextMonth = new DateTime(date.Year, date.Month, 1).AddMonths(1);
+            DateTime lastOfThisMonth = firstOfNextMonth.AddDays(-1);
+            int lastscday = lastOfThisMonth.Day - 2;
 
+            DateTime sdt =DateTime.Now;
+            if (date.Month == 1)
+            {
+                sdt = new DateTime((date.Year-1), 12, 21);
+            }else{
+                sdt = new DateTime(date.Year, (date.Month - 1), 21);
+            }
+            DateTime edt = new DateTime(date.Year, date.Month, 21);
+            sp_zh_wmstobill( sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
             //XmlDocument doc = new XmlDocument();
             //doc.Load("c:\\hddec.xml");
             //HBDec.Read(doc);
@@ -82,8 +113,9 @@ namespace TestConsoleApp
 
             //CalendarProcess p = new CalendarProcess("C:\\希捷日历11.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse2");
             //p.Read();
-            AllocProcess p = new AllocProcess("c:\\SZD_vendor_alloc_quarter20160104.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse2");
+            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_adhoc201601270.xlsx", "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse1");
             p.Read();
+            Console.Read();
             //string a = "STZ".Substring(0, 2);
             //string connstring = "Server=10.10.201.154;Database=SCPRD;User ID=sa;Password=P@ssw0rd;Trusted_Connection=False";
             //string warehouse = "wmwhse1";

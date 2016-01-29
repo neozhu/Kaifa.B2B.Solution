@@ -841,25 +841,31 @@ namespace Kaifa.B2B.Orchestration.CM940
             public override void Finally()
             {
                 WmsWebServiceClient __svc__ = (WmsWebServiceClient)_service;
-                __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
                 __WmsWebServiceClient_1 __ctx1__ = (__WmsWebServiceClient_1)(__svc__._stateMgrs[1]);
+                __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
 
+                if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
+                {
+                    __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
+                    __ctx0__.__subWrapper1 = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__siteCode = null;
+                if (__ctx1__ != null && __ctx1__.__CM940Message != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
+                    __ctx1__.__CM940Message = null;
+                }
                 if (__ctx1__ != null && __ctx1__.__CallServiceReponse != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceReponse);
                     __ctx1__.__CallServiceReponse = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__siteCode = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strContent = null;
                 if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
                     __ctx1__.__ShipmentOrder = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__Reqdate = null;
                 if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
@@ -867,18 +873,12 @@ namespace Kaifa.B2B.Orchestration.CM940
                 }
                 if (__ctx1__ != null)
                     __ctx1__.__pulllistNo = null;
-                if (__ctx1__ != null && __ctx1__.__CM940Message != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
-                    __ctx1__.__CM940Message = null;
-                }
+                if (__ctx1__ != null)
+                    __ctx1__.__Reqdate = null;
                 if (__ctx1__ != null)
                     __ctx1__.__strType = null;
-                if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
-                {
-                    __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
-                    __ctx0__.__subWrapper1 = null;
-                }
+                if (__ctx1__ != null)
+                    __ctx1__.__strContent = null;
                 base.Finally();
             }
 
@@ -1042,8 +1042,8 @@ namespace Kaifa.B2B.Orchestration.CM940
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)_stateMgrs[0];
             __WmsWebServiceClient_1 __ctx1__ = (__WmsWebServiceClient_1)_stateMgrs[1];
+            __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1088,8 +1088,8 @@ namespace Kaifa.B2B.Orchestration.CM940
             Microsoft.XLANGs.Core.Envelope __msgEnv__ = null;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)_stateMgrs[0];
             __WmsWebServiceClient_1 __ctx1__ = (__WmsWebServiceClient_1)_stateMgrs[1];
+            __WmsWebServiceClient_root_0 __ctx0__ = (__WmsWebServiceClient_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1407,7 +1407,7 @@ namespace Kaifa.B2B.Orchestration.CM940
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{A17CFBB2-AE65-4062-9C7E-C9C661B99AE8}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{BA0DFFCC-8379-41E1-9858-39B28000B187}"))
         };
 
     }

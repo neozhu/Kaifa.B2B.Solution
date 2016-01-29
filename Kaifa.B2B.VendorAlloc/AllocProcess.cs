@@ -159,6 +159,10 @@ namespace Kaifa.B2B.VendorAlloc
         private DataTable VaildateTable(DataTable datatable)
         {
             DataTable dt = new DataTable();
+            foreach (DataColumn cl in datatable.Columns)
+            {
+                dt.Columns.Add(cl.ColumnName);
+            }
             foreach (DataRow dr in datatable.Rows)
             {
                 

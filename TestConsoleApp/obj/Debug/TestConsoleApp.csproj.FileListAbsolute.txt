@@ -16,3 +16,4 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Kai
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\obj\Debug\ResolveAssemblyReference.cache
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\obj\Debug\TestConsoleApp.exe
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\obj\Debug\TestConsoleApp.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\TestConsoleApp\bin\Debug\Microsoft.Solutions.BTARN.Shared.dll

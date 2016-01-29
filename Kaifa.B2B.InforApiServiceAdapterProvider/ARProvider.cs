@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
+using System.Data;
 
 namespace Kaifa.B2B.InforApiServiceAdapterProvider
 {
@@ -71,17 +72,25 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             DateTime date = DateTime.Now;
             DateTime firstOfNextMonth = new DateTime(date.Year, date.Month, 1).AddMonths(1);
             DateTime lastOfThisMonth = firstOfNextMonth.AddDays(-1);
-            int lastscday = lastOfThisMonth.Day - 1;
+            int lastscday = lastOfThisMonth.Day - 2;
             string batchId = "";
             if (date.Day == lastscday)
             {
-               
-                DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
-                DateTime edt = new DateTime(date.Year, date.Month, 21);
-                if (_args.warehous.ToLower() == "wmwhse2")
+
+                DateTime sdt = DateTime.Now;
+                if (date.Month == 1)
                 {
-                    this.sp_zh_wmstobill(_args, sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
+                    sdt = new DateTime((date.Year - 1), 12, 21);
                 }
+                else
+                {
+                    sdt = new DateTime(date.Year, (date.Month - 1), 21);
+                }
+                DateTime edt = new DateTime(date.Year, date.Month, 21);
+                //if (_args.warehous.ToLower() == "wmwhse2")
+                //{
+                    this.sp_zh_wmstobill(_args, sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
+                //}
                 batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                 using (SqlConnection conn = new SqlConnection(_args.connectionstring))
                 {
@@ -113,7 +122,15 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                 if (_args.Immediately)
                 {
                     //batchId = date.ToString("yyyyMMdd");
-                    DateTime sdt = new DateTime(date.Year, (date.Month - 1), 21);
+                    DateTime sdt = DateTime.Now;
+                    if (date.Month == 1)
+                    {
+                        sdt = new DateTime((date.Year - 1), 12, 21);
+                    }
+                    else
+                    {
+                        sdt = new DateTime(date.Year, (date.Month - 1), 21);
+                    }
                     DateTime edt = new DateTime(date.Year, date.Month, 21);
                     batchId = sdt.ToString("yyyyMMdd") + edt.ToString("yyyyMMdd");
                     using (SqlConnection conn = new SqlConnection(_args.connectionstring))
@@ -168,9 +185,14 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
+        
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SCPRD.wmwhse2.sp_zh_wmstobill";
                 cmd.Parameters.Add(new SqlParameter("@v_fdin", fdin));
                 cmd.Parameters.Add(new SqlParameter("@v_edin", edin));
+                SqlParameter outp = new SqlParameter("@v_ret", "");
+                outp.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outp);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
