@@ -102,7 +102,7 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                     int count = Convert.ToInt32(res);
                     if (count > 0)
                     {
-                        string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='C',ARSAPDT=getdate() where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND ARBATCHID IS NULL
+                        string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='C',ARSAPDT=getdate() where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND （ARBATCHID IS NULL OR ARBATCHID='')
                                         ", batchId, sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
 
                         cmd.CommandText = sqlcmd;
@@ -137,13 +137,13 @@ namespace Kaifa.B2B.InforApiServiceAdapterProvider
                     {
                         conn.Open();
                         SqlCommand cmd = conn.CreateCommand();
-                        cmd.CommandText = string.Format("select count(*) from BILLADMIN.BIC_CHARGE where CHARGE_DATE>='{0}' AND CHARGE_DATE<='{1}' AND ARBATCHID IS NULL",
+                        cmd.CommandText = string.Format("select count(*) from BILLADMIN.BIC_CHARGE where CHARGE_DATE>='{0}' AND CHARGE_DATE<='{1}' AND （ARBATCHID IS NULL OR ARBATCHID='') ",
                              sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
                         object res = cmd.ExecuteScalar();
                         int count = Convert.ToInt32(res);
                         if (count > 0)
                         {
-                            string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='C',ARSAPDT=getdate() where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND ARBATCHID IS NULL
+                            string sqlcmd = string.Format(@" update BILLADMIN.BIC_CHARGE set ARBATCHID = '{0}_'+ CUST_CODE,INVOICE_STATUS='C',ARSAPDT=getdate() where CHARGE_DATE>='{1}' AND CHARGE_DATE<='{2}' AND （ARBATCHID IS NULL OR ARBATCHID='') 
                                         ", batchId, sdt.ToString("yyyy-MM-dd HH:mm:ss"), edt.ToString("yyyy-MM-dd HH:mm:ss"));
 
                             cmd.CommandText = sqlcmd;
