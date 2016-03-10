@@ -867,37 +867,27 @@ namespace Kaifa.B2B.Orchestration.HUB
                 __HUB_Orchestration_1 __ctx1__ = (__HUB_Orchestration_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx1__ != null)
-                    __ctx1__.__CountStr = null;
-                if (__ctx1__ != null)
                     __ctx1__.__strPipMessageFore2open = null;
+                if (__ctx1__ != null && __ctx1__.__AdvancedShipNoticeMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__AdvancedShipNoticeMessage);
+                    __ctx1__.__AdvancedShipNoticeMessage = null;
+                }
                 if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageForSTX = null;
+                    __ctx1__.__SubmitRNIF1 = null;
                 if (__ctx1__ != null)
                     __ctx1__.__SCHEDULELocation = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierFore2open = null;
-                if (__ctx1__ != null && __ctx1__.__VendorReciptReportMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__VendorReciptReportMessage);
-                    __ctx1__.__VendorReciptReportMessage = null;
-                }
+                    __ctx1__.__strPipMessageForSTX = null;
                 if (__ctx1__ != null && __ctx1__.__Pip4B2MessageForE2Open != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__Pip4B2MessageForE2Open);
                     __ctx1__.__Pip4B2MessageForE2Open = null;
                 }
-                if (__ctx1__ != null && __ctx1__.__AdvancedShipNoticeMessage != null)
+                if (__ctx1__ != null && __ctx1__.__VendorReciptReportMessage != null)
                 {
-                    __ctx1__.UnrefMessage(__ctx1__.__AdvancedShipNoticeMessage);
-                    __ctx1__.__AdvancedShipNoticeMessage = null;
+                    __ctx1__.UnrefMessage(__ctx1__.__VendorReciptReportMessage);
+                    __ctx1__.__VendorReciptReportMessage = null;
                 }
                 if (__ctx1__ != null && __ctx1__.__Pip4B2MessageForSTX != null)
                 {
@@ -905,7 +895,17 @@ namespace Kaifa.B2B.Orchestration.HUB
                     __ctx1__.__Pip4B2MessageForSTX = null;
                 }
                 if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF1 = null;
+                    __ctx1__.__SubmitRNIF = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__CountStr = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierForSTX = null;
                 base.Finally();
             }
 

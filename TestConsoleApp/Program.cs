@@ -36,22 +36,34 @@ namespace TestConsoleApp
             }
         }
 
+        static void test1() {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("c:\\DECRETURN.xml");
+            HBDec.Read(doc);
+             
+        
+        }
+
         static void Main(string[] args)
         {
-            DateTime date = DateTime.Now;
-            DateTime firstOfNextMonth = new DateTime(date.Year, date.Month, 1).AddMonths(1);
-            DateTime lastOfThisMonth = firstOfNextMonth.AddDays(-1);
-            int lastscday = lastOfThisMonth.Day - 2;
+            PreDisGenerator P = new PreDisGenerator("1000000034", "wmwhse1", "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "");
+            XDocument d = P.Generator();
+            d.Save("c:\\test.xml");
+            //test1();
+            //DateTime date = DateTime.Now;
+            //DateTime firstOfNextMonth = new DateTime(date.Year, date.Month, 1).AddMonths(1);
+            //DateTime lastOfThisMonth = firstOfNextMonth.AddDays(-1);
+            //int lastscday = lastOfThisMonth.Day - 2;
 
-            DateTime sdt =DateTime.Now;
-            if (date.Month == 1)
-            {
-                sdt = new DateTime((date.Year-1), 12, 21);
-            }else{
-                sdt = new DateTime(date.Year, (date.Month - 1), 21);
-            }
-            DateTime edt = new DateTime(date.Year, date.Month, 21);
-            sp_zh_wmstobill( sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
+            //DateTime sdt =DateTime.Now;
+            //if (date.Month == 1)
+            //{
+            //    sdt = new DateTime((date.Year-1), 12, 21);
+            //}else{
+            //    sdt = new DateTime(date.Year, (date.Month - 1), 21);
+            //}
+            //DateTime edt = new DateTime(date.Year, date.Month, 21);
+            //sp_zh_wmstobill( sdt.ToString("yyyyMMdd"), edt.ToString("yyyyMMdd"));
             //XmlDocument doc = new XmlDocument();
             //doc.Load("c:\\hddec.xml");
             //HBDec.Read(doc);
@@ -113,7 +125,7 @@ namespace TestConsoleApp
 
             //CalendarProcess p = new CalendarProcess("C:\\希捷日历11.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse2");
             //p.Read();
-            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_adhoc201601270.xlsx", "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse1");
+            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_adhoc201602030.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse1");
             p.Read();
             Console.Read();
             //string a = "STZ".Substring(0, 2);

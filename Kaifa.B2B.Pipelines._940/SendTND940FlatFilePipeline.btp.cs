@@ -35,7 +35,7 @@ namespace Kaifa.B2B.Pipelines._940
 "s=\"-1\" execMethod=\"All\" stageId=\"9d0e4108-4cce-4536-83fa-4a5040674ad6\" />      <Components />    </S"+
 "tage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "9c799ce1-dd00-40b4-9332-8baf84b41f67";
+        private const string _versionDependentGuid = "f7fc01a3-0ad2-4b54-8acf-8ccb9b762edd";
         
         public SendTND940FlatFilePipeline()
         {

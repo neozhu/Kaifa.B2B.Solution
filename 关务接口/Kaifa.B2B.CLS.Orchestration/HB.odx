@@ -1,0 +1,161 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="11bfe52b-7088-4bc9-872b-a37f95d69ee5" LowerBound="1.1" HigherBound="37.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.CLS.Orchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="46ec6281-76a1-4c1e-9362-545029df84a0" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveHBDEC" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8e84cec7-ee82-40da-9354-737e13aabc65" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="34ff8fae-e8e3-4c43-9c90-2fc2c4621129" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.41">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.CLS.Schemas.HB_DEC" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="8e9cd38a-ff38-4151-a780-82ddaf6d5f04" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SaveHBDEC" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e632ccb5-8ca1-4fc7-9a3a-d3887cd0de9d" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="44414009-2477-4e4a-930d-5e8cb364cd4b" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.41">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.CLS.Schemas.HB_DEC" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="7adf3b7f-2031-4617-9b15-3848651fc84c" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="36.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="HB" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="9a7876be-5003-4a02-9063-c9e611310ab8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.CLS.Schemas.HB_DEC" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_HB" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="68042c37-d108-40f9-a17f-d1689340cab1" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="86abcf36-477d-403d-b0fd-27b320b45840" ParentLink="ServiceBody_Statement" LowerBound="28.1" HigherBound="30.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveHBDEC" />
+                    <om:Property Name="MessageName" Value="Message_HB" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_HB" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="768d7352-4688-4bd0-8c14-b6e8bd065544" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                    <om:Property Name="Expression" Value="Kaifa.B2B.CLS.XmlHelper.HBDec.Read(Message_HB);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Expression_Exec" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Send" OID="cc326168-2be6-44c8-8e0e-10ddd5992cd4" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="34.1">
+                    <om:Property Name="PortName" Value="SaveHBDEC" />
+                    <om:Property Name="MessageName" Value="Message_HB" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_SaveFile" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ae3becf6-677e-4a60-bc18-aacc5517eb66" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.CLS.Orchestration.PortType_ReceiveHBDEC" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveHBDEC" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="86b72a85-cea8-4673-837a-b6586eb1b37e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e7f057e3-7d46-4839-88fa-85b4694ffdc2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.CLS.Orchestration.PortType_SaveHBDEC" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SaveHBDEC" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ead298c1-9b5f-4d79-800d-fb71bb63c86c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.CLS.Orchestration
+{
+    internal porttype PortType_ReceiveHBDEC
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.CLS.Schemas.HB_DEC
+        };
+    };
+    internal porttype PortType_SaveHBDEC
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.CLS.Schemas.HB_DEC
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service HB
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveHBDEC ReceiveHBDEC;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SaveHBDEC SaveHBDEC;
+        message Kaifa.B2B.CLS.Schemas.HB_DEC Message_HB;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("86abcf36-477d-403d-b0fd-27b320b45840")]
+            activate receive (ReceiveHBDEC.Operation_1, Message_HB);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("768d7352-4688-4bd0-8c14-b6e8bd065544")]
+            Kaifa.B2B.CLS.XmlHelper.HBDec.Read(Message_HB);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cc326168-2be6-44c8-8e0e-10ddd5992cd4")]
+            send (SaveHBDEC.Operation_1, Message_HB);
+        }
+    }
+}
+

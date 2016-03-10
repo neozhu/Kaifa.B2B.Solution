@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--Type:KAIFA_STX_1 TRACE=33-->
+<!DOCTYPE labels SYSTEM "..\..\Batch\label.dtd">
+<labels _FORMAT="KAIFA_STX_1" _PRINTERNAME="" _QUANTITY="1">
+	<label>
+		<variable name="PART">333</variable>
+		<variable name="QTY">333</variable>
+		<variable name="LOT">33</variable>
+		<variable name="ASL">33</variable>
+		<variable name="VEN">33</variable>
+		<variable name="TRACE">33</variable>
+		<variable name="DCODE">33</variable>
+	</label>
+</labels>

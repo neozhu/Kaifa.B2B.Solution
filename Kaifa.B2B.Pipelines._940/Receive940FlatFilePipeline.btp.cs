@@ -54,7 +54,7 @@ namespace Kaifa.B2B.Pipelines._940
 "=\"0\" maxOccurs=\"-1\" execMethod=\"All\" stageId=\"9d0e410e-4cce-4536-83fa-4a5040674ad6\" />      <Compone"+
 "nts />    </Stage>  </Stages></Document>";
         
-        private const string _versionDependentGuid = "3bfa720f-daef-444d-aaca-0d5bcc8446d6";
+        private const string _versionDependentGuid = "b08f2be3-c304-4478-b3d0-d587bc432851";
         
         public Receive940FlatFilePipeline()
         {

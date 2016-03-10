@@ -19,12 +19,19 @@ namespace Kaifa.Wms.OQC.WinForm
         public delegate void QueryCompleted(DataTable dt);
         private string _connectionstring = "";
 
+        private Dictionary<string ,int> skupickinglist = null;
+
         private OQCChecker checker = null;
         public oqcForm()
         {
             InitializeComponent();
+           
+            skupickinglist = new Dictionary<string, int>();
+
             //_connectionstring = System.Configuration.ConfigurationSettings.AppSettings["connectionstring"];
             checker = new OQCChecker(_connectionstring);
+
+            //checker.PlayNumSound(3291);
             //this.stxqrcode.Enabled = false;
         }
 
@@ -64,6 +71,12 @@ namespace Kaifa.Wms.OQC.WinForm
             if (this.orderkeytxt.Text.Length == 10)
             {
                 GetOrderQtyInfo();
+                skupickinglist = new Dictionary<string,int>();
+                DataTable dt = checker.GetSKUPicking(this.orderkeytxt.Text, "");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    skupickinglist.Add(dr["SKU"].ToString(),Convert.ToInt32(dr["rownum"]));
+                }
             }
         }
 
@@ -91,6 +104,7 @@ namespace Kaifa.Wms.OQC.WinForm
 
                 loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
                 loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
+                loadSKUPicking(this.orderkeytxt.Text,this.diffck.Checked.ToString());
             }
         }
         private void loadOQCResult(string orderkey, string dropid, bool onlydiff)
@@ -167,6 +181,41 @@ namespace Kaifa.Wms.OQC.WinForm
             
          
         }
+
+        private void loadSKUPicking(string orderkey,string isdiff)
+        {
+            //DataTable dt = checker.GetCheckLog(orderkey, dropid);
+            QueryLogDelegate querydelegate = new QueryLogDelegate(checker.GetSKUPicking);
+
+            querydelegate.BeginInvoke(orderkey, isdiff, new AsyncCallback(res =>
+            {
+
+                QueryLogDelegate query = (QueryLogDelegate)res.AsyncState;
+                DataTable dt = query.EndInvoke(res);
+
+                this.Invoke((QueryCompleted)delegate
+                {
+
+                    
+                    this.dataGridView1.DataSource = dt;
+
+
+                    dataGridView1.Columns[0].HeaderText = "分选序号";
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].HeaderText = "订单号";
+                    dataGridView1.Columns[2].HeaderText = "料号";
+                    dataGridView1.Columns[3].HeaderText = "订单数量";
+                    dataGridView1.Columns[4].HeaderText = "复检数量";
+                    dataGridView1.Columns[5].HeaderText = "复检盘数";
+                    dataGridView1.Columns[6].HeaderText = "差异";
+                
+                }, dt);
+
+            }), querydelegate);
+
+
+        }
+
         private void subpickedqtytxt_TextChanged(object sender, EventArgs e)
         {
 
@@ -209,6 +258,7 @@ namespace Kaifa.Wms.OQC.WinForm
         {
             loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
             loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
+            loadSKUPicking(this.orderkeytxt.Text, this.diffck.Checked.ToString());
         }
 
         private void stxqrcode_Leave(object sender, EventArgs e)
@@ -314,9 +364,11 @@ namespace Kaifa.Wms.OQC.WinForm
                     
                     if (isok)
                     {
+                        this.lbbox.Text = this.skupickinglist[sku].ToString();
                         checker.insertLog(this.orderkeytxt.Text, this.dropidtxt.Text, ven.Replace("\n", ""), sku.Replace("\n", ""), Convert.ToInt32(qty.Replace("\n", "")), this.stxqrcode.Text);
-                        checker.PlayOK();
-                        
+                        //checker.PlayOK();
+                        int no = this.skupickinglist[sku];
+                        checker.PlayNumSound(no);
                         CleanTextBox();
                         this.stxqrcode.BackColor = Color.Green;
                         this.stxqrcode.Text = string.Empty;

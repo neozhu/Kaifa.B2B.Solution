@@ -1,0 +1,161 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c92fb72d-2a83-4669-beff-5bcd8f44faa9" LowerBound="1.1" HigherBound="37.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Kaifa.B2B.CLS.Orchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="930a84b8-c7a5-4ed4-a03f-2f733b36dcd5" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="36.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DIS" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="2039ca37-098e-4dc7-adf4-279b7a808bc6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Kaifa.B2B.CLS.Schemas.DIS_B2B" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DisMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="aeb111d9-6fc6-4189-ba69-3fa63ba4d227" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="c3656b2a-396d-4ba2-85bd-81a3bdb268e2" ParentLink="ServiceBody_Statement" LowerBound="28.1" HigherBound="30.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveDISB2B" />
+                    <om:Property Name="MessageName" Value="DisMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_DIS" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="689eba95-9009-48a4-b388-6a2eaac7fa07" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                    <om:Property Name="Expression" Value="Kaifa.B2B.CLS.XmlHelper.DisB2B.Read(DisMessage);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Expression_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="fcc23301-6f5b-48af-9d8b-076dc9475a00" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="34.1">
+                    <om:Property Name="PortName" Value="SaveDISB2B" />
+                    <om:Property Name="MessageName" Value="DisMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1d2a5b29-8c04-4910-99dd-09f97dcf12ae" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.CLS.Orchestration.PortType_ReceiveDISB2B" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveDISB2B" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c1aaac00-7282-4bcf-a1e4-f41580198f30" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="60ca8064-0b58-4f38-b6d8-6deac6d20cb2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Kaifa.B2B.CLS.Orchestration.PortType_SaveDISB2B" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SaveDISB2B" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="66e00966-469e-41ad-be09-c32dc85b4bd3" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="68ae0320-8dfd-4f42-bba4-c8f6ec94b862" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveDISB2B" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7d53197e-d618-4d27-8d7f-ceeb40a3efd6" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="040cb842-0009-40b4-b9e2-a17a15d82878" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.42">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.CLS.Schemas.DIS_B2B" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="53186f38-4570-480c-93f2-95f5a2d757fc" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SaveDISB2B" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9ade2b34-0a81-48c7-938a-a465b3e205f2" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a321afc4-3689-4233-943c-3bb6616615c0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.42">
+                    <om:Property Name="Ref" Value="Kaifa.B2B.CLS.Schemas.DIS_B2B" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Kaifa.B2B.CLS.Orchestration
+{
+    internal porttype PortType_ReceiveDISB2B
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.CLS.Schemas.DIS_B2B
+        };
+    };
+    internal porttype PortType_SaveDISB2B
+    {
+        oneway Operation_1
+        {
+            Kaifa.B2B.CLS.Schemas.DIS_B2B
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service DIS
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveDISB2B ReceiveDISB2B;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SaveDISB2B SaveDISB2B;
+        message Kaifa.B2B.CLS.Schemas.DIS_B2B DisMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c3656b2a-396d-4ba2-85bd-81a3bdb268e2")]
+            activate receive (ReceiveDISB2B.Operation_1, DisMessage);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("689eba95-9009-48a4-b388-6a2eaac7fa07")]
+            Kaifa.B2B.CLS.XmlHelper.DisB2B.Read(DisMessage);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fcc23301-6f5b-48af-9d8b-076dc9475a00")]
+            send (SaveDISB2B.Operation_1, DisMessage);
+        }
+    }
+}
+

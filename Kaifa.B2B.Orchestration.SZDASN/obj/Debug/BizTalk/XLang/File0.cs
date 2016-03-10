@@ -818,15 +818,15 @@ namespace Kaifa.B2B.Orchestration.SZDASN
                 SZDASN_Orchestration __svc__ = (SZDASN_Orchestration)_service;
                 __SZDASN_Orchestration_root_0 __ctx0__ = (__SZDASN_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.SendPip3B2Message != null)
-                {
-                    __svc__.SendPip3B2Message.Close(this, null);
-                    __svc__.SendPip3B2Message = null;
-                }
                 if (__svc__.ReceiveOrderShipmentMessage != null)
                 {
                     __svc__.ReceiveOrderShipmentMessage.Close(this, null);
                     __svc__.ReceiveOrderShipmentMessage = null;
+                }
+                if (__svc__.SendPip3B2Message != null)
+                {
+                    __svc__.SendPip3B2Message.Close(this, null);
+                    __svc__.SendPip3B2Message = null;
                 }
                 base.Finally();
             }
@@ -868,42 +868,42 @@ namespace Kaifa.B2B.Orchestration.SZDASN
                 SZDASN_Orchestration __svc__ = (SZDASN_Orchestration)_service;
                 __SZDASN_Orchestration_1 __ctx1__ = (__SZDASN_Orchestration_1)(__svc__._stateMgrs[1]);
 
+                if (__ctx1__ != null && __ctx1__.__VendorShipmentReportMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__VendorShipmentReportMessage);
+                    __ctx1__.__VendorShipmentReportMessage = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null && __ctx1__.__OrderShipmentMessage != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__OrderShipmentMessage);
+                    __ctx1__.__OrderShipmentMessage = null;
+                }
                 if (__ctx1__ != null && __ctx1__.__Pip3B2MessageForSTX != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__Pip3B2MessageForSTX);
                     __ctx1__.__Pip3B2MessageForSTX = null;
                 }
+                if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__CountStr = null;
                 if (__ctx1__ != null && __ctx1__.__Pip3B2MessageForE2open != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__Pip3B2MessageForE2open);
                     __ctx1__.__Pip3B2MessageForE2open = null;
                 }
                 if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF = null;
-                if (__ctx1__ != null)
                     __ctx1__.__pipInstanceIdentifierFore2open = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageForSTX = null;
-                if (__ctx1__ != null)
                     __ctx1__.__pipInstanceMessageIdForSTX = null;
-                if (__ctx1__ != null && __ctx1__.__OrderShipmentMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__OrderShipmentMessage);
-                    __ctx1__.__OrderShipmentMessage = null;
-                }
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__CountStr = null;
-                if (__ctx1__ != null && __ctx1__.__VendorShipmentReportMessage != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__VendorShipmentReportMessage);
-                    __ctx1__.__VendorShipmentReportMessage = null;
-                }
                 base.Finally();
             }
 
@@ -1099,8 +1099,8 @@ namespace Kaifa.B2B.Orchestration.SZDASN
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __SZDASN_Orchestration_1 __ctx1__ = (__SZDASN_Orchestration_1)_stateMgrs[1];
             __SZDASN_Orchestration_root_0 __ctx0__ = (__SZDASN_Orchestration_root_0)_stateMgrs[0];
+            __SZDASN_Orchestration_1 __ctx1__ = (__SZDASN_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1146,8 +1146,8 @@ namespace Kaifa.B2B.Orchestration.SZDASN
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SZDASN_Orchestration_1 __ctx1__ = (__SZDASN_Orchestration_1)_stateMgrs[1];
             __SZDASN_Orchestration_root_0 __ctx0__ = (__SZDASN_Orchestration_root_0)_stateMgrs[0];
+            __SZDASN_Orchestration_1 __ctx1__ = (__SZDASN_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {

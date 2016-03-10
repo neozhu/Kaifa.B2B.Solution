@@ -13,12 +13,14 @@
     <AssemblyName>Kaifa.B2B.CLS.Orchestration</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <BpelCompliance>True</BpelCompliance>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>kaifa.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\build\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -59,6 +61,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DIS.odx">
+      <TypeName>DIS</TypeName>
+      <Namespace>Kaifa.B2B.CLS.Orchestration</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kaifa.B2B.CLS.Schemas\Kaifa.B2B.CLS.Schemas.btproj">
+      <Project>{C61022DD-CA24-4357-BC8B-8838AFDBD6DE}</Project>
+      <Name>Kaifa.B2B.CLS.Schemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kaifa.B2B.CLS.XmlHelper\Kaifa.B2B.CLS.XmlHelper.csproj">
+      <Project>{98E80C42-50B8-4C93-BA24-EACC7692BB46}</Project>
+      <Name>Kaifa.B2B.CLS.XmlHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kaifa.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="HB.odx">
+      <TypeName>HB</TypeName>
+      <Namespace>Kaifa.B2B.CLS.Orchestration</Namespace>
+    </XLang>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

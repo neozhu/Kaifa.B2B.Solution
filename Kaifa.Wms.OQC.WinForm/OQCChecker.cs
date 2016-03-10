@@ -57,19 +57,47 @@ namespace Kaifa.Wms.OQC.WinForm
             }
         }
 
-        public DataTable GetOQCResult(string orderkey,string dropid,bool onlydiff) {
+        public DataTable GetOQCResult(string orderkey, string dropid, bool onlydiff)
+        {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
                 string sqltxt = string.Format(@"SELECT ORDERKEY ,STORERKEY,SKU,QTY,CHECKEDQTY,DIFFQTY,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}' ", orderkey);
-                if(!string.IsNullOrEmpty(dropid)){
-                    sqltxt +=string.Format(" AND DROPID='{0}'",dropid);
+                if (!string.IsNullOrEmpty(dropid))
+                {
+                    sqltxt += string.Format(" AND DROPID='{0}'", dropid);
                 }
-                if(onlydiff){
-                     sqltxt +=string.Format(" AND DIFFQTY<>0 ");
+                if (onlydiff)
+                {
+                    sqltxt += string.Format(" AND DIFFQTY<>0 ");
                 }
                 cmd.CommandText = sqltxt + "  order by CHECKEDQTY desc";
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+
+                conn.Close();
+                return ds.Tables[0];
+
+            }
+        }
+        public DataTable GetSKUPicking(string orderkey, string dd)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                string sqltxt = string.Format(@"select ROW_NUMBER() OVER(ORDER BY sku ) AS rownum ,* from wmwhse1.[OPICKING] where ORDERKEY='{0}'  ", orderkey);
+                if (dd == "True")
+                {
+                    sqltxt += string.Format(" AND DIFFQTY<>0 ");
+                }
+                cmd.CommandText = sqltxt + "  order by order by sku ";
+
+                cmd.CommandText = sqltxt;
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -91,7 +119,7 @@ namespace Kaifa.Wms.OQC.WinForm
                 {
                     sqltxt += string.Format(" AND DROPID='{0}' ", dropid);
                 }
-               
+
                 cmd.CommandText = sqltxt + " ORDER BY SERIALKEY desc";
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -115,13 +143,13 @@ namespace Kaifa.Wms.OQC.WinForm
                 return Convert.ToInt32(result);
             }
         }
-        public int GetSumCheckedQtyByDropId(string orderkey,string dropid)
+        public int GetSumCheckedQtyByDropId(string orderkey, string dropid)
         {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format(@"select isnull(sum(isnull(checkQty,0)),0) from [wmwhse1].ordershipreview where orderkey='{0}' and dropid='{1}'", orderkey,dropid);
+                cmd.CommandText = string.Format(@"select isnull(sum(isnull(checkQty,0)),0) from [wmwhse1].ordershipreview where orderkey='{0}' and dropid='{1}'", orderkey, dropid);
                 object result = cmd.ExecuteScalar();
                 conn.Close();
                 return Convert.ToInt32(result);
@@ -146,7 +174,7 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 loadcacheTable(orderkey, dropid);
             }
-            string filter=string.Format("ORDERKEY = '{0}' AND STORERKEY = '{1}' AND SKU = '{2}' AND DROPID = '{3}'",orderkey,storer,sku,dropid);
+            string filter = string.Format("ORDERKEY = '{0}' AND STORERKEY = '{1}' AND SKU = '{2}' AND DROPID = '{3}'", orderkey, storer, sku, dropid);
             DataRow[] rows = this._cacheTable.Select(filter);
             if (rows.Count() > 0)
             {
@@ -154,7 +182,7 @@ namespace Kaifa.Wms.OQC.WinForm
             }
             else
             {
-              return  false;
+                return false;
             }
 
             //using (SqlConnection conn = new SqlConnection(_connectionstring))
@@ -168,7 +196,7 @@ namespace Kaifa.Wms.OQC.WinForm
             //}
         }
 
-        public void loadcacheTable(string orderkey,string dropid)
+        public void loadcacheTable(string orderkey, string dropid)
         {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
@@ -182,7 +210,7 @@ namespace Kaifa.Wms.OQC.WinForm
 
             }
         }
-       
+
         public bool checkingOrderKey(string orderkey)
         {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
@@ -207,8 +235,8 @@ namespace Kaifa.Wms.OQC.WinForm
                 return Convert.ToBoolean(result);
             }
         }
-         
-        public void insertLog(string orderkey,string dropid,string storerkey,string sku,int checkqty,string qrcode)
+
+        public void insertLog(string orderkey, string dropid, string storerkey, string sku, int checkqty, string qrcode)
         {
             using (SqlConnection conn = new SqlConnection(_connectionstring))
             {
@@ -231,24 +259,90 @@ namespace Kaifa.Wms.OQC.WinForm
            ,'{5}'
            ,'{6}'
           )", orderkey
-            ,qrcode
-            ,checkqty
-            ,storerkey
-            ,sku
-            ,dropid
-            ,checkqty);
+            , qrcode
+            , checkqty
+            , storerkey
+            , sku
+            , dropid
+            , checkqty);
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                
+
             }
         }
 
+        public void PlayNumSound(int num)
+        {
+            System.Media.SoundPlayer player;
+            string numstr = num.ToString();
+            foreach (char ch in numstr)
+            {
+                int i = Convert.ToInt32(ch) - 48;
+                switch (i)
+                {
+                    case 0:
+                        player = new System.Media.SoundPlayer(Properties.Resources._0);
 
+                        player.Play();
+                        break;
+                    case 1:
+                        player = new System.Media.SoundPlayer(Properties.Resources._1);
+
+                        player.Play();
+                        break;
+                    case 2:
+                        player = new System.Media.SoundPlayer(Properties.Resources._2);
+
+                        player.Play();
+                        break;
+                    case 3:
+                        player = new System.Media.SoundPlayer(Properties.Resources._3);
+
+                        player.Play();
+                        break;
+                    case 4:
+                        player = new System.Media.SoundPlayer(Properties.Resources._4);
+
+                        player.Play();
+                        break;
+                    case 5:
+                        player = new System.Media.SoundPlayer(Properties.Resources._5);
+
+                        player.Play();
+                        break;
+                    case 6:
+                        player = new System.Media.SoundPlayer(Properties.Resources._6);
+
+                        player.Play();
+                        break;
+                    case 7:
+                        player = new System.Media.SoundPlayer(Properties.Resources._7);
+
+                        player.Play();
+                        break;
+                    case 8:
+                        player = new System.Media.SoundPlayer(Properties.Resources._8);
+
+                        player.Play();
+                        break;
+                    case 9:
+                        player = new System.Media.SoundPlayer(Properties.Resources._9);
+
+                        player.Play();
+                        break;
+                    default:
+
+                        break;
+
+                }
+                System.Threading.Thread.Sleep(500);
+            }
+        }
         public void PlayAlarm()
         {
 
             //System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.ALARM5);
-  
+
             //player.Play();
             System.Media.SystemSounds.Asterisk.Play();
         }
@@ -301,7 +395,7 @@ namespace Kaifa.Wms.OQC.WinForm
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = string.Format("SELECT ORDERKEY as '订单号' ,STORERKEY as '货主',SKU,QTY as '订单数量',CHECKEDQTY as '复检数量',DIFFQTY as '差异数量',DROPID as '落放ID' FROM [WMWHSE1].OQC  WHERE ORDERKEY='{0}' ; SELECT SERIALKEY as 'ID' ,STORERKEY as '货主',SKU,CHECKQTY as '扫描数量',DROPID as '落放ID',Q2CODE as '二维码信息',ORDERKEY as '订单号' FROM [WMWHSE1].ORDERSHIPREVIEW WHERE ORDERKEY='{0}' ", orderkey);
-                
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -316,5 +410,5 @@ namespace Kaifa.Wms.OQC.WinForm
 
     }
 
-     
+
 }

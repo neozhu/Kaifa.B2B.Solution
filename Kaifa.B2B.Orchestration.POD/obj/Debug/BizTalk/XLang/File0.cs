@@ -1000,15 +1000,15 @@ namespace Kaifa.B2B.Orchestration.POD
                 POD_Orchestration __svc__ = (POD_Orchestration)_service;
                 __POD_Orchestration_root_0 __ctx0__ = (__POD_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.SendPIPs4B2PODMessage != null)
-                {
-                    __svc__.SendPIPs4B2PODMessage.Close(this, null);
-                    __svc__.SendPIPs4B2PODMessage = null;
-                }
                 if (__svc__.ReceiveOrderShipmentPODMessage != null)
                 {
                     __svc__.ReceiveOrderShipmentPODMessage.Close(this, null);
                     __svc__.ReceiveOrderShipmentPODMessage = null;
+                }
+                if (__svc__.SendPIPs4B2PODMessage != null)
+                {
+                    __svc__.SendPIPs4B2PODMessage.Close(this, null);
+                    __svc__.SendPIPs4B2PODMessage = null;
                 }
                 base.Finally();
             }
@@ -1051,33 +1051,27 @@ namespace Kaifa.B2B.Orchestration.POD
                 __POD_Orchestration_1 __ctx1__ = (__POD_Orchestration_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx1__ != null)
-                    __ctx1__.__CountStr = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageForSTX = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__strPipMessageFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF1 = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__SubmitRNIF = null;
-                if (__ctx1__ != null)
                     __ctx1__.__pipInstanceMessageIdForSTX = null;
                 if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceMessageIdFore2open = null;
-                if (__ctx1__ != null)
-                    __ctx1__.__pipInstanceIdentifierForSTX = null;
-                if (__ctx1__ != null && __ctx1__.__PIPs4B2PODMessageForE2open != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__PIPs4B2PODMessageForE2open);
-                    __ctx1__.__PIPs4B2PODMessageForE2open = null;
-                }
+                    __ctx1__.__strPipMessageForSTX = null;
                 if (__ctx1__ != null && __ctx1__.__VendorShipmentPODReport != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__VendorShipmentPODReport);
                     __ctx1__.__VendorShipmentPODReport = null;
                 }
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceMessageIdFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierForSTX = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__CountStr = null;
+                if (__ctx1__ != null && __ctx1__.__PIPs4B2PODMessageForE2open != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__PIPs4B2PODMessageForE2open);
+                    __ctx1__.__PIPs4B2PODMessageForE2open = null;
+                }
+                if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF = null;
                 if (__ctx1__ != null && __ctx1__.__OrderShipmentPODMessage != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__OrderShipmentPODMessage);
@@ -1088,6 +1082,12 @@ namespace Kaifa.B2B.Orchestration.POD
                     __ctx1__.UnrefMessage(__ctx1__.__PIPs4B2PODMessageForSTX);
                     __ctx1__.__PIPs4B2PODMessageForSTX = null;
                 }
+                if (__ctx1__ != null)
+                    __ctx1__.__SubmitRNIF1 = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__strPipMessageFore2open = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pipInstanceIdentifierFore2open = null;
                 if (__ctx1__ != null && __ctx1__.__CMShipmentPODReport != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CMShipmentPODReport);

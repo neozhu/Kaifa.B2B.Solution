@@ -841,42 +841,42 @@ namespace Kaifa.B2B.Orchestration.SZD940
             public override void Finally()
             {
                 SZDWmsWebServiceClient __svc__ = (SZDWmsWebServiceClient)_service;
-                __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)(__svc__._stateMgrs[1]);
                 __SZDWmsWebServiceClient_root_0 __ctx0__ = (__SZDWmsWebServiceClient_root_0)(__svc__._stateMgrs[0]);
+                __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx0__ != null && __ctx0__.__subWrapper1 != null)
                 {
                     __ctx0__.__subWrapper1.Destroy(__svc__, __ctx0__);
                     __ctx0__.__subWrapper1 = null;
                 }
-                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
-                    __ctx1__.__ShipmentOrder = null;
-                }
                 if (__ctx1__ != null)
-                    __ctx1__.__pulllistNo = null;
+                    __ctx1__.__siteCode = null;
                 if (__ctx1__ != null && __ctx1__.__CM940Message != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CM940Message);
                     __ctx1__.__CM940Message = null;
                 }
                 if (__ctx1__ != null)
-                    __ctx1__.__siteCode = null;
-                if (__ctx1__ != null)
                     __ctx1__.__strType = null;
-                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
-                {
-                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
-                    __ctx1__.__CallServiceRequest = null;
-                }
                 if (__ctx1__ != null && __ctx1__.__CallServiceReponse != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__CallServiceReponse);
                     __ctx1__.__CallServiceReponse = null;
                 }
+                if (__ctx1__ != null && __ctx1__.__ShipmentOrder != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__ShipmentOrder);
+                    __ctx1__.__ShipmentOrder = null;
+                }
+                if (__ctx1__ != null && __ctx1__.__CallServiceRequest != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__CallServiceRequest);
+                    __ctx1__.__CallServiceRequest = null;
+                }
                 if (__ctx1__ != null)
                     __ctx1__.__Reqdate = null;
+                if (__ctx1__ != null)
+                    __ctx1__.__pulllistNo = null;
                 if (__ctx1__ != null)
                     __ctx1__.__strContent = null;
                 base.Finally();
@@ -1042,8 +1042,8 @@ namespace Kaifa.B2B.Orchestration.SZD940
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)_stateMgrs[1];
             __SZDWmsWebServiceClient_root_0 __ctx0__ = (__SZDWmsWebServiceClient_root_0)_stateMgrs[0];
+            __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1088,8 +1088,8 @@ namespace Kaifa.B2B.Orchestration.SZD940
             Microsoft.XLANGs.Core.Envelope __msgEnv__ = null;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)_stateMgrs[1];
             __SZDWmsWebServiceClient_root_0 __ctx0__ = (__SZDWmsWebServiceClient_root_0)_stateMgrs[0];
+            __SZDWmsWebServiceClient_1 __ctx1__ = (__SZDWmsWebServiceClient_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1407,7 +1407,7 @@ namespace Kaifa.B2B.Orchestration.SZD940
             return Microsoft.XLANGs.Core.StopConditions.Completed;
         }
         private static Microsoft.XLANGs.Core.CachedObject[] _locations = new Microsoft.XLANGs.Core.CachedObject[] {
-            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{71A14851-225C-4202-97FC-9E23562F4FB8}"))
+            new Microsoft.XLANGs.Core.CachedObject(new System.Guid("{05E77522-8FEA-4A34-BE4B-793AFA1DBDA9}"))
         };
 
     }

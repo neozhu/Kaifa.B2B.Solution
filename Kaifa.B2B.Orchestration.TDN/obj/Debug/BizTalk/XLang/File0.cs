@@ -623,15 +623,15 @@ namespace Kaifa.B2B.Orchestration.TDN
                 TDN_Orchestration __svc__ = (TDN_Orchestration)_service;
                 __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)(__svc__._stateMgrs[0]);
 
-                if (__svc__.SendTDN940ToCCS != null)
-                {
-                    __svc__.SendTDN940ToCCS.Close(this, null);
-                    __svc__.SendTDN940ToCCS = null;
-                }
                 if (__svc__.ReceiveTDN940 != null)
                 {
                     __svc__.ReceiveTDN940.Close(this, null);
                     __svc__.ReceiveTDN940 = null;
+                }
+                if (__svc__.SendTDN940ToCCS != null)
+                {
+                    __svc__.SendTDN940ToCCS.Close(this, null);
+                    __svc__.SendTDN940ToCCS = null;
                 }
                 if (__svc__.SendTDN940ToKFS != null)
                 {
@@ -679,14 +679,14 @@ namespace Kaifa.B2B.Orchestration.TDN
                 __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)(__svc__._stateMgrs[1]);
 
                 if (__ctx1__ != null)
+                    __ctx1__.__FileName = null;
+                if (__ctx1__ != null)
                     __ctx1__.__cmsite = null;
                 if (__ctx1__ != null && __ctx1__.__TDN940Message != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__TDN940Message);
                     __ctx1__.__TDN940Message = null;
                 }
-                if (__ctx1__ != null)
-                    __ctx1__.__FileName = null;
                 if (__ctx1__ != null && __ctx1__.__OrderTDNMessage != null)
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__OrderTDNMessage);
@@ -856,8 +856,8 @@ namespace Kaifa.B2B.Orchestration.TDN
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)_stateMgrs[1];
             __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)_stateMgrs[0];
+            __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -904,8 +904,8 @@ namespace Kaifa.B2B.Orchestration.TDN
             bool __condition__;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)_stateMgrs[1];
             __TDN_Orchestration_root_0 __ctx0__ = (__TDN_Orchestration_root_0)_stateMgrs[0];
+            __TDN_Orchestration_1 __ctx1__ = (__TDN_Orchestration_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
