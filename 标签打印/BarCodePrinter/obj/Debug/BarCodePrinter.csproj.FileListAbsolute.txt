@@ -6,5 +6,4 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.csproj.GenerateResource.Cache
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.exe
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\obj\Debug\BarCodePrinter.pdb
-D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\bin\Debug\Spire.Barcode.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\标签打印\BarCodePrinter\bin\Debug\Spire.Barcode.xml

@@ -148,6 +148,52 @@ namespace Kaifa.B2B.CLS.Orchestration
         #endregion // port reflection support
     }
 
+    [System.SerializableAttribute]
+    sealed public class __Kaifa_B2B_CLS_Schemas_LIST_B2B__ : Microsoft.XLANGs.Core.XSDPart
+    {
+        private static Kaifa.B2B.CLS.Schemas.LIST_B2B _schema = new Kaifa.B2B.CLS.Schemas.LIST_B2B();
+
+        public __Kaifa_B2B_CLS_Schemas_LIST_B2B__(Microsoft.XLANGs.Core.XMessage msg, string name, int index) : base(msg, name, index) { }
+
+        
+        #region part reflection support
+        public static Microsoft.XLANGs.BaseTypes.SchemaBase PartSchema { get { return (Microsoft.XLANGs.BaseTypes.SchemaBase)_schema; } }
+        #endregion // part reflection support
+    }
+
+    [Microsoft.XLANGs.BaseTypes.MessageTypeAttribute(
+        Microsoft.XLANGs.BaseTypes.EXLangSAccess.ePublic,
+        Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eThirdKind,
+        "Kaifa.B2B.CLS.Schemas.LIST_B2B",
+        new System.Type[]{
+            typeof(Kaifa.B2B.CLS.Schemas.LIST_B2B)
+        },
+        new string[]{
+            "part"
+        },
+        new System.Type[]{
+            typeof(__Kaifa_B2B_CLS_Schemas_LIST_B2B__)
+        },
+        0,
+        @"LIST_B2B"
+    )]
+    [System.SerializableAttribute]
+    sealed public class __messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B : Microsoft.BizTalk.XLANGs.BTXEngine.BTXMessage
+    {
+        public __Kaifa_B2B_CLS_Schemas_LIST_B2B__ part;
+
+        private void __CreatePartWrappers()
+        {
+            part = new __Kaifa_B2B_CLS_Schemas_LIST_B2B__(this, "part", 0);
+            this.AddPart("part", 0, part);
+        }
+
+        public __messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B(string msgName, Microsoft.XLANGs.Core.Context ctx) : base(msgName, ctx)
+        {
+            __CreatePartWrappers();
+        }
+    }
+
     [Microsoft.XLANGs.BaseTypes.PortTypeOperationAttribute(
         "Operation_1",
         new System.Type[]{
@@ -230,6 +276,104 @@ namespace Kaifa.B2B.CLS.Orchestration
             System.Web.Services.Description.OperationFlow.OneWay,
             typeof(PortType_SaveHBDEC),
             typeof(__messagetype_Kaifa_B2B_CLS_Schemas_HB_DEC),
+            null,
+            new System.Type[]{},
+            new string[]{}
+        );
+        static public System.Collections.Hashtable OperationsInformation
+        {
+            get
+            {
+                System.Collections.Hashtable h = new System.Collections.Hashtable();
+                h[ "Operation_1" ] = Operation_1;
+                return h;
+            }
+        }
+        #endregion // port reflection support
+    }
+
+    [Microsoft.XLANGs.BaseTypes.PortTypeOperationAttribute(
+        "Operation_1",
+        new System.Type[]{
+            typeof(Kaifa.B2B.CLS.Orchestration.__messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B)
+        },
+        new string[]{
+        }
+    )]
+    [Microsoft.XLANGs.BaseTypes.PortTypeAttribute(Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal, "")]
+    [System.SerializableAttribute]
+    sealed internal class PortType_ReceiveRET : Microsoft.BizTalk.XLANGs.BTXEngine.BTXPortBase
+    {
+        public PortType_ReceiveRET(int portInfo, Microsoft.XLANGs.Core.IServiceProxy s)
+            : base(portInfo, s)
+        { }
+        public PortType_ReceiveRET(PortType_ReceiveRET p)
+            : base(p)
+        { }
+
+        public override Microsoft.XLANGs.Core.PortBase Clone()
+        {
+            PortType_ReceiveRET p = new PortType_ReceiveRET(this);
+            return p;
+        }
+
+        public static readonly Microsoft.XLANGs.BaseTypes.EXLangSAccess __access = Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal;
+        #region port reflection support
+        static public Microsoft.XLANGs.Core.OperationInfo Operation_1 = new Microsoft.XLANGs.Core.OperationInfo
+        (
+            "Operation_1",
+            System.Web.Services.Description.OperationFlow.OneWay,
+            typeof(PortType_ReceiveRET),
+            typeof(__messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B),
+            null,
+            new System.Type[]{},
+            new string[]{}
+        );
+        static public System.Collections.Hashtable OperationsInformation
+        {
+            get
+            {
+                System.Collections.Hashtable h = new System.Collections.Hashtable();
+                h[ "Operation_1" ] = Operation_1;
+                return h;
+            }
+        }
+        #endregion // port reflection support
+    }
+
+    [Microsoft.XLANGs.BaseTypes.PortTypeOperationAttribute(
+        "Operation_1",
+        new System.Type[]{
+            typeof(Kaifa.B2B.CLS.Orchestration.__messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B)
+        },
+        new string[]{
+        }
+    )]
+    [Microsoft.XLANGs.BaseTypes.PortTypeAttribute(Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal, "")]
+    [System.SerializableAttribute]
+    sealed internal class PortType_SaveRET : Microsoft.BizTalk.XLANGs.BTXEngine.BTXPortBase
+    {
+        public PortType_SaveRET(int portInfo, Microsoft.XLANGs.Core.IServiceProxy s)
+            : base(portInfo, s)
+        { }
+        public PortType_SaveRET(PortType_SaveRET p)
+            : base(p)
+        { }
+
+        public override Microsoft.XLANGs.Core.PortBase Clone()
+        {
+            PortType_SaveRET p = new PortType_SaveRET(this);
+            return p;
+        }
+
+        public static readonly Microsoft.XLANGs.BaseTypes.EXLangSAccess __access = Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal;
+        #region port reflection support
+        static public Microsoft.XLANGs.Core.OperationInfo Operation_1 = new Microsoft.XLANGs.Core.OperationInfo
+        (
+            "Operation_1",
+            System.Web.Services.Description.OperationFlow.OneWay,
+            typeof(PortType_SaveRET),
+            typeof(__messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B),
             null,
             new System.Type[]{},
             new string[]{}
@@ -745,8 +889,8 @@ namespace Kaifa.B2B.CLS.Orchestration
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __DIS_1 __ctx1__ = (__DIS_1)_stateMgrs[1];
             __DIS_root_0 __ctx0__ = (__DIS_root_0)_stateMgrs[0];
+            __DIS_1 __ctx1__ = (__DIS_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -791,8 +935,8 @@ namespace Kaifa.B2B.CLS.Orchestration
             Microsoft.XLANGs.Core.Envelope __msgEnv__ = null;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __DIS_1 __ctx1__ = (__DIS_1)_stateMgrs[1];
             __DIS_root_0 __ctx0__ = (__DIS_root_0)_stateMgrs[0];
+            __DIS_1 __ctx1__ = (__DIS_1)_stateMgrs[1];
 
             switch (__seg__.Progress)
             {
@@ -1430,8 +1574,8 @@ namespace Kaifa.B2B.CLS.Orchestration
         {
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
-            __HB_root_0 __ctx0__ = (__HB_root_0)_stateMgrs[0];
             __HB_1 __ctx1__ = (__HB_1)_stateMgrs[1];
+            __HB_root_0 __ctx0__ = (__HB_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1476,8 +1620,8 @@ namespace Kaifa.B2B.CLS.Orchestration
             Microsoft.XLANGs.Core.Envelope __msgEnv__ = null;
             Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
             Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
-            __HB_root_0 __ctx0__ = (__HB_root_0)_stateMgrs[0];
             __HB_1 __ctx1__ = (__HB_1)_stateMgrs[1];
+            __HB_root_0 __ctx0__ = (__HB_root_0)_stateMgrs[0];
 
             switch (__seg__.Progress)
             {
@@ -1585,6 +1729,691 @@ namespace Kaifa.B2B.CLS.Orchestration
                 {
                     __ctx1__.UnrefMessage(__ctx1__.__Message_HB);
                     __ctx1__.__Message_HB = null;
+                }
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 12;
+            case 12:
+                if ( !PreProgressInc( __seg__, __ctx__, 13 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                Tracker.FireEvent(__eventLocations[7],__eventData[5],_stateMgrs[1].TrackDataStream );
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 13;
+            case 13:
+                if (!__ctx1__.CleanupAndPrepareToCommit(__seg__))
+                    return Microsoft.XLANGs.Core.StopConditions.Blocked;
+                if ( !PostProgressInc( __seg__, __ctx__, 14 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 14;
+            case 14:
+                if ( !PreProgressInc( __seg__, __ctx__, 15 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                __ctx1__.OnCommit();
+                goto case 15;
+            case 15:
+                __seg__.SegmentDone();
+                _segments[0].PredecessorDone(this);
+                break;
+            }
+            return Microsoft.XLANGs.Core.StopConditions.Completed;
+        }
+    }
+    //#line 143 "D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Orchestration\RET.odx"
+    [Microsoft.XLANGs.BaseTypes.StaticSubscriptionAttribute(
+        0, "ReceiveRET", "Operation_1", -1, -1, true
+    )]
+    [Microsoft.XLANGs.BaseTypes.ServicePortsAttribute(
+        new Microsoft.XLANGs.BaseTypes.EXLangSParameter[] {
+            Microsoft.XLANGs.BaseTypes.EXLangSParameter.ePort|Microsoft.XLANGs.BaseTypes.EXLangSParameter.eImplements,
+            Microsoft.XLANGs.BaseTypes.EXLangSParameter.ePort|Microsoft.XLANGs.BaseTypes.EXLangSParameter.eUses
+        },
+        new System.Type[] {
+            typeof(Kaifa.B2B.CLS.Orchestration.PortType_ReceiveRET),
+            typeof(Kaifa.B2B.CLS.Orchestration.PortType_SaveRET)
+        },
+        new System.String[] {
+            "ReceiveRET",
+            "SaveRET"
+        },
+        new System.Type[] {
+            null,
+            null
+        }
+    )]
+    [Microsoft.XLANGs.BaseTypes.ServiceCallTreeAttribute(
+        new System.Type[] {
+        },
+        new System.Type[] {
+        },
+        new System.Type[] {
+        }
+    )]
+    [Microsoft.XLANGs.BaseTypes.ServiceAttribute(
+        Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal,
+        Microsoft.XLANGs.BaseTypes.EXLangSServiceInfo.eNone
+    )]
+    [System.SerializableAttribute]
+    [Microsoft.XLANGs.BaseTypes.BPELExportableAttribute(false)]
+    sealed internal class RET : Microsoft.BizTalk.XLANGs.BTXEngine.BTXService
+    {
+        public static readonly Microsoft.XLANGs.BaseTypes.EXLangSAccess __access = Microsoft.XLANGs.BaseTypes.EXLangSAccess.eInternal;
+        public static readonly bool __execable = false;
+        [Microsoft.XLANGs.BaseTypes.CallCompensationAttribute(
+            Microsoft.XLANGs.BaseTypes.EXLangSCallCompensationInfo.eNone,
+            new System.String[] {
+            },
+            new System.String[] {
+            }
+        )]
+        public static void __bodyProxy()
+        {
+        }
+        private static System.Guid _serviceId = Microsoft.XLANGs.Core.HashHelper.HashServiceType(typeof(RET));
+        private static volatile System.Guid[] _activationSubIds;
+
+        private static new object _lockIdentity = new object();
+
+        public static System.Guid UUID { get { return _serviceId; } }
+        public override System.Guid ServiceId { get { return UUID; } }
+
+        protected override System.Guid[] ActivationSubGuids
+        {
+            get { return _activationSubIds; }
+            set { _activationSubIds = value; }
+        }
+
+        protected override object StaleStateLock
+        {
+            get { return _lockIdentity; }
+        }
+
+        protected override bool HasActivation { get { return true; } }
+
+        internal bool IsExeced = false;
+
+        static RET()
+        {
+            Microsoft.BizTalk.XLANGs.BTXEngine.BTXService.CacheStaticState( _serviceId );
+        }
+
+        private void ConstructorHelper()
+        {
+            _segments = new Microsoft.XLANGs.Core.Segment[] {
+                new Microsoft.XLANGs.Core.Segment( new Microsoft.XLANGs.Core.Segment.SegmentCode(this.segment0), 0, 0, 0),
+                new Microsoft.XLANGs.Core.Segment( new Microsoft.XLANGs.Core.Segment.SegmentCode(this.segment1), 1, 1, 1)
+            };
+
+            _Locks = 0;
+            _rootContext = new __RET_root_0(this);
+            _stateMgrs = new Microsoft.XLANGs.Core.IStateManager[2];
+            _stateMgrs[0] = _rootContext;
+            FinalConstruct();
+        }
+
+        public RET(System.Guid instanceId, Microsoft.BizTalk.XLANGs.BTXEngine.BTXSession session, Microsoft.BizTalk.XLANGs.BTXEngine.BTXEvents tracker)
+            : base(instanceId, session, "RET", tracker)
+        {
+            ConstructorHelper();
+        }
+
+        public RET(int callIndex, System.Guid instanceId, Microsoft.BizTalk.XLANGs.BTXEngine.BTXService parent)
+            : base(callIndex, instanceId, parent, "RET")
+        {
+            ConstructorHelper();
+        }
+
+        private const string _symInfo = @"
+<XsymFile>
+<ProcessFlow xmlns:om='http://schemas.microsoft.com/BizTalk/2003/DesignerData'>      <shapeType>RootShape</shapeType>      <ShapeID>1330e397-dcea-45f6-af6e-5894903cb5e7</ShapeID>      
+<children>                          
+<ShapeInfo>      <shapeType>ReceiveShape</shapeType>      <ShapeID>c5531f89-b469-41aa-bd64-dbf270a5d2b5</ShapeID>      <ParentLink>ServiceBody_Statement</ParentLink>                <shapeText>Receive_1</shapeText>                  
+<children>                </children>
+  </ShapeInfo>
+                            
+<ShapeInfo>      <shapeType>VariableAssignmentShape</shapeType>      <ShapeID>90d14fb2-38de-473b-93f5-784875fc1d79</ShapeID>      <ParentLink>ServiceBody_Statement</ParentLink>                <shapeText>Expression_1</shapeText>                  
+<children>                </children>
+  </ShapeInfo>
+                            
+<ShapeInfo>      <shapeType>SendShape</shapeType>      <ShapeID>b1a99662-b9a0-40dc-ad53-cf9c3a8d2356</ShapeID>      <ParentLink>ServiceBody_Statement</ParentLink>                <shapeText>Send_1</shapeText>                  
+<children>                </children>
+  </ShapeInfo>
+                  </children>
+  </ProcessFlow><Metadata>
+
+<TrkMetadata>
+<ActionName>'RET'</ActionName><IsAtomic>0</IsAtomic><Line>143</Line><Position>14</Position><ShapeID>'e211a116-cb8b-44e7-a052-0de295aa0001'</ShapeID>
+</TrkMetadata>
+
+<TrkMetadata>
+<Line>153</Line><Position>22</Position><ShapeID>'c5531f89-b469-41aa-bd64-dbf270a5d2b5'</ShapeID>
+<Messages>
+	<MsgInfo><name>Message_RET</name><part>part</part><schema>Kaifa.B2B.CLS.Schemas.LIST_B2B</schema><direction>Out</direction></MsgInfo>
+</Messages>
+</TrkMetadata>
+
+<TrkMetadata>
+<Line>155</Line><Position>49</Position><ShapeID>'90d14fb2-38de-473b-93f5-784875fc1d79'</ShapeID>
+<Messages>
+</Messages>
+</TrkMetadata>
+
+<TrkMetadata>
+<Line>157</Line><Position>13</Position><ShapeID>'b1a99662-b9a0-40dc-ad53-cf9c3a8d2356'</ShapeID>
+<Messages>
+	<MsgInfo><name>Message_RET</name><part>part</part><schema>Kaifa.B2B.CLS.Schemas.LIST_B2B</schema><direction>Out</direction></MsgInfo>
+</Messages>
+</TrkMetadata>
+</Metadata>
+</XsymFile>";
+
+        public override string odXml { get { return _symODXML; } }
+
+        private const string _symODXML = @"
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<om:MetaModel MajorVersion='1' MinorVersion='3' Core='2b131234-7959-458d-834f-2dc0769ce683' ScheduleModel='66366196-361d-448d-976f-cab5e87496d2' xmlns:om='http://schemas.microsoft.com/BizTalk/2003/DesignerData'>
+    <om:Element Type='Module' OID='7a85fa5d-7bed-4632-9fc7-b2a7d8c897c6' LowerBound='1.1' HigherBound='37.1'>
+        <om:Property Name='ReportToAnalyst' Value='True' />
+        <om:Property Name='Name' Value='Kaifa.B2B.CLS.Orchestration' />
+        <om:Property Name='Signal' Value='False' />
+        <om:Element Type='PortType' OID='e6aea0e9-57e4-4be3-89b2-1fcecc2b57c6' ParentLink='Module_PortType' LowerBound='4.1' HigherBound='11.1'>
+            <om:Property Name='Synchronous' Value='False' />
+            <om:Property Name='TypeModifier' Value='Internal' />
+            <om:Property Name='ReportToAnalyst' Value='True' />
+            <om:Property Name='Name' Value='PortType_ReceiveRET' />
+            <om:Property Name='Signal' Value='False' />
+            <om:Element Type='OperationDeclaration' OID='e52518b5-6d61-47fb-9bf4-b07926912dfa' ParentLink='PortType_OperationDeclaration' LowerBound='6.1' HigherBound='10.1'>
+                <om:Property Name='OperationType' Value='OneWay' />
+                <om:Property Name='ReportToAnalyst' Value='True' />
+                <om:Property Name='Name' Value='Operation_1' />
+                <om:Property Name='Signal' Value='False' />
+                <om:Element Type='MessageRef' OID='3263aa4a-15f8-4758-acd6-6f9ea225b744' ParentLink='OperationDeclaration_RequestMessageRef' LowerBound='8.13' HigherBound='8.43'>
+                    <om:Property Name='Ref' Value='Kaifa.B2B.CLS.Schemas.LIST_B2B' />
+                    <om:Property Name='ReportToAnalyst' Value='True' />
+                    <om:Property Name='Name' Value='Request' />
+                    <om:Property Name='Signal' Value='False' />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type='PortType' OID='b657d6a8-b00f-436e-8a9b-2946d0c3e2b0' ParentLink='Module_PortType' LowerBound='11.1' HigherBound='18.1'>
+            <om:Property Name='Synchronous' Value='False' />
+            <om:Property Name='TypeModifier' Value='Internal' />
+            <om:Property Name='ReportToAnalyst' Value='True' />
+            <om:Property Name='Name' Value='PortType_SaveRET' />
+            <om:Property Name='Signal' Value='False' />
+            <om:Element Type='OperationDeclaration' OID='e3366a2c-b454-426e-994f-320306850162' ParentLink='PortType_OperationDeclaration' LowerBound='13.1' HigherBound='17.1'>
+                <om:Property Name='OperationType' Value='OneWay' />
+                <om:Property Name='ReportToAnalyst' Value='True' />
+                <om:Property Name='Name' Value='Operation_1' />
+                <om:Property Name='Signal' Value='False' />
+                <om:Element Type='MessageRef' OID='c7f2736b-b635-46c9-ade1-7537c03b2864' ParentLink='OperationDeclaration_RequestMessageRef' LowerBound='15.13' HigherBound='15.43'>
+                    <om:Property Name='Ref' Value='Kaifa.B2B.CLS.Schemas.LIST_B2B' />
+                    <om:Property Name='ReportToAnalyst' Value='True' />
+                    <om:Property Name='Name' Value='Request' />
+                    <om:Property Name='Signal' Value='False' />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type='ServiceDeclaration' OID='23ecccf3-013c-48d1-83ea-7e35ea70fa35' ParentLink='Module_ServiceDeclaration' LowerBound='18.1' HigherBound='36.1'>
+            <om:Property Name='InitializedTransactionType' Value='False' />
+            <om:Property Name='IsInvokable' Value='False' />
+            <om:Property Name='TypeModifier' Value='Internal' />
+            <om:Property Name='ReportToAnalyst' Value='True' />
+            <om:Property Name='Name' Value='RET' />
+            <om:Property Name='Signal' Value='False' />
+            <om:Element Type='MessageDeclaration' OID='884b1e92-c2ab-43c6-9961-0f9dd475a6a7' ParentLink='ServiceDeclaration_MessageDeclaration' LowerBound='25.1' HigherBound='26.1'>
+                <om:Property Name='Type' Value='Kaifa.B2B.CLS.Schemas.LIST_B2B' />
+                <om:Property Name='ParamDirection' Value='In' />
+                <om:Property Name='ReportToAnalyst' Value='True' />
+                <om:Property Name='Name' Value='Message_RET' />
+                <om:Property Name='Signal' Value='True' />
+            </om:Element>
+            <om:Element Type='ServiceBody' OID='1330e397-dcea-45f6-af6e-5894903cb5e7' ParentLink='ServiceDeclaration_ServiceBody'>
+                <om:Property Name='Signal' Value='False' />
+                <om:Element Type='Receive' OID='c5531f89-b469-41aa-bd64-dbf270a5d2b5' ParentLink='ServiceBody_Statement' LowerBound='28.1' HigherBound='30.1'>
+                    <om:Property Name='Activate' Value='True' />
+                    <om:Property Name='PortName' Value='ReceiveRET' />
+                    <om:Property Name='MessageName' Value='Message_RET' />
+                    <om:Property Name='OperationName' Value='Operation_1' />
+                    <om:Property Name='OperationMessageName' Value='Request' />
+                    <om:Property Name='ReportToAnalyst' Value='True' />
+                    <om:Property Name='Name' Value='Receive_1' />
+                    <om:Property Name='Signal' Value='True' />
+                </om:Element>
+                <om:Element Type='VariableAssignment' OID='90d14fb2-38de-473b-93f5-784875fc1d79' ParentLink='ServiceBody_Statement' LowerBound='30.1' HigherBound='32.1'>
+                    <om:Property Name='Expression' Value='Kaifa.B2B.CLS.XmlHelper.ListB2B.Read(Message_RET);' />
+                    <om:Property Name='ReportToAnalyst' Value='True' />
+                    <om:Property Name='Name' Value='Expression_1' />
+                    <om:Property Name='Signal' Value='True' />
+                </om:Element>
+                <om:Element Type='Send' OID='b1a99662-b9a0-40dc-ad53-cf9c3a8d2356' ParentLink='ServiceBody_Statement' LowerBound='32.1' HigherBound='34.1'>
+                    <om:Property Name='PortName' Value='SaveRET' />
+                    <om:Property Name='MessageName' Value='Message_RET' />
+                    <om:Property Name='OperationName' Value='Operation_1' />
+                    <om:Property Name='OperationMessageName' Value='Request' />
+                    <om:Property Name='ReportToAnalyst' Value='True' />
+                    <om:Property Name='Name' Value='Send_1' />
+                    <om:Property Name='Signal' Value='True' />
+                </om:Element>
+            </om:Element>
+            <om:Element Type='PortDeclaration' OID='a3ee2e87-5bef-4827-b398-dc7ae677ff36' ParentLink='ServiceDeclaration_PortDeclaration' LowerBound='21.1' HigherBound='23.1'>
+                <om:Property Name='PortModifier' Value='Implements' />
+                <om:Property Name='Orientation' Value='Left' />
+                <om:Property Name='PortIndex' Value='-1' />
+                <om:Property Name='IsWebPort' Value='False' />
+                <om:Property Name='OrderedDelivery' Value='False' />
+                <om:Property Name='DeliveryNotification' Value='None' />
+                <om:Property Name='Type' Value='Kaifa.B2B.CLS.Orchestration.PortType_ReceiveRET' />
+                <om:Property Name='ParamDirection' Value='In' />
+                <om:Property Name='ReportToAnalyst' Value='True' />
+                <om:Property Name='Name' Value='ReceiveRET' />
+                <om:Property Name='Signal' Value='False' />
+                <om:Element Type='LogicalBindingAttribute' OID='d2327ee8-1803-45f9-8e15-e3e2977f9c18' ParentLink='PortDeclaration_CLRAttribute' LowerBound='21.1' HigherBound='22.1'>
+                    <om:Property Name='Signal' Value='False' />
+                </om:Element>
+            </om:Element>
+            <om:Element Type='PortDeclaration' OID='c5320190-cfa5-400f-867c-84ae933b0aa0' ParentLink='ServiceDeclaration_PortDeclaration' LowerBound='23.1' HigherBound='25.1'>
+                <om:Property Name='PortModifier' Value='Uses' />
+                <om:Property Name='Orientation' Value='Left' />
+                <om:Property Name='PortIndex' Value='-1' />
+                <om:Property Name='IsWebPort' Value='False' />
+                <om:Property Name='OrderedDelivery' Value='False' />
+                <om:Property Name='DeliveryNotification' Value='None' />
+                <om:Property Name='Type' Value='Kaifa.B2B.CLS.Orchestration.PortType_SaveRET' />
+                <om:Property Name='ParamDirection' Value='In' />
+                <om:Property Name='ReportToAnalyst' Value='True' />
+                <om:Property Name='Name' Value='SaveRET' />
+                <om:Property Name='Signal' Value='False' />
+                <om:Element Type='LogicalBindingAttribute' OID='c4d39957-550f-491b-a5ae-47d2bd906111' ParentLink='PortDeclaration_CLRAttribute' LowerBound='23.1' HigherBound='24.1'>
+                    <om:Property Name='Signal' Value='False' />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+";
+
+        [System.SerializableAttribute]
+        public class __RET_root_0 : Microsoft.XLANGs.Core.ServiceContext
+        {
+            public __RET_root_0(Microsoft.XLANGs.Core.Service svc)
+                : base(svc, "RET")
+            {
+            }
+
+            public override int Index { get { return 0; } }
+
+            public override Microsoft.XLANGs.Core.Segment InitialSegment
+            {
+                get { return _service._segments[0]; }
+            }
+            public override Microsoft.XLANGs.Core.Segment FinalSegment
+            {
+                get { return _service._segments[0]; }
+            }
+
+            public override int CompensationSegment { get { return -1; } }
+            public override bool OnError()
+            {
+                Finally();
+                return false;
+            }
+
+            public override void Finally()
+            {
+                RET __svc__ = (RET)_service;
+                __RET_root_0 __ctx0__ = (__RET_root_0)(__svc__._stateMgrs[0]);
+
+                if (__svc__.ReceiveRET != null)
+                {
+                    __svc__.ReceiveRET.Close(this, null);
+                    __svc__.ReceiveRET = null;
+                }
+                if (__svc__.SaveRET != null)
+                {
+                    __svc__.SaveRET.Close(this, null);
+                    __svc__.SaveRET = null;
+                }
+                base.Finally();
+            }
+
+            internal Microsoft.XLANGs.Core.SubscriptionWrapper __subWrapper0;
+        }
+
+
+        [System.SerializableAttribute]
+        public class __RET_1 : Microsoft.XLANGs.Core.ExceptionHandlingContext
+        {
+            public __RET_1(Microsoft.XLANGs.Core.Service svc)
+                : base(svc, "RET")
+            {
+            }
+
+            public override int Index { get { return 1; } }
+
+            public override bool CombineParentCommit { get { return true; } }
+
+            public override Microsoft.XLANGs.Core.Segment InitialSegment
+            {
+                get { return _service._segments[1]; }
+            }
+            public override Microsoft.XLANGs.Core.Segment FinalSegment
+            {
+                get { return _service._segments[1]; }
+            }
+
+            public override int CompensationSegment { get { return -1; } }
+            public override bool OnError()
+            {
+                Finally();
+                return false;
+            }
+
+            public override void Finally()
+            {
+                RET __svc__ = (RET)_service;
+                __RET_1 __ctx1__ = (__RET_1)(__svc__._stateMgrs[1]);
+
+                if (__ctx1__ != null && __ctx1__.__Message_RET != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__Message_RET);
+                    __ctx1__.__Message_RET = null;
+                }
+                base.Finally();
+            }
+
+            [Microsoft.XLANGs.Core.UserVariableAttribute("Message_RET")]
+            public __messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B __Message_RET;
+        }
+
+        private static Microsoft.XLANGs.Core.CorrelationType[] _correlationTypes = null;
+        public override Microsoft.XLANGs.Core.CorrelationType[] CorrelationTypes { get { return _correlationTypes; } }
+
+        private static System.Guid[] _convoySetIds;
+
+        public override System.Guid[] ConvoySetGuids
+        {
+            get { return _convoySetIds; }
+            set { _convoySetIds = value; }
+        }
+
+        public static object[] StaticConvoySetInformation
+        {
+            get {
+                return null;
+            }
+        }
+
+        [Microsoft.XLANGs.BaseTypes.LogicalBindingAttribute()]
+        [Microsoft.XLANGs.BaseTypes.PortAttribute(
+            Microsoft.XLANGs.BaseTypes.EXLangSParameter.eImplements
+        )]
+        [Microsoft.XLANGs.Core.UserVariableAttribute("ReceiveRET")]
+        internal PortType_ReceiveRET ReceiveRET;
+        [Microsoft.XLANGs.BaseTypes.LogicalBindingAttribute()]
+        [Microsoft.XLANGs.BaseTypes.PortAttribute(
+            Microsoft.XLANGs.BaseTypes.EXLangSParameter.eUses
+        )]
+        [Microsoft.XLANGs.Core.UserVariableAttribute("SaveRET")]
+        internal PortType_SaveRET SaveRET;
+
+        public static Microsoft.XLANGs.Core.PortInfo[] _portInfo = new Microsoft.XLANGs.Core.PortInfo[] {
+            new Microsoft.XLANGs.Core.PortInfo(new Microsoft.XLANGs.Core.OperationInfo[] {PortType_ReceiveRET.Operation_1},
+                                               typeof(RET).GetField("ReceiveRET", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance),
+                                               Microsoft.XLANGs.BaseTypes.Polarity.implements,
+                                               false,
+                                               Microsoft.XLANGs.Core.HashHelper.HashPort(typeof(RET), "ReceiveRET"),
+                                               null),
+            new Microsoft.XLANGs.Core.PortInfo(new Microsoft.XLANGs.Core.OperationInfo[] {PortType_SaveRET.Operation_1},
+                                               typeof(RET).GetField("SaveRET", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance),
+                                               Microsoft.XLANGs.BaseTypes.Polarity.uses,
+                                               false,
+                                               Microsoft.XLANGs.Core.HashHelper.HashPort(typeof(RET), "SaveRET"),
+                                               null)
+        };
+
+        public override Microsoft.XLANGs.Core.PortInfo[] PortInformation
+        {
+            get { return _portInfo; }
+        }
+
+        static public System.Collections.Hashtable PortsInformation
+        {
+            get
+            {
+                System.Collections.Hashtable h = new System.Collections.Hashtable();
+                h[_portInfo[0].Name] = _portInfo[0];
+                h[_portInfo[1].Name] = _portInfo[1];
+                return h;
+            }
+        }
+
+        public static System.Type[] InvokedServicesTypes
+        {
+            get
+            {
+                return new System.Type[] {
+                    // type of each service invoked by this service
+                };
+            }
+        }
+
+        public static System.Type[] CalledServicesTypes
+        {
+            get
+            {
+                return new System.Type[] {
+                };
+            }
+        }
+
+        public static System.Type[] ExecedServicesTypes
+        {
+            get
+            {
+                return new System.Type[] {
+                };
+            }
+        }
+
+        public static object[] StaticSubscriptionsInformation {
+            get {
+                return new object[1]{
+                     new object[5] { _portInfo[0], 0, null , -1, true }
+                };
+            }
+        }
+
+        public static Microsoft.XLANGs.RuntimeTypes.Location[] __eventLocations = new Microsoft.XLANGs.RuntimeTypes.Location[] {
+            new Microsoft.XLANGs.RuntimeTypes.Location(0, "00000000-0000-0000-0000-000000000000", 1, true),
+            new Microsoft.XLANGs.RuntimeTypes.Location(1, "c5531f89-b469-41aa-bd64-dbf270a5d2b5", 1, true),
+            new Microsoft.XLANGs.RuntimeTypes.Location(2, "c5531f89-b469-41aa-bd64-dbf270a5d2b5", 1, false),
+            new Microsoft.XLANGs.RuntimeTypes.Location(3, "90d14fb2-38de-473b-93f5-784875fc1d79", 1, true),
+            new Microsoft.XLANGs.RuntimeTypes.Location(4, "90d14fb2-38de-473b-93f5-784875fc1d79", 1, false),
+            new Microsoft.XLANGs.RuntimeTypes.Location(5, "b1a99662-b9a0-40dc-ad53-cf9c3a8d2356", 1, true),
+            new Microsoft.XLANGs.RuntimeTypes.Location(6, "b1a99662-b9a0-40dc-ad53-cf9c3a8d2356", 1, false),
+            new Microsoft.XLANGs.RuntimeTypes.Location(7, "00000000-0000-0000-0000-000000000000", 1, false)
+        };
+
+        public override Microsoft.XLANGs.RuntimeTypes.Location[] EventLocations
+        {
+            get { return __eventLocations; }
+        }
+
+        public static Microsoft.XLANGs.RuntimeTypes.EventData[] __eventData = new Microsoft.XLANGs.RuntimeTypes.EventData[] {
+            new Microsoft.XLANGs.RuntimeTypes.EventData( Microsoft.XLANGs.RuntimeTypes.Operation.Start | Microsoft.XLANGs.RuntimeTypes.Operation.Body),
+            new Microsoft.XLANGs.RuntimeTypes.EventData( Microsoft.XLANGs.RuntimeTypes.Operation.Start | Microsoft.XLANGs.RuntimeTypes.Operation.Receive),
+            new Microsoft.XLANGs.RuntimeTypes.EventData( Microsoft.XLANGs.RuntimeTypes.Operation.Start | Microsoft.XLANGs.RuntimeTypes.Operation.Expression),
+            new Microsoft.XLANGs.RuntimeTypes.EventData( Microsoft.XLANGs.RuntimeTypes.Operation.End | Microsoft.XLANGs.RuntimeTypes.Operation.Expression),
+            new Microsoft.XLANGs.RuntimeTypes.EventData( Microsoft.XLANGs.RuntimeTypes.Operation.Start | Microsoft.XLANGs.RuntimeTypes.Operation.Send),
+            new Microsoft.XLANGs.RuntimeTypes.EventData( Microsoft.XLANGs.RuntimeTypes.Operation.End | Microsoft.XLANGs.RuntimeTypes.Operation.Body)
+        };
+
+        public static int[] __progressLocation0 = new int[] { 0,0,0,7,7,};
+        public static int[] __progressLocation1 = new int[] { 0,0,1,1,2,3,3,4,5,5,5,6,7,7,7,7,};
+
+        public static int[][] __progressLocations = new int[2] [] {__progressLocation0,__progressLocation1};
+        public override int[][] ProgressLocations {get {return __progressLocations;} }
+
+        public Microsoft.XLANGs.Core.StopConditions segment0(Microsoft.XLANGs.Core.StopConditions stopOn)
+        {
+            Microsoft.XLANGs.Core.Segment __seg__ = _segments[0];
+            Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[0];
+            __RET_root_0 __ctx0__ = (__RET_root_0)_stateMgrs[0];
+            __RET_1 __ctx1__ = (__RET_1)_stateMgrs[1];
+
+            switch (__seg__.Progress)
+            {
+            case 0:
+                ReceiveRET = new PortType_ReceiveRET(0, this);
+                SaveRET = new PortType_SaveRET(1, this);
+                __ctx__.PrologueCompleted = true;
+                __ctx0__.__subWrapper0 = new Microsoft.XLANGs.Core.SubscriptionWrapper(ActivationSubGuids[0], ReceiveRET, this);
+                if ( !PostProgressInc( __seg__, __ctx__, 1 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                if ((stopOn & Microsoft.XLANGs.Core.StopConditions.Initialized) != 0)
+                    return Microsoft.XLANGs.Core.StopConditions.Initialized;
+                goto case 1;
+            case 1:
+                __ctx1__ = new __RET_1(this);
+                _stateMgrs[1] = __ctx1__;
+                if ( !PostProgressInc( __seg__, __ctx__, 2 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 2;
+            case 2:
+                __ctx0__.StartContext(__seg__, __ctx1__);
+                if ( !PostProgressInc( __seg__, __ctx__, 3 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                return Microsoft.XLANGs.Core.StopConditions.Blocked;
+            case 3:
+                if (!__ctx0__.CleanupAndPrepareToCommit(__seg__))
+                    return Microsoft.XLANGs.Core.StopConditions.Blocked;
+                if ( !PostProgressInc( __seg__, __ctx__, 4 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 4;
+            case 4:
+                __ctx1__.Finally();
+                ServiceDone(__seg__, (Microsoft.XLANGs.Core.Context)_stateMgrs[0]);
+                __ctx0__.OnCommit();
+                break;
+            }
+            return Microsoft.XLANGs.Core.StopConditions.Completed;
+        }
+
+        public Microsoft.XLANGs.Core.StopConditions segment1(Microsoft.XLANGs.Core.StopConditions stopOn)
+        {
+            Microsoft.XLANGs.Core.Envelope __msgEnv__ = null;
+            Microsoft.XLANGs.Core.Segment __seg__ = _segments[1];
+            Microsoft.XLANGs.Core.Context __ctx__ = (Microsoft.XLANGs.Core.Context)_stateMgrs[1];
+            __RET_root_0 __ctx0__ = (__RET_root_0)_stateMgrs[0];
+            __RET_1 __ctx1__ = (__RET_1)_stateMgrs[1];
+
+            switch (__seg__.Progress)
+            {
+            case 0:
+                __ctx__.PrologueCompleted = true;
+                if ( !PostProgressInc( __seg__, __ctx__, 1 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 1;
+            case 1:
+                if ( !PreProgressInc( __seg__, __ctx__, 2 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                Tracker.FireEvent(__eventLocations[0],__eventData[0],_stateMgrs[1].TrackDataStream );
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 2;
+            case 2:
+                if ( !PreProgressInc( __seg__, __ctx__, 3 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                Tracker.FireEvent(__eventLocations[1],__eventData[1],_stateMgrs[1].TrackDataStream );
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 3;
+            case 3:
+                if (!ReceiveRET.GetMessageId(__ctx0__.__subWrapper0.getSubscription(this), __seg__, __ctx1__, out __msgEnv__))
+                    return Microsoft.XLANGs.Core.StopConditions.Blocked;
+                if (__ctx1__.__Message_RET != null)
+                    __ctx1__.UnrefMessage(__ctx1__.__Message_RET);
+                __ctx1__.__Message_RET = new __messagetype_Kaifa_B2B_CLS_Schemas_LIST_B2B("Message_RET", __ctx1__);
+                __ctx1__.RefMessage(__ctx1__.__Message_RET);
+                ReceiveRET.ReceiveMessage(0, __msgEnv__, __ctx1__.__Message_RET, null, (Microsoft.XLANGs.Core.Context)_stateMgrs[1], __seg__);
+                if (ReceiveRET != null)
+                {
+                    ReceiveRET.Close(__ctx1__, __seg__);
+                    ReceiveRET = null;
+                }
+                if ( !PostProgressInc( __seg__, __ctx__, 4 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 4;
+            case 4:
+                if ( !PreProgressInc( __seg__, __ctx__, 5 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                {
+                    Microsoft.XLANGs.RuntimeTypes.EventData __edata = new Microsoft.XLANGs.RuntimeTypes.EventData(Microsoft.XLANGs.RuntimeTypes.Operation.End | Microsoft.XLANGs.RuntimeTypes.Operation.Receive);
+                    __edata.Messages.Add(__ctx1__.__Message_RET);
+                    __edata.PortName = @"ReceiveRET";
+                    Tracker.FireEvent(__eventLocations[2],__edata,_stateMgrs[1].TrackDataStream );
+                }
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 5;
+            case 5:
+                if ( !PreProgressInc( __seg__, __ctx__, 6 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                Tracker.FireEvent(__eventLocations[3],__eventData[2],_stateMgrs[1].TrackDataStream );
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 6;
+            case 6:
+                Kaifa.B2B.CLS.XmlHelper.ListB2B.Read(__ctx1__.__Message_RET.part.TypedValue);
+                if ( !PostProgressInc( __seg__, __ctx__, 7 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 7;
+            case 7:
+                if ( !PreProgressInc( __seg__, __ctx__, 8 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                Tracker.FireEvent(__eventLocations[4],__eventData[3],_stateMgrs[1].TrackDataStream );
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 8;
+            case 8:
+                if ( !PreProgressInc( __seg__, __ctx__, 9 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                Tracker.FireEvent(__eventLocations[5],__eventData[4],_stateMgrs[1].TrackDataStream );
+                if (IsDebugged)
+                    return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;
+                goto case 9;
+            case 9:
+                if (!__ctx1__.PrepareToPendingCommit(__seg__))
+                    return Microsoft.XLANGs.Core.StopConditions.Blocked;
+                if ( !PostProgressInc( __seg__, __ctx__, 10 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                goto case 10;
+            case 10:
+                if ( !PreProgressInc( __seg__, __ctx__, 11 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                SaveRET.SendMessage(0, __ctx1__.__Message_RET, null, null, __ctx1__, __seg__ , Microsoft.XLANGs.Core.ActivityFlags.NextActivityPersists );
+                if (SaveRET != null)
+                {
+                    SaveRET.Close(__ctx1__, __seg__);
+                    SaveRET = null;
+                }
+                if ((stopOn & Microsoft.XLANGs.Core.StopConditions.OutgoingRqst) != 0)
+                    return Microsoft.XLANGs.Core.StopConditions.OutgoingRqst;
+                goto case 11;
+            case 11:
+                if ( !PreProgressInc( __seg__, __ctx__, 12 ) )
+                    return Microsoft.XLANGs.Core.StopConditions.Paused;
+                {
+                    Microsoft.XLANGs.RuntimeTypes.EventData __edata = new Microsoft.XLANGs.RuntimeTypes.EventData(Microsoft.XLANGs.RuntimeTypes.Operation.End | Microsoft.XLANGs.RuntimeTypes.Operation.Send);
+                    __edata.Messages.Add(__ctx1__.__Message_RET);
+                    __edata.PortName = @"SaveRET";
+                    Tracker.FireEvent(__eventLocations[6],__edata,_stateMgrs[1].TrackDataStream );
+                }
+                if (__ctx1__ != null && __ctx1__.__Message_RET != null)
+                {
+                    __ctx1__.UnrefMessage(__ctx1__.__Message_RET);
+                    __ctx1__.__Message_RET = null;
                 }
                 if (IsDebugged)
                     return Microsoft.XLANGs.Core.StopConditions.InBreakpoint;

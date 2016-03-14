@@ -87,6 +87,12 @@
       <Namespace>Kaifa.B2B.CLS.Orchestration</Namespace>
     </XLang>
   </ItemGroup>
+  <ItemGroup>
+    <XLang Include="RET.odx">
+      <TypeName>RET</TypeName>
+      <Namespace>Kaifa.B2B.CLS.Orchestration</Namespace>
+    </XLang>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>

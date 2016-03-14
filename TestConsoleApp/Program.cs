@@ -38,18 +38,18 @@ namespace TestConsoleApp
 
         static void test1() {
             XmlDocument doc = new XmlDocument();
-            doc.Load("c:\\DECRETURN.xml");
-            HBDec.Read(doc);
+            doc.Load("c:\\H.xml");
+            ListB2B.Read(doc);
              
         
         }
 
         static void Main(string[] args)
         {
-            PreDisGenerator P = new PreDisGenerator("1000000034", "wmwhse1", "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "");
-            XDocument d = P.Generator();
-            d.Save("c:\\test.xml");
-            //test1();
+            //PreDisGenerator P = new PreDisGenerator("1000000034", "wmwhse1", "Server=10.10.205.147;Database=SCPRD;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "");
+            //XDocument d = P.Generator();
+            //d.Save("c:\\test.xml");
+            test1();
             //DateTime date = DateTime.Now;
             //DateTime firstOfNextMonth = new DateTime(date.Year, date.Month, 1).AddMonths(1);
             //DateTime lastOfThisMonth = firstOfNextMonth.AddDays(-1);

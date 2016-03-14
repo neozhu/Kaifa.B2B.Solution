@@ -69,12 +69,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.diffck = new System.Windows.Forms.CheckBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.exportbtn = new System.Windows.Forms.Button();
-            this.countlb = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.exportbtn = new System.Windows.Forms.Button();
+            this.countlb = new System.Windows.Forms.Label();
             this.lbbox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pickdetailgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkrecordgrid)).BeginInit();
@@ -397,7 +397,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.pickdetailgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.pickdetailgrid.Size = new System.Drawing.Size(592, 314);
+            this.pickdetailgrid.Size = new System.Drawing.Size(644, 314);
             this.pickdetailgrid.TabIndex = 230;
             // 
             // label13
@@ -543,34 +543,6 @@
             this.splitContainer1.SplitterDistance = 459;
             this.splitContainer1.TabIndex = 281;
             // 
-            // exportbtn
-            // 
-            this.exportbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportbtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.exportbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.exportbtn.Location = new System.Drawing.Point(1027, 10);
-            this.exportbtn.Name = "exportbtn";
-            this.exportbtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.exportbtn.Size = new System.Drawing.Size(106, 74);
-            this.exportbtn.TabIndex = 282;
-            this.exportbtn.Text = "导出复检结果";
-            this.exportbtn.UseVisualStyleBackColor = true;
-            this.exportbtn.Click += new System.EventHandler(this.exportbtn_Click);
-            // 
-            // countlb
-            // 
-            this.countlb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.countlb.AutoSize = true;
-            this.countlb.Cursor = System.Windows.Forms.Cursors.Default;
-            this.countlb.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.countlb.ForeColor = System.Drawing.Color.Green;
-            this.countlb.Location = new System.Drawing.Point(213, 518);
-            this.countlb.Name = "countlb";
-            this.countlb.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.countlb.Size = new System.Drawing.Size(57, 39);
-            this.countlb.TabIndex = 283;
-            this.countlb.Text = "(1)";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -588,7 +560,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(598, 320);
+            this.tabPage1.Size = new System.Drawing.Size(650, 320);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "复检差异数据";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -640,16 +612,46 @@
             this.dataGridView1.Size = new System.Drawing.Size(644, 314);
             this.dataGridView1.TabIndex = 0;
             // 
+            // exportbtn
+            // 
+            this.exportbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportbtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.exportbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exportbtn.Location = new System.Drawing.Point(1027, 10);
+            this.exportbtn.Name = "exportbtn";
+            this.exportbtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.exportbtn.Size = new System.Drawing.Size(106, 74);
+            this.exportbtn.TabIndex = 282;
+            this.exportbtn.Text = "导出复检结果";
+            this.exportbtn.UseVisualStyleBackColor = true;
+            this.exportbtn.Click += new System.EventHandler(this.exportbtn_Click);
+            // 
+            // countlb
+            // 
+            this.countlb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.countlb.AutoSize = true;
+            this.countlb.Cursor = System.Windows.Forms.Cursors.Default;
+            this.countlb.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.countlb.ForeColor = System.Drawing.Color.Green;
+            this.countlb.Location = new System.Drawing.Point(213, 518);
+            this.countlb.Name = "countlb";
+            this.countlb.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.countlb.Size = new System.Drawing.Size(57, 39);
+            this.countlb.TabIndex = 283;
+            this.countlb.Text = "(1)";
+            // 
             // lbbox
             // 
+            this.lbbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbbox.AutoSize = true;
-            this.lbbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 120F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbbox.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbbox.Location = new System.Drawing.Point(838, -4);
             this.lbbox.Name = "lbbox";
-            this.lbbox.Size = new System.Drawing.Size(167, 181);
+            this.lbbox.Size = new System.Drawing.Size(140, 152);
             this.lbbox.TabIndex = 1;
             this.lbbox.Text = "1";
+            this.lbbox.Visible = false;
             // 
             // oqcForm
             // 

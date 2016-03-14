@@ -223,23 +223,31 @@ namespace Kaifa.Wms.OQC.WinForm
 
         private void dropidtxt_Leave(object sender, EventArgs e)
         {
-            if ((this.dropidtxt.Text.Length>1) && checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
+            if ((this.dropidtxt.Text.Length > 1) )
             {
                 ReloadCheckResult();
                 checker.loadcacheTable(this.orderkeytxt.Text, this.dropidtxt.Text);
             }
-            else if(this.dropidtxt.Text.Length>1)
-            {
-                MessageBox.Show("找到该落放ID，请重新输入");
-                //this.stxqrcode.Enabled = false;
 
-                int subtotalcheckqty = 0;
-                int subtotalpickqty = 0;
-                this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
-                this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
-                this.subtotaldiffqtytxt.Text = (subtotalcheckqty - subtotalpickqty).ToString();
-                checker.PlayAlarm();
-            }
+
+            //if ((this.dropidtxt.Text.Length>1) && checker.checkingDropId(this.orderkeytxt.Text, this.dropidtxt.Text))
+            //{
+            //    ReloadCheckResult();
+            //    checker.loadcacheTable(this.orderkeytxt.Text, this.dropidtxt.Text);
+            //}
+
+            //else if(this.dropidtxt.Text.Length>1)
+            //{
+            //    MessageBox.Show("找到该落放ID，请重新输入");
+            //    //this.stxqrcode.Enabled = false;
+
+            //    int subtotalcheckqty = 0;
+            //    int subtotalpickqty = 0;
+            //    this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
+            //    this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
+            //    this.subtotaldiffqtytxt.Text = (subtotalcheckqty - subtotalpickqty).ToString();
+            //    checker.PlayAlarm();
+            //}
 
         }
 
@@ -336,7 +344,13 @@ namespace Kaifa.Wms.OQC.WinForm
         {
             if (e.KeyChar == 13)
             {
-
+                if (string.IsNullOrEmpty(this.dropidtxt.Text))
+                {
+                    checker.PlayAlarm();
+                    MessageBox.Show("请输入卡板号!");
+                    this.dropidtxt.Focus();
+                    return;
+                }
                 string[] barcodes =  this.stxqrcode.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
                 if (barcodes.Length >= 7)
                 {
@@ -359,16 +373,35 @@ namespace Kaifa.Wms.OQC.WinForm
                         //}
 
                     }
+                    string als = barcodes[3];
+                    string lotno = barcodes[2];
                     string ven = barcodes[4];
+                    string trace = barcodes[5];
+                    string dcode = barcodes[6];
                     bool isok = checker.checkingSku(orderkey, dropid, ven.Replace("\n", ""), sku.Replace("\n", ""));
-                    
+                    bool isblack = checker.ValidateBackList(ven, sku, als, lotno, dcode, trace);
+                    if (isblack)
+                    {
+                        MessageBox.Show("发现黑名单");
+                        checker.PlayAlarm();
+                        checker.PlayAlarm();
+
+                        CleanTextBox();
+                        this.stxqrcode.BackColor = Color.Red;
+                        this.stxqrcode.Text = string.Empty;
+                        this.GetOrderQtyInfo();
+                        this.ReloadCheckResult();
+                        return;
+                    }
                     if (isok)
                     {
+                        
+
                         this.lbbox.Text = this.skupickinglist[sku].ToString();
                         checker.insertLog(this.orderkeytxt.Text, this.dropidtxt.Text, ven.Replace("\n", ""), sku.Replace("\n", ""), Convert.ToInt32(qty.Replace("\n", "")), this.stxqrcode.Text);
-                        //checker.PlayOK();
-                        int no = this.skupickinglist[sku];
-                        checker.PlayNumSound(no);
+                        checker.PlayOK();
+                        //int no = this.skupickinglist[sku];
+                        //checker.PlayNumSound(no);
                         CleanTextBox();
                         this.stxqrcode.BackColor = Color.Green;
                         this.stxqrcode.Text = string.Empty;

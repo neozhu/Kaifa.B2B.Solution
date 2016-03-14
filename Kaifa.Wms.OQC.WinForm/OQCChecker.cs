@@ -15,8 +15,116 @@ using NPOI.Util;
 
 namespace Kaifa.Wms.OQC.WinForm
 {
+    public class BlackItem {
+        public string Vendor { get; set; }
+        public string Sku { get; set; }
+        public string Als { get; set; }
+        public string LotNo { get; set; }
+        public string DateCode { get; set; }
+        public string TraceCode { get; set; }
+        public string Reason { get; set; }
+    }
+
     class OQCChecker
     {
+        private List<BlackItem> _backList;
+        public List<BlackItem> BackList {
+
+            get { 
+                if(_backList==null){
+                    
+                _backList= GetBlackList();
+                    return _backList;
+                }else{
+                return  _backList;
+                }
+            }
+        }
+
+        public bool ValidateBackList(string Vendor, string sku, string Als, string LotNo, string DateCode, string TraceCode)
+        {
+            bool val = false;
+            foreach (BlackItem item in BackList.Where(x=>x.Vendor==Vendor && x.Sku==sku)) {
+                if (!string.IsNullOrEmpty(item.Als) && !string.IsNullOrEmpty(Als))
+                {
+                    if (Als.Contains(item.Als))
+                        return true;
+                }
+                if (!string.IsNullOrEmpty(item.LotNo) && !string.IsNullOrEmpty(LotNo))
+                {
+                    if (LotNo.Contains(item.Als))
+                        return true;
+                }
+                if (!string.IsNullOrEmpty(item.DateCode) && !string.IsNullOrEmpty(DateCode))
+                {
+                    if (DateCode.Contains(item.DateCode))
+                        return true;
+
+                    string[] dstr = item.DateCode.Split(new char[] { ',', '，', ';' });
+                    if (dstr.Length > 1) {
+                        if (dstr.Contains(DateCode))
+                        {
+                            return true;
+                        }
+                    }
+                    dstr = item.DateCode.Split(new char[] { '-' });
+                    if (dstr.Length == 2)
+                    {
+                        int d1 = 0;
+                        int d2 = 0;
+                        int d3 = 0;
+                        if( int.TryParse(dstr[0],out d1) && int.TryParse(dstr[1],out d2) && int.TryParse(DateCode,out d3))
+                        if (d3>=d1 &&  d3 <=d2)
+                        {
+                            return true;
+                        }
+                    }
+
+                }
+
+                if (!string.IsNullOrEmpty(item.TraceCode) && !string.IsNullOrEmpty(TraceCode))
+                {
+                    if (TraceCode.Contains(item.TraceCode))
+                        return true;
+                     string[] dstr = item.TraceCode.Split(new char[] { ',', '，', ';','/','\\','|' });
+                     if (dstr.Length > 1)
+                     {
+                         if (dstr.Contains(TraceCode))
+                         {
+                             return true;
+                         }
+                     }
+                      
+                }
+            
+            }
+            return val;
+        }
+
+        public List<BlackItem> GetBlackList() {
+            List<BlackItem> list = new List<BlackItem>();
+            using (SqlConnection conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                string sqltxt = string.Format(@"SELECT T.VENDORNO,T.MATERIALNO,T.ASLCODE,T.LOTNO,T.DATECODE,T.TRACECODE,T.REASON FROM [WMWHSE1].[BLACKLIST] T WHERE T.STATUS=0");
+                cmd.CommandText = sqltxt;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    BlackItem item = new BlackItem();
+                    item.Vendor = reader.GetValue(0) == DBNull.Value?"":reader.GetString(0);
+                    item.Sku = reader.GetValue(1) == DBNull.Value ? "" : reader.GetString(1);
+                    item.Als = reader.GetValue(2) == DBNull.Value ? "" : reader.GetString(2);
+                    item.LotNo = reader.GetValue(3) == DBNull.Value ? "" : reader.GetString(3);
+                    item.DateCode = reader.GetValue(4) == DBNull.Value ? "" : reader.GetString(4);
+                    item.TraceCode = reader.GetValue(5) == DBNull.Value ? "" : reader.GetString(5);
+                    item.Reason = reader.GetValue(6) == DBNull.Value ? "" : reader.GetString(6);
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+
         private string _connectionstring;
         private DataTable _cacheTable = null;
         public OQCChecker(string connectionstring)
@@ -66,7 +174,7 @@ namespace Kaifa.Wms.OQC.WinForm
                 string sqltxt = string.Format(@"SELECT ORDERKEY ,STORERKEY,SKU,QTY,CHECKEDQTY,DIFFQTY,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}' ", orderkey);
                 if (!string.IsNullOrEmpty(dropid))
                 {
-                    sqltxt += string.Format(" AND DROPID='{0}'", dropid);
+                    //sqltxt += string.Format(" AND DROPID='{0}'", dropid);
                 }
                 if (onlydiff)
                 {
@@ -174,7 +282,7 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 loadcacheTable(orderkey, dropid);
             }
-            string filter = string.Format("ORDERKEY = '{0}' AND STORERKEY = '{1}' AND SKU = '{2}' AND DROPID = '{3}'", orderkey, storer, sku, dropid);
+            string filter = string.Format("ORDERKEY = '{0}' AND STORERKEY = '{1}' AND SKU = '{2}' ", orderkey, storer, sku );
             DataRow[] rows = this._cacheTable.Select(filter);
             if (rows.Count() > 0)
             {
@@ -202,7 +310,7 @@ namespace Kaifa.Wms.OQC.WinForm
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format("SELECT ORDERKEY ,STORERKEY,SKU,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}'   and   DROPID='{1}'", orderkey, dropid);
+                cmd.CommandText = string.Format("SELECT ORDERKEY ,STORERKEY,SKU,DROPID FROM [WMWHSE1].OQC WHERE ORDERKEY='{0}'  ", orderkey);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
