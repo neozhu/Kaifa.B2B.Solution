@@ -264,18 +264,18 @@ namespace Kaifa.Wms.OQC.WinForm
             }
         }
 
-        public int GetSumPickedQtyByDropId(string orderkey, string dropid)
-        {
-            using (SqlConnection conn = new SqlConnection(_connectionstring))
-            {
-                conn.Open();
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = string.Format(@"select isnull(sum(qty),0) from [wmwhse1].pickdetail where orderkey='{0}'  and status in(5,8) and dropid='{1}'", orderkey, dropid);
-                object result = cmd.ExecuteScalar();
-                conn.Close();
-                return Convert.ToInt32(result);
-            }
-        }
+        //public int GetSumPickedQtyByDropId(string orderkey, string dropid)
+        //{
+        //    using (SqlConnection conn = new SqlConnection(_connectionstring))
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = conn.CreateCommand();
+        //        cmd.CommandText = string.Format(@"select isnull(sum(qty),0) from [wmwhse1].pickdetail where orderkey='{0}'  and status in(5,8) and dropid='{1}'", orderkey, dropid);
+        //        object result = cmd.ExecuteScalar();
+        //        conn.Close();
+        //        return Convert.ToInt32(result);
+        //    }
+        //}
         public bool checkingSku(string orderkey, string dropid, string storer, string sku)
         {
             if (this._cacheTable == null)

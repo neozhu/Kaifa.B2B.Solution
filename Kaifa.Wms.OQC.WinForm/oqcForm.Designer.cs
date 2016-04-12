@@ -177,6 +177,7 @@
             this.subtotalpickedqtytxt.Size = new System.Drawing.Size(190, 38);
             this.subtotalpickedqtytxt.TabIndex = 90;
             this.subtotalpickedqtytxt.Text = "0";
+            this.subtotalpickedqtytxt.Visible = false;
             this.subtotalpickedqtytxt.TextChanged += new System.EventHandler(this.subpickedqtytxt_TextChanged);
             // 
             // label5
@@ -191,6 +192,7 @@
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "捡货数量";
+            this.label5.Visible = false;
             // 
             // subtotalcheckqtytxt
             // 
@@ -232,6 +234,7 @@
             this.subtotaldiffqtytxt.Size = new System.Drawing.Size(190, 38);
             this.subtotaldiffqtytxt.TabIndex = 130;
             this.subtotaldiffqtytxt.Text = "0";
+            this.subtotaldiffqtytxt.Visible = false;
             // 
             // label7
             // 
@@ -245,6 +248,7 @@
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "差异数量";
+            this.label7.Visible = false;
             // 
             // label8
             // 
@@ -461,12 +465,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.delmenu});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
             // 
             // delmenu
             // 
             this.delmenu.Name = "delmenu";
-            this.delmenu.Size = new System.Drawing.Size(152, 22);
+            this.delmenu.Size = new System.Drawing.Size(146, 22);
             this.delmenu.Text = "删除扫码记录";
             this.delmenu.Click += new System.EventHandler(this.delmenu_Click);
             // 

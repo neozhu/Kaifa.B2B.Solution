@@ -50,13 +50,13 @@ namespace Kaifa.B2B.VendorAlloc
                 {
                     try
                     {
-                        DataTable notsku = VaildateTable(result.Tables[0]);
-                        if (notsku.Rows.Count > 0)
-                        {
-                            MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
+                        //DataTable notsku = VaildateTable(result.Tables[0]);
+                        //if (notsku.Rows.Count > 0)
+                        //{
+                        //    MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
 
-                            return;
-                        }
+                        //    return;
+                        //}
                     }
                     catch (Exception e)
                     {

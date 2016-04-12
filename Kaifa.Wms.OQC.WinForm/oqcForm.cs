@@ -256,7 +256,7 @@ namespace Kaifa.Wms.OQC.WinForm
             loadOQCResult(this.orderkeytxt.Text, this.dropidtxt.Text, this.diffck.Checked);
             loadCheckLog(this.orderkeytxt.Text, this.dropidtxt.Text);
             int subtotalcheckqty = checker.GetSumCheckedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
-            int subtotalpickqty = checker.GetSumPickedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
+            int subtotalpickqty = 0; //checker.GetSumPickedQtyByDropId(this.orderkeytxt.Text, this.dropidtxt.Text);
             this.subtotalcheckqtytxt.Text = subtotalcheckqty.ToString();
             this.subtotalpickedqtytxt.Text = subtotalpickqty.ToString();
             this.subtotaldiffqtytxt.Text = (subtotalcheckqty - subtotalpickqty  ).ToString();
