@@ -1,0 +1,11 @@
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Kaifa.B2B.Import.Console.exe.config
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Kaifa.B2B.Import.Console.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Kaifa.B2B.Import.Console.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Kaifa.B2B.VendorAlloc.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Excel.dll
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Kaifa.B2B.VendorAlloc.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\bin\Debug\Excel.pdb
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\obj\Debug\ResolveAssemblyReference.cache
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\obj\Debug\Kaifa.B2B.Import.Console.exe
+D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.Import.Console\obj\Debug\Kaifa.B2B.Import.Console.pdb
