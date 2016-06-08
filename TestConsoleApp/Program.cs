@@ -125,7 +125,7 @@ namespace TestConsoleApp
 
             //CalendarProcess p = new CalendarProcess("C:\\希捷日历11.xlsx", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse2");
             //p.Read();
-            AllocProcess p = new AllocProcess("c:\\szt.csv", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse1");
+            AllocProcess p = new AllocProcess("c:\\szt_vendor_alloc_adhoc20160608001501.csv", "Server=10.10.205.147;Database=STEST;User ID=sa;Password=Suwmsdb_2015;Trusted_Connection=False", "wmwhse1");
             p.Read();
             Console.Read();
             //string a = "STZ".Substring(0, 2);

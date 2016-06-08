@@ -62,7 +62,7 @@ namespace Kaifa.B2B.VendorAlloc
                 {
                     System.Console.WriteLine(line);
                     string[] lineitems = line.Split(new char[] { ',' });
-                    if (lineitems.Length == 10 && lineitems[0]=="SZT")
+                    if (lineitems.Length >= 9 && lineitems[0]=="SZT")
                     {
                         Item item = new Item();
                         item.SITE = lineitems[0];
