@@ -8,3 +8,8 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\ResolveAssemblyReference.cache
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\Kaifa.B2B.VendorAlloc.dll
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\Kaifa.B2B.VendorAlloc.pdb
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\ResolveAssemblyReference.cache
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\Kaifa.B2B.VendorAlloc.dll
+D:\苏州长城开发\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.dll
+D:\苏州长城开发\Kaifa.B2B.Solution\build\Kaifa.B2B.VendorAlloc.pdb
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.VendorAlloc\obj\Debug\Kaifa.B2B.VendorAlloc.pdb

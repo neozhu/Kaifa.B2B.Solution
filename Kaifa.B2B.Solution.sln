@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.Orchestration.SZD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaifa.B2B.Import.Console", "Kaifa.B2B.Import.Console\Kaifa.B2B.Import.Console.csproj", "{F409D11C-A40F-4D7B-A1E7-A47314261B63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{351ADDF8-B2F6-49CF-851B-7C99F3101700}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{F409D11C-A40F-4D7B-A1E7-A47314261B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F409D11C-A40F-4D7B-A1E7-A47314261B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F409D11C-A40F-4D7B-A1E7-A47314261B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351ADDF8-B2F6-49CF-851B-7C99F3101700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351ADDF8-B2F6-49CF-851B-7C99F3101700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351ADDF8-B2F6-49CF-851B-7C99F3101700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351ADDF8-B2F6-49CF-851B-7C99F3101700}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

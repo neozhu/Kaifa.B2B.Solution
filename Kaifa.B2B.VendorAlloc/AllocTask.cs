@@ -47,7 +47,7 @@ namespace Kaifa.B2B.VendorAlloc
                 {
                     foreach (FileInfo file in fileInfoArray)
                     {
-                        if (!file.IsReadOnly && (file.Extension.ToLower() == ".xls" || file.Extension.ToLower() == ".xlsx"))
+                        if (!file.IsReadOnly && (file.Extension.ToLower() == ".csv" || file.Extension.ToLower() == ".txt"))
                         {
                             Console.WriteLine(file.FullName);
                             AllocProcess alloc = new AllocProcess(file.FullName, _connstring, _warehouse);

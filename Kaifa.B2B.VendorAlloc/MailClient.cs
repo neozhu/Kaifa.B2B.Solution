@@ -8,6 +8,8 @@ using System.Data;
 
 namespace Kaifa.B2B.VendorAlloc
 {
+
+
     public  class MailClient
     {
         static MailClient()
@@ -110,7 +112,7 @@ namespace Kaifa.B2B.VendorAlloc
             SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "HaiYangLi@kaifa.cn", "JessieZeng@kaifa.cn", "JieLingYe@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn", "KangZuWang@kaifa.cn", "QiangKong@kaifa.cn" }, siteCode + "-940-" + pulllistNo, content, null, true, "", "", "10.2.232.75");
             
         }
-        static public void SendAllocNotificationMail(DataTable messageTable,string filename,string errormsg)
+        static public void SendAllocNotificationMail(List<Item> list,string filename,string errormsg)
         {
             //string orderno = "";
             //string error = GetError(GetResponseDocument(doc));
@@ -119,12 +121,8 @@ namespace Kaifa.B2B.VendorAlloc
             //    error = GetMsg(GetResponseDocument(doc));
             //    orderno = GetOrderNo(GetResponseDocument(doc));
             //}
-            string content = ConstructHTMLTable(errormsg,messageTable, (dr) =>
-            {
-                            return false;
-                    });
-            //content = "";
-            content = TemplateHTML().Replace("#Email Content#", content);
+            
+            string content = TemplateHTML().Replace("#Email Content#", list.ToHtmlTable());
 
             SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "HaiYangLi@kaifa.cn", "JessieZeng@kaifa.cn", "JieLingYe@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn", "KangZuWang@kaifa.cn", "QiangKong@kaifa.cn" }, "Alloc导入通知[" + filename + "]", content, null, true, "", "", "10.2.232.75");
         }
@@ -358,5 +356,66 @@ namespace Kaifa.B2B.VendorAlloc
 
 
 
+
+        internal static void SendNoSKUAllocNotificationMail(string result, string _excelFile, string p)
+        {
+            SendSMTPMail("B2B HUB System Manager", "B2Badmin@kaifa.cn", new string[] { "huzhu@ataway.cn", "XiaoQinWang@kaifa.cn", "HaiYangLi@kaifa.cn", "JessieZeng@kaifa.cn", "JieLingYe@kaifa.cn", "HuiYang@kaifa.cn", "YanPan@kaifa.cn", "LongWang@kaifa.cn", "KangZuWang@kaifa.cn", "QiangKong@kaifa.cn" }, "Alloc导入失败SKU没有主数据[" + _excelFile + "]", result, null, true, "", "", "10.2.232.75");
+        
+        }
+    }
+
+
+
+
+    public static class MyExt {
+
+
+        public static string ToHtmlTable<T>(this List<T> listOfClassObjects)
+        {
+            var ret = string.Empty;
+
+            return listOfClassObjects == null || !listOfClassObjects.Any()
+                ? ret
+                : "<table>" +
+                  listOfClassObjects.First().GetType().GetProperties().Select(p => p.Name).ToList().ToColumnHeaders() +
+                  listOfClassObjects.Aggregate(ret, (current, t) => current + t.ToHtmlTableRow()) +
+                  "</table>";
+        }
+
+        public static string ToColumnHeaders<T>(this List<T> listOfProperties)
+        {
+            var ret = string.Empty;
+
+            return listOfProperties == null || !listOfProperties.Any()
+                ? ret
+                : "<tr>" +
+                  listOfProperties.Aggregate(ret,
+                      (current, propValue) =>
+                          current +
+                          ("<th style='font-size: 11pt; font-weight: bold; border: 1pt solid black'>" +
+                           (Convert.ToString(propValue).Length <= 100
+                               ? Convert.ToString(propValue)
+                               : Convert.ToString(propValue).Substring(0, 100)) + "..." + "</th>")) +
+                  "</tr>";
+        }
+
+        public static string ToHtmlTableRow<T>(this T classObject)
+        {
+            var ret = string.Empty;
+
+            return classObject == null
+                ? ret
+                : "<tr>" +
+                  classObject.GetType()
+                      .GetProperties()
+                      .Aggregate(ret,
+                          (current, prop) =>
+                              current + ("<td style='font-size: 11pt; font-weight: normal; border: 1pt solid black'>" +
+                                         (Convert.ToString(prop.GetValue(classObject, null)).Length <= 100
+                                             ? Convert.ToString(prop.GetValue(classObject, null))
+                                             : Convert.ToString(prop.GetValue(classObject, null)).Substring(0, 100) +
+                                               "...") +
+                                         "</td>")) + "</tr>";
+        }
     }
 }

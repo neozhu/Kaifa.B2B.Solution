@@ -3,7 +3,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{EF7E3281-CD33-11D4-8326-00C04FA0CE8D}">
         <Files>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0A1_FailureNotificationPropertySchema.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0A1_FailureNotificationPropertySchema.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -17,21 +17,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0A1_MS_V02_00_FailureNotification.xsd">
-			<ValidateTestMapInput>True</ValidateTestMapInput>
-			<ValidateTestMapOutput>True</ValidateTestMapOutput>
-			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
-			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
-			<TestMapSourceType>0</TestMapSourceType>
-			<TestMapTargetType>0</TestMapTargetType>
-			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
-			<EditorInputInstanceFilename>D:\长城开发项目\报文\0a1.xml</EditorInputInstanceFilename>
-			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
-			<ValidateInstanceInputType>0</ValidateInstanceInputType>
-			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
-			<AutoRefreshSchema>0</AutoRefreshSchema>
-		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0A1_V1_FailureNotificationMessageGuideline.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0A1_MS_V02_00_FailureNotification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -45,7 +31,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0C1_MS_R01_02_AsynchronousTestNotification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0A1_V1_FailureNotificationMessageGuideline.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -59,7 +45,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0C2_MS_R01_02_AsynchronousTestConfirmation.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0C1_MS_R01_02_AsynchronousTestNotification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -73,7 +59,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0C2_MS_R01_02_AsynchronousTestRequest.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0C2_MS_R01_02_AsynchronousTestConfirmation.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -87,7 +73,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0C3_MS_R01_02_SynchronousTestNotification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0C2_MS_R01_02_AsynchronousTestRequest.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -101,7 +87,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0C4_MS_R01_02_SynchronousTestQuery.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0C3_MS_R01_02_SynchronousTestNotification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -115,7 +101,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\0C4_MS_R01_02_SynchronousTestResponse.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0C4_MS_R01_02_SynchronousTestQuery.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -129,7 +115,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\2A12_MS_V01_03_ProductMasterNotification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\0C4_MS_R01_02_SynchronousTestResponse.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -143,7 +129,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\3A2PriceAndAvailabilityQueryMessageGuideline_v1_3.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\2A12_MS_V01_03_ProductMasterNotification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -157,7 +143,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\3A2PriceAndAvailabilityResponseMessageGuideline_v1_3.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\3A2PriceAndAvailabilityQueryMessageGuideline_v1_3.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -171,7 +157,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\3A4_MS_V02_02_PurchaseOrderConfirmation.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\3A2PriceAndAvailabilityResponseMessageGuideline_v1_3.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -185,7 +171,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\3A4_MS_V02_02_PurchaseOrderRequest.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\3A4_MS_V02_02_PurchaseOrderConfirmation.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -199,7 +185,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\BaseDataTypes.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\3A4_MS_V02_02_PurchaseOrderRequest.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -213,7 +199,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_BookPriceQualifier.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\BaseDataTypes.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -227,7 +213,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_PaymentMethod.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_BookPriceQualifier.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -241,7 +227,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_PurchaseMethod.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_PaymentMethod.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -255,7 +241,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_ReportType.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_PurchaseMethod.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -269,7 +255,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_SalesReportDiscrepancyCode.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_ReportType.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -283,7 +269,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_SaleType.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_SalesReportDiscrepancyCode.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -297,7 +283,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_TotalQualifier.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_SaleType.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -311,7 +297,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_TransactionType.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_TotalQualifier.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -325,7 +311,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\SalesReporting.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\CodeList\RN_TransactionType.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -339,7 +325,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Interchange\SalesReportAcknowledgementNotification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Domain\SalesReporting\SalesReporting.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -353,7 +339,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Interchange\SalesReportNotification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Interchange\SalesReportAcknowledgementNotification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -367,7 +353,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\System\StandardDocumentHeader.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Interchange\SalesReportNotification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -381,7 +367,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\AbstractType.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\System\StandardDocumentHeader.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -395,7 +381,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_Country.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\AbstractType.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -409,7 +395,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_CountrySubdivision.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_Country.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -423,7 +409,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_Currency.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_CountrySubdivision.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -437,7 +423,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_Language.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_Currency.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -451,7 +437,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_DocumentType.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\ISO_Language.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -465,7 +451,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_MimeTypeQualifier.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_DocumentType.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -479,7 +465,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_ProcessRoleIdentifier.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_MimeTypeQualifier.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -493,7 +479,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_UnitOfMeasure.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_ProcessRoleIdentifier.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -507,7 +493,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\ContactInformation.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\CodeList\RN_UnitOfMeasure.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -521,7 +507,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\DataType.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\ContactInformation.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -535,7 +521,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\Dates.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\DataType.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -549,7 +535,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\Document.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\Dates.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -563,7 +549,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\Locations.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\Document.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -577,7 +563,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\MonetaryExpression.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\Locations.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -591,7 +577,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\PartnerIdentification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\MonetaryExpression.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -605,7 +591,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\Universal\ProductIdentification.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\PartnerIdentification.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -619,7 +605,21 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Schemas\xml.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\Universal\ProductIdentification.xsd">
+			<ValidateTestMapInput>True</ValidateTestMapInput>
+			<ValidateTestMapOutput>True</ValidateTestMapOutput>
+			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
+			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
+			<TestMapSourceType>0</TestMapSourceType>
+			<TestMapTargetType>0</TestMapTargetType>
+			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
+			<EditorInputInstanceFilename></EditorInputInstanceFilename>
+			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
+			<ValidateInstanceInputType>0</ValidateInstanceInputType>
+			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
+			<AutoRefreshSchema>0</AutoRefreshSchema>
+		</File>
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\Schemas\xml.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>

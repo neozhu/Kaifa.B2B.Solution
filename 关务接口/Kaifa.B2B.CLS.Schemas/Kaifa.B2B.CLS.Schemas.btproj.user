@@ -3,21 +3,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{EF7E3281-CD33-11D4-8326-00C04FA0CE8D}">
         <Files>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\DIS_B2B.xsd">
-			<ValidateTestMapInput>True</ValidateTestMapInput>
-			<ValidateTestMapOutput>True</ValidateTestMapOutput>
-			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
-			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
-			<TestMapSourceType>0</TestMapSourceType>
-			<TestMapTargetType>0</TestMapTargetType>
-			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
-			<EditorInputInstanceFilename>C:\SHDB2.xml</EditorInputInstanceFilename>
-			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
-			<ValidateInstanceInputType>0</ValidateInstanceInputType>
-			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
-			<AutoRefreshSchema>0</AutoRefreshSchema>
-		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\HB_DEC.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\DIS_B2B.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -31,7 +17,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\LIST_B2B.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\HB_DEC.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -45,21 +31,7 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\MapToCLS.btm">
-			<ValidateTestMapInput>True</ValidateTestMapInput>
-			<ValidateTestMapOutput>True</ValidateTestMapOutput>
-			<TestMapInputInstanceFilename>C:\test.xml</TestMapInputInstanceFilename>
-			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
-			<TestMapSourceType>1</TestMapSourceType>
-			<TestMapTargetType>0</TestMapTargetType>
-			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
-			<EditorInputInstanceFilename></EditorInputInstanceFilename>
-			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
-			<ValidateInstanceInputType>0</ValidateInstanceInputType>
-			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
-			<AutoRefreshSchema>0</AutoRefreshSchema>
-		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\PRE_DIS_B2B.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\LIST_B2B.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
@@ -73,7 +45,35 @@
 			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
 			<AutoRefreshSchema>0</AutoRefreshSchema>
 		</File>
-		<File Path="D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\PREDIS.xsd">
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\MapToCLS.btm">
+			<ValidateTestMapInput>True</ValidateTestMapInput>
+			<ValidateTestMapOutput>True</ValidateTestMapOutput>
+			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
+			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
+			<TestMapSourceType>0</TestMapSourceType>
+			<TestMapTargetType>0</TestMapTargetType>
+			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
+			<EditorInputInstanceFilename></EditorInputInstanceFilename>
+			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
+			<ValidateInstanceInputType>0</ValidateInstanceInputType>
+			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
+			<AutoRefreshSchema>0</AutoRefreshSchema>
+		</File>
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\PRE_DIS_B2B.xsd">
+			<ValidateTestMapInput>True</ValidateTestMapInput>
+			<ValidateTestMapOutput>True</ValidateTestMapOutput>
+			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>
+			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
+			<TestMapSourceType>0</TestMapSourceType>
+			<TestMapTargetType>0</TestMapTargetType>
+			<EditorOutputInstanceFilename></EditorOutputInstanceFilename>
+			<EditorInputInstanceFilename></EditorInputInstanceFilename>
+			<GenerateInstanceOutputType>0</GenerateInstanceOutputType>
+			<ValidateInstanceInputType>0</ValidateInstanceInputType>
+			<PropertySchemaFileName>PropertySchema.xsd</PropertySchemaFileName>
+			<AutoRefreshSchema>0</AutoRefreshSchema>
+		</File>
+		<File Path="D:\苏州长城开发\Kaifa.B2B.Solution\关务接口\Kaifa.B2B.CLS.Schemas\PREDIS.xsd">
 			<ValidateTestMapInput>True</ValidateTestMapInput>
 			<ValidateTestMapOutput>True</ValidateTestMapOutput>
 			<TestMapInputInstanceFilename></TestMapInputInstanceFilename>

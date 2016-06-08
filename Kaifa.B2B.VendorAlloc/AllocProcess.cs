@@ -10,6 +10,21 @@ using System.Data.SqlClient;
 
 namespace Kaifa.B2B.VendorAlloc
 {
+    public class Item {
+        public string SITE { get; set; }
+        public string PRIMEPART { get; set; }
+        public string ALTERNATEPART { get; set; }
+        public string VENDORCODE { get; set; }
+        public string PERCENTAGE { get; set; }
+        public string STARTDATE { get; set; }
+        public string ENDDATE{get;set;}
+        public string PLANNERCODE { get; set; }
+        public string FLAG { get; set; }
+        public override string ToString()
+        {
+            return string.Format("{0},{1},{2},{3}", this.SITE, this.PRIMEPART, this.ALTERNATEPART, this.VENDORCODE);
+        }
+    }
     public class AllocProcess
     {
         private string _excelFile;
@@ -38,51 +53,72 @@ namespace Kaifa.B2B.VendorAlloc
                 return "Q";
             }
         }
-        public void Read() {
-            using (FileStream stream = File.Open(_excelFile, FileMode.Open, FileAccess.Read)) {
-                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-                excelReader.IsFirstRowAsColumnNames = true;
-                DataSet result = excelReader.AsDataSet();
-                DataTable dt = null;
-                excelReader.Close();
-                stream.Close();
-                if (result.Tables.Count > 0 && result.Tables[0].Rows.Count>0)
+
+        private List<Item> ReadCSV() {
+            List<Item> list = new List<Item>();
+            using (StreamReader sr = new StreamReader(_excelFile, Encoding.UTF8)) {
+                string line = string.Empty;
+                while ((line = sr.ReadLine()) != null)
                 {
+                    System.Console.WriteLine(line);
+                    string[] lineitems = line.Split(new char[] { ',' });
+                    if (lineitems.Length == 10 && lineitems[0]=="SZT")
+                    {
+                        Item item = new Item();
+                        item.SITE = lineitems[0];
+                        item.PRIMEPART = lineitems[1];
+                        item.ALTERNATEPART = lineitems[2];
+                        item.VENDORCODE = lineitems[3];
+                        item.PERCENTAGE = lineitems[4];
+                        item.STARTDATE = lineitems[5];
+                        item.ENDDATE = lineitems[6];
+                        item.PLANNERCODE = lineitems[7];
+                        item.FLAG = lineitems[8];
+                        list.Add(item);
+                      
+                    }
+
+                }
+                sr.Close();
+                
+            }
+            return list;
+        
+        }
+         
+
+        public void Read() {
+
+            List<Item> list = ReadCSV();
+            if (list.Count > 0) {
+                string result = VaildateSku(list);
+                if (!string.IsNullOrEmpty(result)) {
+                    MailClient.SendNoSKUAllocNotificationMail(result, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
+                    return;
+                }
+
+
+                using (SqlConnection conn = new SqlConnection(_connectionstring))
+                {
+                    conn.Open();
+
+                    SqlTransaction trx = conn.BeginTransaction();
                     try
                     {
-                        //DataTable notsku = VaildateTable(result.Tables[0]);
-                        //if (notsku.Rows.Count > 0)
-                        //{
-                        //    MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
 
-                        //    return;
-                        //}
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
-                    using (SqlConnection conn = new SqlConnection(_connectionstring))
-                    {
-                        conn.Open();
-                       
-                        SqlTransaction trx = conn.BeginTransaction();
-                        try
+                        foreach (Item item in list)
                         {
-                             dt = result.Tables[0];
-                            foreach (DataRow dr in dt.Rows)
+
+                            string site = item.SITE;
+                            if (site == null || string.IsNullOrEmpty(site.ToString()))
                             {
+                                continue;
+                            }
 
-                                object site = dr["Site"];
-                                if (site == null || string.IsNullOrEmpty(site.ToString()))
-                                {
-                                    continue;
-                                }
-
-                                #region sqlcmd
-                                SqlCommand cmd = conn.CreateCommand();
-                                cmd.Transaction = trx;
-                                cmd.CommandText =string.Format(@"INSERT INTO [{0}].[STXALLOCATION]
+                            #region sqlcmd
+                            SqlCommand cmd = conn.CreateCommand();
+                            cmd.Transaction = trx;
+                            cmd.CommandText = string.Format(@"INSERT INTO [{0}].[STXALLOCATION]
                                                     ([WHSEID]
                                                     ,[PLANNERCODE]
                                                     ,[STXAGRP]
@@ -115,47 +151,183 @@ namespace Kaifa.B2B.VendorAlloc
                                                           ,'{12}'
                                                           ,'{13}')"
 
-                                    , _warehouse
-                                    , dr["Planner Code"]
-                                    , dr["SITE"]
-                                    , GetAllocType(_excelFile)
-                                    , dr["Prime Part"]
-                                    , dr["Alternate Part"]
-                                    , dr["Vendor Number"]
-                                    , dr["Non ASIC Indicator"]
-                                    , dr["Allocation Percentage"]
-                                    , dr["Start Date Active"]
-                                    , dr["End Date Active"]
-                                    , DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                                    , _warehouse
-                                    , ""
-                                    , _fileName
-                                    );
-                                Console.WriteLine("reading....." + dr["Planner Code"].ToString());
-                                #endregion
-                                //Site	Prime Part	Alternate Part	Vendor Number	Allocation Percentage	Start Date Active	End Date Active	Planner Code	Non ASIC Indicator
-                                cmd.ExecuteNonQuery();
-                            }
-                            trx.Commit();
-                            conn.Close();
+                                , _warehouse
+                                , item.PLANNERCODE
+                                , item.SITE
+                                , GetAllocType(_excelFile)
+                                , item.PRIMEPART
+                                , item.ALTERNATEPART
+                                , item.VENDORCODE
+                                , item.FLAG
+                                , item.PERCENTAGE
+                                , item.STARTDATE
+                                , item.ENDDATE
+                                , DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+                                , _warehouse
+                                , ""
+                                , _fileName
+                                );
+                            Console.WriteLine("reading....." + item.ToString());
+                            #endregion
+                            //Site	Prime Part	Alternate Part	Vendor Number	Allocation Percentage	Start Date Active	End Date Active	Planner Code	Non ASIC Indicator
+                            cmd.ExecuteNonQuery();
+                        }
+                        trx.Commit();
+                        conn.Close();
 
 
-                            MailClient.SendAllocNotificationMail(dt, _excelFile,string.Empty);
-                        }
-                        catch (Exception e)
-                        {
-                            MailClient.SendAllocNotificationMail(dt, _excelFile, e.Message);
-                            Console.WriteLine(e);
-                            trx.Rollback();
-                            conn.Close();
-                        }
+                        MailClient.SendAllocNotificationMail(list, _excelFile, string.Empty);
+                    }
+                    catch (Exception e)
+                    {
+                        MailClient.SendAllocNotificationMail(list, _excelFile, e.Message);
+                        Console.WriteLine(e);
+                        trx.Rollback();
+                        conn.Close();
                     }
                 }
 
 
+
+            
             }
 
+
+
+//            using (FileStream stream = File.Open(_excelFile, FileMode.Open, FileAccess.Read)) {
+//                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+//                excelReader.IsFirstRowAsColumnNames = true;
+//                DataSet result = excelReader.AsDataSet();
+//                DataTable dt = null;
+//                excelReader.Close();
+//                stream.Close();
+//                if (result.Tables.Count > 0 && result.Tables[0].Rows.Count>0)
+//                {
+//                    try
+//                    {
+//                        //DataTable notsku = VaildateTable(result.Tables[0]);
+//                        //if (notsku.Rows.Count > 0)
+//                        //{
+//                        //    MailClient.SendNoSKUAllocNotificationMail(notsku, _excelFile, "以下SKU没有找到主数据-请先维护好主数据后再重新导入");
+
+//                        //    return;
+//                        //}
+//                    }
+//                    catch (Exception e)
+//                    {
+//                        Console.WriteLine(e);
+//                    }
+//                    using (SqlConnection conn = new SqlConnection(_connectionstring))
+//                    {
+//                        conn.Open();
+                       
+//                        SqlTransaction trx = conn.BeginTransaction();
+//                        try
+//                        {
+//                             dt = result.Tables[0];
+//                            foreach (DataRow dr in dt.Rows)
+//                            {
+
+//                                object site = dr["Site"];
+//                                if (site == null || string.IsNullOrEmpty(site.ToString()))
+//                                {
+//                                    continue;
+//                                }
+
+//                                #region sqlcmd
+//                                SqlCommand cmd = conn.CreateCommand();
+//                                cmd.Transaction = trx;
+//                                cmd.CommandText =string.Format(@"INSERT INTO [{0}].[STXALLOCATION]
+//                                                    ([WHSEID]
+//                                                    ,[PLANNERCODE]
+//                                                    ,[STXAGRP]
+//                                                    ,[SITE]
+//                                                    ,[TYPE]
+//                                                    ,[PRISKU]
+//                                                    ,[SKU]
+//                                                    ,[STORERKEY]
+//                                                    ,[COMMODITYCLASS]
+//                                                    ,[ALLQTY]
+//                                                    ,[STARTDATE]
+//                                                    ,[ENDDATE]
+//                                                    ,[ADDDATE]
+//                                                    ,[ADDWHO]
+//                                                    ,[NOTES])
+//                                                    VALUES
+//                                                          ('{0}'
+//                                                          ,'{1}'
+//                                                          ,'{14}'
+//                                                          ,'{2}'
+//                                                          ,'{3}'
+//                                                          ,'{4}'
+//                                                          ,'{5}'
+//                                                          ,'{6}'
+//                                                          ,'{7}'
+//                                                          ,'{8}'
+//                                                          ,'{9}'
+//                                                          ,'{10}'
+//                                                          ,'{11}'
+//                                                          ,'{12}'
+//                                                          ,'{13}')"
+
+//                                    , _warehouse
+//                                    , dr["Planner Code"]
+//                                    , dr["SITE"]
+//                                    , GetAllocType(_excelFile)
+//                                    , dr["Prime Part"]
+//                                    , dr["Alternate Part"]
+//                                    , dr["Vendor Number"]
+//                                    , dr["Non ASIC Indicator"]
+//                                    , dr["Allocation Percentage"]
+//                                    , dr["Start Date Active"]
+//                                    , dr["End Date Active"]
+//                                    , DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+//                                    , _warehouse
+//                                    , ""
+//                                    , _fileName
+//                                    );
+//                                Console.WriteLine("reading....." + dr["Planner Code"].ToString());
+//                                #endregion
+//                                //Site	Prime Part	Alternate Part	Vendor Number	Allocation Percentage	Start Date Active	End Date Active	Planner Code	Non ASIC Indicator
+//                                cmd.ExecuteNonQuery();
+//                            }
+//                            trx.Commit();
+//                            conn.Close();
+
+
+//                            MailClient.SendAllocNotificationMail(dt, _excelFile,string.Empty);
+//                        }
+//                        catch (Exception e)
+//                        {
+//                            MailClient.SendAllocNotificationMail(dt, _excelFile, e.Message);
+//                            Console.WriteLine(e);
+//                            trx.Rollback();
+//                            conn.Close();
+//                        }
+//                    }
+//                }
+
+
+//            }
+
         }
+
+        private string VaildateSku(List<Item> list)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Item item in list)
+            {
+
+                if (!VaildationSKU(item.ALTERNATEPART, item.VENDORCODE))
+                {
+                    sb.Append(string.Format("SKU:{0} STORE:{1} 主数据没有维护<br>", item.ALTERNATEPART, item.VENDORCODE));
+                }
+            }
+            return sb.ToString();
+        }
+
+
+
         private DataTable VaildateTable(DataTable datatable)
         {
             DataTable dt = new DataTable();
