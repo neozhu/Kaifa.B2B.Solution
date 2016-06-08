@@ -62,7 +62,7 @@ namespace Kaifa.B2B.VendorAlloc
                 {
                     System.Console.WriteLine(line);
                     string[] lineitems = line.Split(new char[] { ',' });
-                    if (lineitems.Length >= 9 && lineitems[0]=="SZT")
+                    if (lineitems.Length >= 9 && (lineitems[0] == "SZT" || lineitems[0] == "SZD"))
                     {
                         Item item = new Item();
                         item.SITE = lineitems[0];
@@ -181,6 +181,7 @@ namespace Kaifa.B2B.VendorAlloc
                     catch (Exception e)
                     {
                         MailClient.SendAllocNotificationMail(list, _excelFile, e.Message);
+                        MailClient.WriteLog("配额导入异常" + e.Message);
                         Console.WriteLine(e);
                         trx.Rollback();
                         conn.Close();
@@ -321,6 +322,7 @@ namespace Kaifa.B2B.VendorAlloc
                 if (!VaildationSKU(item.ALTERNATEPART, item.VENDORCODE))
                 {
                     sb.Append(string.Format("SKU:{0} STORE:{1} 主数据没有维护<br>", item.ALTERNATEPART, item.VENDORCODE));
+                    MailClient.WriteLog(string.Format("SKU:{0} STORE:{1} 主数据没有维护<br>", item.ALTERNATEPART, item.VENDORCODE));
                 }
             }
             return sb.ToString();

@@ -12,3 +12,17 @@ D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\b
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.exe
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.pdb
 D:\长城开发项目\SourceCode\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.Kaifa_B2B_SZDImportService.resources
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Kaifa.B2B.SZDImportService.exe.config
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Kaifa.B2B.SZDImportService.exe
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Kaifa.B2B.SZDImportService.pdb
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Kaifa.B2B.VendorAlloc.dll
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Excel.dll
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Kaifa.B2B.VendorAlloc.pdb
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\bin\Debug\Excel.pdb
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\ResolveAssemblyReference.cache
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.Kaifa_B2B_SZDImportService.resources
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.ProjectInstaller.resources
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.csproj.GenerateResource.Cache
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.exe
+D:\苏州长城开发\Kaifa.B2B.Solution\Kaifa.B2B.SZDImportService\obj\Debug\Kaifa.B2B.SZDImportService.pdb

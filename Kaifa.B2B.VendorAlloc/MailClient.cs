@@ -94,6 +94,15 @@ namespace Kaifa.B2B.VendorAlloc
 
 
 
+        static public void WriteLog(string line) {
+            using (System.IO.StreamWriter sw = new System.IO.StreamWriter("c:\\b2blog.txt", true)) {
+                sw.WriteLine( DateTime.Now.ToString() + ":" + line);
+                sw.Flush();
+                sw.Close();
+            }
+        
+        }
+
 
 
 
